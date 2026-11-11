@@ -1,0 +1,140 @@
+[
+  {
+    "label": "2-1",
+    "parts": 1,
+    "visible_text": [
+      "IoU=TPTP+FP+FN"
+    ]
+  },
+  {
+    "label": "2-2",
+    "parts": 1,
+    "visible_text": [
+      "Dice=2TP2TP+FP+FN=2IoU1+IoU"
+    ]
+  },
+  {
+    "label": "2-3",
+    "parts": 2,
+    "visible_text": [
+      "F1,k=2TPk2TPk+FPk+FNk",
+      "F1,macro=18k=18F1,k"
+    ]
+  },
+  {
+    "label": "2-4",
+    "parts": 2,
+    "visible_text": [
+      "pg,k=1ngi∈gpi,k",
+      "yg=argmaxkpg,k"
+    ]
+  },
+  {
+    "label": "2-5",
+    "parts": 1,
+    "visible_text": [
+      "J=IoU×F1,group"
+    ]
+  },
+  {
+    "label": "2-6",
+    "parts": 2,
+    "visible_text": [
+      "x=13s=13xs",
+      "sx=12s=13xs−x2"
+    ]
+  },
+  {
+    "label": "3-1",
+    "parts": 3,
+    "visible_text": [
+      "F3,F4=ΦX",
+      "S=hsF3",
+      "Sa=haF4"
+    ]
+  },
+  {
+    "label": "3-2",
+    "parts": 2,
+    "visible_text": [
+      "Ai=σsgSi",
+      "Ais=clipResizeAi,Hs,Ws,0,1"
+    ]
+  },
+  {
+    "label": "3-3",
+    "parts": 1,
+    "visible_text": [
+      "gis=1HsWsu=1Hsv=1WsFisu,v"
+    ]
+  },
+  {
+    "label": "3-4",
+    "parts": 1,
+    "visible_text": [
+      "lis=u,vAisu,vFisu,vmaxu,vAisu,v,ε"
+    ]
+  },
+  {
+    "label": "3-5",
+    "parts": 2,
+    "visible_text": [
+      "mis=u,vAisu,vHsWs",
+      "lis=risgis+1−rislis"
+    ]
+  },
+  {
+    "label": "3-6",
+    "parts": 2,
+    "visible_text": [
+      "Gi=P3gi3+b3;P4gi4+b4",
+      "Li=P3li3+b3;P4li4+b4"
+    ]
+  },
+  {
+    "label": "3-7",
+    "parts": 2,
+    "visible_text": [
+      "qi=W2SiLUW1Gi;Li+b1+b2",
+      "αi,βi=Softmaxqi"
+    ]
+  },
+  {
+    "label": "3-8",
+    "parts": 2,
+    "visible_text": [
+      "fi=αiGi+βiLi",
+      "zi=WcDropout0.20SiLUWffi+bf+bc"
+    ]
+  },
+  {
+    "label": "3-9",
+    "parts": 1,
+    "visible_text": [
+      "Rbal=1nci∈Cqi,L−qi,G2"
+    ]
+  },
+  {
+    "label": "3-10",
+    "parts": 1,
+    "visible_text": [
+      "LBCE=v∈V−yvlogpv−1−yvlog1−pvmax|V|,1"
+    ]
+  },
+  {
+    "label": "3-11",
+    "parts": 2,
+    "visible_text": [
+      "LDice=1−2v∈Vpvyv+1v∈Vpv+yv+1",
+      "Lseg=LBCE+LDice+0.4LBCEa"
+    ]
+  },
+  {
+    "label": "3-12",
+    "parts": 2,
+    "visible_text": [
+      "Lcls=−1nci∈Clogexpzi,yik=18expzi,k",
+      "Ltotal=BLseg+0.5Lcls+0.01Rbal"
+    ]
+  }
+]

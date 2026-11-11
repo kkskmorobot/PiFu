@@ -1,0 +1,352 @@
+{
+  "status": "COMPLETE",
+  "completed_local_time": "2026-09-11 14:31:05 +0800",
+  "config_sha256": "c52579693178474e0bea80c8b5878a0420c7d6261f292bc3ad85900323801722",
+  "fingerprint": "e6b1cfa834cc682922527cd1898ea6ea65a8f4999593bb70bba5e85c3fb20d42",
+  "architecture": "Plain YOLO26m P3/P4 partial-label multitask",
+  "decision_rule": "eight_class_argmax",
+  "representative_seed": 43,
+  "per_seed": [
+    {
+      "run": 18,
+      "seed": 42,
+      "visible_epoch": 50,
+      "bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\checkpoint_bundles\\epoch_0049",
+      "internal_test": {
+        "segmentation": {
+          "binary_iou": 0.78844,
+          "binary_dice": 0.88171,
+          "pixel_accuracy": 0.94706,
+          "samples": 634
+        },
+        "weight_source": {
+          "structure_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\checkpoint_bundles\\epoch_0049\\trainer.pt",
+          "state_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\checkpoint_bundles\\epoch_0049\\runtime_state.pt::training_state.ema",
+          "exact_ema_loaded": true
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast",
+        "classification": {
+          "support": {
+            "total": 56,
+            "mel": 16,
+            "nv": 40
+          },
+          "accuracy": 0.7857142857142857,
+          "mel_recall": 0.4375,
+          "nv_recall": 0.925,
+          "balanced_recall": 0.68125,
+          "mel_to_nv_count": 9,
+          "mel_to_nv_rate": 0.5625,
+          "nv_to_mel_count": 2,
+          "nv_to_mel_rate": 0.05,
+          "nll": 0.6335947386078032,
+          "brier": 0.32420057528045293,
+          "ece": 0.12329973493303574,
+          "predicted_class_counts": {
+            "akiec": 0,
+            "bcc": 1,
+            "bkl": 0,
+            "df": 0,
+            "mel": 9,
+            "nv": 46,
+            "vasc": 0,
+            "scc": 0
+          },
+          "bootstrap_95ci": {
+            "accuracy": [
+              0.6964285714285714,
+              0.875
+            ],
+            "mel_recall": [
+              0.1875,
+              0.6875
+            ],
+            "nv_recall": [
+              0.825,
+              1.0
+            ],
+            "balanced_recall": [
+              0.55625,
+              0.80625
+            ],
+            "mel_to_nv_rate": [
+              0.3125,
+              0.8125
+            ],
+            "nv_to_mel_rate": [
+              0.0,
+              0.125
+            ]
+          },
+          "scope": "IMA++ test MEL/NV labeled subset only; not eight-class test Macro-F1"
+        }
+      },
+      "external": {
+        "segmentation": {
+          "binary_iou": 0.65381,
+          "binary_dice": 0.79067,
+          "pixel_accuracy": 0.93228,
+          "samples": 89
+        },
+        "weight_source": {
+          "structure_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\checkpoint_bundles\\epoch_0049\\trainer.pt",
+          "state_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\checkpoint_bundles\\epoch_0049\\runtime_state.pt::training_state.ema",
+          "exact_ema_loaded": true
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast"
+      }
+    },
+    {
+      "run": 22,
+      "seed": 43,
+      "visible_epoch": 60,
+      "bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\checkpoint_bundles\\epoch_0059",
+      "internal_test": {
+        "segmentation": {
+          "binary_iou": 0.78615,
+          "binary_dice": 0.88027,
+          "pixel_accuracy": 0.94662,
+          "samples": 634
+        },
+        "weight_source": {
+          "structure_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\checkpoint_bundles\\epoch_0059\\trainer.pt",
+          "state_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\checkpoint_bundles\\epoch_0059\\runtime_state.pt::training_state.ema",
+          "exact_ema_loaded": true
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast",
+        "classification": {
+          "support": {
+            "total": 56,
+            "mel": 16,
+            "nv": 40
+          },
+          "accuracy": 0.8035714285714286,
+          "mel_recall": 0.4375,
+          "nv_recall": 0.95,
+          "balanced_recall": 0.69375,
+          "mel_to_nv_count": 9,
+          "mel_to_nv_rate": 0.5625,
+          "nv_to_mel_count": 2,
+          "nv_to_mel_rate": 0.05,
+          "nll": 0.6721401607281049,
+          "brier": 0.3107518441427885,
+          "ece": 0.09659249441964289,
+          "predicted_class_counts": {
+            "akiec": 0,
+            "bcc": 0,
+            "bkl": 0,
+            "df": 0,
+            "mel": 9,
+            "nv": 47,
+            "vasc": 0,
+            "scc": 0
+          },
+          "bootstrap_95ci": {
+            "accuracy": [
+              0.7142857142857143,
+              0.8928571428571429
+            ],
+            "mel_recall": [
+              0.1875,
+              0.6875
+            ],
+            "nv_recall": [
+              0.875,
+              1.0
+            ],
+            "balanced_recall": [
+              0.56875,
+              0.81875
+            ],
+            "mel_to_nv_rate": [
+              0.3125,
+              0.8125
+            ],
+            "nv_to_mel_rate": [
+              0.0,
+              0.125
+            ]
+          },
+          "scope": "IMA++ test MEL/NV labeled subset only; not eight-class test Macro-F1"
+        }
+      },
+      "external": {
+        "segmentation": {
+          "binary_iou": 0.63596,
+          "binary_dice": 0.77747,
+          "pixel_accuracy": 0.93027,
+          "samples": 89
+        },
+        "weight_source": {
+          "structure_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\checkpoint_bundles\\epoch_0059\\trainer.pt",
+          "state_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\checkpoint_bundles\\epoch_0059\\runtime_state.pt::training_state.ema",
+          "exact_ema_loaded": true
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast"
+      }
+    },
+    {
+      "run": 24,
+      "seed": 44,
+      "visible_epoch": 78,
+      "bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results\\run24_yolo26m_plain_seed44_replication\\checkpoint_bundles\\epoch_0077",
+      "internal_test": {
+        "segmentation": {
+          "binary_iou": 0.78182,
+          "binary_dice": 0.87755,
+          "pixel_accuracy": 0.94507,
+          "samples": 634
+        },
+        "weight_source": {
+          "structure_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results\\run24_yolo26m_plain_seed44_replication\\checkpoint_bundles\\epoch_0077\\trainer.pt",
+          "state_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results\\run24_yolo26m_plain_seed44_replication\\checkpoint_bundles\\epoch_0077\\runtime_state.pt::training_state.ema",
+          "exact_ema_loaded": true
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast",
+        "classification": {
+          "support": {
+            "total": 56,
+            "mel": 16,
+            "nv": 40
+          },
+          "accuracy": 0.75,
+          "mel_recall": 0.5,
+          "nv_recall": 0.85,
+          "balanced_recall": 0.675,
+          "mel_to_nv_count": 8,
+          "mel_to_nv_rate": 0.5,
+          "nv_to_mel_count": 4,
+          "nv_to_mel_rate": 0.1,
+          "nll": 0.8511703556119029,
+          "brier": 0.39373605827487124,
+          "ece": 0.19906180245535715,
+          "predicted_class_counts": {
+            "akiec": 0,
+            "bcc": 1,
+            "bkl": 1,
+            "df": 0,
+            "mel": 12,
+            "nv": 42,
+            "vasc": 0,
+            "scc": 0
+          },
+          "bootstrap_95ci": {
+            "accuracy": [
+              0.6428571428571429,
+              0.8571428571428571
+            ],
+            "mel_recall": [
+              0.25,
+              0.75
+            ],
+            "nv_recall": [
+              0.725,
+              0.95
+            ],
+            "balanced_recall": [
+              0.54375,
+              0.8064062499999978
+            ],
+            "mel_to_nv_rate": [
+              0.25,
+              0.75
+            ],
+            "nv_to_mel_rate": [
+              0.025,
+              0.2
+            ]
+          },
+          "scope": "IMA++ test MEL/NV labeled subset only; not eight-class test Macro-F1"
+        }
+      },
+      "external": {
+        "segmentation": {
+          "binary_iou": 0.61064,
+          "binary_dice": 0.75825,
+          "pixel_accuracy": 0.92492,
+          "samples": 89
+        },
+        "weight_source": {
+          "structure_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results\\run24_yolo26m_plain_seed44_replication\\checkpoint_bundles\\epoch_0077\\trainer.pt",
+          "state_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results\\run24_yolo26m_plain_seed44_replication\\checkpoint_bundles\\epoch_0077\\runtime_state.pt::training_state.ema",
+          "exact_ema_loaded": true
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast"
+      }
+    }
+  ],
+  "aggregate": {
+    "internal_segmentation": {
+      "binary_iou": {
+        "mean": 0.7854700000000001,
+        "sample_sd": 0.003361978584107913
+      },
+      "binary_dice": {
+        "mean": 0.8798433333333332,
+        "sample_sd": 0.00211256558083606
+      },
+      "pixel_accuracy": {
+        "mean": 0.94625,
+        "sample_sd": 0.001045322916614793
+      }
+    },
+    "external_segmentation": {
+      "binary_iou": {
+        "mean": 0.63347,
+        "sample_sd": 0.02169244799463631
+      },
+      "binary_dice": {
+        "mean": 0.7754633333333333,
+        "sample_sd": 0.016302887269846817
+      },
+      "pixel_accuracy": {
+        "mean": 0.9291566666666666,
+        "sample_sd": 0.003804212577306048
+      }
+    },
+    "restricted_classification": {
+      "accuracy": {
+        "mean": 0.7797619047619048,
+        "sample_sd": 0.02727723627949906
+      },
+      "mel_recall": {
+        "mean": 0.4583333333333333,
+        "sample_sd": 0.036084391824351615
+      },
+      "nv_recall": {
+        "mean": 0.9083333333333333,
+        "sample_sd": 0.05204164998665332
+      },
+      "balanced_recall": {
+        "mean": 0.6833333333333332,
+        "sample_sd": 0.009547032697824634
+      },
+      "mel_to_nv_rate": {
+        "mean": 0.5416666666666666,
+        "sample_sd": 0.03608439182435161
+      },
+      "nv_to_mel_rate": {
+        "mean": 0.06666666666666667,
+        "sample_sd": 0.02886751345948129
+      },
+      "nll": {
+        "mean": 0.7189684183159369,
+        "sample_sd": 0.11610104030633374
+      },
+      "brier": {
+        "mean": 0.3428961592327042,
+        "sample_sd": 0.04453918042877077
+      },
+      "ece": {
+        "mean": 0.13965134393601195,
+        "sample_sd": 0.05315563102879301
+      }
+    }
+  },
+  "selection_performed": false,
+  "training_performed": false,
+  "test_metrics_used": true,
+  "external_metrics_used": true,
+  "pad_ufes_20_used": false,
+  "post_test_development_changes_permitted": false
+}

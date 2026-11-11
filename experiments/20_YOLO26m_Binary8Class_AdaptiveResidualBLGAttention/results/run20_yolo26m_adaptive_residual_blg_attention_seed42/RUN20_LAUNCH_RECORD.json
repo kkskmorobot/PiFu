@@ -1,0 +1,10 @@
+{
+  "status": "STARTING_OR_RESUMING",
+  "started_local_time": "2026-08-13 11:15:25 +0800",
+  "entrypoint": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run20\\train_run20_from_pycharm.py",
+  "config_sha256": "65bd40b9241c218b1ff4f403990a99390ad47b02874827801479a03458417338",
+  "fingerprint": "38db3f494705668e995328c1db4491f00f32d49d1ce1149a9df8cc677ff10d1e",
+  "resume_bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\20_YOLO26m_Binary8Class_AdaptiveResidualBLGAttention\\results\\run20_yolo26m_adaptive_residual_blg_attention_seed42\\checkpoint_bundles\\epoch_0059",
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

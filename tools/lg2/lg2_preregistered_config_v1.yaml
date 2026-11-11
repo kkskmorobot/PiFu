@@ -1,0 +1,190 @@
+# lg2: locked gate-balanced LGLA v1 replication, seed42, paired with frozen Plain Run18.
+# No test, external, or PAD-UFES-20 source is present in this configuration.
+
+contract:
+  version: lg2_yolo26m_p3p4_lgla_v1_gate_balance_seed42
+  role: first_seed_replication_of_successful_lgx_gate_balanced_lgla_v1
+  single_preregistered_factor: replace_plain_p3_p4_global_descriptor_with_locked_lgx_gate_balanced_lgla_v1
+  comparison_policy: paired_seed42_best_joint_row_against_frozen_run18
+  successful_parent_experiment: experiments/lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43
+  successful_parent_best_joint_bundle: epoch_0098
+  successful_parent_fingerprint: 3a9aa4156828bd2e5af1b1f44a62929041cde5895d01ed995c8c5af823186ac0
+  parent_screening_and_diagnostic_gate: pass
+  baseline_run: experiments/18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop
+  baseline_fingerprint: 2ed64c4aa90c6d90d15ace2158de0866e570f71ad8a3cb3bbc3e2b7d0fd2b7a3
+  authorization_plan: PROJECT_LGLA_EXTENSION_PLAN_2026-09-12.md
+  metric_protocol_note: validation_metrics_selection_aliases_and_lifecycle_unchanged_from_lgx_and_run18
+  test_policy: forbidden_during_lg2_development
+  external_policy: forbidden_during_lg2_development
+
+ultralytics:
+  task: semantic
+  mode: train
+  model: models/yolo26m-sem.pt
+  data: tools/lg2/lg2_development_data.yaml
+  epochs: 100
+  patience: 30
+  batch: 16
+  imgsz: 640
+  device: 0
+  workers: 8
+  project: experiments/lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42/results
+  name: lg2_yolo26m_lgla_v1_gate_balance_seed42
+  exist_ok: false
+  pretrained: true
+  optimizer: AdamW
+  lr0: 0.001
+  lrf: 0.01
+  cos_lr: true
+  momentum: 0.937
+  weight_decay: 0.0005
+  warmup_epochs: 3.0
+  warmup_momentum: 0.8
+  warmup_bias_lr: 0.1
+  nbs: 64
+  seed: 42
+  deterministic: true
+  amp: true
+  cache: false
+  save: true
+  save_period: -1
+  plots: true
+  val: true
+  verbose: true
+  fraction: 1.0
+  single_cls: false
+  rect: false
+  multi_scale: false
+  dropout: 0.0
+
+amp_check:
+  asset: tools/yolo26n.pt
+  sha256: 9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef
+  working_directory: tools
+  runtime_download: forbidden_local_asset_required
+
+early_stopping:
+  policy: delayed_utility_gated_v1
+  start_epoch: 40
+  patience_after_start: 30
+  earliest_possible_stop_epoch: 70
+  ineligible_score: joint_score_minus_two
+  eligible_score: original_joint_minus_mel_to_nv_excess_fitness
+  utility_eligible_requires:
+    min_binary_iou: 0.70
+    min_group_macro_f1: 0.50
+  applies_to:
+    - ultralytics_stopper
+    - ultralytics_best_pt
+  does_not_change:
+    - validation_metrics
+    - checkpoint_selection_aliases
+
+augmentations:
+  hsv_h: 0.005
+  hsv_s: 0.10
+  hsv_v: 0.10
+  degrees: 5.0
+  translate: 0.03
+  scale: 0.10
+  shear: 0.0
+  perspective: 0.0
+  flipud: 0.5
+  fliplr: 0.5
+  bgr: 0.0
+  mosaic: 0.0
+  mixup: 0.0
+  cutmix: 0.0
+  copy_paste: 0.0
+  close_mosaic: 0
+  auto_augment: null
+  erasing: 0.0
+
+multitask:
+  semantic_classes: 1
+  classification_classes: 8
+  image_cls_weight: 0.5
+  image_head: lgla_v1_p3_p4_predicted_lesion_global_local_softmax_gate_mlp_dropout020
+  classification_loss: unweighted_cross_entropy_plus_gate_balance_only
+  classification_label_smoothing: 0.0
+  sampler: standard_seeded_epoch_shuffle_without_replacement
+  epoch_size: all_23462_train_samples_once
+  segmentation_loss_scope: has_segmentation_only
+  classification_loss_scope: has_official_classification_only
+
+lgla_v1:
+  enabled: true
+  baseline_run18: p3_p4_plain_global_average_pool_mlp_dropout020
+  scales: [P3, P4]
+  attention_source: sigmoid_main_predicted_semantic_logit
+  attention_stop_gradient: true
+  ground_truth_mask_as_classifier_input: false
+  resize: bilinear_align_corners_false
+  global_pooling: global_average
+  local_pooling: lesion_probability_weighted_average
+  projection_dim: 128
+  projection_sharing: same_scale_projection_shared_between_global_and_local
+  scale_fusion: concatenate_projected_p3_p4
+  gate: two_way_softmax_mlp
+  gate_hidden_dim: 128
+  gate_initialization: equal_half_weights
+  gate_balance_regularizer: classified_batch_mean_local_minus_global_logit_squared
+  gate_balance_weight: 0.01
+  gate_balance_scope: official_classification_labels_only
+  gate_balance_intent: prevent_systematic_global_or_local_gate_collapse_without_penalizing_sample_variation
+  attention_eps: 0.000001
+  min_attention_mass_fraction: 0.0001
+  empty_or_tiny_attention_fallback: global_average
+  classifier_only: true
+  p5_descriptor: false
+  semantic_branch_modified: false
+
+checkpoint:
+  bundle_version: pifuv2_multitask_checkpoint_v2
+  keep_last: 3
+  resume_default: auto
+  safe_boundary: completed_epoch
+  require_success_hash_and_fingerprint: true
+  save_live_model_ema_optimizer_scaler_scheduler_stopper_rng_data_progress: true
+
+selection:
+  primary_alias: best_feasible_joint
+  joint_score: sqrt_binary_iou_times_group_macro_f1
+  max_mel_to_nv_rate: 0.1077844311
+  min_binary_iou: 0.70
+  min_group_macro_f1: 0.50
+  feasible_requires: mel_support_and_risk_limit_and_non_degenerate_utility_floors
+  fitness_policy: unchanged_joint_minus_mel_to_nv_excess_only
+  fallback_if_no_feasible: constraint_failure_report_best_joint_for_diagnosis_only
+  tie_break_order:
+    - higher_group_macro_f1
+    - higher_binary_iou
+    - earlier_epoch
+  semantic_probability_threshold: 0.5
+  classification_decision: argmax
+  calibration_temperature: 1.0
+  fit_temperature_or_threshold_on_external: false
+
+screening_gate:
+  comparison_row: each_runs_best_joint_score_bundle_row
+  baseline_run18:
+    binary_iou: 0.76323
+    image_macro_f1: 0.54417
+    group_macro_f1: 0.61023
+    group_recall: 0.59915
+    mel_to_nv: 0.38776
+    malignant_to_benign: 0.27536
+    joint: 0.68246
+  required_deltas:
+    min_group_macro_f1: 0.005
+    min_joint: 0.003
+    min_image_macro_f1: 0.0
+    min_binary_iou: -0.005
+  attention_diagnostics:
+    all_finite: true
+    local_gate_mean_min: 0.05
+    local_gate_mean_max: 0.95
+    local_gate_std_min: 0.001
+  action_if_pass: stop_and_return_complete_deltas_to_user_before_seed44_or_any_ablation
+  action_if_borderline: stop_and_return_complete_deltas_and_tradeoffs_before_seed44
+  action_if_fail: stop_and_return_complete_deltas_before_deciding_whether_seed44_is_informative

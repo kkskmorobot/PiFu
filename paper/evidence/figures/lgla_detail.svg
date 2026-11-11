@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="900" height="610" preserveAspectRatio="xMinYMin meet" viewBox="0 0 900 610" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="900" height="610"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-610)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="900" height="610" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="30" y="525" width="190" height="65" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="53.5" y="550.24" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,1100) scale(1,-1)">主分割logit S</text>
+			<rect x="290" y="525" width="230" height="65" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="333.5" y="563.99" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,1127) scale(1,-1)">stop-gradient</text>
+			<text x="366.5" y="536.49" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,1072) scale(1,-1)">Sigmoid</text>
+			<rect x="590" y="525" width="275" height="65" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="638.25" y="563.695" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,1127) scale(1,-1)">双线性插值→A3/A4</text>
+			<text x="627.75" y="537.445" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,1074) scale(1,-1)">align_corners=False</text>
+			<path d="M 220,558 L 290,558 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="290 558, 280.7894 554.1058, 280.7894 561.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 520,558 L 590,558 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="590 558, 580.7894 554.1058, 580.7894 561.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="30" y="350" width="180" height="110" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="62.24999999999999" y="424.32" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,848) scale(1,-1)">P3 / P4特征</text>
+			<text x="78.0" y="398.07" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,796) scale(1,-1)">分别处理</text>
+			<text x="51.75" y="371.82" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,743) scale(1,-1)">256 / 512通道</text>
+			<rect x="280" y="415" width="230" height="75" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="329.0" y="458.99" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,917) scale(1,-1)">全局平均池化</text>
+			<text x="340.0" y="431.49" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,862) scale(1,-1)">全局描述 g</text>
+			<rect x="280" y="275" width="230" height="100" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="335.0" y="343.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,686) scale(1,-1)">概率加权池化</text>
+			<text x="290.0" y="318.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,636) scale(1,-1)">分母保护 / 小质量回退</text>
+			<text x="345.0" y="293.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,586) scale(1,-1)">局部描述 l</text>
+			<path d="M 210,425 L 280,453 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="280 453, 272.8944 445.9636, 270.0019 453.1949" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 210,375 L 280,325 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="280 325, 270.2416 327.1847, 274.7685 333.5224" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<polyline points="727 525, 727 505, 550 505, 550 345" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.8; fill: None; fill-rule: evenodd; stroke-dasharray: 6, 4;"/>
+			<path d="M 550,345 L 510,345 Z" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.8; stroke-dasharray: 6, 4;"/>
+			<polygon points="510 345, 519.2106 348.8942, 519.2106 341.1058" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<rect x="590" y="380" width="275" height="100" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="627.75" y="449.32" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,898) scale(1,-1)">每尺度共享投影→128</text>
+			<text x="633.0" y="423.07" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,846) scale(1,-1)">P3、P4投影相互独立</text>
+			<text x="654.0" y="396.82" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,793) scale(1,-1)">两尺度各自拼接</text>
+			<path d="M 510,452 L 590,447 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="590 447, 580.5644 443.6879, 581.0502 451.4611" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 510,325 L 590,403 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="590 403, 586.1237 393.7818, 580.6867 399.3583" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="610" y="255" width="230" height="70" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="681.0" y="296.49" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,592) scale(1,-1)">G：256维</text>
+			<text x="681.0" y="268.99" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,537) scale(1,-1)">L：256维</text>
+			<path d="M 727,380 L 727,325 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="727 325, 723.1058 334.2106, 730.8942 334.2106" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="40" y="100" width="270" height="105" rx="5" ry="5" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(91%,96%,94%); fill-rule: evenodd;"/>
+			<text x="90.0" y="170.89999999999998" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,341) scale(1,-1)">门网络 [G;L]：512</text>
+			<text x="55.0" y="145.89999999999998" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,291) scale(1,-1)">Linear128→SiLU→Linear2</text>
+			<text x="120.0" y="120.89999999999998" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,241) scale(1,-1)">得到logit q</text>
+			<path d="M 610,290 L 175,205 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="175 205, 183.2928 210.5883, 184.7865 202.9445" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="380" y="100" width="210" height="105" rx="5" ry="5" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(91%,96%,94%); fill-rule: evenodd;"/>
+			<text x="446.5" y="172.74" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,345) scale(1,-1)">Softmax</text>
+			<text x="424.5" y="145.24" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,290) scale(1,-1)">α + β = 1</text>
+			<text x="419.0" y="117.74000000000001" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,235) scale(1,-1)">每样本自适应</text>
+			<path d="M 310,153 L 380,153 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="380 153, 370.7894 149.1058, 370.7894 156.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="650" y="100" width="210" height="105" rx="5" ry="5" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(91%,96%,94%); fill-rule: evenodd;"/>
+			<text x="678.0" y="172.74" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,345) scale(1,-1)">融合 f=αG+βL</text>
+			<text x="727.5" y="145.24" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,290) scale(1,-1)">256维</text>
+			<text x="700.0" y="117.74000000000001" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,235) scale(1,-1)">送入分类器</text>
+			<path d="M 590,153 L 650,153 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="650 153, 640.7894 149.1058, 640.7894 156.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 755,255 L 755,205 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="755 205, 751.1058 214.2106, 758.8942 214.2106" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<text x="191.5" y="46.0" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,92) scale(1,-1)">均衡项作用于q的批次平均差；仅有分类标签样本参与</text>
+			<text x="175.0" y="15.0" style="font-family: SimHei; font-size: 22px;fill: rgb(33%,38%,42%); stroke:none;" transform="translate(0,30) scale(1,-1)">概率图路径停止梯度；分类与分割仍共享前面的特征网络</text>
+		</g>
+	</g>
+</svg>

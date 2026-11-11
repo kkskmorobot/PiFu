@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "weights": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43\\results\\lgx_yolo26m_lgla_v1_gate_balance_seed43\\checkpoint_bundles\\epoch_0098",
+  "samples": [
+    {
+      "isic_id": "ISIC_0000173",
+      "true_class": "mel",
+      "predicted_class_id": 4,
+      "global_gate": 0.5265710353851318,
+      "local_gate": 0.47342902421951294,
+      "image_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\images\\val\\ISIC_0000173.jpg",
+      "mask_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\masks\\val\\ISIC_0000173.png",
+      "scope": "development validation only"
+    },
+    {
+      "isic_id": "ISIC_0000187",
+      "true_class": "nv",
+      "predicted_class_id": 5,
+      "global_gate": 0.7117816209793091,
+      "local_gate": 0.2882183790206909,
+      "image_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\images\\val\\ISIC_0000187.jpg",
+      "mask_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\masks\\val\\ISIC_0000187.png",
+      "scope": "development validation only"
+    },
+    {
+      "isic_id": "ISIC_0000038",
+      "true_class": "unlabeled",
+      "predicted_class_id": 5,
+      "global_gate": 0.45341309905052185,
+      "local_gate": 0.5465868711471558,
+      "image_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\images\\val\\ISIC_0000038.jpg",
+      "mask_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\masks\\val\\ISIC_0000038.png",
+      "scope": "development validation only"
+    },
+    {
+      "isic_id": "ISIC_0000049",
+      "true_class": "unlabeled",
+      "predicted_class_id": 5,
+      "global_gate": 0.6103082895278931,
+      "local_gate": 0.38969168066978455,
+      "image_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\images\\val\\ISIC_0000049.jpg",
+      "mask_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\masks\\val\\ISIC_0000049.png",
+      "scope": "development validation only"
+    }
+  ],
+  "test_or_external_used": false
+}

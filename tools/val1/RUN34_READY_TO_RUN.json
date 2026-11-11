@@ -1,0 +1,20 @@
+{
+  "status": "READY_TO_RUN_DEVELOPMENT_ONLY_EVALUATION",
+  "prepared_local_time": "2026-09-11 12:09:31 +0800",
+  "config_sha256": "2952bb706ee8eacd24d75348be2d0dc1a8e8df6d7204a64fd0cc932ee15dbf0d",
+  "fingerprint": "04a47ea9b7c8d35eb8f1cd047d0bb53eb037b2953c7216002a9f34b82e5d9ac2",
+  "locked_files": {
+    "run34_preregistered_config_v1.yaml": "2952bb706ee8eacd24d75348be2d0dc1a8e8df6d7204a64fd0cc932ee15dbf0d",
+    "evaluate_run34_from_pycharm.py": "35a536f2a2837787c01e8ef44d95cd19803ee0eea3be6d347786f216452a8b4b",
+    "run_run34_from_pycharm.py": "4e50e8bcb233456012eabdde6349f27527f4c92ce7b2949c9331ace58f3fa48e",
+    "preflight_run34_exact_ema_reproduction_v1.py": "a9f3ed044a5378beaaff67cf2ec62e912960104e0803234dafb698fff5be1037",
+    "RUN34_PROTOCOL_2026-09-10.md": "0052bd0ca0cab051ba7dc4ebf2b6f3d40777cf51634d553708b9435475e42edb",
+    "RUN33_RESULT_REVIEW_AND_RUN34_DECISION_2026-09-10.md": "66598e74cff85296a19be46eddb810cc064fdcdb0d66a77296558844141c856e",
+    "test_run34_fixed_cost_decision_v1.py": "3ee58eb2c04fde7f52b4740660d349070218e671411a91dc4a0ca1516300c241"
+  },
+  "formal_output_exists": false,
+  "training_permitted": false,
+  "test_metrics_used": false,
+  "external_metrics_used": false,
+  "pad_ufes_20_used": false
+}

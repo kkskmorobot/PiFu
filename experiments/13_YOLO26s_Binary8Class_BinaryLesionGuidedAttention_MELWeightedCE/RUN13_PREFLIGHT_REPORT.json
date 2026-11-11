@@ -1,0 +1,223 @@
+{
+  "status": "PASS",
+  "scope": "final Run13 preparation; no optimizer, backward, training, test, or external evaluation",
+  "created_local_time": "2026-08-08 19:07:30 +0800",
+  "config_sha256": "269b58b3e5062a3f9b279f6d60365c0f5f25d846f656fbb72e10e66dea008674",
+  "fingerprint": "980198023b0119e63882eb5d5f5fedf662691eb4837a775c5b73b0696d38375b",
+  "protected_files": {
+    "models/yolo26s-sem.pt": {
+      "bytes": 13252403,
+      "sha256": "bc3e2152329831303de83e1af91d4b57d547e8794de8bb6edb1f2a622d1d5435"
+    },
+    "classification_taxonomy_v1.yaml": {
+      "bytes": 771,
+      "sha256": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e"
+    },
+    "Data/processed_imaplusplus_binary_v1/manifest.csv": {
+      "bytes": 5780376,
+      "sha256": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e"
+    },
+    "Data/processed_isic2019_classification_incremental_v1/manifest.csv": {
+      "bytes": 5317937,
+      "sha256": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a"
+    },
+    "Data/processed_isic2019_classification_incremental_v1/multitask_manifest.csv": {
+      "bytes": 8511477,
+      "sha256": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956"
+    },
+    "Data/processed_isic2019_classification_incremental_v1/multitask_data.yaml": {
+      "bytes": 600,
+      "sha256": "fb2becbc7d07086494b8abb6179b061a845c532717a23ff66c68d4ec70c7ce6e"
+    },
+    "Data/processed_isic2018_task1_incremental_v1/manifest.csv": {
+      "bytes": 40002,
+      "sha256": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102"
+    }
+  },
+  "lock_inputs": {
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\13_YOLO26s_Binary8Class_BinaryLesionGuidedAttention_MELWeightedCE\\run13_preregistered_config_v1.yaml": {
+      "bytes": 3973,
+      "sha256": "269b58b3e5062a3f9b279f6d60365c0f5f25d846f656fbb72e10e66dea008674"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\13_YOLO26s_Binary8Class_BinaryLesionGuidedAttention_MELWeightedCE\\RUN13_PROTOCOL_2026-08-08.md": {
+      "bytes": 3934,
+      "sha256": "82e3e89c1f9f98f3c58ab9c3ab3e6a8f97d61da2c3c076f17ee12a08a15c4115"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\13_YOLO26s_Binary8Class_BinaryLesionGuidedAttention_MELWeightedCE\\run13_development_manifest.csv": {
+      "bytes": 8299971,
+      "sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\13_YOLO26s_Binary8Class_BinaryLesionGuidedAttention_MELWeightedCE\\run13_development_data.yaml": {
+      "bytes": 692,
+      "sha256": "9f5ec1c9d8d1a8cbe0a90e8e6777d07a82d4aa54e2156712d02faab5d3a7ffa8"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26s-sem.pt": {
+      "bytes": 13252403,
+      "sha256": "bc3e2152329831303de83e1af91d4b57d547e8794de8bb6edb1f2a622d1d5435"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\classification_taxonomy_v1.yaml": {
+      "bytes": 771,
+      "sha256": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\multitask_manifest.csv": {
+      "bytes": 8511477,
+      "sha256": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\manifest.csv": {
+      "bytes": 5780376,
+      "sha256": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\manifest.csv": {
+      "bytes": 5317937,
+      "sha256": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2018_task1_incremental_v1\\manifest.csv": {
+      "bytes": 40002,
+      "sha256": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py": {
+      "bytes": 26587,
+      "sha256": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_mel_weight_v1.py": {
+      "bytes": 28523,
+      "sha256": "6a4f4aeb614426f67817cab9378fb86ce76a4f4a26a67c25b846050187d8c53a"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_lesion_attention_v1.py": {
+      "bytes": 9328,
+      "sha256": "dc32caaff2e840f1e928bec011c9b256c5319da33ccc95afaaa60f1ec6222c27"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_lesion_attention_mel_weight_v1.py": {
+      "bytes": 3943,
+      "sha256": "2018be48f3309b37bfed567667ba5728321976ff346fbf0446a1d845cc5b7465"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py": {
+      "bytes": 27811,
+      "sha256": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py": {
+      "bytes": 12421,
+      "sha256": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\train_run13_from_pycharm.py": {
+      "bytes": 34259,
+      "sha256": "378b4969b8d0165f19913536e448f0e264bc68523e74d450827f65695af46ff6"
+    }
+  },
+  "development": {
+    "counts": {
+      "train": {
+        "total": 23462,
+        "seg": 10483,
+        "cls": 13715,
+        "both": 736
+      },
+      "val": {
+        "total": 1744,
+        "seg": 292,
+        "cls": 1488,
+        "both": 36
+      }
+    },
+    "development_manifest_sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+    "development_data_sha256": "9f5ec1c9d8d1a8cbe0a90e8e6777d07a82d4aa54e2156712d02faab5d3a7ffa8",
+    "source_test_rows_excluded": 634,
+    "test_key": null,
+    "external_candidates_present": false
+  },
+  "manual_pad_extraction": {
+    "status": "PASS",
+    "total_png": 2298,
+    "parts": {
+      "imgs_part_1": {
+        "png": 911,
+        "crc32_and_size": "PASS"
+      },
+      "imgs_part_2": {
+        "png": 659,
+        "crc32_and_size": "PASS"
+      },
+      "imgs_part_3": {
+        "png": 728,
+        "crc32_and_size": "PASS"
+      }
+    },
+    "training_role": "none_external_candidate_only"
+  },
+  "cuda": {
+    "available": true,
+    "count": 1,
+    "name": "NVIDIA GeForce RTX 5080",
+    "torch": "2.8.0+cu129",
+    "cuda_runtime": "12.9",
+    "free_bytes_before_preflight": 15712911360,
+    "total_bytes": 17094475776
+  },
+  "forward_only_preflight": {
+    "status": "PASS",
+    "scope": "real development role batch expanded to frozen batch size; forward and loss only",
+    "source_role_ids": [
+      "ISIC_0000017_downsampled",
+      "ISIC_0000000",
+      "ISIC_0000005"
+    ],
+    "batch": 16,
+    "imgsz": 640,
+    "amp": true,
+    "semantic_shape": [
+      16,
+      1,
+      80,
+      80
+    ],
+    "classification_shape": [
+      16,
+      8
+    ],
+    "loss_items": [
+      0.7359123826026917,
+      0.5749402046203613,
+      0.28586921095848083,
+      2.0319602489471436
+    ],
+    "parameters": 6614361,
+    "classification_head_parameters": 115848,
+    "attention_head_inputs": [
+      16,
+      13,
+      10
+    ],
+    "attention_scale_channels": [
+      128,
+      256,
+      512
+    ],
+    "identity_initialized_eca_modules": 3,
+    "detached_binary_lesion_map": true,
+    "mask_guided_mix": 0.5,
+    "classification_class_weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.8178536265178864,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "mel_class_weight": 1.8178536265178864,
+    "pretrained_load_result": "None",
+    "peak_cuda_allocated_bytes": 600452608,
+    "peak_cuda_reserved_bytes": 1004535808,
+    "model_state_changed": false,
+    "optimizer_created": false,
+    "backward_called": false,
+    "optimizer_step_called": false,
+    "trainer_train_called": false,
+    "test_or_external_loaded": false
+  },
+  "formal_training_started": false,
+  "experiments_13_result_directory_created": false,
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

@@ -1,0 +1,235 @@
+{
+  "weights": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\05_YOLO26s_Semantic_AuxClassifier\\results\\semantic_multitask\\skin7_yolo26s_sem_auxcls_seed42\\weights\\epoch60.pt",
+  "split": "val",
+  "decision": "classifier",
+  "semantic": {
+    "miou_8class": 0.5615848302841187,
+    "foreground_miou_7class": 0.505155582513128,
+    "pixel_accuracy": 0.9200962781906128,
+    "per_class_iou": {
+      "akiec": 0.1807873398065567,
+      "bcc": 0.5209847092628479,
+      "bkl": 0.5242541432380676,
+      "df": 0.4083191752433777,
+      "mel": 0.4210822582244873,
+      "nv": 0.7516530752182007,
+      "vasc": 0.7290083765983582,
+      "background": 0.9565899968147278
+    }
+  },
+  "image_level": {
+    "samples": 1504,
+    "accuracy": 0.7772606382978723,
+    "macro_precision": 0.7654283142294763,
+    "macro_recall": 0.6885247016418196,
+    "macro_f1": 0.6836513135048303,
+    "minority_recall": 0.5463478320621178,
+    "mel_to_nv": 13,
+    "mel_to_nv_rate": 0.07784431137724551,
+    "nv_to_mel": 161,
+    "no_predictions": 0,
+    "per_class": [
+      {
+        "class": "akiec",
+        "support": 49,
+        "precision": 0.9285714285714286,
+        "recall": 0.2653061224489796,
+        "f1": 0.4126984126984127,
+        "tp": 13,
+        "fp": 1,
+        "fn": 36
+      },
+      {
+        "class": "bcc",
+        "support": 77,
+        "precision": 0.6847826086956522,
+        "recall": 0.8181818181818182,
+        "f1": 0.7455621301775148,
+        "tp": 63,
+        "fp": 29,
+        "fn": 14
+      },
+      {
+        "class": "bkl",
+        "support": 165,
+        "precision": 0.6538461538461539,
+        "recall": 0.8242424242424242,
+        "f1": 0.7292225201072386,
+        "tp": 136,
+        "fp": 72,
+        "fn": 29
+      },
+      {
+        "class": "df",
+        "support": 18,
+        "precision": 0.8333333333333334,
+        "recall": 0.5555555555555556,
+        "f1": 0.6666666666666667,
+        "tp": 10,
+        "fp": 2,
+        "fn": 8
+      },
+      {
+        "class": "mel",
+        "support": 167,
+        "precision": 0.4024390243902439,
+        "recall": 0.7904191616766467,
+        "f1": 0.5333333333333333,
+        "tp": 132,
+        "fp": 196,
+        "fn": 35
+      },
+      {
+        "class": "nv",
+        "support": 1006,
+        "precision": 0.9602888086642599,
+        "recall": 0.7932405566600398,
+        "f1": 0.8688078388677192,
+        "tp": 798,
+        "fp": 33,
+        "fn": 208
+      },
+      {
+        "class": "vasc",
+        "support": 22,
+        "precision": 0.8947368421052632,
+        "recall": 0.7727272727272727,
+        "f1": 0.8292682926829269,
+        "tp": 17,
+        "fp": 2,
+        "fn": 5
+      }
+    ]
+  },
+  "lesion_level": {
+    "samples": 1118,
+    "accuracy": 0.8425760286225402,
+    "macro_precision": 0.7869976094431909,
+    "macro_recall": 0.7369895336682051,
+    "macro_f1": 0.7244041292448172,
+    "minority_recall": 0.589071992433337,
+    "mel_to_nv": 4,
+    "mel_to_nv_rate": 0.04395604395604396,
+    "nv_to_mel": 83,
+    "no_predictions": 0,
+    "per_class": [
+      {
+        "class": "akiec",
+        "support": 34,
+        "precision": 0.9090909090909091,
+        "recall": 0.29411764705882354,
+        "f1": 0.4444444444444445,
+        "tp": 10,
+        "fp": 1,
+        "fn": 24
+      },
+      {
+        "class": "bcc",
+        "support": 49,
+        "precision": 0.7068965517241379,
+        "recall": 0.8367346938775511,
+        "f1": 0.7663551401869159,
+        "tp": 41,
+        "fp": 17,
+        "fn": 8
+      },
+      {
+        "class": "bkl",
+        "support": 108,
+        "precision": 0.7014925373134329,
+        "recall": 0.8703703703703703,
+        "f1": 0.7768595041322315,
+        "tp": 94,
+        "fp": 40,
+        "fn": 14
+      },
+      {
+        "class": "df",
+        "support": 11,
+        "precision": 0.7777777777777778,
+        "recall": 0.6363636363636364,
+        "f1": 0.7000000000000001,
+        "tp": 7,
+        "fp": 2,
+        "fn": 4
+      },
+      {
+        "class": "mel",
+        "support": 91,
+        "precision": 0.43333333333333335,
+        "recall": 0.8571428571428571,
+        "f1": 0.5756457564575647,
+        "tp": 78,
+        "fp": 102,
+        "fn": 13
+      },
+      {
+        "class": "nv",
+        "support": 810,
+        "precision": 0.9803921568627451,
+        "recall": 0.8641975308641975,
+        "f1": 0.9186351706036745,
+        "tp": 700,
+        "fp": 14,
+        "fn": 110
+      },
+      {
+        "class": "vasc",
+        "support": 15,
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889,
+        "tp": 12,
+        "fp": 0,
+        "fn": 3
+      }
+    ]
+  },
+  "lesion_bootstrap": {
+    "method": "stratified lesion resampling with replacement",
+    "samples": 2000,
+    "seed": 42,
+    "intervals": {
+      "accuracy": {
+        "estimate": 0.8424982110912344,
+        "ci95_low": 0.8220035778175313,
+        "ci95_high": 0.8631484794275492
+      },
+      "macro_precision": {
+        "estimate": 0.7900225557498197,
+        "ci95_low": 0.740405143826647,
+        "ci95_high": 0.8354815284771705
+      },
+      "macro_recall": {
+        "estimate": 0.7358868249094139,
+        "ci95_low": 0.6730484160586202,
+        "ci95_high": 0.7928348196680529
+      },
+      "macro_f1": {
+        "estimate": 0.7218816369509858,
+        "ci95_low": 0.6629000695491957,
+        "ci95_high": 0.7751684933057396
+      },
+      "minority_recall": {
+        "estimate": 0.5866387918803885,
+        "ci95_low": 0.47184328276765247,
+        "ci95_high": 0.6986112626868929
+      },
+      "mel_to_nv_rate": {
+        "estimate": 0.04428571428571429,
+        "ci95_low": 0.01098901098901099,
+        "ci95_high": 0.08791208791208792
+      }
+    }
+  },
+  "efficiency": {
+    "parameters": 6540327,
+    "gflops": 17.1713536,
+    "mean_ms_per_image": {
+      "preprocess": 0.7998329122340664,
+      "inference": 0.9195342420211097,
+      "postprocess": 0.0775986702128748
+    },
+    "end_to_end_ms_per_image": 4.062572938829794
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "ready_to_click_pycharm": true,
+  "entrypoint": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\train_run14_from_pycharm.py",
+  "config": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\14_YOLO26s_Binary8Class_BinaryLesionGuidedAttention_MELNVLogitMargin\\run14_preregistered_config_v1.yaml",
+  "config_sha256": "7d50195c4713656a3d1e02e0f450018dce8339cae7019a09ecdc9ebf56d31a0a",
+  "fingerprint": "30e88fffb1eab5c59d7a3a1e0cbb458dcd2b020414c1011853941ce9fd456bc4",
+  "lock_inputs": {
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\14_YOLO26s_Binary8Class_BinaryLesionGuidedAttention_MELNVLogitMargin\\run14_preregistered_config_v1.yaml": {
+      "bytes": 3880,
+      "sha256": "7d50195c4713656a3d1e02e0f450018dce8339cae7019a09ecdc9ebf56d31a0a"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\14_YOLO26s_Binary8Class_BinaryLesionGuidedAttention_MELNVLogitMargin\\RUN14_PROTOCOL_2026-08-09.md": {
+      "bytes": 3538,
+      "sha256": "22ee6959ff1f795b230b91a9bff4a8c38b15b4220e30c837336dae9287976bc6"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\14_YOLO26s_Binary8Class_BinaryLesionGuidedAttention_MELNVLogitMargin\\run14_development_manifest.csv": {
+      "bytes": 8299971,
+      "sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\14_YOLO26s_Binary8Class_BinaryLesionGuidedAttention_MELNVLogitMargin\\run14_development_data.yaml": {
+      "bytes": 695,
+      "sha256": "1f6b80e09fb4d2133bb3d7a84fd6c4daa11671f5f752cd781193059ffc29b6bb"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26s-sem.pt": {
+      "bytes": 13252403,
+      "sha256": "bc3e2152329831303de83e1af91d4b57d547e8794de8bb6edb1f2a622d1d5435"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\classification_taxonomy_v1.yaml": {
+      "bytes": 771,
+      "sha256": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\multitask_manifest.csv": {
+      "bytes": 8511477,
+      "sha256": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\manifest.csv": {
+      "bytes": 5780376,
+      "sha256": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\manifest.csv": {
+      "bytes": 5317937,
+      "sha256": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2018_task1_incremental_v1\\manifest.csv": {
+      "bytes": 40002,
+      "sha256": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py": {
+      "bytes": 26587,
+      "sha256": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_lesion_attention_v1.py": {
+      "bytes": 9328,
+      "sha256": "dc32caaff2e840f1e928bec011c9b256c5319da33ccc95afaaa60f1ec6222c27"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_lesion_attention_mel_nv_margin_v1.py": {
+      "bytes": 7939,
+      "sha256": "9cd132796df66822139fca6ff0b981756a16bd74294974a24466e032b8010475"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py": {
+      "bytes": 27811,
+      "sha256": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py": {
+      "bytes": 12421,
+      "sha256": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\train_run14_from_pycharm.py": {
+      "bytes": 33781,
+      "sha256": "42ddba441764e8fa065d58d54082f0d79221192ec06f95fb4259c2f6f89d68b9"
+    }
+  },
+  "preflight_report": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\14_YOLO26s_Binary8Class_BinaryLesionGuidedAttention_MELNVLogitMargin\\RUN14_PREFLIGHT_REPORT.json",
+  "formal_training_started": false,
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

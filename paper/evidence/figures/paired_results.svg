@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="900" height="650" preserveAspectRatio="xMinYMin meet" viewBox="0 0 900 650" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="900" height="650"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-650)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="900" height="650" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="186.0" y="595.0" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,1190) scale(1,-1)">图像宏平均F1</text>
+			<path d="M 120,385 L 395,385 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="62.99999999999999" y="380.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,760) scale(1,-1)">0.535</text>
+			<path d="M 120,446.666667 L 395,446.666667 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="62.99999999999999" y="441.6666666666669" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,883) scale(1,-1)">0.545</text>
+			<path d="M 120,508.333333 L 395,508.333333 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="62.99999999999999" y="503.3333333333331" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,1006) scale(1,-1)">0.555</text>
+			<path d="M 120,570 L 395,570 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="62.99999999999999" y="565.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,1130) scale(1,-1)">0.565</text>
+			<path d="M 150,441.548333 L 365,542.743333 Z" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 2.5;"/>
+			<circle cx="150" cy="441.5483333333336" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<circle cx="365" cy="542.7433333333333" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<path d="M 150,478.548333 L 365,519.495 Z" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 2.5;"/>
+			<circle cx="150" cy="478.5483333333337" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<circle cx="365" cy="519.4950000000003" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<path d="M 150,434.395 L 365,545.086667 Z" style="stroke: rgb(69%,45%,21%); stroke-linecap: butt; stroke-width: 2.5;"/>
+			<circle cx="150" cy="434.39499999999987" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,45%,21%); fill-rule: evenodd;"/>
+			<circle cx="365" cy="545.086666666667" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,45%,21%); fill-rule: evenodd;"/>
+			<text x="125.0" y="355.0" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,710) scale(1,-1)">Plain</text>
+			<text x="345.0" y="355.0" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,710) scale(1,-1)">LGLA</text>
+			<text x="636.0" y="595.0" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,1190) scale(1,-1)">分组宏平均F1</text>
+			<path d="M 570,385 L 845,385 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="513.0" y="380.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,760) scale(1,-1)">0.600</text>
+			<path d="M 570,446.666667 L 845,446.666667 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="513.0" y="441.66666666666663" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,883) scale(1,-1)">0.620</text>
+			<path d="M 570,508.333333 L 845,508.333333 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="513.0" y="503.3333333333333" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,1006) scale(1,-1)">0.640</text>
+			<path d="M 570,570 L 845,570 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="513.0" y="565.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,1130) scale(1,-1)">0.660</text>
+			<path d="M 600,416.5425 L 815,452.000833 Z" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 2.5;"/>
+			<circle cx="600" cy="416.5425000000002" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<circle cx="815" cy="452.0008333333334" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<path d="M 600,471.6725 L 815,550.729167 Z" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 2.5;"/>
+			<circle cx="600" cy="471.67249999999984" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<circle cx="815" cy="550.7291666666667" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<path d="M 600,404.764167 L 815,521.591667 Z" style="stroke: rgb(69%,45%,21%); stroke-linecap: butt; stroke-width: 2.5;"/>
+			<circle cx="600" cy="404.7641666666667" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,45%,21%); fill-rule: evenodd;"/>
+			<circle cx="815" cy="521.5916666666666" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,45%,21%); fill-rule: evenodd;"/>
+			<text x="575.0" y="355.0" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,710) scale(1,-1)">Plain</text>
+			<text x="795.0" y="355.0" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,710) scale(1,-1)">LGLA</text>
+			<text x="203.25" y="305.0" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,610) scale(1,-1)">综合指标J</text>
+			<path d="M 120,95 L 395,95 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="62.99999999999999" y="90.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,180) scale(1,-1)">0.675</text>
+			<path d="M 120,156.666667 L 395,156.666667 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="62.99999999999999" y="151.6666666666668" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,303) scale(1,-1)">0.690</text>
+			<path d="M 120,218.333333 L 395,218.333333 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="62.99999999999999" y="213.3333333333332" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,426) scale(1,-1)">0.705</text>
+			<path d="M 120,280 L 395,280 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="62.99999999999999" y="275.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,550) scale(1,-1)">0.720</text>
+			<path d="M 150,125.668889 L 365,151.24 Z" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 2.5;"/>
+			<circle cx="150" cy="125.66888888888855" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<circle cx="365" cy="151.23999999999972" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<path d="M 150,167.478889 L 365,253.113333 Z" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 2.5;"/>
+			<circle cx="150" cy="167.47888888888872" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<circle cx="365" cy="253.11333333333334" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<path d="M 150,118.145556 L 365,216.647778 Z" style="stroke: rgb(69%,45%,21%); stroke-linecap: butt; stroke-width: 2.5;"/>
+			<circle cx="150" cy="118.14555555555523" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,45%,21%); fill-rule: evenodd;"/>
+			<circle cx="365" cy="216.647777777778" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,45%,21%); fill-rule: evenodd;"/>
+			<text x="125.0" y="65.0" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,130) scale(1,-1)">Plain</text>
+			<text x="345.0" y="65.0" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,130) scale(1,-1)">LGLA</text>
+			<text x="664.75" y="305.0" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,610) scale(1,-1)">验证IoU</text>
+			<path d="M 570,95 L 845,95 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="513.0" y="90.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,180) scale(1,-1)">0.760</text>
+			<path d="M 570,156.666667 L 845,156.666667 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="513.0" y="151.6666666666664" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,303) scale(1,-1)">0.768</text>
+			<path d="M 570,218.333333 L 845,218.333333 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="513.0" y="213.3333333333336" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,426) scale(1,-1)">0.777</text>
+			<path d="M 570,280 L 845,280 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="513.0" y="275.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,550) scale(1,-1)">0.785</text>
+			<path d="M 600,118.902 L 815,116.016 Z" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 2.5;"/>
+			<circle cx="600" cy="118.90199999999959" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<circle cx="815" cy="116.01599999999962" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<path d="M 600,122.898 L 815,232.862 Z" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 2.5;"/>
+			<circle cx="600" cy="122.89799999999957" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<circle cx="815" cy="232.86200000000014" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<path d="M 600,124.082 L 815,172.774 Z" style="stroke: rgb(69%,45%,21%); stroke-linecap: butt; stroke-width: 2.5;"/>
+			<circle cx="600" cy="124.08199999999988" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,45%,21%); fill-rule: evenodd;"/>
+			<circle cx="815" cy="172.77400000000006" r="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,45%,21%); fill-rule: evenodd;"/>
+			<text x="575.0" y="65.0" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,130) scale(1,-1)">Plain</text>
+			<text x="795.0" y="65.0" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,130) scale(1,-1)">LGLA</text>
+			<text x="137.5" y="27.0" style="font-family: SimHei; font-size: 21px;fill: rgb(20%,40%,51%); stroke:none;" transform="translate(0,54) scale(1,-1)">● seed 42</text>
+			<text x="387.5" y="27.0" style="font-family: SimHei; font-size: 21px;fill: rgb(14%,51%,47%); stroke:none;" transform="translate(0,54) scale(1,-1)">● seed 43</text>
+			<text x="637.5" y="27.0" style="font-family: SimHei; font-size: 21px;fill: rgb(69%,45%,21%); stroke:none;" transform="translate(0,54) scale(1,-1)">● seed 44</text>
+			<text x="203.0" y="2.0" style="font-family: SimHei; font-size: 19px;fill: rgb(33%,38%,42%); stroke:none;" transform="translate(0,4) scale(1,-1)">各面板采用已标注的局部纵轴范围，连线表示同一种子配对</text>
+		</g>
+	</g>
+</svg>

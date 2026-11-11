@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="900" height="350" preserveAspectRatio="xMinYMin meet" viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="900" height="350"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-350)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="900" height="350" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="20" y="260" width="250" height="70" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="57.0" y="301.49" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,602) scale(1,-1)">相同冻结开发清单</text>
+			<text x="24.0" y="273.99" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,547) scale(1,-1)">相同任务与主要训练设置</text>
+			<rect x="340" y="260" width="250" height="70" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="377.0" y="301.49" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,602) scale(1,-1)">Plain / 完整LGLA</text>
+			<text x="371.5" y="273.99" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,547) scale(1,-1)">各seed 42、43、44</text>
+			<path d="M 270,295 L 340,295 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="340 295, 330.7894 291.1058, 330.7894 298.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="340" y="125" width="250" height="80" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="375.75" y="184.32" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,368) scale(1,-1)">无均衡 / 常量引导</text>
+			<text x="423.0" y="158.07" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,316) scale(1,-1)">固定等权</text>
+			<text x="412.5" y="131.82" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,263) scale(1,-1)">均为seed43</text>
+			<path d="M 145,260 L 340,165 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="340 165, 330.0142 165.5331, 333.4253 172.5348" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="655" y="230" width="220" height="100" rx="5" ry="5" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(91%,96%,94%); fill-rule: evenodd;"/>
+			<text x="715.5" y="300.24" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,600) scale(1,-1)">既定J权重</text>
+			<text x="710.0" y="272.74" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,545) scale(1,-1)">同轮多指标</text>
+			<text x="699.0" y="245.24" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,490) scale(1,-1)">均值与样本SD</text>
+			<path d="M 590,295 L 655,295 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="655 295, 645.7894 291.1058, 645.7894 298.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="655" y="105" width="220" height="70" rx="5" ry="5" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(91%,96%,94%); fill-rule: evenodd;"/>
+			<text x="699.0" y="146.49" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,292) scale(1,-1)">单次结构对照</text>
+			<text x="699.0" y="118.99000000000001" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,237) scale(1,-1)">说明控制因素</text>
+			<path d="M 590,165 L 655,143 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="655 143, 645.0271 142.2643, 647.524 149.6415" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<text x="131.0" y="47.0" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,94) scale(1,-1)">补充评价：相同内部634张 / 外部89张；固定条件、既有测试集合</text>
+			<text x="166.5" y="15.0" style="font-family: SimHei; font-size: 21px;fill: rgb(33%,38%,42%); stroke:none;" transform="translate(0,30) scale(1,-1)">主比较与结构对照分开解释，不将六次新增运行混为重复实验</text>
+		</g>
+	</g>
+</svg>

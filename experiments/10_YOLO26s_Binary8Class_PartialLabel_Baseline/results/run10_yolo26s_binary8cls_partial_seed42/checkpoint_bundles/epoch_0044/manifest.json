@@ -1,0 +1,15 @@
+{
+  "bundle_version": "pifuv2_multitask_checkpoint_v2",
+  "epoch": 44,
+  "fingerprint": "a09e0cfb4669e06ff8ff67036699253282bbaa619c9bba28eb3e79bfb7445d9a",
+  "files": {
+    "trainer.pt": {
+      "bytes": 52777267,
+      "sha256": "d0c7673643d06b3d8f7e711f160a1f97e83435dad82bf42bd22af69694e1f872"
+    },
+    "runtime_state.pt": {
+      "bytes": 105348590,
+      "sha256": "770f8fc87705e54d98fb4f58f26f6212020cbecbb502309bf3b30721bedaa625"
+    }
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "status": "PASS",
+  "scope": "final lgx preparation; no optimizer, backward, training, test, or external evaluation",
+  "created_local_time": "2026-09-13 03:55:12 +0800",
+  "config_sha256": "15a854ceee23149017dab986d18b6729359eabcc58be132990efe1e9df0f60df",
+  "fingerprint": "3a9aa4156828bd2e5af1b1f44a62929041cde5895d01ed995c8c5af823186ac0",
+  "protected_files": {
+    "models/yolo26m-sem.pt": {
+      "bytes": 28924971,
+      "sha256": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233"
+    },
+    "tools/yolo26n.pt": {
+      "bytes": 5544453,
+      "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef"
+    },
+    "tools/classification_taxonomy_v1.yaml": {
+      "bytes": 771,
+      "sha256": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e"
+    },
+    "tools/run22/run22_development_manifest.csv": {
+      "bytes": 8299971,
+      "sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b"
+    },
+    "tools/run22/run22_development_data.yaml": {
+      "bytes": 632,
+      "sha256": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9"
+    }
+  },
+  "lock_inputs": {
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\lgx_preregistered_config_v1.yaml": {
+      "bytes": 6079,
+      "sha256": "15a854ceee23149017dab986d18b6729359eabcc58be132990efe1e9df0f60df"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\LGX_PROTOCOL_2026-09-13.md": {
+      "bytes": 3521,
+      "sha256": "65636ce3098c3b748426bf5a81d57ce330524f7e2c6b1050b85ea8461e787d57"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\lgx_development_manifest.csv": {
+      "bytes": 8299971,
+      "sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\lgx_development_data.yaml": {
+      "bytes": 626,
+      "sha256": "7d24cb3de0f190493c763f9119cc85736add0e30666b4c66ceeea44cbbe1633a"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt": {
+      "bytes": 28924971,
+      "sha256": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt": {
+      "bytes": 5544453,
+      "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml": {
+      "bytes": 771,
+      "sha256": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_manifest.csv": {
+      "bytes": 8299971,
+      "sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_data.yaml": {
+      "bytes": 632,
+      "sha256": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py": {
+      "bytes": 26587,
+      "sha256": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py": {
+      "bytes": 2877,
+      "sha256": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\imaplusplus_partial_multitask_lgla_v1_gate_balance_seed43.py": {
+      "bytes": 17251,
+      "sha256": "967f44959eab30fe7bec4510bd6afc32bbffb601d14d7f47fb30ef087a86cd48"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py": {
+      "bytes": 27811,
+      "sha256": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py": {
+      "bytes": 12421,
+      "sha256": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\train_lgx_from_pycharm.py": {
+      "bytes": 37052,
+      "sha256": "1c36c34ea0ee0460dc01f1c53b4db44aaec0df8a01620078c2a1fc84499157bf"
+    }
+  },
+  "development": {
+    "counts": {
+      "train": {
+        "total": 23462,
+        "seg": 10483,
+        "cls": 13715,
+        "both": 736
+      },
+      "val": {
+        "total": 1744,
+        "seg": 292,
+        "cls": 1488,
+        "both": 36
+      }
+    },
+    "development_manifest_sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+    "development_data_sha256": "7d24cb3de0f190493c763f9119cc85736add0e30666b4c66ceeea44cbbe1633a",
+    "source_manifest_role": "frozen_run22_development_only",
+    "source_rows_all_development": true,
+    "test_key": null,
+    "external_candidates_present": false
+  },
+  "forbidden_data_access": {
+    "imaplusplus_test": false,
+    "isic2018_external": false,
+    "pad_ufes_20": false,
+    "source": "frozen Run22 development-only manifest"
+  },
+  "cuda": {
+    "available": true,
+    "count": 1,
+    "name": "NVIDIA GeForce RTX 5080",
+    "torch": "2.8.0+cu129",
+    "cuda_runtime": "12.9",
+    "free_bytes_before_preflight": 15712911360,
+    "total_bytes": 17066033152
+  },
+  "forward_only_preflight": {
+    "status": "PASS",
+    "scope": "real development role batch expanded to frozen batch size; forward and loss only",
+    "source_role_ids": [
+      "ISIC_0000017_downsampled",
+      "ISIC_0000000",
+      "ISIC_0000005"
+    ],
+    "batch": 16,
+    "imgsz": 640,
+    "amp": true,
+    "semantic_shape": [
+      16,
+      1,
+      80,
+      80
+    ],
+    "classification_shape": [
+      16,
+      8
+    ],
+    "loss_items": [
+      0.6686394810676575,
+      0.5690107345581055,
+      0.28084704279899597,
+      1.9872158765792847,
+      0.0
+    ],
+    "gate_balance_weight": 0.01,
+    "gate_balance_loss": 0.0,
+    "parameters": 14540748,
+    "classification_head_parameters": 67848,
+    "attention_head_inputs": [
+      16,
+      13
+    ],
+    "attention_modules_present": true,
+    "descriptor": "p3_p4_detached_predicted_lesion_global_local_softmax_gate",
+    "projection_dim": 128,
+    "gate_hidden_dim": 128,
+    "attention_stop_gradient": true,
+    "ground_truth_mask_as_classifier_input": false,
+    "empty_attention_fallback": "global_average",
+    "gate_weights_shape": [
+      16,
+      2
+    ],
+    "gate_weights_finite": true,
+    "gate_weight_sums": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "attention_mass_fraction_shape": [
+      16,
+      2
+    ],
+    "attention_mass_fraction_finite": true,
+    "p5_descriptor": false,
+    "pretrained_load_result": "None",
+    "peak_cuda_allocated_bytes": 1057751552,
+    "peak_cuda_reserved_bytes": 1864368128,
+    "model_state_changed": false,
+    "optimizer_created": false,
+    "backward_called": false,
+    "optimizer_step_called": false,
+    "trainer_train_called": false,
+    "test_or_external_loaded": false
+  },
+  "formal_training_started": false,
+  "formal_result_directory_created": false,
+  "amp_check_asset": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt",
+  "amp_check_working_directory": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools",
+  "amp_check_runtime_download": "forbidden_local_asset_required",
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

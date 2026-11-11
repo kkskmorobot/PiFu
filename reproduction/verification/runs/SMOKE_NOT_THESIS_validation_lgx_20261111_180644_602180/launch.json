@@ -1,0 +1,67 @@
+{
+  "mode": "NEW_TRAINING_EVALUATION",
+  "smoke_not_thesis": true,
+  "input_evidence": {
+    "path": "D:\\Data\\project\\PiFu\\tools\\lgx\\lgx_development_manifest.csv",
+    "sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+    "rows": 25206,
+    "splits": {
+      "train": 23462,
+      "val": 1744
+    },
+    "run": "lgx",
+    "original_config_sha256": "15a854ceee23149017dab986d18b6729359eabcc58be132990efe1e9df0f60df",
+    "task_counts": {
+      "train": 23462,
+      "val": 1744
+    },
+    "protected_hashes": {
+      "models/yolo26m-sem.pt": {
+        "expected": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+        "actual": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+        "matches_original": true
+      },
+      "tools/yolo26n.pt": {
+        "expected": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+        "actual": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+        "matches_original": true
+      },
+      "tools/classification_taxonomy_v1.yaml": {
+        "expected": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+        "actual": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+        "matches_original": true
+      },
+      "tools/run22/run22_development_manifest.csv": {
+        "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+        "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+        "matches_original": true
+      },
+      "tools/run22/run22_development_data.yaml": {
+        "expected": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+        "actual": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+        "matches_original": true
+      }
+    }
+  },
+  "rows": 16,
+  "weights": {
+    "kind": "new_training_bundle",
+    "bundle": "D:\\Data\\project\\PiFu\\outputs\\SMOKE_NOT_THESIS_train_lgx_20261111_174837_266747\\training\\checkpoint_bundles\\epoch_0000",
+    "alias": "D:\\Data\\project\\PiFu\\outputs\\SMOKE_NOT_THESIS_train_lgx_20261111_174837_266747\\training\\checkpoint_bundles\\aliases\\best_joint_score.json",
+    "epoch": 0,
+    "fingerprint": "6b366fefef6a8df609a2e7f0ca126e648acdb36fed104acd72dc9bb6f78cfc41",
+    "manifest_sha256": "d3f5d6a9c8f9dca86f31e22c5b5080478b800efbeb3398723f22bb0933be4572",
+    "files": {
+      "trainer.pt": {
+        "bytes": 116785847,
+        "sha256": "03e87c4b8e5a2017801bcd03e7616c46da68646bc7de4b18a732c86bf3cd6b86"
+      },
+      "runtime_state.pt": {
+        "bytes": 233366160,
+        "sha256": "60bbbab25632d38404189509aea136caf9d22a758b4ee9b6bf49ded9a66adf88"
+      }
+    },
+    "state": "exact_fp32_training_ema"
+  },
+  "prepared_only": false
+}

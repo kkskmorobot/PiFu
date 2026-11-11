@@ -1,0 +1,27 @@
+{
+  "source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2",
+  "target": "D:\\Data\\project\\PiFu",
+  "runs": [
+    "run18",
+    "run22",
+    "run24",
+    "run21",
+    "run23",
+    "run25",
+    "run26",
+    "run27",
+    "run28",
+    "run33",
+    "lg1",
+    "lg2",
+    "lgx",
+    "lg3",
+    "ab1",
+    "ab2"
+  ],
+  "copied_files": 2466,
+  "source_copy_sha256_all_equal": true,
+  "frozen_exports": 16,
+  "frozen_state_tensor_equality_all_pass": true,
+  "bytes": 1464366298
+}

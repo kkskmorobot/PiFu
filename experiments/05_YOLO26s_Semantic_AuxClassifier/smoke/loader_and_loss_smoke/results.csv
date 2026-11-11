@@ -1,0 +1,2 @@
+epoch,time,train/ce_loss,train/dice_loss,train/aux_loss,train/image_cls_loss,metrics/mIoU,metrics/pixel_acc,metrics/image_accuracy,metrics/macro_precision,metrics/macro_recall,metrics/macro_f1,metrics/foreground_mIoU,metrics/minority_recall,metrics/mel_to_nv_rate,val/ce_loss,val/dice_loss,val/aux_loss,val/image_cls_loss,lr/pg0,lr/pg1,lr/pg2
+1,30.1056,1.75498,0.88937,0.65597,1.87777,0.11438,0.76384,0.66888,0.09555,0.14286,0.11451,0.02097,0,1,1.42441,0.87817,0,1.38389,0.00021,0.00021,0.07921

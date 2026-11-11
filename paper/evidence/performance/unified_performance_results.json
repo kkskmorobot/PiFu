@@ -1,0 +1,195 @@
+{
+  "title": "Plain 与 LGLA v1 统一性能及 FLOPs 基准",
+  "tested_at": "2026-09-16T11:44:34+08:00",
+  "protocol": {
+    "device": "NVIDIA GeForce RTX 5080",
+    "cuda_runtime": "12.9",
+    "torch": "2.8.0+cu129",
+    "python": "3.13.7",
+    "os": "Windows-11-10.0.22631-SP0",
+    "input": [
+      1,
+      3,
+      640,
+      640
+    ],
+    "precision": "FP32",
+    "batch": 1,
+    "cudnn_benchmark": true,
+    "timing_boundary_direct": "CUDA event around model(x), excludes preprocessing/postprocessing and host transfer",
+    "timing_boundary_pipeline": "wall clock around wrapper.predict on the same in-memory PIL image, includes Ultralytics preprocessing/postprocessing and synchronization",
+    "warning": "Single-machine engineering benchmark, not a clinical or cross-hardware result. Do not compare with screenshot request_total_ms or batch duration as if they were the same timing boundary."
+  },
+  "models": [
+    {
+      "model_id": "run22",
+      "description": "Plain seed43 representative",
+      "experiment": "22_YOLO26m_Binary8Class_Plain_Seed43Replication",
+      "weights_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\weights\\best.pt",
+      "weights_sha256": "a20dd6a0349ebe2fcef85a715e555c60121d45bc281580dac6d0b933a83775ad",
+      "weights_bytes": 29271111,
+      "parameters_total": 14507338,
+      "parameters_trainable": 0,
+      "flops": {
+        "input": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "ultralytics_thop_gflops": 59.574067,
+        "torch_profiler_gflops": 59.020134,
+        "interpretation": "forward pass; 2 operations per multiply-accumulate; unsupported operations may be omitted by profiler",
+        "missing_reason": null
+      },
+      "direct_forward_fp32_cuda": {
+        "warmup": 20,
+        "repeats": 100,
+        "n": 100,
+        "mean_ms": 5.4703,
+        "median_ms": 4.6065,
+        "p95_ms": 10.1642,
+        "min_ms": 4.1672,
+        "max_ms": 13.4978,
+        "throughput_fps_from_mean": 182.8042,
+        "peak_allocated_mib": 194.449,
+        "peak_reserved_mib": 284.0
+      },
+      "ultralytics_pipeline_fp32_cuda": {
+        "warmup": 5,
+        "repeats": 30,
+        "source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_skin7_v3\\images\\test\\ISIC_0024307.jpg",
+        "source_size": [
+          600,
+          450
+        ],
+        "wall_clock": {
+          "n": 30,
+          "mean_ms": 6.2254,
+          "median_ms": 5.7185,
+          "p95_ms": 9.9161,
+          "min_ms": 5.4145,
+          "max_ms": 11.1113,
+          "throughput_fps_from_mean": 160.6329
+        },
+        "reported_preprocess": {
+          "n": 30,
+          "mean_ms": 0.6726,
+          "median_ms": 0.6512,
+          "p95_ms": 0.7588,
+          "min_ms": 0.6344,
+          "max_ms": 1.0243,
+          "throughput_fps_from_mean": 1486.7236
+        },
+        "reported_inference": {
+          "n": 30,
+          "mean_ms": 4.4236,
+          "median_ms": 3.9713,
+          "p95_ms": 7.9387,
+          "min_ms": 3.6548,
+          "max_ms": 8.6038,
+          "throughput_fps_from_mean": 226.0582
+        },
+        "reported_postprocess": {
+          "n": 30,
+          "mean_ms": 0.1525,
+          "median_ms": 0.1317,
+          "p95_ms": 0.2644,
+          "min_ms": 0.1186,
+          "max_ms": 0.2654,
+          "throughput_fps_from_mean": 6557.6637
+        }
+      }
+    },
+    {
+      "model_id": "lgx",
+      "description": "LGLA v1 gate-balance seed43 representative",
+      "experiment": "lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43",
+      "weights_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43\\results\\lgx_yolo26m_lgla_v1_gate_balance_seed43\\weights\\best.pt",
+      "weights_sha256": "5a8e6fa655ce39a7a79af05ff44199d6e273d9ff9034b1e362c2fd1ae63e9bd9",
+      "weights_bytes": 29346699,
+      "parameters_total": 14540748,
+      "parameters_trainable": 0,
+      "flops": {
+        "input": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "ultralytics_thop_gflops": 59.67913,
+        "torch_profiler_gflops": 59.048883,
+        "interpretation": "forward pass; 2 operations per multiply-accumulate; unsupported operations may be omitted by profiler",
+        "missing_reason": null
+      },
+      "direct_forward_fp32_cuda": {
+        "warmup": 20,
+        "repeats": 100,
+        "n": 100,
+        "mean_ms": 5.6642,
+        "median_ms": 5.2941,
+        "p95_ms": 7.7342,
+        "min_ms": 4.8185,
+        "max_ms": 10.0197,
+        "throughput_fps_from_mean": 176.5487,
+        "peak_allocated_mib": 195.579,
+        "peak_reserved_mib": 256.0
+      },
+      "ultralytics_pipeline_fp32_cuda": {
+        "warmup": 5,
+        "repeats": 30,
+        "source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_skin7_v3\\images\\test\\ISIC_0024307.jpg",
+        "source_size": [
+          600,
+          450
+        ],
+        "wall_clock": {
+          "n": 30,
+          "mean_ms": 6.5456,
+          "median_ms": 6.3993,
+          "p95_ms": 7.5844,
+          "min_ms": 6.1082,
+          "max_ms": 8.2612,
+          "throughput_fps_from_mean": 152.7748
+        },
+        "reported_preprocess": {
+          "n": 30,
+          "mean_ms": 0.6803,
+          "median_ms": 0.6426,
+          "p95_ms": 0.8925,
+          "min_ms": 0.6282,
+          "max_ms": 1.0521,
+          "throughput_fps_from_mean": 1470.0334
+        },
+        "reported_inference": {
+          "n": 30,
+          "mean_ms": 4.756,
+          "median_ms": 4.6486,
+          "p95_ms": 5.5592,
+          "min_ms": 4.4272,
+          "max_ms": 5.7905,
+          "throughput_fps_from_mean": 210.2603
+        },
+        "reported_postprocess": {
+          "n": 30,
+          "mean_ms": 0.1375,
+          "median_ms": 0.1265,
+          "p95_ms": 0.2366,
+          "min_ms": 0.1175,
+          "max_ms": 0.2921,
+          "throughput_fps_from_mean": 7271.4937
+        }
+      }
+    }
+  ],
+  "comparison_lgla_minus_plain": {
+    "parameter_delta": 33410,
+    "parameter_delta_percent": 0.2303,
+    "thop_gflops_delta": 0.105063,
+    "thop_gflops_delta_percent": 0.1764,
+    "direct_forward_mean_ms_delta": 0.1939,
+    "direct_forward_mean_ms_delta_percent": 3.5446,
+    "pipeline_mean_ms_delta": 0.3202,
+    "pipeline_mean_ms_delta_percent": 5.1434
+  }
+}

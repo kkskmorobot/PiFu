@@ -1,0 +1,235 @@
+{
+  "weights": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\04_YOLO26s_Semantic_C2PSA\\results\\semantic\\skin7_yolo26s_sem_balanced\\weights\\best.pt",
+  "split": "val",
+  "decision": "area",
+  "semantic": {
+    "miou_8class": 0.591254472732544,
+    "foreground_miou_7class": 0.5387483239173889,
+    "pixel_accuracy": 0.9250560998916626,
+    "per_class_iou": {
+      "akiec": 0.35551056265830994,
+      "bcc": 0.5367119908332825,
+      "bkl": 0.4763897955417633,
+      "df": 0.4102609157562256,
+      "mel": 0.4736138582229614,
+      "nv": 0.7642071843147278,
+      "vasc": 0.7545439600944519,
+      "background": 0.9587976932525635
+    }
+  },
+  "image_level": {
+    "samples": 1504,
+    "accuracy": 0.8091755319148937,
+    "macro_precision": 0.7889135789956941,
+    "macro_recall": 0.6833439596188048,
+    "macro_f1": 0.7041204811034802,
+    "minority_recall": 0.533498247783962,
+    "mel_to_nv": 18,
+    "mel_to_nv_rate": 0.10778443113772455,
+    "nv_to_mel": 84,
+    "no_predictions": 16,
+    "per_class": [
+      {
+        "class": "akiec",
+        "support": 49,
+        "precision": 0.8148148148148148,
+        "recall": 0.4489795918367347,
+        "f1": 0.5789473684210527,
+        "tp": 22,
+        "fp": 5,
+        "fn": 27
+      },
+      {
+        "class": "bcc",
+        "support": 77,
+        "precision": 0.7777777777777778,
+        "recall": 0.8181818181818182,
+        "f1": 0.7974683544303799,
+        "tp": 63,
+        "fp": 18,
+        "fn": 14
+      },
+      {
+        "class": "bkl",
+        "support": 165,
+        "precision": 0.57847533632287,
+        "recall": 0.7818181818181819,
+        "f1": 0.6649484536082474,
+        "tp": 129,
+        "fp": 94,
+        "fn": 36
+      },
+      {
+        "class": "df",
+        "support": 18,
+        "precision": 0.8571428571428571,
+        "recall": 0.3333333333333333,
+        "f1": 0.48,
+        "tp": 6,
+        "fp": 1,
+        "fn": 12
+      },
+      {
+        "class": "mel",
+        "support": 167,
+        "precision": 0.5413223140495868,
+        "recall": 0.7844311377245509,
+        "f1": 0.6405867970660146,
+        "tp": 131,
+        "fp": 111,
+        "fn": 36
+      },
+      {
+        "class": "nv",
+        "support": 1006,
+        "precision": 0.9528619528619529,
+        "recall": 0.8439363817097415,
+        "f1": 0.8950975224037955,
+        "tp": 849,
+        "fp": 42,
+        "fn": 157
+      },
+      {
+        "class": "vasc",
+        "support": 22,
+        "precision": 1.0,
+        "recall": 0.7727272727272727,
+        "f1": 0.8717948717948718,
+        "tp": 17,
+        "fp": 0,
+        "fn": 5
+      }
+    ]
+  },
+  "lesion_level": {
+    "samples": 1118,
+    "accuracy": 0.8595706618962433,
+    "macro_precision": 0.786840277030565,
+    "macro_recall": 0.7077870990035856,
+    "macro_f1": 0.7242827546133225,
+    "minority_recall": 0.5569864309360107,
+    "mel_to_nv": 12,
+    "mel_to_nv_rate": 0.13186813186813187,
+    "nv_to_mel": 44,
+    "no_predictions": 2,
+    "per_class": [
+      {
+        "class": "akiec",
+        "support": 34,
+        "precision": 0.7619047619047619,
+        "recall": 0.47058823529411764,
+        "f1": 0.5818181818181817,
+        "tp": 16,
+        "fp": 5,
+        "fn": 18
+      },
+      {
+        "class": "bcc",
+        "support": 49,
+        "precision": 0.82,
+        "recall": 0.8367346938775511,
+        "f1": 0.8282828282828283,
+        "tp": 41,
+        "fp": 9,
+        "fn": 8
+      },
+      {
+        "class": "bkl",
+        "support": 108,
+        "precision": 0.6267605633802817,
+        "recall": 0.8240740740740741,
+        "f1": 0.712,
+        "tp": 89,
+        "fp": 53,
+        "fn": 19
+      },
+      {
+        "class": "df",
+        "support": 11,
+        "precision": 0.8,
+        "recall": 0.36363636363636365,
+        "f1": 0.5000000000000001,
+        "tp": 4,
+        "fp": 1,
+        "fn": 7
+      },
+      {
+        "class": "mel",
+        "support": 91,
+        "precision": 0.5348837209302325,
+        "recall": 0.7582417582417582,
+        "f1": 0.6272727272727272,
+        "tp": 69,
+        "fp": 60,
+        "fn": 22
+      },
+      {
+        "class": "nv",
+        "support": 810,
+        "precision": 0.964332892998679,
+        "recall": 0.9012345679012346,
+        "f1": 0.9317166560306317,
+        "tp": 730,
+        "fp": 27,
+        "fn": 80
+      },
+      {
+        "class": "vasc",
+        "support": 15,
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889,
+        "tp": 12,
+        "fp": 0,
+        "fn": 3
+      }
+    ]
+  },
+  "lesion_bootstrap": {
+    "method": "stratified lesion resampling with replacement",
+    "samples": 200,
+    "seed": 42,
+    "intervals": {
+      "accuracy": {
+        "estimate": 0.8602146690518784,
+        "ci95_low": 0.8389534883720929,
+        "ci95_high": 0.8819320214669052
+      },
+      "macro_precision": {
+        "estimate": 0.7912517660902122,
+        "ci95_low": 0.7264216882161114,
+        "ci95_high": 0.8453835302425954
+      },
+      "macro_recall": {
+        "estimate": 0.7087286368908019,
+        "ci95_low": 0.6538520174229457,
+        "ci95_high": 0.7716820546622467
+      },
+      "macro_f1": {
+        "estimate": 0.7230032187742466,
+        "ci95_low": 0.6608733057159262,
+        "ci95_high": 0.7778356980373158
+      },
+      "minority_recall": {
+        "estimate": 0.5587949725344683,
+        "ci95_low": 0.4468505584051803,
+        "ci95_high": 0.6782490268834808
+      },
+      "mel_to_nv_rate": {
+        "estimate": 0.13043956043956043,
+        "ci95_low": 0.06593406593406594,
+        "ci95_high": 0.2087912087912088
+      }
+    }
+  },
+  "efficiency": {
+    "parameters": 6490144,
+    "gflops": 17.1313152,
+    "mean_ms_per_image": {
+      "preprocess": 0.7898725399230743,
+      "inference": 0.8932056515867713,
+      "postprocess": 0.0766464095346585
+    },
+    "end_to_end_ms_per_image": 4.440569880337515
+  }
+}

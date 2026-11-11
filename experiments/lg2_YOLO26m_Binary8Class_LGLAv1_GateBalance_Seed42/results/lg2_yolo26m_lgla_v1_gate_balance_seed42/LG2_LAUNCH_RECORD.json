@@ -1,0 +1,10 @@
+{
+  "status": "STARTING_OR_RESUMING",
+  "started_local_time": "2026-09-14 13:06:44 +0800",
+  "entrypoint": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg2\\train_lg2_from_pycharm.py",
+  "config_sha256": "ef019674fe95ae80560285abfc74fe046b72f4b3a473fb05334cae4aef19f170",
+  "fingerprint": "16f9505ad452813aac9eb85e1b4cb176d077ff9d16a30ac20965ff3efbd87df4",
+  "resume_bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42\\results\\lg2_yolo26m_lgla_v1_gate_balance_seed42\\checkpoint_bundles\\epoch_0015",
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

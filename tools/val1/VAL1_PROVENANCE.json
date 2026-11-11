@@ -1,0 +1,21 @@
+{
+  "canonical_task_name": "Val1",
+  "task_type": "development_only_validation",
+  "legacy_preregistered_name": "Run34",
+  "original_tools_directory": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run34",
+  "current_tools_directory": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\val1",
+  "legacy_experiment_directory": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\34_YOLO26m_Plain_FixedCostDecision_ThreeSeed_DevelopmentOnly",
+  "result_file": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\34_YOLO26m_Plain_FixedCostDecision_ThreeSeed_DevelopmentOnly\\results\\run34_plain_fixed_cost_decision_three_seed_val\\RUN34_RESULT.json",
+  "result_sha256": "004639e58121162cd84156388494823109261102a65767e0924f01811f737a04",
+  "config_sha256": "2952bb706ee8eacd24d75348be2d0dc1a8e8df6d7204a64fd0cc932ee15dbf0d",
+  "fingerprint": "04a47ea9b7c8d35eb8f1cd047d0bb53eb037b2953c7216002a9f34b82e5d9ac2",
+  "status": "COMPLETE",
+  "acceptance_gate_passed": false,
+  "decision": "retain_argmax_and_stop_decision_rule_tuning",
+  "training_performed": false,
+  "test_metrics_used": false,
+  "external_metrics_used": false,
+  "pad_ufes_20_used": false,
+  "relocation_note": "After Val1 completed, the user moved the complete tools/run34 contents into tools/val1 and removed tools/run34. Files that were part of the frozen preregistration retain their original Run34 names and internal historical paths so their recorded hashes are not silently rewritten.",
+  "rename_policy": "Canonical name is Val1. Historical Run34 filenames and recorded hashes remain provenance evidence; completed results stay in the original experiments/34_... directory."
+}

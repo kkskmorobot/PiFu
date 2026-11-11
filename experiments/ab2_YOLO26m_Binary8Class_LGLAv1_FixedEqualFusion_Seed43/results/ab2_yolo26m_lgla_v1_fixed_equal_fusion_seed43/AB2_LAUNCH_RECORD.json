@@ -1,0 +1,10 @@
+{
+  "status": "STARTING_OR_RESUMING",
+  "started_local_time": "2026-09-15 19:01:09 +0800",
+  "entrypoint": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab2\\train_ab2_from_pycharm.py",
+  "config_sha256": "13425e3d56f405ec2d855e636c23e105a17b234bf9b55a6fee9a92572e55f637",
+  "fingerprint": "e50ab8dea5846fd01adfd621d1b4b025c7bbac278cec6d096e6e120d3e574738",
+  "resume_bundle": null,
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

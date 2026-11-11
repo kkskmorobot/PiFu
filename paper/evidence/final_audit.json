@@ -1,0 +1,148 @@
+{
+  "pages": 42,
+  "chapters": [
+    {
+      "page": 6,
+      "heading": "1 绪论"
+    },
+    {
+      "page": 9,
+      "heading": "2 相关背景知识简介"
+    },
+    {
+      "page": 13,
+      "heading": "3 算法的改进方案"
+    },
+    {
+      "page": 20,
+      "heading": "4 改进算法实现"
+    },
+    {
+      "page": 28,
+      "heading": "5 实验验证"
+    },
+    {
+      "page": 38,
+      "heading": "6 总结及展望"
+    }
+  ],
+  "roman_pages": 4,
+  "arabic_pages": 37,
+  "fields": 147,
+  "cross_references": 57,
+  "missing_bookmarks": [],
+  "native_math_objects": 37,
+  "numbered_equations": 18,
+  "figures": 11,
+  "numbered_tables": 14,
+  "references": 20,
+  "comments": 0,
+  "sources_unchanged": {
+    "reference": true,
+    "template": true
+  },
+  "chapter_prose_chars": [
+    2765,
+    3335,
+    4550,
+    4721,
+    5087,
+    1016
+  ],
+  "chapters_3_to_5_ratio": 0.668622520257055,
+  "deployment_chars": 367,
+  "deployment_han_chars": 303,
+  "deployment_ratio": 0.01709043494458415,
+  "changed_pages_from_v2": [
+    11,
+    16,
+    17,
+    18,
+    23,
+    24,
+    25,
+    26,
+    27,
+    30
+  ],
+  "outputs": {
+    "毕业论文正文_算法研究重写版.docx": {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\LunWen\\astra-6-ultra\\毕业论文正文_算法研究重写版.docx",
+      "bytes": 11696753,
+      "sha256": "1077f400ae04e1aa8edaf7caa24c56950b65c8295787c455e2fc8f25c0e9bda9"
+    },
+    "毕业论文正文_算法研究重写版.pdf": {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\LunWen\\astra-6-ultra\\毕业论文正文_算法研究重写版.pdf",
+      "bytes": 2330795,
+      "sha256": "c9d172ea69c2ca866123db3a9db52f36131052e1dd0a979b2c289155c291c108"
+    }
+  },
+  "visual_qa": {
+    "status": "passed",
+    "v2_all_pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "v3_changed_pages_reviewed": [
+      11,
+      16,
+      17,
+      18,
+      23,
+      24,
+      25,
+      26,
+      27,
+      30
+    ],
+    "unchanged_pages_pixel_identical": 32,
+    "reviewers": {
+      "root": "1–10",
+      "method_audit": "11–23",
+      "results_audit": "24–36",
+      "literature": "37–42"
+    },
+    "latest_template_recheck": "passed"
+  },
+  "template_recheck": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\LunWen\\astra-6-ultra\\Data\\academic_rewrite\\template_recheck_20261109\\audit_final.json"
+}

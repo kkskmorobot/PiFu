@@ -1,0 +1,177 @@
+[
+  {
+    "kind": "results_csv",
+    "run": 16,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\16_YOLO26m_Binary8Class_BinaryLesionGuidedAttention\\results\\run16_yolo26m_binary8cls_binary_lesion_guided_attention_seed42\\results.csv",
+    "sha256": "7e72ccc06079c0aa9282a61a30675c877846ff29d6cfcda8c39f0a77fc5df2a3",
+    "rows": 61
+  },
+  {
+    "kind": "results_csv",
+    "run": 18,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\results.csv",
+    "sha256": "ccf863ccde2da3ee72c66a56a594346df7561dcb76ef6fea09242f2f898ce217",
+    "rows": 100
+  },
+  {
+    "kind": "results_csv",
+    "run": 19,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\19_YOLO26m_Binary8Class_BLGAttention_DelayedUtilityEarlyStop\\results\\run19_yolo26m_blg_attention_delayed_utility_early_stop_seed42\\results.csv",
+    "sha256": "c69265470209d660c086b6f4de8cf2d24339b4a1b3f93ecc7195a95f6f3c8138",
+    "rows": 71
+  },
+  {
+    "kind": "results_csv",
+    "run": 20,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\20_YOLO26m_Binary8Class_AdaptiveResidualBLGAttention\\results\\run20_yolo26m_adaptive_residual_blg_attention_seed42\\results.csv",
+    "sha256": "184c656f47bde069fe7bd0ae06de95f24180b9ff55907483eda4a89bc7ab8acc",
+    "rows": 100
+  },
+  {
+    "kind": "results_csv",
+    "run": 21,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\21_YOLO26m_Binary8Class_P3P4_ECAOnlyAttention\\results\\run21_yolo26m_p3p4_eca_only_attention_seed42\\results.csv",
+    "sha256": "c95913646b91e74a2e6b5684371233819417f3620f808ca3ceb1fc7398f53ff9",
+    "rows": 100
+  },
+  {
+    "kind": "results_csv",
+    "run": 22,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\results.csv",
+    "sha256": "6a3f8f25add2ab387dbd8f10fd45460538d551d0167bbf20c7a94a3b15efe949",
+    "rows": 93
+  },
+  {
+    "kind": "results_csv",
+    "run": 23,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\23_YOLO26m_Binary8Class_P3P4_ECAOnlyAttention_Seed43Replication\\results\\run23_yolo26m_p3p4_eca_only_attention_seed43_replication\\results.csv",
+    "sha256": "7cf6124132efac4c8e2401e09b1ad30359454a6ff30078b9d9023619e2a9d81a",
+    "rows": 70
+  },
+  {
+    "kind": "results_csv",
+    "run": 24,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results\\run24_yolo26m_plain_seed44_replication\\results.csv",
+    "sha256": "bbb270d3ead0a6d78094fd8d3ec8f7fa764d6fc4d2bb46c67d67d17822cb241b",
+    "rows": 100
+  },
+  {
+    "kind": "results_csv",
+    "run": 25,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\25_YOLO26m_Binary8Class_P3P4_ECAOnlyAttention_Seed44Replication\\results\\run25_yolo26m_p3p4_eca_only_attention_seed44_replication\\results.csv",
+    "sha256": "9dede2dfedd274547544c31f01e398ebe4f6d51d647a7e3515f643b89da2db83",
+    "rows": 73
+  },
+  {
+    "kind": "results_csv",
+    "run": 26,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\26_YOLO26m_Binary8Class_P3P4_ECASpatialAttention_Seed44\\results\\run26_yolo26m_p3p4_eca_spatial_attention_seed44\\results.csv",
+    "sha256": "fef00c1f7f6884dfeebf28ead13164bd8147c0e66d6dafbc5ad3157f8bdcf5e6",
+    "rows": 71
+  },
+  {
+    "kind": "results_csv",
+    "run": 27,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\27_YOLO26m_Binary8Class_P3P4_ECASpatialAttention_Seed42\\results\\run27_yolo26m_p3p4_eca_spatial_attention_seed42\\results.csv",
+    "sha256": "4ffde0f4579a4b46678062385cdb82fbb9370cf25963f263ad2805ced3ebe51a",
+    "rows": 91
+  },
+  {
+    "kind": "results_csv",
+    "run": 28,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\28_YOLO26m_Binary8Class_P3P4_ECASpatialAttention_Seed43\\results\\run28_yolo26m_p3p4_eca_spatial_attention_seed43\\results.csv",
+    "sha256": "b58684d8ed19bc51f69d7009ca348ecb3e76f4516bcd5abde945cf49bd9be325",
+    "rows": 100
+  },
+  {
+    "kind": "results_csv",
+    "run": 29,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\29_YOLO26m_Binary8Class_Plain_MalignantGroupAux_Seed43\\results\\run29_yolo26m_plain_malignant_group_aux_seed43\\results.csv",
+    "sha256": "3d055746b7f7575d088bd68709ca4e96815c5a7b2c3cf26caf1dcf302c8cf482",
+    "rows": 100
+  },
+  {
+    "kind": "results_csv",
+    "run": 30,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\30_YOLO26m_Binary8Class_Plain_MELNVFocalRisk_Seed43\\results\\run30_yolo26m_plain_mel_nv_focal_risk_seed43\\results.csv",
+    "sha256": "7228d9cdb7fd867388bb81d70875d15da0156246e7379c730e965f0a46c38443",
+    "rows": 93
+  },
+  {
+    "kind": "results_csv",
+    "run": 31,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\31_YOLO26m_Binary8Class_Plain_MELNVAuxHead_Seed43\\results\\run31_yolo26m_plain_mel_nv_aux_head_seed43\\results.csv",
+    "sha256": "7784257a63bdfd1a065d7acb89a3ea9669c0a28de69343b5128884b7e11fb83d",
+    "rows": 100
+  },
+  {
+    "kind": "results_csv",
+    "run": 32,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\32_YOLO26m_Binary8Class_Plain_MalignantAuxHead_Seed43\\results\\run32_yolo26m_plain_malignant_aux_head_seed43\\results.csv",
+    "sha256": "17c0ad4386b3b9df9b8b7bf0f6ae19068e3f85125ba768cf0990d4a3352ae3d7",
+    "rows": 100
+  },
+  {
+    "kind": "results_csv",
+    "run": 33,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\33_YOLO26m_Binary8Class_P3P4_StandardCBAM_Seed43\\results\\run33_yolo26m_p3p4_standard_cbam_seed43\\results.csv",
+    "sha256": "41830e25e1774bc26497dcc085ac634b75d4e416aff0a0480491d4e6b4bd5824",
+    "rows": 100
+  },
+  {
+    "kind": "preflight_complexity",
+    "run": 18,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\RUN18_PREFLIGHT_REPORT.json",
+    "sha256": "e448bf4d47ff1752c9d03876c744f88e529e1d57d3a98cf5448c16ada8aec206",
+    "rows": 1
+  },
+  {
+    "kind": "preflight_complexity",
+    "run": 21,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run21\\RUN21_PREFLIGHT_REPORT.json",
+    "sha256": "465dcc1e121c52908d743411e05065324a0ffbedf1a2666fb0949ef0c05b8a6b",
+    "rows": 1
+  },
+  {
+    "kind": "preflight_complexity",
+    "run": 26,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run26\\RUN26_PREFLIGHT_REPORT.json",
+    "sha256": "ddef8203d993d02a5cf9a29b285bb6ae40e85fde14605002c39f9fca7fc48934",
+    "rows": 1
+  },
+  {
+    "kind": "preflight_complexity",
+    "run": 33,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run33\\RUN33_PREFLIGHT_REPORT.json",
+    "sha256": "97a45619ec584e2c0bbee4053e7d9cae1caec0ce3acba9bce80e81a0eb82cd4c",
+    "rows": 1
+  },
+  {
+    "kind": "val1_result",
+    "run": "Val1",
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\34_YOLO26m_Plain_FixedCostDecision_ThreeSeed_DevelopmentOnly\\results\\run34_plain_fixed_cost_decision_three_seed_val\\RUN34_RESULT.json",
+    "sha256": "004639e58121162cd84156388494823109261102a65767e0924f01811f737a04",
+    "rows": 3
+  },
+  {
+    "kind": "val1_group_predictions",
+    "run": 18,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\34_YOLO26m_Plain_FixedCostDecision_ThreeSeed_DevelopmentOnly\\results\\run34_plain_fixed_cost_decision_three_seed_val\\seed42_run18\\group_predictions.csv",
+    "sha256": "10751116e98145718b7e5ef455ff16686ebc5b992514c6ce7430bac4475772f8",
+    "rows": 587
+  },
+  {
+    "kind": "val1_group_predictions",
+    "run": 22,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\34_YOLO26m_Plain_FixedCostDecision_ThreeSeed_DevelopmentOnly\\results\\run34_plain_fixed_cost_decision_three_seed_val\\seed43_run22\\group_predictions.csv",
+    "sha256": "79378d592633f05e7846dddf7a4466a832c56f0ac28530cccd3682ed37c31a92",
+    "rows": 587
+  },
+  {
+    "kind": "val1_group_predictions",
+    "run": 24,
+    "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\34_YOLO26m_Plain_FixedCostDecision_ThreeSeed_DevelopmentOnly\\results\\run34_plain_fixed_cost_decision_three_seed_val\\seed44_run24\\group_predictions.csv",
+    "sha256": "445465fb1cd157023114605044a9d6bf8850469c3d602e7431b8533078289e74",
+    "rows": 587
+  }
+]

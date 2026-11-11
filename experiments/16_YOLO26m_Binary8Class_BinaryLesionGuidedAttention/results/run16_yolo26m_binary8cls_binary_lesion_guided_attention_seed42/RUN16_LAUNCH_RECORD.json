@@ -1,0 +1,10 @@
+{
+  "status": "STARTING_OR_RESUMING",
+  "started_local_time": "2026-08-10 10:45:34 +0800",
+  "entrypoint": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\train_run16_from_pycharm.py",
+  "config_sha256": "e9089274a44d8c0fb352938628e11d5efc87d10621c22dc18afaf4b73ddd26d6",
+  "fingerprint": "2433474d4f826d8fcfed94e946eb9facf54d4ac13c20fdc5e2720855ddf18e27",
+  "resume_bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\16_YOLO26m_Binary8Class_BinaryLesionGuidedAttention\\results\\run16_yolo26m_binary8cls_binary_lesion_guided_attention_seed42\\checkpoint_bundles\\epoch_0041",
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

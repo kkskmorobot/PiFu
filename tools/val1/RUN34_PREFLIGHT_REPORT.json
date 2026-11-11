@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "prepared_local_time": "2026-09-11 12:09:31 +0800",
+  "config_sha256": "2952bb706ee8eacd24d75348be2d0dc1a8e8df6d7204a64fd0cc932ee15dbf0d",
+  "fingerprint": "04a47ea9b7c8d35eb8f1cd047d0bb53eb037b2953c7216002a9f34b82e5d9ac2",
+  "data": {
+    "yaml": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run34\\run34_development_data.yaml",
+    "manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run34\\run34_development_manifest.csv",
+    "taxonomy": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml",
+    "counts": {
+      "train": {
+        "total": 23462,
+        "classification": 13715,
+        "segmentation": 10483
+      },
+      "val": {
+        "total": 1744,
+        "classification": 1488,
+        "segmentation": 292
+      }
+    },
+    "test_present": false,
+    "external_present": false,
+    "pad_ufes_20_present": false
+  },
+  "checkpoints": [
+    {
+      "run": 18,
+      "seed": 42,
+      "bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\checkpoint_bundles\\epoch_0049",
+      "fingerprint": "2ed64c4aa90c6d90d15ace2158de0866e570f71ad8a3cb3bbc3e2b7d0fd2b7a3",
+      "trainer_sha256": "71a2308299fb3b7287c891bfc590f4b0b890f89750c94c081b715a0ced4fa312",
+      "runtime_sha256": "d746270550e867926d91cd498984ac4e339a0badf953f66a2b74ccbdd7e3d7bd"
+    },
+    {
+      "run": 22,
+      "seed": 43,
+      "bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\checkpoint_bundles\\epoch_0059",
+      "fingerprint": "6a9cc96bd2d21f28b9c17ed745a50e76846f05d9c96153b2bad69f59c7257e82",
+      "trainer_sha256": "be15ce40b874682d1c95246baebcd0f4d5087b5a0289699de0f009f360089535",
+      "runtime_sha256": "0197f9300a165bd4e6f294a9739b83516ef01a9133f6123763d51112c98e978b"
+    },
+    {
+      "run": 24,
+      "seed": 44,
+      "bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results\\run24_yolo26m_plain_seed44_replication\\checkpoint_bundles\\epoch_0077",
+      "fingerprint": "c856d97b12202fac2e400ecbcd94d5ad91c705981d6c692cda827e99e28929e6",
+      "trainer_sha256": "8ca22463f80c0e816b38972a2369793f689f8e003303c6ac83c28cb4c4ae0b62",
+      "runtime_sha256": "56295a325b4c567e400dc5546284431675fdb0c0f96c7c7f02edb5987b4e80f4"
+    }
+  ],
+  "model_forward": {
+    "device": "cuda:0",
+    "model_class": "BinaryPartialMultiTaskModel",
+    "parameters": 14507338,
+    "output_shapes": [
+      [
+        1,
+        1,
+        80,
+        80
+      ],
+      [
+        1,
+        8
+      ]
+    ],
+    "all_finite": true,
+    "model_state_unchanged": true,
+    "weight_source": {
+      "structure_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\checkpoint_bundles\\epoch_0049\\trainer.pt",
+      "state_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\checkpoint_bundles\\epoch_0049\\runtime_state.pt::training_state.ema",
+      "serialized_fp16_differing_float_tensors": 358,
+      "serialized_fp16_max_abs_difference": 153569.46875,
+      "exact_ema_loaded": true
+    },
+    "optimizer_created": false,
+    "backward_called": false,
+    "training_called": false
+  },
+  "formal_output_exists": false,
+  "training_performed": false,
+  "test_metrics_used": false,
+  "external_metrics_used": false,
+  "pad_ufes_20_used": false
+}

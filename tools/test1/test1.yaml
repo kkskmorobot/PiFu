@@ -1,0 +1,100 @@
+contract:
+  version: test1_final_evaluation_v1
+  role: one_time_final_evaluation_after_development_lock
+  training_permitted: false
+  model_selection_permitted: false
+  threshold_tuning_permitted: false
+  decision_rule_tuning_permitted: false
+  rerun_for_model_improvement_permitted: false
+  decision_rule: eight_class_argmax
+  calibration_temperature: 1.0
+  pad_ufes_20_policy: excluded
+
+internal_test:
+  role: imaplusplus_frozen_test
+  yaml: tools/test1/data_test.yaml
+  yaml_sha256: 85e872c2f33b38c3897b69de2e8a7cef0dab690dd60e6ab440716f3869ee044f
+  manifest: tools/test1/manifest_test.csv
+  manifest_sha256: f3925b5cb7a78bf6ae8dc2d9ba5b219dd008610475207c1ab210374099950ee3
+  source_manifest: Data/processed_isic2019_classification_incremental_v1/multitask_manifest.csv
+  source_manifest_sha256: c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956
+  total_samples: 634
+  segmentation_samples: 634
+  classification_samples: 56
+  classification_scope: mel_nv_labeled_subset_only
+  classification_classes_present: [mel, nv]
+  eight_class_macro_metrics_permitted: false
+
+external:
+  role: isic2018_task1_incremental_segmentation_only
+  yaml: tools/test1/data_external.yaml
+  yaml_sha256: 9a54707c26c021d932946f3fa9167827d676cf63ba0d32291aad21eb9df7e355
+  manifest: tools/test1/manifest_external.csv
+  manifest_sha256: 4d601c29e98462537fe6b184f175dc6adda52491a74ea03cb6e5a4c4c4e86a4f
+  source_manifest: Data/processed_isic2018_task1_incremental_v1/manifest.csv
+  source_manifest_sha256: 595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102
+  total_samples: 89
+  segmentation_samples: 89
+  classification_samples: 0
+
+taxonomy:
+  path: tools/classification_taxonomy_v1.yaml
+  sha256: ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e
+  classes: [akiec, bcc, bkl, df, mel, nv, vasc, scc]
+
+evaluation:
+  imgsz: 640
+  batch: 16
+  workers: 8
+  device: 0
+  semantic_probability_threshold: 0.5
+  classification_aggregation: mean_image_probability_per_group
+  classification_bootstrap_seed: 20260911
+  classification_bootstrap_repetitions: 10000
+  classification_bootstrap_strategy: stratified_by_true_class
+  output: experiments/test1/results
+
+checkpoints:
+  - run: 18
+    seed: 42
+    visible_epoch: 50
+    zero_based_epoch: 49
+    bundle: experiments/18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop/results/run18_yolo26m_plain_delayed_utility_early_stop_seed42/checkpoint_bundles/epoch_0049
+    fingerprint: 2ed64c4aa90c6d90d15ace2158de0866e570f71ad8a3cb3bbc3e2b7d0fd2b7a3
+    trainer_bytes: 116518939
+    trainer_sha256: 71a2308299fb3b7287c891bfc590f4b0b890f89750c94c081b715a0ced4fa312
+    runtime_bytes: 232819976
+    runtime_sha256: d746270550e867926d91cd498984ac4e339a0badf953f66a2b74ccbdd7e3d7bd
+  - run: 22
+    seed: 43
+    visible_epoch: 60
+    zero_based_epoch: 59
+    bundle: experiments/22_YOLO26m_Binary8Class_Plain_Seed43Replication/results/run22_yolo26m_plain_seed43_replication/checkpoint_bundles/epoch_0059
+    fingerprint: 6a9cc96bd2d21f28b9c17ed745a50e76846f05d9c96153b2bad69f59c7257e82
+    trainer_bytes: 116521435
+    trainer_sha256: be15ce40b874682d1c95246baebcd0f4d5087b5a0289699de0f009f360089535
+    runtime_bytes: 232820040
+    runtime_sha256: 0197f9300a165bd4e6f294a9739b83516ef01a9133f6123763d51112c98e978b
+  - run: 24
+    seed: 44
+    visible_epoch: 78
+    zero_based_epoch: 77
+    bundle: experiments/24_YOLO26m_Binary8Class_Plain_Seed44Replication/results/run24_yolo26m_plain_seed44_replication/checkpoint_bundles/epoch_0077
+    fingerprint: c856d97b12202fac2e400ecbcd94d5ad91c705981d6c692cda827e99e28929e6
+    trainer_bytes: 116525979
+    trainer_sha256: 8ca22463f80c0e816b38972a2369793f689f8e003303c6ac83c28cb4c4ae0b62
+    runtime_bytes: 232819976
+    runtime_sha256: 56295a325b4c567e400dc5546284431675fdb0c0f96c7c7f02edb5987b4e80f4
+
+reporting:
+  all_three_seeds_required: true
+  post_test_seed_selection_forbidden: true
+  representative_seed_fixed_before_test: 43
+  representative_source_run: 22
+  report_mean_and_sample_sd_across_seeds: true
+  internal_segmentation_metrics: [binary_iou, binary_dice, pixel_accuracy]
+  restricted_classification_metrics: [accuracy, mel_recall, nv_recall, balanced_recall, mel_to_nv_rate, nv_to_mel_rate, nll, brier, ece]
+  restricted_classification_bootstrap_ci: [accuracy, mel_recall, nv_recall, balanced_recall, mel_to_nv_rate, nv_to_mel_rate]
+  external_metrics: [binary_iou, binary_dice, pixel_accuracy]
+  joint_score_on_test_permitted: false
+  acceptance_gate: none_descriptive_final_evaluation

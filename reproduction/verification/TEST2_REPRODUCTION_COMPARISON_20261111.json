@@ -1,0 +1,55 @@
+{
+  "historical": "D:\\Data\\project\\PiFu\\experiments\\test2\\results\\result.json",
+  "historical_sha256": "221870ed599a77b07952661b3d30ce0182910e466c21aad613f83f93f8e0f011",
+  "reproduced": "D:\\Data\\project\\PiFu\\outputs\\test2_20261111_174956_642668\\result.json",
+  "reproduced_sha256": "9c88b6ceb62222e81a8b9909faca2bc73228cd252cd6fed9dd7e7e3bd1e4cd8f",
+  "scope": "Every numeric leaf of aggregate plus per-seed internal/external segmentation and restricted classification, including supports, predicted class counts and confidence interval endpoints. Source paths, dates and checkpoint metadata are excluded.",
+  "historical_numeric_metric_count": 156,
+  "reproduced_numeric_metric_count": 156,
+  "exactly_equal_numeric_metric_count": 156,
+  "different_numeric_metric_count": 0,
+  "missing_metric_paths": [],
+  "extra_metric_paths": [],
+  "differences": [],
+  "maximum_absolute_delta_decimal": "0",
+  "classification_predictions": [
+    {
+      "historical": "D:\\Data\\project\\PiFu\\experiments\\test2\\results\\seed42\\internal\\classification.csv",
+      "reproduced": "D:\\Data\\project\\PiFu\\outputs\\test2_20261111_174956_642668\\lg2\\internal_test\\classification.csv",
+      "historical_sha256": "b2c474f87f2db7d1e470fe20f2728e9a6d4647219612e11678cdc228b15e4031",
+      "reproduced_sha256": "b2c474f87f2db7d1e470fe20f2728e9a6d4647219612e11678cdc228b15e4031",
+      "same_bytes": true,
+      "groups_historical": 56,
+      "groups_reproduced": 56,
+      "missing_groups": [],
+      "extra_groups": [],
+      "changed_cells": []
+    },
+    {
+      "historical": "D:\\Data\\project\\PiFu\\experiments\\test2\\results\\seed43\\internal\\classification.csv",
+      "reproduced": "D:\\Data\\project\\PiFu\\outputs\\test2_20261111_174956_642668\\lgx\\internal_test\\classification.csv",
+      "historical_sha256": "1dcca2300b50a9a908c7df96503b79f0f8a53b67e9a441a9fc20590752b9637a",
+      "reproduced_sha256": "1dcca2300b50a9a908c7df96503b79f0f8a53b67e9a441a9fc20590752b9637a",
+      "same_bytes": true,
+      "groups_historical": 56,
+      "groups_reproduced": 56,
+      "missing_groups": [],
+      "extra_groups": [],
+      "changed_cells": []
+    },
+    {
+      "historical": "D:\\Data\\project\\PiFu\\experiments\\test2\\results\\seed44\\internal\\classification.csv",
+      "reproduced": "D:\\Data\\project\\PiFu\\outputs\\test2_20261111_174956_642668\\lg3\\internal_test\\classification.csv",
+      "historical_sha256": "4481a70195e9c111e245ec5c53f2937c2df1335a24d1c51bc9ca74609bbff48c",
+      "reproduced_sha256": "4481a70195e9c111e245ec5c53f2937c2df1335a24d1c51bc9ca74609bbff48c",
+      "same_bytes": true,
+      "groups_historical": 56,
+      "groups_reproduced": 56,
+      "missing_groups": [],
+      "extra_groups": [],
+      "changed_cells": []
+    }
+  ],
+  "all_formal_numeric_metrics_exactly_equal": true,
+  "all_classification_predictions_exactly_equal": true
+}

@@ -1,0 +1,113 @@
+{
+  "report_version": 1,
+  "verification_date": "2026-11-11",
+  "timezone": "Asia/Hong_Kong",
+  "status": "PASS",
+  "scope": "Read-only final dataset inventory and frontend sampling verification",
+  "dataset_root": "D:/Data/project/PiFuData",
+  "project_root": "D:/Data/project/PiFu",
+  "dataset_inventory": {
+    "status": "PASS",
+    "manifest": "DATA_FILES.json",
+    "summary": "DATA_SUMMARY.json",
+    "payload_files": 52188,
+    "payload_bytes": 12870938214,
+    "all_manifest_paths_exist": true,
+    "all_payload_file_sizes_match_manifest": true,
+    "all_dataset_totals_match_summary": true,
+    "missing_payload_files": 0,
+    "wrong_size_payload_files": 0,
+    "datasets": [
+      {
+        "directory": "processed_imaplusplus_binary_v1",
+        "files": 22838,
+        "images": 11409,
+        "bytes": 5595367891,
+        "gib": 5.211092,
+        "role": "Complete thesis segmentation training, validation and internal test dataset"
+      },
+      {
+        "directory": "processed_isic2019_classification_incremental_v1",
+        "files": 28878,
+        "images": 14431,
+        "bytes": 6909525900,
+        "gib": 6.434997,
+        "role": "Complete thesis incremental classification training and validation dataset"
+      },
+      {
+        "directory": "processed_isic2018_task1_incremental_v1",
+        "files": 188,
+        "images": 89,
+        "bytes": 327908469,
+        "gib": 0.305389,
+        "role": "Complete thesis external segmentation evaluation dataset"
+      },
+      {
+        "directory": "processed_skin7_v3",
+        "files": 284,
+        "images": 140,
+        "bytes": 38135954,
+        "gib": 0.035517,
+        "role": "Frontend demonstration subset only; not the full historical skin7 training dataset",
+        "images_per_class_per_split": 10,
+        "splits": ["test", "val"],
+        "classes": ["akiec", "bcc", "bkl", "df", "mel", "nv", "vasc"]
+      }
+    ],
+    "verification_method": [
+      "Read DATA_FILES.json and DATA_SUMMARY.json without modifying either file.",
+      "Enumerate actual files beneath the dataset root and compare every manifest payload path and byte size against its physical file.",
+      "Aggregate physical payload file counts and byte sizes by dataset and compare them against DATA_SUMMARY.json.",
+      "Count images only beneath images/ directories with jpg, jpeg, png, webp or bmp extensions.",
+      "This final inventory check did not recompute all content hashes; the build-stage source/destination SHA-256 verification is separately recorded in DATA_FILES.json and DATA_SUMMARY.json."
+    ],
+    "additional_regenerable_files_observed": {
+      "excluded_from_payload_totals": true,
+      "total_bytes": 217310,
+      "files": [
+        {"path": ".cache/partial_multitask_v1/external.cache", "bytes": 28289},
+        {"path": ".cache/partial_multitask_v1/test.cache", "bytes": 170453},
+        {"path": ".cache/partial_multitask_v1/train.cache", "bytes": 9331},
+        {"path": ".cache/partial_multitask_v1/val.cache", "bytes": 9237}
+      ],
+      "note": "These files were already present when the read-only verification started and were not created by this verification. They are regenerable runtime caches, not required payload files. Their final inclusion/removal is controlled by the primary packaging workflow."
+    }
+  },
+  "frontend_sampling": {
+    "status": "PASS",
+    "source": "QianDuan/app.py",
+    "portable_entrypoint_reviewed": "reproduction/front.py",
+    "portable_sample_roots_correct": true,
+    "batch_sampling_rounds": 100,
+    "requested_images_per_round": 100,
+    "all_rounds_returned_100_unique_files": true,
+    "all_rounds_had_7_classes": true,
+    "class_count_range_each_round": [14, 15],
+    "split_count_each_round": {"test": 50, "val": 50},
+    "single_image_next_sample_checks_per_split": 100,
+    "all_single_image_samples_exist": true,
+    "no_consecutive_single_image_repeat": true,
+    "last_observed_batch_distribution": {
+      "akiec": 14,
+      "bcc": 14,
+      "bkl": 14,
+      "df": 15,
+      "mel": 14,
+      "nv": 14,
+      "vasc": 15
+    },
+    "verification_method": [
+      "Parse the preserved QianDuan/app.py with Python ast.",
+      "Extract and compile the original sample_images, random_sample and select_batch_samples function definitions without importing or launching the frontend.",
+      "Read CLASS_INFO from the original source and provide the same constants, random module, CSV parser, threading lock and pathlib Path objects.",
+      "Point SAMPLE_DATA_ROOT and SAMPLE_IMAGES_ROOT at D:/Data/project/PiFuData/processed_skin7_v3 and its images directory, matching reproduction/front.py.",
+      "Call select_batch_samples(100) for 100 rounds and assert unique file paths, seven class counts of 14 or 15, and 50 samples from each split.",
+      "In each round call random_sample for test and val, checking that the chosen path exists and differs from the immediately previous choice."
+    ],
+    "model_inference_executed": false,
+    "torch_or_ultralytics_import_required": false,
+    "network_used": false,
+    "source_or_destination_dataset_files_modified": false,
+    "limitation": "This verifies original sampling behavior and portable path wiring. It is not a 100-image prediction test and does not certify model numerical outputs."
+  }
+}

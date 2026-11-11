@@ -1,0 +1,345 @@
+{
+  "mode": "FROZEN_TEST_REPRODUCTION",
+  "suite": "test2",
+  "original_config_sha256": "cc0885a90767d939b589afb47405ef0d43f95a4c759e60571b4c0bf828cf3578",
+  "models": {
+    "lg2": {
+      "weights": "weights/lg2/frozen_eval.pt",
+      "sha256": "50b39cb6e3c449f6abbbfdc62c640f2b2d467fdd10e8be88d703485b048d0e49",
+      "bytes": 58485067,
+      "source_bundle": "experiments/lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42/results/lg2_yolo26m_lgla_v1_gate_balance_seed42/checkpoint_bundles/epoch_0073",
+      "source_fingerprint": "16f9505ad452813aac9eb85e1b4cb176d077ff9d16a30ac20965ff3efbd87df4",
+      "source_trainer_sha256": "f2dde365c4be7109606194b0bee976334c31c41b5049789e99c13e96cad39a5c",
+      "source_runtime_sha256": "2b2371927bbaa0c746b81c2879bff0abebcf891ecf6aed9f1a6fa962a7f23973",
+      "visible_epoch": 74,
+      "zero_based_epoch": 73,
+      "state_tensor_count": 436,
+      "exact_tensor_equality": true,
+      "scalar_count": 14570130,
+      "experiment": "lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42"
+    },
+    "lgx": {
+      "weights": "weights/lgx/frozen_eval.pt",
+      "sha256": "24bbab8ad3de5cc62b887e9e64435cc32993fb186152b7d70a1a6417268953ef",
+      "bytes": 58484811,
+      "source_bundle": "experiments/lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43/results/lgx_yolo26m_lgla_v1_gate_balance_seed43/checkpoint_bundles/epoch_0098",
+      "source_fingerprint": "3a9aa4156828bd2e5af1b1f44a62929041cde5895d01ed995c8c5af823186ac0",
+      "source_trainer_sha256": "7db5600fcafbc5853902f234d5ee1e08c9ec44d9160d8077a5cd5af16a1e14ba",
+      "source_runtime_sha256": "6ad29b0d5422d393e79efa6eab414dabc0f731055654bf82c75e66787c0f9b33",
+      "visible_epoch": 99,
+      "zero_based_epoch": 98,
+      "state_tensor_count": 436,
+      "exact_tensor_equality": true,
+      "scalar_count": 14570130,
+      "experiment": "lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43"
+    },
+    "lg3": {
+      "weights": "weights/lg3/frozen_eval.pt",
+      "sha256": "31e40b81cb51ee88a8b7182d888cc7f95c720c068e3e141da25307ac31a2cf20",
+      "bytes": 58484811,
+      "source_bundle": "experiments/lg3_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed44/results/lg3_yolo26m_lgla_v1_gate_balance_seed44/checkpoint_bundles/epoch_0096",
+      "source_fingerprint": "4a7c29f336b7ea28d8fbfe38e5e51cdff21f68ba418c78fddedbceb6956642aa",
+      "source_trainer_sha256": "cb6cf3a9d40d180a9ace51da6bb2420411d95da408f62f3009e6b33a289675e2",
+      "source_runtime_sha256": "b7bb2c5d926f899c66d9ee74ef5b4cac8266c763413ac3475e7a162bbba269d7",
+      "visible_epoch": 97,
+      "zero_based_epoch": 96,
+      "state_tensor_count": 436,
+      "exact_tensor_equality": true,
+      "scalar_count": 14570130,
+      "experiment": "lg3_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed44"
+    }
+  },
+  "original_config": {
+    "contract": {
+      "version": "test2_lgla_v1_final_evaluation_v1",
+      "role": "one_time_frozen_lgla_v1_evaluation_after_development_lock",
+      "training_permitted": false,
+      "model_selection_permitted": false,
+      "threshold_tuning_permitted": false,
+      "decision_rule_tuning_permitted": false,
+      "rerun_for_model_improvement_permitted": false,
+      "decision_rule": "eight_class_argmax",
+      "calibration_temperature": 1.0,
+      "pad_ufes_20_policy": "excluded"
+    },
+    "internal_test": {
+      "role": "imaplusplus_frozen_test",
+      "yaml": "tools/test2/data_test.yaml",
+      "yaml_sha256": "d076ba6226129264efcfed3b095605fd570b25857ae060e155fc72b8bb21bbf2",
+      "manifest": "tools/test2/manifest_test.csv",
+      "manifest_sha256": "f3925b5cb7a78bf6ae8dc2d9ba5b219dd008610475207c1ab210374099950ee3",
+      "source_manifest": "Data/processed_isic2019_classification_incremental_v1/multitask_manifest.csv",
+      "source_manifest_sha256": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956",
+      "total_samples": 634,
+      "segmentation_samples": 634,
+      "classification_samples": 56,
+      "classification_scope": "mel_nv_labeled_subset_only",
+      "classification_classes_present": [
+        "mel",
+        "nv"
+      ],
+      "eight_class_macro_metrics_permitted": false
+    },
+    "external": {
+      "role": "isic2018_task1_incremental_segmentation_only",
+      "yaml": "tools/test2/data_external.yaml",
+      "yaml_sha256": "6803ee71a9c2b929110baf41861cc747d4fefd5a40deb98c3ebf13f90abf63d8",
+      "manifest": "tools/test2/manifest_external.csv",
+      "manifest_sha256": "4d601c29e98462537fe6b184f175dc6adda52491a74ea03cb6e5a4c4c4e86a4f",
+      "source_manifest": "Data/processed_isic2018_task1_incremental_v1/manifest.csv",
+      "source_manifest_sha256": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102",
+      "total_samples": 89,
+      "segmentation_samples": 89,
+      "classification_samples": 0
+    },
+    "taxonomy": {
+      "path": "tools/classification_taxonomy_v1.yaml",
+      "sha256": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+      "classes": [
+        "akiec",
+        "bcc",
+        "bkl",
+        "df",
+        "mel",
+        "nv",
+        "vasc",
+        "scc"
+      ]
+    },
+    "evaluation": {
+      "imgsz": 640,
+      "batch": 16,
+      "workers": 8,
+      "device": 0,
+      "semantic_probability_threshold": 0.5,
+      "classification_aggregation": "mean_image_probability_per_group",
+      "classification_bootstrap_seed": 20260916,
+      "classification_bootstrap_repetitions": 10000,
+      "classification_bootstrap_strategy": "stratified_by_true_class",
+      "output": "experiments/test2/results"
+    },
+    "checkpoints": [
+      {
+        "run": "LG2",
+        "seed": 42,
+        "visible_epoch": 74,
+        "zero_based_epoch": 73,
+        "bundle": "experiments/lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42/results/lg2_yolo26m_lgla_v1_gate_balance_seed42/checkpoint_bundles/epoch_0073",
+        "fingerprint": "16f9505ad452813aac9eb85e1b4cb176d077ff9d16a30ac20965ff3efbd87df4",
+        "trainer_bytes": 116807095,
+        "trainer_sha256": "f2dde365c4be7109606194b0bee976334c31c41b5049789e99c13e96cad39a5c",
+        "runtime_bytes": 233366224,
+        "runtime_sha256": "2b2371927bbaa0c746b81c2879bff0abebcf891ecf6aed9f1a6fa962a7f23973"
+      },
+      {
+        "run": "LGX",
+        "seed": 43,
+        "visible_epoch": 99,
+        "zero_based_epoch": 98,
+        "bundle": "experiments/lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43/results/lgx_yolo26m_lgla_v1_gate_balance_seed43/checkpoint_bundles/epoch_0098",
+        "fingerprint": "3a9aa4156828bd2e5af1b1f44a62929041cde5895d01ed995c8c5af823186ac0",
+        "trainer_bytes": 116812919,
+        "trainer_sha256": "7db5600fcafbc5853902f234d5ee1e08c9ec44d9160d8077a5cd5af16a1e14ba",
+        "runtime_bytes": 233366224,
+        "runtime_sha256": "6ad29b0d5422d393e79efa6eab414dabc0f731055654bf82c75e66787c0f9b33"
+      },
+      {
+        "run": "LG3",
+        "seed": 44,
+        "visible_epoch": 97,
+        "zero_based_epoch": 96,
+        "bundle": "experiments/lg3_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed44/results/lg3_yolo26m_lgla_v1_gate_balance_seed44/checkpoint_bundles/epoch_0096",
+        "fingerprint": "4a7c29f336b7ea28d8fbfe38e5e51cdff21f68ba418c78fddedbceb6956642aa",
+        "trainer_bytes": 116812407,
+        "trainer_sha256": "cb6cf3a9d40d180a9ace51da6bb2420411d95da408f62f3009e6b33a289675e2",
+        "runtime_bytes": 233366224,
+        "runtime_sha256": "b7bb2c5d926f899c66d9ee74ef5b4cac8266c763413ac3475e7a162bbba269d7"
+      }
+    ],
+    "reporting": {
+      "all_three_seeds_required": true,
+      "post_test_seed_selection_forbidden": true,
+      "representative_seed_fixed_before_test": 43,
+      "representative_source_run": "LGX",
+      "report_mean_and_sample_sd_across_seeds": true,
+      "internal_segmentation_metrics": [
+        "binary_iou",
+        "binary_dice",
+        "pixel_accuracy"
+      ],
+      "restricted_classification_metrics": [
+        "accuracy",
+        "mel_recall",
+        "nv_recall",
+        "balanced_recall",
+        "mel_to_nv_rate",
+        "nv_to_mel_rate",
+        "nll",
+        "brier",
+        "ece"
+      ],
+      "restricted_classification_bootstrap_ci": [
+        "accuracy",
+        "mel_recall",
+        "nv_recall",
+        "balanced_recall",
+        "mel_to_nv_rate",
+        "nv_to_mel_rate"
+      ],
+      "external_metrics": [
+        "binary_iou",
+        "binary_dice",
+        "pixel_accuracy"
+      ],
+      "joint_score_on_test_permitted": false,
+      "acceptance_gate": "none_descriptive_final_evaluation"
+    }
+  },
+  "generated_config": {
+    "contract": {
+      "version": "test2_lgla_v1_final_evaluation_v1",
+      "role": "one_time_frozen_lgla_v1_evaluation_after_development_lock",
+      "training_permitted": false,
+      "model_selection_permitted": false,
+      "threshold_tuning_permitted": false,
+      "decision_rule_tuning_permitted": false,
+      "rerun_for_model_improvement_permitted": false,
+      "decision_rule": "eight_class_argmax",
+      "calibration_temperature": 1.0,
+      "pad_ufes_20_policy": "excluded"
+    },
+    "internal_test": {
+      "role": "imaplusplus_frozen_test",
+      "yaml": "D:\\Data\\project\\PiFu\\outputs\\test2_20261111_174956_642668\\internal_test\\data.yaml",
+      "yaml_sha256": "d076ba6226129264efcfed3b095605fd570b25857ae060e155fc72b8bb21bbf2",
+      "manifest": "D:\\Data\\project\\PiFu\\outputs\\test2_20261111_174956_642668\\internal_test\\manifest.csv",
+      "manifest_sha256": "f3925b5cb7a78bf6ae8dc2d9ba5b219dd008610475207c1ab210374099950ee3",
+      "source_manifest": "Data/processed_isic2019_classification_incremental_v1/multitask_manifest.csv",
+      "source_manifest_sha256": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956",
+      "total_samples": 634,
+      "segmentation_samples": 634,
+      "classification_samples": 56,
+      "classification_scope": "mel_nv_labeled_subset_only",
+      "classification_classes_present": [
+        "mel",
+        "nv"
+      ],
+      "eight_class_macro_metrics_permitted": false
+    },
+    "external": {
+      "role": "isic2018_task1_incremental_segmentation_only",
+      "yaml": "D:\\Data\\project\\PiFu\\outputs\\test2_20261111_174956_642668\\external\\data.yaml",
+      "yaml_sha256": "6803ee71a9c2b929110baf41861cc747d4fefd5a40deb98c3ebf13f90abf63d8",
+      "manifest": "D:\\Data\\project\\PiFu\\outputs\\test2_20261111_174956_642668\\external\\manifest.csv",
+      "manifest_sha256": "4d601c29e98462537fe6b184f175dc6adda52491a74ea03cb6e5a4c4c4e86a4f",
+      "source_manifest": "Data/processed_isic2018_task1_incremental_v1/manifest.csv",
+      "source_manifest_sha256": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102",
+      "total_samples": 89,
+      "segmentation_samples": 89,
+      "classification_samples": 0
+    },
+    "taxonomy": {
+      "path": "tools/classification_taxonomy_v1.yaml",
+      "sha256": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+      "classes": [
+        "akiec",
+        "bcc",
+        "bkl",
+        "df",
+        "mel",
+        "nv",
+        "vasc",
+        "scc"
+      ]
+    },
+    "evaluation": {
+      "imgsz": 640,
+      "batch": 16,
+      "workers": 8,
+      "device": 0,
+      "semantic_probability_threshold": 0.5,
+      "classification_aggregation": "mean_image_probability_per_group",
+      "classification_bootstrap_seed": 20260916,
+      "classification_bootstrap_repetitions": 10000,
+      "classification_bootstrap_strategy": "stratified_by_true_class",
+      "output": "experiments/test2/results"
+    },
+    "checkpoints": [
+      {
+        "run": "LG2",
+        "seed": 42,
+        "visible_epoch": 74,
+        "zero_based_epoch": 73,
+        "bundle": "experiments/lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42/results/lg2_yolo26m_lgla_v1_gate_balance_seed42/checkpoint_bundles/epoch_0073",
+        "fingerprint": "16f9505ad452813aac9eb85e1b4cb176d077ff9d16a30ac20965ff3efbd87df4",
+        "trainer_bytes": 116807095,
+        "trainer_sha256": "f2dde365c4be7109606194b0bee976334c31c41b5049789e99c13e96cad39a5c",
+        "runtime_bytes": 233366224,
+        "runtime_sha256": "2b2371927bbaa0c746b81c2879bff0abebcf891ecf6aed9f1a6fa962a7f23973"
+      },
+      {
+        "run": "LGX",
+        "seed": 43,
+        "visible_epoch": 99,
+        "zero_based_epoch": 98,
+        "bundle": "experiments/lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43/results/lgx_yolo26m_lgla_v1_gate_balance_seed43/checkpoint_bundles/epoch_0098",
+        "fingerprint": "3a9aa4156828bd2e5af1b1f44a62929041cde5895d01ed995c8c5af823186ac0",
+        "trainer_bytes": 116812919,
+        "trainer_sha256": "7db5600fcafbc5853902f234d5ee1e08c9ec44d9160d8077a5cd5af16a1e14ba",
+        "runtime_bytes": 233366224,
+        "runtime_sha256": "6ad29b0d5422d393e79efa6eab414dabc0f731055654bf82c75e66787c0f9b33"
+      },
+      {
+        "run": "LG3",
+        "seed": 44,
+        "visible_epoch": 97,
+        "zero_based_epoch": 96,
+        "bundle": "experiments/lg3_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed44/results/lg3_yolo26m_lgla_v1_gate_balance_seed44/checkpoint_bundles/epoch_0096",
+        "fingerprint": "4a7c29f336b7ea28d8fbfe38e5e51cdff21f68ba418c78fddedbceb6956642aa",
+        "trainer_bytes": 116812407,
+        "trainer_sha256": "cb6cf3a9d40d180a9ace51da6bb2420411d95da408f62f3009e6b33a289675e2",
+        "runtime_bytes": 233366224,
+        "runtime_sha256": "b7bb2c5d926f899c66d9ee74ef5b4cac8266c763413ac3475e7a162bbba269d7"
+      }
+    ],
+    "reporting": {
+      "all_three_seeds_required": true,
+      "post_test_seed_selection_forbidden": true,
+      "representative_seed_fixed_before_test": 43,
+      "representative_source_run": "LGX",
+      "report_mean_and_sample_sd_across_seeds": true,
+      "internal_segmentation_metrics": [
+        "binary_iou",
+        "binary_dice",
+        "pixel_accuracy"
+      ],
+      "restricted_classification_metrics": [
+        "accuracy",
+        "mel_recall",
+        "nv_recall",
+        "balanced_recall",
+        "mel_to_nv_rate",
+        "nv_to_mel_rate",
+        "nll",
+        "brier",
+        "ece"
+      ],
+      "restricted_classification_bootstrap_ci": [
+        "accuracy",
+        "mel_recall",
+        "nv_recall",
+        "balanced_recall",
+        "mel_to_nv_rate",
+        "nv_to_mel_rate"
+      ],
+      "external_metrics": [
+        "binary_iou",
+        "binary_dice",
+        "pixel_accuracy"
+      ],
+      "joint_score_on_test_permitted": false,
+      "acceptance_gate": "none_descriptive_final_evaluation"
+    }
+  },
+  "prepared_only": false
+}

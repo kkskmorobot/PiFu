@@ -1,0 +1,65 @@
+# runs4: YOLO26 semantic-segmentation baseline for the seven skin diseases.
+# Ultralytics converts the existing YOLO polygons into 8 pixel classes:
+# 0..6 = diseases, 7 = background. This changes the principal segmentation
+# metric from instance mask mAP to semantic mIoU/Dice, so image-level disease
+# precision/recall must also be reported for comparison with runs3.
+
+model: models/yolo26s-sem.pt
+data: Data/processed_skin7_v3/data.yaml
+
+epochs: 150
+patience: 30
+batch: 16
+imgsz: 640
+device: 0
+workers: 8
+
+project: experiments/04_YOLO26s_Semantic_C2PSA/reruns/semantic
+name: skin7_yolo26s_sem_balanced
+exist_ok: false
+pretrained: true
+
+# Keep the proven fine-tuning optimizer first. YOLO26's MuSGD can be a later
+# controlled ablation instead of confounding this architecture experiment.
+optimizer: AdamW
+lr0: 0.001
+lrf: 0.01
+cos_lr: true
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 3.0
+
+# Damped ENet inverse-log pixel-frequency weights. 0 disables weighting and
+# 1 applies full weighting; 0.5 is deliberately conservative for synthetic data.
+cls_pw: 0.5
+
+seed: 42
+deterministic: true
+amp: true
+cache: false
+save: true
+save_period: 10
+plots: true
+val: true
+
+# Lesions are single, large and centered. Preserve clinical color/texture and
+# avoid unrealistic four-image mosaics on top of the offline augmentation.
+hsv_h: 0.005
+hsv_s: 0.10
+hsv_v: 0.10
+degrees: 5.0
+translate: 0.03
+scale: 0.10
+shear: 0.0
+perspective: 0.0
+flipud: 0.5
+fliplr: 0.5
+mosaic: 0.0
+mixup: 0.0
+cutmix: 0.0
+copy_paste: 0.0
+close_mosaic: 0
+
+single_cls: false
+rect: false
+multi_scale: false

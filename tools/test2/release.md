@@ -1,0 +1,12 @@
+# Test2 发布门
+
+`PROJECT_TEST2_GATE=PASS`
+`TEST2_READY_GATE=PASS`
+`USER_CONFIRMATION_RECORDED=TRUE`
+`ONE_TIME_FINAL_EVALUATION_AUTHORIZED=CONSUMED`
+`TRAINING_PERFORMED=FALSE`
+`TEST2_RESULT_STATUS=COMPLETE`
+`TEST_METRICS_USED=TRUE`
+`EXTERNAL_METRICS_USED=TRUE`
+
+预注册、静态检查、冻结输入检查、checkpoint 哈希与 GPU 零张量预检均已通过。用户于 2026-09-16 明确要求不足半小时的 test/val 由 Codex 直接运行，本文件记录该次新鲜授权。Test2 已于 2026-09-16 01:01:18 +0800 完成，一次性授权已消费。正式结果为 `experiments/test2/results/result.json`，SHA-256 `221870ed599a77b07952661b3d30ce0182910e466c21aad613f83f93f8e0f011`，fingerprint `ddd383a0c902ceba296e14fdf9890873d4ba44611598d0a5259a63af153bfd15`。全程没有训练、调参、校准或事后 seed 选择。

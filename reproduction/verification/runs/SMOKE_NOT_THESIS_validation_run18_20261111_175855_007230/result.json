@@ -1,0 +1,338 @@
+{
+  "status": "COMPLETE",
+  "mode": "SMOKE_NOT_THESIS",
+  "smoke_not_thesis": true,
+  "run": "run18",
+  "weight_source": {
+    "source": "D:\\Data\\project\\PiFu\\weights\\run18\\frozen_eval.pt",
+    "sha256": "f51a465b92097b9cc40e57e83806b9f9a3f259f6383f166aa55d491cfc2a5683",
+    "source_bundle": "experiments/18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop/results/run18_yolo26m_plain_delayed_utility_early_stop_seed42/checkpoint_bundles/epoch_0049",
+    "state": "exact_fp32_ema_export",
+    "original_runtime_sha256": "d746270550e867926d91cd498984ac4e339a0badf953f66a2b74ccbdd7e3d7bd"
+  },
+  "metrics": {
+    "metrics/mIoU": 0.8277,
+    "metrics/pixel_acc": 0.93296,
+    "fitness": 0.30786,
+    "metrics/binary_lesion_iou": 0.8277,
+    "metrics/binary_lesion_dice": 0.90573,
+    "metrics/image_macro_f1": 0.34375,
+    "metrics/image_macro_recall": 0.45833,
+    "metrics/group_macro_f1": 0.34375,
+    "metrics/group_macro_recall": 0.45833,
+    "metrics/group_mel_to_nv_rate": 0.33333,
+    "metrics/group_malignant_to_benign_rate": 0.2,
+    "metrics/group_nll": 1.68432,
+    "metrics/group_brier": 0.52966,
+    "metrics/group_ece": 0.28259,
+    "metrics/joint_score": 0.53341,
+    "metrics/feasible_joint": 0.0
+  },
+  "group_classification": {
+    "samples": 12,
+    "accuracy": 0.5833333333333334,
+    "macro_precision": 0.2833333333333333,
+    "macro_recall": 0.4583333333333333,
+    "macro_f1": 0.34375,
+    "mel_to_nv": 1,
+    "mel_to_nv_rate": 0.3333333333333333,
+    "nv_to_mel": 0,
+    "nv_to_mel_rate": 0.0,
+    "malignant_to_benign": 1,
+    "malignant_to_benign_rate": 0.2,
+    "per_class": [
+      {
+        "class": "akiec",
+        "support": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      {
+        "class": "bcc",
+        "support": 1,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666
+      },
+      {
+        "class": "bkl",
+        "support": 1,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666
+      },
+      {
+        "class": "df",
+        "support": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      {
+        "class": "mel",
+        "support": 3,
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "f1": 0.6666666666666666
+      },
+      {
+        "class": "nv",
+        "support": 3,
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.7499999999999999
+      },
+      {
+        "class": "vasc",
+        "support": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      {
+        "class": "scc",
+        "support": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    ]
+  },
+  "group_calibration": {
+    "nll": 1.6843183163053206,
+    "multiclass_brier": 0.5296613667441642,
+    "ece": 0.2825927734375,
+    "ece_bins": 15
+  },
+  "group_predictions": [
+    {
+      "group_id": "CLS19G00407",
+      "images": 1,
+      "true_id": 2,
+      "true_class": "bkl",
+      "pred_id": 2,
+      "pred_class": "bkl",
+      "correct": true,
+      "probabilities": [
+        0.0258636474609375,
+        0.0028209686279296875,
+        0.85595703125,
+        0.0001175999641418457,
+        0.002811431884765625,
+        0.11181640625,
+        5.364418029785156e-07,
+        0.0007023811340332031
+      ]
+    },
+    {
+      "group_id": "CLS19G02066",
+      "images": 1,
+      "true_id": 7,
+      "true_class": "scc",
+      "pred_id": 1,
+      "pred_class": "bcc",
+      "correct": false,
+      "probabilities": [
+        0.432861328125,
+        0.51806640625,
+        0.0163421630859375,
+        3.8623809814453125e-05,
+        0.01149749755859375,
+        0.0008502006530761719,
+        0.0001544952392578125,
+        0.020355224609375
+      ]
+    },
+    {
+      "group_id": "CLS19G02073",
+      "images": 1,
+      "true_id": 1,
+      "true_class": "bcc",
+      "pred_id": 1,
+      "pred_class": "bcc",
+      "correct": true,
+      "probabilities": [
+        0.0211639404296875,
+        0.97705078125,
+        0.00037217140197753906,
+        1.7881393432617188e-07,
+        0.00017726421356201172,
+        1.0311603546142578e-05,
+        5.960464477539063e-08,
+        0.0014181137084960938
+      ]
+    },
+    {
+      "group_id": "CLS19G02195",
+      "images": 1,
+      "true_id": 0,
+      "true_class": "akiec",
+      "pred_id": 2,
+      "pred_class": "bkl",
+      "correct": false,
+      "probabilities": [
+        0.360107421875,
+        0.002696990966796875,
+        0.61376953125,
+        0.0017862319946289062,
+        0.0189361572265625,
+        0.0022220611572265625,
+        4.2438507080078125e-05,
+        0.00035572052001953125
+      ]
+    },
+    {
+      "group_id": "CLS19G03012",
+      "images": 1,
+      "true_id": 3,
+      "true_class": "df",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": false,
+      "probabilities": [
+        2.4974346160888672e-05,
+        0.0001437664031982422,
+        0.0011644363403320312,
+        2.205371856689453e-05,
+        0.269287109375,
+        0.7294921875,
+        2.2113323211669922e-05,
+        2.5570392608642578e-05
+      ]
+    },
+    {
+      "group_id": "CLS19G04390",
+      "images": 1,
+      "true_id": 6,
+      "true_class": "vasc",
+      "pred_id": 4,
+      "pred_class": "mel",
+      "correct": false,
+      "probabilities": [
+        4.5180320739746094e-05,
+        0.11309814453125,
+        0.019195556640625,
+        0.0207366943359375,
+        0.55517578125,
+        0.004802703857421875,
+        0.27783203125,
+        0.00908660888671875
+      ]
+    },
+    {
+      "group_id": "G00173",
+      "images": 1,
+      "true_id": 4,
+      "true_class": "mel",
+      "pred_id": 4,
+      "pred_class": "mel",
+      "correct": true,
+      "probabilities": [
+        1.1920928955078125e-06,
+        0.0001767873764038086,
+        0.0015420913696289062,
+        4.172325134277344e-07,
+        0.99609375,
+        0.0019159317016601562,
+        4.708766937255859e-06,
+        0.00022125244140625
+      ]
+    },
+    {
+      "group_id": "G00187",
+      "images": 1,
+      "true_id": 5,
+      "true_class": "nv",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": true,
+      "probabilities": [
+        2.1457672119140625e-06,
+        0.0,
+        0.00022268295288085938,
+        0.0,
+        0.0038013458251953125,
+        0.99609375,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "group_id": "G00268",
+      "images": 1,
+      "true_id": 5,
+      "true_class": "nv",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": true,
+      "probabilities": [
+        5.960464477539063e-08,
+        0.0,
+        7.82012939453125e-05,
+        0.0,
+        0.002849578857421875,
+        0.9970703125,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "group_id": "G00287",
+      "images": 1,
+      "true_id": 4,
+      "true_class": "mel",
+      "pred_id": 4,
+      "pred_class": "mel",
+      "correct": true,
+      "probabilities": [
+        0.0003638267517089844,
+        3.635883331298828e-05,
+        0.0105438232421875,
+        2.086162567138672e-06,
+        0.77685546875,
+        0.2122802734375,
+        2.384185791015625e-07,
+        1.1563301086425781e-05
+      ]
+    },
+    {
+      "group_id": "G00303",
+      "images": 1,
+      "true_id": 4,
+      "true_class": "mel",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": false,
+      "probabilities": [
+        0.0002682209014892578,
+        7.897615432739258e-05,
+        0.11749267578125,
+        1.823902130126953e-05,
+        0.0601806640625,
+        0.82177734375,
+        8.940696716308594e-07,
+        1.7404556274414062e-05
+      ]
+    },
+    {
+      "group_id": "G00313",
+      "images": 1,
+      "true_id": 5,
+      "true_class": "nv",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": true,
+      "probabilities": [
+        6.67572021484375e-06,
+        3.3795833587646484e-05,
+        0.0008893013000488281,
+        1.4126300811767578e-05,
+        0.03887939453125,
+        0.9599609375,
+        1.9669532775878906e-06,
+        6.556510925292969e-07
+      ]
+    }
+  ]
+}

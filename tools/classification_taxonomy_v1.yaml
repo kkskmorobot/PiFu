@@ -1,0 +1,41 @@
+version: classification_taxonomy_v1
+source: ISIC_2019_Training_GroundTruth
+num_classes: 8
+classes:
+  0:
+    name: akiec
+    official_column: AK
+  1:
+    name: bcc
+    official_column: BCC
+  2:
+    name: bkl
+    official_column: BKL
+  3:
+    name: df
+    official_column: DF
+  4:
+    name: mel
+    official_column: MEL
+  5:
+    name: nv
+    official_column: NV
+  6:
+    name: vasc
+    official_column: VASC
+  7:
+    name: scc
+    official_column: SCC
+excluded_official_columns:
+  UNK: absent_from_official_training_ground_truth
+malignant_classes:
+  - mel
+  - bcc
+  - scc
+risk_pairs:
+  - true: mel
+    predicted: nv
+  - true: nv
+    predicted: mel
+label_source_policy: official_one_hot_only
+test_policy: forbidden_until_final_model_is_locked_and_user_explicitly_authorizes

@@ -1,0 +1,21 @@
+path: E:/App/DaiMa/JetBrains/Project/PiFuV2/Data/processed_skin7_v3
+train: images/train
+val: images/val
+test: images/test
+
+# YOLO26 semantic checkpoints have an explicit eighth background output.
+# These two fields prevent standalone validation from treating class 6 (vasc)
+# as the polygon background class.
+nc: 8
+bg_class_idx: 7
+_polygon_bg_added: true
+
+names:
+  0: akiec
+  1: bcc
+  2: bkl
+  3: df
+  4: mel
+  5: nv
+  6: vasc
+  7: background

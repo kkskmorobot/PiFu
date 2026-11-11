@@ -1,0 +1,261 @@
+{
+  "model": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\runs3\\segment\\skin7_yolo11s_nv3200\\weights\\best.pt",
+  "split": "val",
+  "confidence": 0.25,
+  "images": 1504,
+  "overall_detection_coverage": 0.99,
+  "overall_top1_accuracy": 0.8238,
+  "per_class": {
+    "akiec": {
+      "images": 49,
+      "detection_coverage": 0.9388,
+      "top1_precision": 0.6316,
+      "top1_recall": 0.4898,
+      "top1_correct": 24,
+      "no_prediction": 3,
+      "correct_class_but_mask_iou_below_05": 1,
+      "mean_mask_iou_when_class_correct": 0.8231,
+      "mean_box_iou_when_class_correct": 0.8734
+    },
+    "bcc": {
+      "images": 77,
+      "detection_coverage": 0.9481,
+      "top1_precision": 0.7297,
+      "top1_recall": 0.7013,
+      "top1_correct": 54,
+      "no_prediction": 4,
+      "correct_class_but_mask_iou_below_05": 2,
+      "mean_mask_iou_when_class_correct": 0.776,
+      "mean_box_iou_when_class_correct": 0.8016
+    },
+    "bkl": {
+      "images": 165,
+      "detection_coverage": 0.9697,
+      "top1_precision": 0.6648,
+      "top1_recall": 0.7212,
+      "top1_correct": 119,
+      "no_prediction": 5,
+      "correct_class_but_mask_iou_below_05": 2,
+      "mean_mask_iou_when_class_correct": 0.8836,
+      "mean_box_iou_when_class_correct": 0.8952
+    },
+    "df": {
+      "images": 18,
+      "detection_coverage": 1.0,
+      "top1_precision": 0.7692,
+      "top1_recall": 0.5556,
+      "top1_correct": 10,
+      "no_prediction": 0,
+      "correct_class_but_mask_iou_below_05": 0,
+      "mean_mask_iou_when_class_correct": 0.8452,
+      "mean_box_iou_when_class_correct": 0.8665
+    },
+    "mel": {
+      "images": 167,
+      "detection_coverage": 1.0,
+      "top1_precision": 0.565,
+      "top1_recall": 0.7545,
+      "top1_correct": 126,
+      "no_prediction": 0,
+      "correct_class_but_mask_iou_below_05": 2,
+      "mean_mask_iou_when_class_correct": 0.9146,
+      "mean_box_iou_when_class_correct": 0.9297
+    },
+    "nv": {
+      "images": 1006,
+      "detection_coverage": 0.998,
+      "top1_precision": 0.9449,
+      "top1_recall": 0.8857,
+      "top1_correct": 891,
+      "no_prediction": 2,
+      "correct_class_but_mask_iou_below_05": 8,
+      "mean_mask_iou_when_class_correct": 0.926,
+      "mean_box_iou_when_class_correct": 0.9328
+    },
+    "vasc": {
+      "images": 22,
+      "detection_coverage": 0.9545,
+      "top1_precision": 0.7895,
+      "top1_recall": 0.6818,
+      "top1_correct": 15,
+      "no_prediction": 1,
+      "correct_class_but_mask_iou_below_05": 0,
+      "mean_mask_iou_when_class_correct": 0.8962,
+      "mean_box_iou_when_class_correct": 0.9017
+    }
+  },
+  "largest_error_pairs": [
+    [
+      "nv->mel",
+      66
+    ],
+    [
+      "nv->bkl",
+      34
+    ],
+    [
+      "mel->nv",
+      26
+    ],
+    [
+      "bkl->mel",
+      17
+    ],
+    [
+      "bkl->nv",
+      12
+    ],
+    [
+      "mel->bkl",
+      11
+    ],
+    [
+      "nv->bcc",
+      9
+    ],
+    [
+      "akiec->mel",
+      8
+    ],
+    [
+      "akiec->bkl",
+      8
+    ],
+    [
+      "bcc->nv",
+      8
+    ],
+    [
+      "bkl->akiec",
+      7
+    ],
+    [
+      "akiec->bcc",
+      5
+    ],
+    [
+      "bkl->no_prediction",
+      5
+    ],
+    [
+      "bcc->no_prediction",
+      4
+    ],
+    [
+      "bkl->bcc",
+      4
+    ],
+    [
+      "bcc->akiec",
+      4
+    ],
+    [
+      "df->bkl",
+      3
+    ],
+    [
+      "bcc->bkl",
+      3
+    ],
+    [
+      "akiec->no_prediction",
+      3
+    ],
+    [
+      "bcc->mel",
+      3
+    ],
+    [
+      "df->nv",
+      3
+    ],
+    [
+      "nv->no_prediction",
+      2
+    ],
+    [
+      "nv->vasc",
+      2
+    ],
+    [
+      "vasc->nv",
+      2
+    ],
+    [
+      "vasc->mel",
+      2
+    ]
+  ],
+  "confusion_true_rows_predicted_columns_plus_no_prediction": [
+    [
+      24,
+      5,
+      8,
+      0,
+      8,
+      1,
+      0,
+      3
+    ],
+    [
+      4,
+      54,
+      3,
+      0,
+      3,
+      8,
+      1,
+      4
+    ],
+    [
+      7,
+      4,
+      119,
+      1,
+      17,
+      12,
+      0,
+      5
+    ],
+    [
+      1,
+      0,
+      3,
+      10,
+      1,
+      3,
+      0,
+      0
+    ],
+    [
+      1,
+      2,
+      11,
+      0,
+      126,
+      26,
+      1,
+      0
+    ],
+    [
+      1,
+      9,
+      34,
+      1,
+      66,
+      891,
+      2,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      15,
+      1
+    ]
+  ]
+}

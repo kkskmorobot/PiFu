@@ -1,0 +1,22 @@
+{
+  "status": "PREFLIGHT_PASS_PENDING_FRESH_USER_CONFIRMATION",
+  "prepared_local_time": "2026-09-11 14:28:25 +0800",
+  "config_sha256": "c52579693178474e0bea80c8b5878a0420c7d6261f292bc3ad85900323801722",
+  "fingerprint": "e6b1cfa834cc682922527cd1898ea6ea65a8f4999593bb70bba5e85c3fb20d42",
+  "locked_files": {
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test1\\test1.yaml": "c52579693178474e0bea80c8b5878a0420c7d6261f292bc3ad85900323801722",
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test1\\protocol.md": "7628252d1b6fb626dcf3d6c65c025122aed33dc7681ca8a78b760826eefad571",
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test1\\unit.py": "df46dfb265ea267f3393e50390288d221505e61df67b53f877c9a2d9e1ca6786",
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test1\\inputs.py": "1621de6c5bb56a790553348102d4c67c5682ea4b9308f48c709d453465128d3b",
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\val1\\PROJECT_FINAL_MODEL_LOCK_2026-09-11.md": "839a22d9933dff4d99248b4f69dc5884195933b1dfcc727e80055adb599a307a",
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test1\\data_test.yaml": "85e872c2f33b38c3897b69de2e8a7cef0dab690dd60e6ab440716f3869ee044f",
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test1\\data_external.yaml": "9a54707c26c021d932946f3fa9167827d676cf63ba0d32291aad21eb9df7e355",
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test1\\manifest_test.csv": "f3925b5cb7a78bf6ae8dc2d9ba5b219dd008610475207c1ab210374099950ee3",
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test1\\manifest_external.csv": "4d601c29e98462537fe6b184f175dc6adda52491a74ea03cb6e5a4c4c4e86a4f",
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test1\\test.py": "5306d66fe0596c07fb84dd870d834ddc02d87e1630e8ab7b17fb9567d0575984"
+  },
+  "formal_output_exists": false,
+  "test_inference_performed": false,
+  "external_inference_performed": false,
+  "training_performed": false
+}

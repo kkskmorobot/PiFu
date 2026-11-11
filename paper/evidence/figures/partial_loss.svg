@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="900" height="390" preserveAspectRatio="xMinYMin meet" viewBox="0 0 900 390" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="900" height="390"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-390)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="900" height="390" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="20" y="270" width="235" height="95" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="71.5" y="337.74" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,675) scale(1,-1)">一个混合批次</text>
+			<text x="33.0" y="310.24" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,620) scale(1,-1)">分割标签 / 分类标签</text>
+			<text x="49.5" y="282.74" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,565) scale(1,-1)">可同时存在或缺失</text>
+			<rect x="335" y="295" width="235" height="75" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="352.5" y="338.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,676) scale(1,-1)">has_seg筛选有效像素V</text>
+			<text x="377.5" y="313.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,626) scale(1,-1)">缺失掩膜255忽略</text>
+			<rect x="335" y="145" width="235" height="75" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="372.5" y="188.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,376) scale(1,-1)">has_cls筛选样本C</text>
+			<text x="377.5" y="163.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,326) scale(1,-1)">缺失类别−1屏蔽</text>
+			<path d="M 255,330 L 335,332 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="335 332, 325.8896 327.8768, 325.6949 335.6628" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 255,305 L 335,185 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="335 185, 326.6507 190.5036, 333.131 194.8238" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="640" y="280" width="235" height="95" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="702.5" y="347.74" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,695) scale(1,-1)">BCE + Dice</text>
+			<text x="680.5" y="320.24" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,640) scale(1,-1)">+ 0.4×辅助BCE</text>
+			<text x="719.0" y="292.74" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,585) scale(1,-1)">→ Lseg</text>
+			<rect x="640" y="130" width="235" height="100" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="710.25" y="199.32" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,398) scale(1,-1)">C上分类CE</text>
+			<text x="673.5" y="173.07" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,346) scale(1,-1)">C上一次批次均衡R</text>
+			<text x="678.75" y="146.82" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,293) scale(1,-1)">→ Lcls + 0.01R</text>
+			<path d="M 570,332 L 640,332 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="640 332, 630.7894 328.1058, 630.7894 335.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 570,183 L 640,183 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="640 183, 630.7894 179.1058, 630.7894 186.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="220" y="25" width="620" height="65" rx="5" ry="5" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(91%,96%,94%); fill-rule: evenodd;"/>
+			<text x="286.25" y="49.25" style="font-family: SimHei; font-size: 25px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,98) scale(1,-1)">总损失：B×[Lseg + 0.5×(Lcls + 0.01R)]</text>
+			<polyline points="757 280, 893 280, 893 105, 820 105" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8; fill: None; fill-rule: evenodd;"/>
+			<path d="M 820,105 L 820,90 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="820 90, 816.1058 99.21061, 823.8942 99.21061" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 757,130 L 757,90 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="757 90, 753.1058 99.21061, 760.8942 99.21061" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<text x="83.5" y="210.0" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,420) scale(1,-1)">双监督样本</text>
+			<text x="73.0" y="183.75" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,367) scale(1,-1)">进入两条路径</text>
+		</g>
+	</g>
+</svg>

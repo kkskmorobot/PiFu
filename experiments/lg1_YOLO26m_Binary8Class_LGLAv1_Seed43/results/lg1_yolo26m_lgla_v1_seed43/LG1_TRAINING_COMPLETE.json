@@ -1,0 +1,23 @@
+{
+  "status": "TRAINING_COMPLETE_OR_NORMAL_EARLY_STOP",
+  "completed_local_time": "2026-09-13 03:37:09 +0800",
+  "last_completed_epoch": 99,
+  "aliases": {
+    "best_binary_iou": {
+      "bundle": "epoch_0027",
+      "epoch": 27
+    },
+    "best_joint_score": {
+      "bundle": "epoch_0083",
+      "epoch": 83
+    },
+    "best_macro_f1": {
+      "bundle": "epoch_0083",
+      "epoch": 83
+    }
+  },
+  "primary_selection_alias": "best_feasible_joint",
+  "test_metrics_used": false,
+  "external_metrics_used": false,
+  "next_action": "Return to Codex for val-only model lock; do not run test or external evaluation."
+}

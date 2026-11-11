@@ -1,0 +1,220 @@
+{
+  "entrypoints": [
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\run18\\train_run18_from_pycharm.py",
+      "direct_execution": "portable train --run run18",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\run22\\train_run22_from_pycharm.py",
+      "direct_execution": "portable train --run run22",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\run24\\train_run24_from_pycharm.py",
+      "direct_execution": "portable train --run run24",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\run21\\train_run21_from_pycharm.py",
+      "direct_execution": "portable train --run run21",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\run23\\train_run23_from_pycharm.py",
+      "direct_execution": "portable train --run run23",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\run25\\train_run25_from_pycharm.py",
+      "direct_execution": "portable train --run run25",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\run26\\train_run26_from_pycharm.py",
+      "direct_execution": "portable train --run run26",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\run27\\train_run27_from_pycharm.py",
+      "direct_execution": "portable train --run run27",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\run28\\train_run28_from_pycharm.py",
+      "direct_execution": "portable train --run run28",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\run33\\train_run33_from_pycharm.py",
+      "direct_execution": "portable train --run run33",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\lg1\\train_lg1_from_pycharm.py",
+      "direct_execution": "portable train --run lg1",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\lg2\\train_lg2_from_pycharm.py",
+      "direct_execution": "portable train --run lg2",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\lgx\\train_lgx_from_pycharm.py",
+      "direct_execution": "portable train --run lgx",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\lg3\\train_lg3_from_pycharm.py",
+      "direct_execution": "portable train --run lg3",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\ab1\\train_ab1_from_pycharm.py",
+      "direct_execution": "portable train --run ab1",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\ab2\\train_ab2_from_pycharm.py",
+      "direct_execution": "portable train --run ab2",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\test1\\test.py",
+      "direct_execution": "portable evaluate --suite test1",
+      "legacy_gates_executed": false
+    },
+    {
+      "path": "D:\\Data\\project\\PiFu\\tools\\test2\\test.py",
+      "direct_execution": "portable evaluate --suite test2",
+      "legacy_gates_executed": false
+    }
+  ],
+  "entrypoint_count": 18,
+  "all_direct_entrypoints_bypass_human_authorization_and_one_shot_gates": true,
+  "early_stopping": [
+    {
+      "run": "run18",
+      "module": "D:\\Data\\project\\PiFu\\tools\\run18\\imaplusplus_partial_multitask_delayed_early_stop_v1.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "run22",
+      "module": "D:\\Data\\project\\PiFu\\tools\\run22\\imaplusplus_partial_multitask_plain_seed43_v1.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "run24",
+      "module": "D:\\Data\\project\\PiFu\\tools\\run24\\imaplusplus_partial_multitask_plain_seed44_v1.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "run21",
+      "module": "D:\\Data\\project\\PiFu\\tools\\run21\\imaplusplus_partial_multitask_p3p4_eca_attention_v1.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "run23",
+      "module": "D:\\Data\\project\\PiFu\\tools\\run23\\imaplusplus_partial_multitask_p3p4_eca_attention_seed43_v1.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "run25",
+      "module": "D:\\Data\\project\\PiFu\\tools\\run25\\imaplusplus_partial_multitask_p3p4_eca_attention_seed44_v1.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "run26",
+      "module": "D:\\Data\\project\\PiFu\\tools\\run26\\imaplusplus_partial_multitask_p3p4_eca_spatial_attention_seed44_v1.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "run27",
+      "module": "D:\\Data\\project\\PiFu\\tools\\run27\\imaplusplus_partial_multitask_p3p4_eca_spatial_attention_seed42_v1.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "run28",
+      "module": "D:\\Data\\project\\PiFu\\tools\\run28\\imaplusplus_partial_multitask_p3p4_eca_spatial_attention_seed43_v1.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "run33",
+      "module": "D:\\Data\\project\\PiFu\\tools\\run33\\imaplusplus_partial_multitask_p3p4_standard_cbam_seed43_v1.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "lg1",
+      "module": "D:\\Data\\project\\PiFu\\tools\\lg1\\imaplusplus_partial_multitask_lgla_v1_seed43.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "lg2",
+      "module": "D:\\Data\\project\\PiFu\\tools\\lg2\\imaplusplus_partial_multitask_lgla_v1_gate_balance_seed42.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "lgx",
+      "module": "D:\\Data\\project\\PiFu\\tools\\lgx\\imaplusplus_partial_multitask_lgla_v1_gate_balance_seed43.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "lg3",
+      "module": "D:\\Data\\project\\PiFu\\tools\\lg3\\imaplusplus_partial_multitask_lgla_v1_gate_balance_seed44.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "ab1",
+      "module": "D:\\Data\\project\\PiFu\\tools\\ab1\\imaplusplus_partial_multitask_lgla_v1_unguided_gate_balance_seed43.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    },
+    {
+      "run": "ab2",
+      "module": "D:\\Data\\project\\PiFu\\tools\\ab2\\imaplusplus_partial_multitask_lgla_v1_fixed_equal_fusion_seed43.py",
+      "default_40_30_unchanged": true,
+      "editable_yaml_5_7_applied": true,
+      "cli_0_0_applied": true
+    }
+  ],
+  "portable_train_source": "C:\\Users\\ROBOT\\Documents\\皮肤识别\\repro_stage\\reproduction\\run.py",
+  "config_audit": "Training/validation load YAML without original SHA/value locking. check audits paper defaults independently. Full frozen evaluation intentionally verifies published split/taxonomy/model integrity. New weights are independently verified and labelled NEW_TRAINING_EVALUATION or DEPLOYMENT_WEIGHTS_EVALUATION.",
+  "repeat_run_policy": "Every invocation creates a timestamped outputs directory; historical complete/ready states do not block execution.",
+  "preserved_structure_requirements": [
+    "Existing model architecture/channel/class compatibility",
+    "Partial-label masks and availability consistency",
+    "Bundle file SHA and strict EMA state loading",
+    "A new bundle requires --run to select its model class",
+    "Frozen evaluation preserves the original held-out split"
+  ]
+}

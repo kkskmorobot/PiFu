@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "prepared_local_time": "2026-09-16 00:59:00 +0800",
+  "config_sha256": "cc0885a90767d939b589afb47405ef0d43f95a4c759e60571b4c0bf828cf3578",
+  "fingerprint": "ddd383a0c902ceba296e14fdf9890873d4ba44611598d0a5259a63af153bfd15",
+  "inputs": {
+    "internal": {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test2\\manifest_test.csv",
+      "sha256": "f3925b5cb7a78bf6ae8dc2d9ba5b219dd008610475207c1ab210374099950ee3",
+      "counts": {
+        "total": 634,
+        "segmentation": 634,
+        "classification": 56,
+        "mel": 16,
+        "nv": 40
+      },
+      "yaml": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test2\\data_test.yaml",
+      "yaml_sha256": "d076ba6226129264efcfed3b095605fd570b25857ae060e155fc72b8bb21bbf2",
+      "source_manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\multitask_manifest.csv"
+    },
+    "external": {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test2\\manifest_external.csv",
+      "sha256": "4d601c29e98462537fe6b184f175dc6adda52491a74ea03cb6e5a4c4c4e86a4f",
+      "counts": {
+        "total": 89,
+        "segmentation": 89,
+        "classification": 0,
+        "mel": 0,
+        "nv": 0
+      },
+      "yaml": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\test2\\data_external.yaml",
+      "yaml_sha256": "6803ee71a9c2b929110baf41861cc747d4fefd5a40deb98c3ebf13f90abf63d8",
+      "source_manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2018_task1_incremental_v1\\manifest.csv"
+    },
+    "id_overlap": 0,
+    "sha256_overlap": 0,
+    "taxonomy": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml",
+    "pad_ufes_20_present": false
+  },
+  "checkpoints": [
+    {
+      "run": "LG2",
+      "seed": 42,
+      "bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42\\results\\lg2_yolo26m_lgla_v1_gate_balance_seed42\\checkpoint_bundles\\epoch_0073",
+      "fingerprint": "16f9505ad452813aac9eb85e1b4cb176d077ff9d16a30ac20965ff3efbd87df4"
+    },
+    {
+      "run": "LGX",
+      "seed": 43,
+      "bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43\\results\\lgx_yolo26m_lgla_v1_gate_balance_seed43\\checkpoint_bundles\\epoch_0098",
+      "fingerprint": "3a9aa4156828bd2e5af1b1f44a62929041cde5895d01ed995c8c5af823186ac0"
+    },
+    {
+      "run": "LG3",
+      "seed": 44,
+      "bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg3_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed44\\results\\lg3_yolo26m_lgla_v1_gate_balance_seed44\\checkpoint_bundles\\epoch_0096",
+      "fingerprint": "4a7c29f336b7ea28d8fbfe38e5e51cdff21f68ba418c78fddedbceb6956642aa"
+    }
+  ],
+  "gpu_smoke": {
+    "device": "cuda:0",
+    "model_class": "LGLAV1MultiTaskModel",
+    "parameters": 14540748,
+    "output_shapes": [
+      [
+        1,
+        1,
+        80,
+        80
+      ],
+      [
+        1,
+        8
+      ]
+    ],
+    "all_finite": true,
+    "model_state_unchanged": true,
+    "weight_source": {
+      "structure_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42\\results\\lg2_yolo26m_lgla_v1_gate_balance_seed42\\checkpoint_bundles\\epoch_0073\\trainer.pt",
+      "state_source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42\\results\\lg2_yolo26m_lgla_v1_gate_balance_seed42\\checkpoint_bundles\\epoch_0073\\runtime_state.pt::training_state.ema",
+      "exact_ema_loaded": true
+    },
+    "optimizer_created": false,
+    "backward_called": false,
+    "test_images_loaded": false
+  },
+  "formal_output_exists": false,
+  "test_inference_performed": false,
+  "external_inference_performed": false,
+  "training_performed": false,
+  "pad_ufes_20_used": false
+}

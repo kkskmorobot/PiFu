@@ -1,0 +1,10 @@
+{
+  "status": "STARTING_OR_RESUMING",
+  "started_local_time": "2026-08-14 09:45:13 +0800",
+  "entrypoint": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run21\\train_run21_from_pycharm.py",
+  "config_sha256": "af4fa31a4cb9db0da5d090f70314d08f71667a05a078ee61af37dede9415abbb",
+  "fingerprint": "b7b853c4284037a6d51d0e66e10cd0302d167bf4ab30c7b32f512f6f137fb1a9",
+  "resume_bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\21_YOLO26m_Binary8Class_P3P4_ECAOnlyAttention\\results\\run21_yolo26m_p3p4_eca_only_attention_seed42\\checkpoint_bundles\\epoch_0011",
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

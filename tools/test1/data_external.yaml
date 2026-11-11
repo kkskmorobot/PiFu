@@ -1,0 +1,11 @@
+# Test1 ISIC2018 incremental external segmentation input; evaluation only.
+path: E:/App/DaiMa/JetBrains/Project/PiFuV2/Data
+train: null
+val: processed_isic2018_task1_incremental_v1/images/external_candidate
+test: null
+masks_dir: masks
+nc: 1
+names:
+  0: lesion
+partial_label_manifest: E:/App/DaiMa/JetBrains/Project/PiFuV2/tools/test1/manifest_external.csv
+classification_taxonomy: E:/App/DaiMa/JetBrains/Project/PiFuV2/tools/classification_taxonomy_v1.yaml

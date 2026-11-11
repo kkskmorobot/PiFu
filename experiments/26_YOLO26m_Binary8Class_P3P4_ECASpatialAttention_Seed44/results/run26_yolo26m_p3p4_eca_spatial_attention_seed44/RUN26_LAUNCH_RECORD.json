@@ -1,0 +1,10 @@
+{
+  "status": "STARTING_OR_RESUMING",
+  "started_local_time": "2026-09-04 18:06:40 +0800",
+  "entrypoint": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run26\\train_run26_from_pycharm.py",
+  "config_sha256": "60f24b15ec51995f9728e86777bda3dcf6274bb7feac5cfd92652ed7e4500546",
+  "fingerprint": "a440204a90d71e79e1d1c9cfa25fadcdc7a0c76854db469a01387bae6451abd7",
+  "resume_bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\26_YOLO26m_Binary8Class_P3P4_ECASpatialAttention_Seed44\\results\\run26_yolo26m_p3p4_eca_spatial_attention_seed44\\checkpoint_bundles\\epoch_0041",
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

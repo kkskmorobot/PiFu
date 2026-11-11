@@ -1,0 +1,87 @@
+{
+  "copy_root": "D:\\Data\\project\\PiFu",
+  "dry_run": false,
+  "modified_files": [
+    {
+      "path": "tools/lg2/imaplusplus_partial_multitask_lgla_v1_gate_balance_seed42.py",
+      "reason": "Allow any finite nonnegative gate_balance_weight; default 0.01 and formula unchanged",
+      "before_sha256": "c2349c26d1ed2b9f63c024c630454fb8d616d27451e20a5a03444d4de4b9bf9f",
+      "after_sha256": "25d09875049f861bbfc9bbdac45182d1810db9c0647b87a72458b426703d0fea",
+      "modified": true,
+      "original_constants_unchanged": true,
+      "all_forward_and_loss_arithmetic_methods_unchanged": true,
+      "changed_nonconstructor_methods": []
+    },
+    {
+      "path": "tools/lgx/imaplusplus_partial_multitask_lgla_v1_gate_balance_seed43.py",
+      "reason": "Allow any finite nonnegative gate_balance_weight; default 0.01 and formula unchanged",
+      "before_sha256": "967f44959eab30fe7bec4510bd6afc32bbffb601d14d7f47fb30ef087a86cd48",
+      "after_sha256": "bc51bc33a29a21b8bb8d3c2a3a9a93bb4c4ee3916cb1b6b6a71892c32e9ec53a",
+      "modified": true,
+      "original_constants_unchanged": true,
+      "all_forward_and_loss_arithmetic_methods_unchanged": true,
+      "changed_nonconstructor_methods": []
+    },
+    {
+      "path": "tools/lg3/imaplusplus_partial_multitask_lgla_v1_gate_balance_seed44.py",
+      "reason": "Allow any finite nonnegative gate_balance_weight; default 0.01 and formula unchanged",
+      "before_sha256": "f0ecd3d3125049e3ad7bd25c5fded61670cbafdf623e7de902ccb93e9ff4174b",
+      "after_sha256": "f4a68dbe949fd0d772082e4bf94492ce4d6365e87c4334f6c40cc65dc7e252e6",
+      "modified": true,
+      "original_constants_unchanged": true,
+      "all_forward_and_loss_arithmetic_methods_unchanged": true,
+      "changed_nonconstructor_methods": []
+    },
+    {
+      "path": "tools/ab1/imaplusplus_partial_multitask_lgla_v1_unguided_gate_balance_seed43.py",
+      "reason": "Allow any finite nonnegative gate_balance_weight; default 0.01 and formula unchanged",
+      "before_sha256": "b5f36e2d32934e7a8dddfa3e9fb40f79b809220bc903fba44e7fa4ec94d48a91",
+      "after_sha256": "42216e4de410b37fb0657fd6540a5be3fa279a82abbac93dc21c8ecf1534a806",
+      "modified": true,
+      "original_constants_unchanged": true,
+      "all_forward_and_loss_arithmetic_methods_unchanged": true,
+      "changed_nonconstructor_methods": []
+    },
+    {
+      "path": "tools/imaplusplus_partial_multitask_utility_selection_v1.py",
+      "reason": "Use configurable eligibility floors; defaults 0.70 and 0.50 unchanged",
+      "before_sha256": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+      "after_sha256": "5dfdbbc20e39f780044a1174f6bd10169aaf0fec19687d52844edc9f996ac831",
+      "modified": true,
+      "original_constants_unchanged": true,
+      "all_forward_and_loss_arithmetic_methods_unchanged": true,
+      "changed_nonconstructor_methods": [
+        "UtilityEligiblePartialLabelMultiTaskValidator.get_stats"
+      ]
+    },
+    {
+      "path": "tools/imaplusplus_partial_multitask_v1.py",
+      "reason": "Allow zero image classification weight for ablations; default 0.5 unchanged",
+      "before_sha256": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+      "after_sha256": "9a6dc11ff48918ac2735103ef5dac2184749cdd7c9ee2ae74c4a422cc5629eb4",
+      "modified": true,
+      "original_constants_unchanged": true,
+      "all_forward_and_loss_arithmetic_methods_unchanged": true,
+      "changed_nonconstructor_methods": []
+    },
+    {
+      "path": "tools/run33/imaplusplus_partial_multitask_p3p4_standard_cbam_seed43_v1.py",
+      "reason": "Allow any positive odd spatial kernel; default 7 unchanged",
+      "before_sha256": "2d0d03af4b76cc69160fb9fb11f51be5729f6f0e55c036601bbe997214e3788b",
+      "after_sha256": "d91fd99318f32c8cb5c3610f20bce9bcc862fa84b20f39a36567717f0123346a",
+      "modified": true,
+      "original_constants_unchanged": true,
+      "all_forward_and_loss_arithmetic_methods_unchanged": true,
+      "changed_nonconstructor_methods": []
+    }
+  ],
+  "utility_default_boundary_cases_equal": 49,
+  "utility_changed_threshold_case_passed": true,
+  "default_behavior": "0.01 gate regularizer, 0.5 classification weight, 0.70/0.50 utility floors, CBAM kernel 7 unchanged; no tensor operation changed except utility comparisons receive the same default values",
+  "preserved_structural_checks": [
+    "AB2 has fixed fusion and no adaptive gate, so its gate balance weight must remain zero",
+    "P3/P4 shape, class count, mask/label consistency and strict state loading",
+    "Partial-label implementation has no semantically valid mixed-image targets, so mosaic/mixup/cutmix/copy_paste remain unsupported",
+    "Finite/nonnegative loss weights, probability threshold ranges and positive odd convolution kernels"
+  ]
+}

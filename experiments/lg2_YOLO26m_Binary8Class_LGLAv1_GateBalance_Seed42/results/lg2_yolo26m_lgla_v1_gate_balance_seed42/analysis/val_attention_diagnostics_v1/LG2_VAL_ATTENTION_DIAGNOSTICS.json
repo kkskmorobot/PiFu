@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "scope": "frozen development validation only; no test, external, or PAD-UFES-20",
+  "weights": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42\\results\\lg2_yolo26m_lgla_v1_gate_balance_seed42\\checkpoint_bundles\\epoch_0073\\trainer.pt",
+  "data": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg2\\lg2_development_data.yaml",
+  "sample_count_all_forwarded": 1746,
+  "classification_rows": 1488,
+  "plain_run18": {
+    "binary_lesion_iou": 0.76323,
+    "image_macro_f1": 0.54417,
+    "group_macro_f1": 0.61023,
+    "group_macro_recall": 0.59915,
+    "group_mel_to_nv_rate": 0.38776,
+    "joint_score": 0.68246
+  },
+  "lg2_best_joint_validation": {
+    "binary_lesion_iou": 0.762878954410553,
+    "image_macro_f1": 0.5534907693733325,
+    "group_macro_f1": 0.6115491051060018,
+    "group_macro_recall": 0.5925603821693723,
+    "group_mel_to_nv_rate": 0.3979591836734694,
+    "joint_score": 0.683035827664974
+  },
+  "delta_lg2_minus_run18": {
+    "binary_lesion_iou": -0.0003510455894469855,
+    "image_macro_f1": 0.009320769373332483,
+    "group_macro_f1": 0.00131910510600175,
+    "group_macro_recall": -0.006589617830627614,
+    "group_mel_to_nv_rate": 0.010199183673469392,
+    "joint_score": 0.0005758276649739935
+  },
+  "screening_gate": {
+    "group_macro_f1_delta_at_least_0p005": false,
+    "joint_delta_at_least_0p003": false,
+    "image_macro_f1_non_decreasing": true,
+    "binary_iou_delta_at_least_minus_0p005": true
+  },
+  "screening_gate_pass": false,
+  "diagnostics": {
+    "global_gate": {
+      "count": 1746,
+      "mean": 0.504213809967041,
+      "std_population": 0.1964428424835205,
+      "min": 0.053286757320165634,
+      "p05": 0.16777119040489197,
+      "p25": 0.3647075593471527,
+      "median": 0.5109022259712219,
+      "p75": 0.6317827701568604,
+      "p95": 0.8409081101417542,
+      "max": 1.0
+    },
+    "local_gate": {
+      "count": 1746,
+      "mean": 0.495786190032959,
+      "std_population": 0.1964428424835205,
+      "min": 2.4548280075364914e-10,
+      "p05": 0.15909187495708466,
+      "p25": 0.36821722984313965,
+      "median": 0.4890977740287781,
+      "p75": 0.6352924108505249,
+      "p95": 0.8322287797927856,
+      "max": 0.9467132091522217
+    },
+    "attention_mass_fraction_p3": {
+      "count": 1746,
+      "mean": 0.30745071172714233,
+      "std_population": 0.25019609928131104,
+      "min": 0.00013443508942145854,
+      "p05": 0.022789420560002327,
+      "p25": 0.09950090944766998,
+      "median": 0.2381126880645752,
+      "p75": 0.46346062421798706,
+      "p95": 0.828742504119873,
+      "max": 0.9850256443023682
+    },
+    "attention_mass_fraction_p4": {
+      "count": 1746,
+      "mean": 0.3074507713317871,
+      "std_population": 0.25019609928131104,
+      "min": 0.00013443508942145854,
+      "p05": 0.022789422422647476,
+      "p25": 0.09950090944766998,
+      "median": 0.238112673163414,
+      "p75": 0.46346062421798706,
+      "p95": 0.8287425637245178,
+      "max": 0.9850256443023682
+    },
+    "fallback_rate_p3": 0.0,
+    "fallback_rate_p4": 0.0,
+    "global_local_descriptor_cosine": {
+      "count": 1746,
+      "mean": 0.526655375957489,
+      "std_population": 0.28822776675224304,
+      "min": -0.31109458208084106,
+      "p05": 0.08416390419006348,
+      "p25": 0.2999718189239502,
+      "median": 0.5153162479400635,
+      "p75": 0.7680002450942993,
+      "p95": 0.9827825427055359,
+      "max": 0.9999916553497314
+    },
+    "global_local_descriptor_relative_l2": {
+      "count": 1746,
+      "mean": 1.7481298446655273,
+      "std_population": 1.7767606973648071,
+      "min": 0.004260219633579254,
+      "p05": 0.23372682929039001,
+      "p25": 0.8012999296188354,
+      "median": 1.2434144020080566,
+      "p75": 1.9496086835861206,
+      "p95": 5.273054599761963,
+      "max": 14.520980834960938
+    }
+  },
+  "diagnostic_gate": {
+    "local_gate_mean_in_0p05_0p95": true,
+    "local_gate_std_at_least_0p001": true,
+    "all_finite": true
+  },
+  "diagnostic_gate_pass": true,
+  "forbidden_data_access": {
+    "imaplusplus_test": false,
+    "isic2018_external": false,
+    "pad_ufes_20": false
+  }
+}

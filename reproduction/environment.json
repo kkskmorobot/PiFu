@@ -1,0 +1,24 @@
+{
+  "verified_source_environment": {
+    "os": "Windows x64",
+    "python": "3.13.7",
+    "torch": "2.8.0+cu129",
+    "torchvision": "0.23.0+cu129",
+    "ultralytics": "8.4.101",
+    "gpu": "NVIDIA GeForce RTX 5080"
+  },
+  "framework_audit": {
+    "method": "SHA-256 comparison against installed ultralytics-8.4.101.dist-info/RECORD",
+    "changed_files": 0,
+    "missing_files": 0,
+    "extra_non_cache_files": 0,
+    "snapshot_role": "preserve exact semantic framework implementation and assets without copying full virtual environment"
+  },
+  "runtime_import_order": ["vendor", "tools", "tools/*", "project_root"],
+  "data_root": "PIFU_DATA_ROOT or ../PiFuData",
+  "installation": {
+    "default": "CUDA 12.9 PyTorch build, matching original environment",
+    "cpu_option": "install.ps1 -Device cpu; suitable for functional checks, not a claim of identical CUDA training results",
+    "network_required": true
+  }
+}

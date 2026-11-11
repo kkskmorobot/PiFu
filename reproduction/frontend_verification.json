@@ -1,0 +1,130 @@
+[
+  {
+    "run": "lg3",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 35918.88340000014
+  },
+  {
+    "run": "lgx",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 1661.8516999999429
+  },
+  {
+    "run": "ab1",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 3245.72790000002
+  },
+  {
+    "run": "ab2",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 1967.2361999998884
+  },
+  {
+    "run": "lg1",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 3078.555900000083
+  },
+  {
+    "run": "lg2",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 2466.95950000003
+  },
+  {
+    "run": "run18",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 2164.038800000071
+  },
+  {
+    "run": "run21",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 2196.1169000001064
+  },
+  {
+    "run": "run22",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 1356.1535999999705
+  },
+  {
+    "run": "run23",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 663.2184999998572
+  },
+  {
+    "run": "run24",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 587.8017999998519
+  },
+  {
+    "run": "run25",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 562.6930999999331
+  },
+  {
+    "run": "run26",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 577.2394999999051
+  },
+  {
+    "run": "run27",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 551.0400000000573
+  },
+  {
+    "run": "run28",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 530.2682999999888
+  },
+  {
+    "run": "run33",
+    "status": "PASS",
+    "image": "ISIC_0000047.jpg",
+    "probability_classes": 8,
+    "prediction": "黑色素细胞痣",
+    "milliseconds": 1143.1405000000723
+  }
+]

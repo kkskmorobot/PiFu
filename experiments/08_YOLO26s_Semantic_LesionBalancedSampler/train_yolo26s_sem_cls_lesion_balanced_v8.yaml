@@ -1,0 +1,75 @@
+# Run8 controlled experiment: fixed Run7 model + lesion-balanced train sampling.
+# No class balancing is applied. Test is never used during model selection.
+
+model: models/yolo26s-sem.pt
+data: Data/processed_skin7_v3/data.yaml
+
+epochs: 100
+patience: 20
+batch: 16
+imgsz: 640
+device: 0
+workers: 8
+
+project: experiments/08_YOLO26s_Semantic_LesionBalancedSampler/results/semantic_multitask_lesion_balanced
+name: skin7_yolo26s_sem_lesion_balanced_seed42
+exist_ok: false
+pretrained: true
+
+optimizer: AdamW
+lr0: 0.001
+lrf: 0.01
+cos_lr: true
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 3.0
+cls_pw: 0.5
+
+seed: 42
+deterministic: true
+amp: true
+cache: false
+save: true
+save_period: 5
+plots: true
+val: true
+
+hsv_h: 0.005
+hsv_s: 0.10
+hsv_v: 0.10
+degrees: 5.0
+translate: 0.03
+scale: 0.10
+shear: 0.0
+perspective: 0.0
+flipud: 0.5
+fliplr: 0.5
+mosaic: 0.0
+mixup: 0.0
+cutmix: 0.0
+copy_paste: 0.0
+close_mosaic: 0
+
+single_cls: false
+rect: false
+multi_scale: false
+
+multitask:
+  image_cls_weight: 0.5
+  lesion_guided:
+    p5_layer: 10
+    eca_kernel_size: 5
+    mask_guided_mix: 0.5
+    detach_mask: true
+  lesion_sampling:
+    enabled: true
+    strategy: fixed_class_quota_uniform_lesion_then_uniform_image
+    metadata: Data/processed_skin7_v3/metadata/train.csv
+  selection:
+    macro_f1_weight: 0.50
+    foreground_miou_weight: 0.25
+    minority_recall_weight: 0.25
+    mel_to_nv_penalty: 0.25
+    max_mel_to_nv_rate: 0.1077844311
+    min_foreground_miou: 0.518748
+    min_minority_recall: 0.533498

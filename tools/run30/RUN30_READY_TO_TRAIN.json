@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "ready_to_click_pycharm": true,
+  "entrypoint": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run30\\train_run30_from_pycharm.py",
+  "config": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run30\\run30_preregistered_config_v1.yaml",
+  "config_sha256": "cae5b6571e724529c36ea92fbff4dca73a27002130232db2343d4931e0179ce0",
+  "fingerprint": "aa8336f13f4c3b024eb5eb09b7bb00b7311d639dad6d9ff4196b3ec61213f9e4",
+  "lock_inputs": {
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run30\\run30_preregistered_config_v1.yaml": {
+      "bytes": 4653,
+      "sha256": "cae5b6571e724529c36ea92fbff4dca73a27002130232db2343d4931e0179ce0"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run30\\RUN30_PROTOCOL_2026-09-06.md": {
+      "bytes": 1938,
+      "sha256": "52fb2e75fd09d69c2012434e89fecee12dbf38c88a3e1cd12f7a0bee40ea0e76"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run30\\run30_development_manifest.csv": {
+      "bytes": 8299971,
+      "sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run30\\run30_development_data.yaml": {
+      "bytes": 632,
+      "sha256": "73913c55cc969bf07add109de3809adda2106b51559633495be1e87860e14a6f"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt": {
+      "bytes": 28924971,
+      "sha256": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt": {
+      "bytes": 5544453,
+      "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml": {
+      "bytes": 771,
+      "sha256": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\manifest.csv": {
+      "bytes": 5780376,
+      "sha256": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\manifest.csv": {
+      "bytes": 5317937,
+      "sha256": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py": {
+      "bytes": 26587,
+      "sha256": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py": {
+      "bytes": 2877,
+      "sha256": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run30\\imaplusplus_partial_multitask_plain_mel_nv_focal_risk_seed43_v1.py": {
+      "bytes": 10953,
+      "sha256": "ad9220d760a46357afc47c196e8ed9f4857f4286486e8f96cdc1ff393c5ba764"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py": {
+      "bytes": 27811,
+      "sha256": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py": {
+      "bytes": 12421,
+      "sha256": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run30\\train_run30_from_pycharm.py": {
+      "bytes": 32102,
+      "sha256": "484e40ea6ee17c1e089e81434679c17539b44d385078e78d7115a35981c6bfb2"
+    }
+  },
+  "preflight_report": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run30\\RUN30_PREFLIGHT_REPORT.json",
+  "formal_training_started": false,
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

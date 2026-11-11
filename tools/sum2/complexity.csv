@@ -1,0 +1,5 @@
+﻿architecture,parameters,delta_parameters,relative_delta_percent,source
+Plain,14507338,0,0.0,tools/val1/RUN34_PREFLIGHT_REPORT.json
+LGLA v1,14540748,33410,0.2302972468139819,tools/lgx/LGX_PREFLIGHT_REPORT.json
+AB1 / unguided run,14540748,33410,0.2302972468139819,tools/ab1/AB1_PREFLIGHT_REPORT.json
+AB2 / fixed fusion,14540748,33410,0.2302972468139819,tools/ab2/AB2_PREFLIGHT_REPORT.json

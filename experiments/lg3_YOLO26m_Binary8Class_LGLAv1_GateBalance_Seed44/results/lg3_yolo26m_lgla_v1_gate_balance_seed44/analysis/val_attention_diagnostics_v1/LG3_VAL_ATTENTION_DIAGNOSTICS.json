@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "scope": "frozen development validation only; no test, external, or PAD-UFES-20",
+  "weights": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg3_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed44\\results\\lg3_yolo26m_lgla_v1_gate_balance_seed44\\checkpoint_bundles\\epoch_0096\\trainer.pt",
+  "data": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg3\\lg3_development_data.yaml",
+  "sample_count_all_forwarded": 1746,
+  "classification_rows": 1488,
+  "plain_run24": {
+    "binary_lesion_iou": 0.76393,
+    "image_macro_f1": 0.54301,
+    "group_macro_f1": 0.60641,
+    "group_macro_recall": 0.62047,
+    "group_mel_to_nv_rate": 0.34694,
+    "joint_score": 0.68063
+  },
+  "lg3_best_joint_validation": {
+    "binary_lesion_iou": 0.7705893516540527,
+    "image_macro_f1": 0.5579455416705064,
+    "group_macro_f1": 0.6443044768174382,
+    "group_macro_recall": 0.6291889512215142,
+    "group_mel_to_nv_rate": 0.3673469387755102,
+    "joint_score": 0.7046234235806764
+  },
+  "delta_lg3_minus_run24": {
+    "binary_lesion_iou": 0.0066593516540527364,
+    "image_macro_f1": 0.01493554167050637,
+    "group_macro_f1": 0.03789447681743818,
+    "group_macro_recall": 0.008718951221514226,
+    "group_mel_to_nv_rate": 0.020406938775510197,
+    "joint_score": 0.023993423580676465
+  },
+  "screening_gate": {
+    "group_macro_f1_delta_at_least_0p005": true,
+    "joint_delta_at_least_0p003": true,
+    "image_macro_f1_non_decreasing": true,
+    "binary_iou_delta_at_least_minus_0p005": true
+  },
+  "screening_gate_pass": true,
+  "diagnostics": {
+    "global_gate": {
+      "count": 1746,
+      "mean": 0.49212446808815,
+      "std_population": 0.17457859218120575,
+      "min": 0.03979738801717758,
+      "p05": 0.21141892671585083,
+      "p25": 0.3737195134162903,
+      "median": 0.493661493062973,
+      "p75": 0.6019278764724731,
+      "p95": 0.7925220727920532,
+      "max": 1.0
+    },
+    "local_gate": {
+      "count": 1746,
+      "mean": 0.5078755021095276,
+      "std_population": 0.17457859218120575,
+      "min": 0.0,
+      "p05": 0.20747794210910797,
+      "p25": 0.39807218313217163,
+      "median": 0.5063384771347046,
+      "p75": 0.6262805461883545,
+      "p95": 0.7885810732841492,
+      "max": 0.9602025747299194
+    },
+    "attention_mass_fraction_p3": {
+      "count": 1746,
+      "mean": 0.3013971149921417,
+      "std_population": 0.24929891526699066,
+      "min": 0.00025431092944927514,
+      "p05": 0.021121980622410774,
+      "p25": 0.09400998800992966,
+      "median": 0.2355053424835205,
+      "p75": 0.44774696230888367,
+      "p95": 0.8204556107521057,
+      "max": 1.0
+    },
+    "attention_mass_fraction_p4": {
+      "count": 1746,
+      "mean": 0.3013971149921417,
+      "std_population": 0.24929891526699066,
+      "min": 0.00025431092944927514,
+      "p05": 0.021121980622410774,
+      "p25": 0.09400998055934906,
+      "median": 0.2355053424835205,
+      "p75": 0.44774696230888367,
+      "p95": 0.8204556703567505,
+      "max": 1.0
+    },
+    "fallback_rate_p3": 0.0,
+    "fallback_rate_p4": 0.0,
+    "global_local_descriptor_cosine": {
+      "count": 1746,
+      "mean": 0.4098339378833771,
+      "std_population": 0.3315746784210205,
+      "min": -0.3674335479736328,
+      "p05": -0.08356992900371552,
+      "p25": 0.14177054166793823,
+      "median": 0.3798142671585083,
+      "p75": 0.6731497645378113,
+      "p95": 0.9672271013259888,
+      "max": 0.9999998807907104
+    },
+    "global_local_descriptor_relative_l2": {
+      "count": 1746,
+      "mean": 1.7566543817520142,
+      "std_population": 1.5073062181472778,
+      "min": 0.0,
+      "p05": 0.30701833963394165,
+      "p25": 0.9335554838180542,
+      "median": 1.3690483570098877,
+      "p75": 2.03755521774292,
+      "p95": 4.654489994049072,
+      "max": 12.322575569152832
+    }
+  },
+  "diagnostic_gate": {
+    "local_gate_mean_in_0p05_0p95": true,
+    "local_gate_std_at_least_0p001": true,
+    "all_finite": true
+  },
+  "diagnostic_gate_pass": true,
+  "forbidden_data_access": {
+    "imaplusplus_test": false,
+    "isic2018_external": false,
+    "pad_ufes_20": false
+  }
+}

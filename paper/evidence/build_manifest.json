@@ -1,0 +1,983 @@
+{
+  "final": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\LunWen\\astra-6-ultra\\毕业论文正文_算法研究重写版.docx",
+  "template_sha256": "b9630dbd39a0305d13cac432e702dd96261bdca3a158aafd772742aeafba2846",
+  "figures": [
+    {
+      "id": "1-1",
+      "title": "算法研究技术路线",
+      "file": "figures/research_route.png"
+    },
+    {
+      "id": "3-1",
+      "title": "基础模型与LGLA改进模型总体结构",
+      "file": "figures/architecture.png"
+    },
+    {
+      "id": "3-2",
+      "title": "LGLA的概率引导池化与门控融合",
+      "file": "figures/lgla_detail.png"
+    },
+    {
+      "id": "3-3",
+      "title": "标签可用性与联合损失计算流程",
+      "file": "figures/partial_loss.png"
+    },
+    {
+      "id": "4-1",
+      "title": "联合数据集的标签覆盖与分类分布",
+      "file": "figures/data_distribution.png"
+    },
+    {
+      "id": "4-2",
+      "title": "主比较、结构对照与补充评价流程",
+      "file": "figures/experiment_flow.png"
+    },
+    {
+      "id": "5-1",
+      "title": "三个随机种子的配对结果",
+      "file": "figures/paired_results.png"
+    },
+    {
+      "id": "5-2",
+      "title": "种子43的原始验证指标训练轨迹",
+      "file": "figures/training_curves.png"
+    },
+    {
+      "id": "5-3",
+      "title": "验证样本的真实掩膜与病灶概率图",
+      "file": "figures/qualitative.png"
+    },
+    {
+      "id": "5-4",
+      "title": "种子43在受限分类子集上的实际混淆计数",
+      "file": "figures/restricted_confusion.png"
+    },
+    {
+      "id": "5-5",
+      "title": "LGLA的本地单图预测展示",
+      "file": "figures/deployment.png"
+    }
+  ],
+  "tables": [
+    {
+      "id": "4-1",
+      "title": "实验环境与实现条件",
+      "rows": [
+        [
+          "计算设备",
+          "NVIDIA GeForce RTX 5080，单GPU"
+        ],
+        [
+          "设备显存",
+          "约16 GiB"
+        ],
+        [
+          "深度学习框架",
+          "PyTorch 2.8.0+cu129"
+        ],
+        [
+          "CUDA运行时",
+          "12.9"
+        ],
+        [
+          "训练框架记录",
+          "Ultralytics 8.4.101（LGLA seed43权重记录）"
+        ],
+        [
+          "初始化权重",
+          "yolo26m-sem.pt，权重元数据8.4.50"
+        ],
+        [
+          "输入与精度",
+          "RGB，640×640，自动混合精度"
+        ]
+      ]
+    },
+    {
+      "id": "4-2",
+      "title": "数据划分与任务标签覆盖",
+      "rows": [
+        [
+          "IMA++有效图像—掩膜对",
+          10483,
+          292,
+          634
+        ],
+        [
+          "ISIC2019增量分类图像",
+          12979,
+          1452,
+          "—"
+        ],
+        [
+          "联合图像总数",
+          23462,
+          1744,
+          "634"
+        ],
+        [
+          "可用分割监督",
+          10483,
+          292,
+          634
+        ],
+        [
+          "可用分类监督",
+          13715,
+          1488,
+          56
+        ],
+        [
+          "同时具备两类监督",
+          736,
+          36,
+          56
+        ]
+      ]
+    },
+    {
+      "id": "4-3",
+      "title": "联合开发集分类标注分布",
+      "rows": [
+        [
+          "AKIEC（官方AK）",
+          654,
+          75
+        ],
+        [
+          "BCC",
+          2518,
+          283
+        ],
+        [
+          "BKL",
+          1360,
+          151
+        ],
+        [
+          "DF",
+          112,
+          12
+        ],
+        [
+          "MEL",
+          3047,
+          334
+        ],
+        [
+          "NV",
+          5539,
+          576
+        ],
+        [
+          "VASC",
+          98,
+          13
+        ],
+        [
+          "SCC",
+          387,
+          44
+        ],
+        [
+          "合计",
+          13715,
+          1488
+        ]
+      ]
+    },
+    {
+      "id": "4-4",
+      "title": "主要训练增强参数",
+      "rows": [
+        [
+          "HSV色调／饱和度／明度",
+          "0.005／0.10／0.10"
+        ],
+        [
+          "旋转范围参数",
+          "5°"
+        ],
+        [
+          "平移／缩放参数",
+          "0.03／0.10"
+        ],
+        [
+          "上下翻转／左右翻转概率",
+          "0.5／0.5"
+        ],
+        [
+          "剪切／透视",
+          "0／0"
+        ],
+        [
+          "Mosaic／MixUp／CutMix／Copy-Paste",
+          "均为0"
+        ],
+        [
+          "随机擦除／多尺度训练",
+          "0／关闭"
+        ]
+      ]
+    },
+    {
+      "id": "4-5",
+      "title": "LGLA关键张量与层尺寸",
+      "rows": [
+        [
+          "P3特征",
+          "B×256×80×80",
+          "主分割与分类特征"
+        ],
+        [
+          "P4特征",
+          "B×512×40×40",
+          "辅助分割与分类特征"
+        ],
+        [
+          "主分割logit",
+          "B×1×80×80",
+          "产生软病灶引导"
+        ],
+        [
+          "每尺度投影",
+          "256→128；512→128",
+          "同尺度两路共享"
+        ],
+        [
+          "全局／局部描述",
+          "各B×256",
+          "P3/P4顺序拼接"
+        ],
+        [
+          "融合门",
+          "512→128→2",
+          "输出两路权重"
+        ],
+        [
+          "最终分类器",
+          "256→256→8",
+          "输出疾病类别logit"
+        ]
+      ]
+    },
+    {
+      "id": "4-6",
+      "title": "共同训练设置",
+      "rows": [
+        [
+          "输入尺寸／实际批大小",
+          "640×640／16"
+        ],
+        [
+          "优化器",
+          "AdamW"
+        ],
+        [
+          "初始学习率／末端比例",
+          "0.001／0.01"
+        ],
+        [
+          "学习率调度／预热",
+          "余弦调度／3个epoch"
+        ],
+        [
+          "配置权重衰减／名义批大小",
+          "0.0005／64"
+        ],
+        [
+          "最大epoch数",
+          "100"
+        ],
+        [
+          "早停起始／耐心",
+          "40／30"
+        ],
+        [
+          "分类任务权重",
+          "0.5"
+        ],
+        [
+          "完整LGLA门控均衡权重",
+          "0.01"
+        ],
+        [
+          "采样",
+          "每轮随机打乱，无放回"
+        ],
+        [
+          "主比较随机种子",
+          "42、43、44"
+        ]
+      ]
+    },
+    {
+      "id": "4-7",
+      "title": "主比较及结构对照运行设置",
+      "rows": [
+        [
+          "Plain",
+          "Run18",
+          42,
+          100,
+          50
+        ],
+        [
+          "Plain",
+          "Run22",
+          43,
+          93,
+          60
+        ],
+        [
+          "Plain",
+          "Run24",
+          44,
+          100,
+          78
+        ],
+        [
+          "LGLA无均衡项",
+          "LG1",
+          43,
+          100,
+          84
+        ],
+        [
+          "完整LGLA",
+          "LGX",
+          43,
+          100,
+          99
+        ],
+        [
+          "完整LGLA",
+          "LG2",
+          42,
+          100,
+          74
+        ],
+        [
+          "完整LGLA",
+          "LG3",
+          44,
+          100,
+          97
+        ],
+        [
+          "常量区域引导",
+          "AB1",
+          43,
+          98,
+          68
+        ],
+        [
+          "固定等权融合",
+          "AB2",
+          43,
+          79,
+          49
+        ]
+      ]
+    },
+    {
+      "id": "5-1",
+      "title": "开发验证集三种子主比较",
+      "rows": [
+        [
+          "IoU",
+          "0.76364±0.00037",
+          "0.77066±0.00790",
+          "0.92%"
+        ],
+        [
+          "Dice",
+          "0.86598±0.00023",
+          "0.87046±0.00504",
+          "0.52%"
+        ],
+        [
+          "图像宏平均F1",
+          "0.54578±0.00384",
+          "0.55945±0.00229",
+          "2.50%"
+        ],
+        [
+          "分组宏平均F1",
+          "0.61492±0.01158",
+          "0.63993±0.01645",
+          "4.07%"
+        ],
+        [
+          "综合指标J",
+          "0.68524±0.00647",
+          "0.70224±0.01256",
+          "2.48%"
+        ]
+      ]
+    },
+    {
+      "id": "5-2",
+      "title": "不同注意力方案的开发验证结果",
+      "rows": [
+        [
+          "Plain",
+          "3",
+          "0.76364\n±0.00037",
+          "0.54578\n±0.00384",
+          "0.61492\n±0.01158",
+          "0.68524\n±0.00647"
+        ],
+        [
+          "ECA",
+          "3",
+          "0.76684\n±0.00660",
+          "0.53850\n±0.01146",
+          "0.60451\n±0.01816",
+          "0.68080\n±0.01086"
+        ],
+        [
+          "ECA+Spatial7",
+          "3",
+          "0.76492\n±0.00548",
+          "0.54380\n±0.01486",
+          "0.60677\n±0.04393",
+          "0.68096\n±0.02491"
+        ],
+        [
+          "CBAM",
+          "1",
+          "0.76789",
+          "0.54022",
+          "0.61167",
+          "0.68534"
+        ],
+        [
+          "LGLA",
+          "3",
+          "0.77066\n±0.00790",
+          "0.55945\n±0.00229",
+          "0.63993\n±0.01645",
+          "0.70224\n±0.01256"
+        ]
+      ]
+    },
+    {
+      "id": "5-3",
+      "title": "种子43的消融与结构对照",
+      "rows": [
+        [
+          "Plain",
+          "Run22",
+          "0.76377",
+          "0.55017",
+          "0.62811",
+          "0.69263"
+        ],
+        [
+          "无均衡约束",
+          "LG1",
+          "0.75967",
+          "0.53761",
+          "0.61057",
+          "0.68105"
+        ],
+        [
+          "常量区域引导",
+          "AB1",
+          "0.76719",
+          "0.54533",
+          "0.61436",
+          "0.68653"
+        ],
+        [
+          "固定等权融合",
+          "AB2",
+          "0.76856",
+          "0.51652",
+          "0.59544",
+          "0.67648"
+        ],
+        [
+          "完整LGLA",
+          "LGX",
+          "0.77863",
+          "0.55681",
+          "0.65375",
+          "0.71346"
+        ]
+      ]
+    },
+    {
+      "id": "5-4",
+      "title": "参数规模与同机推理开销",
+      "rows": [
+        [
+          "Plain",
+          "14,507,338",
+          "5.4703",
+          "6.2254"
+        ],
+        [
+          "LGLA",
+          "14,540,748",
+          "5.6642",
+          "6.5456"
+        ]
+      ]
+    },
+    {
+      "id": "5-5",
+      "title": "固定测试集合的补充分割结果",
+      "rows": [
+        [
+          "内部测试（634）",
+          "Plain",
+          "0.78547±0.00336",
+          "0.87984±0.00211"
+        ],
+        [
+          "内部测试（634）",
+          "LGLA",
+          "0.78558±0.00763",
+          "0.87990±0.00478"
+        ],
+        [
+          "外部增量（89）",
+          "Plain",
+          "0.63347±0.02169",
+          "0.77546±0.01630"
+        ],
+        [
+          "外部增量（89）",
+          "LGLA",
+          "0.59449±0.00671",
+          "0.74567±0.00528"
+        ]
+      ]
+    },
+    {
+      "id": "5-6",
+      "title": "内部56张标签子集的受限分类结果",
+      "rows": [
+        [
+          "Plain",
+          "0.77976±0.02728",
+          "0.45833±0.03608",
+          "0.90833±0.05204"
+        ],
+        [
+          "LGLA",
+          "0.79167±0.02062",
+          "0.43750±0.06250",
+          "0.93333±0.01443"
+        ]
+      ]
+    },
+    {
+      "id": "A-1",
+      "title": "主要运行与既定权重",
+      "rows": [
+        [
+          "无均衡约束",
+          "LG1",
+          43,
+          "epoch_0083"
+        ],
+        [
+          "完整LGLA",
+          "LGX",
+          43,
+          "epoch_0098"
+        ],
+        [
+          "完整LGLA",
+          "LG2",
+          42,
+          "epoch_0073"
+        ],
+        [
+          "完整LGLA",
+          "LG3",
+          44,
+          "epoch_0096"
+        ],
+        [
+          "常量引导",
+          "AB1",
+          43,
+          "epoch_0067"
+        ],
+        [
+          "固定等权",
+          "AB2",
+          43,
+          "epoch_0048"
+        ],
+        [
+          "Plain",
+          "Run18",
+          42,
+          "epoch_0049"
+        ],
+        [
+          "Plain",
+          "Run22",
+          43,
+          "epoch_0059"
+        ],
+        [
+          "Plain",
+          "Run24",
+          44,
+          "epoch_0077"
+        ]
+      ]
+    }
+  ],
+  "equations": [
+    {
+      "id": "2-1",
+      "latex": "\\mathrm{IoU}=\\frac{TP}{TP+FP+FN}",
+      "lines": 1
+    },
+    {
+      "id": "2-2",
+      "latex": "\\mathrm{Dice}=\\frac{2TP}{2TP+FP+FN}=\\frac{2\\mathrm{IoU}}{1+\\mathrm{IoU}}",
+      "lines": 1
+    },
+    {
+      "id": "2-3",
+      "latex": "F_{1,k}=\\frac{2TP_k}{2TP_k+FP_k+FN_k},\\qquad F_{1,\\mathrm{macro}}=\\frac{1}{8}\\sum_{k=1}^{8}F_{1,k}",
+      "lines": 2
+    },
+    {
+      "id": "2-4",
+      "latex": "\\bar{p}_{g,k}=\\frac{1}{n_g}\\sum_{i\\in g}p_{i,k},\\qquad \\hat{y}_g=\\arg\\max_k\\bar{p}_{g,k}",
+      "lines": 2
+    },
+    {
+      "id": "2-5",
+      "latex": "J=\\sqrt{\\mathrm{IoU}\\times F_{1,\\mathrm{group}}}",
+      "lines": 1
+    },
+    {
+      "id": "2-6",
+      "latex": "\\bar{x}=\\frac{1}{3}\\sum_{s=1}^{3}x_s,\\qquad s_x=\\sqrt{\\frac{1}{2}\\sum_{s=1}^{3}(x_s-\\bar{x})^2}",
+      "lines": 2
+    },
+    {
+      "id": "3-1",
+      "latex": "(F_3,F_4)=\\Phi(X),\\quad S=h_s(F_3),\\quad S^{a}=h_a(F_4)",
+      "lines": 1
+    },
+    {
+      "id": "3-2",
+      "latex": "A_i=\\sigma(\\operatorname{sg}(S_i)),\\quad A_i^{(s)}=\\operatorname{clip}(\\operatorname{Resize}(A_i,H_s,W_s),0,1)",
+      "lines": 2
+    },
+    {
+      "id": "3-3",
+      "latex": "g_i^{(s)}=\\frac{1}{H_sW_s}\\sum_{u=1}^{H_s}\\sum_{v=1}^{W_s}F_i^{(s)}(u,v)",
+      "lines": 1
+    },
+    {
+      "id": "3-4",
+      "latex": "\\widetilde{l}_i^{(s)}=\\frac{\\sum_{u,v}A_i^{(s)}(u,v)F_i^{(s)}(u,v)}{\\max(\\sum_{u,v}A_i^{(s)}(u,v),\\varepsilon)}",
+      "lines": 1
+    },
+    {
+      "id": "3-5",
+      "latex": "m_i^{(s)}=\\frac{\\sum_{u,v}A_i^{(s)}(u,v)}{H_sW_s},\\quad l_i^{(s)}=r_i^{(s)}g_i^{(s)}+(1-r_i^{(s)})\\widetilde{l}_i^{(s)}",
+      "lines": 2
+    },
+    {
+      "id": "3-6",
+      "latex": "G_i=[P_3g_i^{(3)}+b_3;P_4g_i^{(4)}+b_4],\\quad L_i=[P_3l_i^{(3)}+b_3;P_4l_i^{(4)}+b_4]",
+      "lines": 2
+    },
+    {
+      "id": "3-7",
+      "latex": "q_i=W_2\\operatorname{SiLU}(W_1[G_i;L_i]+b_1)+b_2,\\quad (\\alpha_i,\\beta_i)=\\operatorname{Softmax}(q_i)",
+      "lines": 2
+    },
+    {
+      "id": "3-8",
+      "latex": "f_i=\\alpha_iG_i+\\beta_iL_i,\\quad z_i=W_c\\operatorname{Dropout}_{0.20}(\\operatorname{SiLU}(W_ff_i+b_f))+b_c",
+      "lines": 2
+    },
+    {
+      "id": "3-9",
+      "latex": "\\mathcal{R}_{bal}=\\left(\\frac{1}{n_c}\\sum_{i\\in\\mathcal{C}}(q_{i,L}-q_{i,G})\\right)^2",
+      "lines": 1
+    },
+    {
+      "id": "3-10",
+      "latex": "\\mathcal{L}_{BCE}=\\frac{\\sum_{v\\in\\mathcal{V}}[-y_v\\log p_v-(1-y_v)\\log(1-p_v)]}{\\max(|\\mathcal{V}|,1)}",
+      "lines": 1
+    },
+    {
+      "id": "3-11",
+      "latex": "\\mathcal{L}_{Dice}=1-\\frac{2\\sum_{v\\in\\mathcal{V}}p_vy_v+1}{\\sum_{v\\in\\mathcal{V}}(p_v+y_v)+1},\\quad \\mathcal{L}_{seg}=\\mathcal{L}_{BCE}+\\mathcal{L}_{Dice}+0.4\\mathcal{L}_{BCE}^{a}",
+      "lines": 2
+    },
+    {
+      "id": "3-12",
+      "latex": "\\mathcal{L}_{cls}=-\\frac{1}{n_c}\\sum_{i\\in\\mathcal{C}}\\log\\frac{\\exp z_{i,y_i}}{\\sum_{k=1}^{8}\\exp z_{i,k}},\\quad \\mathcal{L}_{total}=B[\\mathcal{L}_{seg}+0.5(\\mathcal{L}_{cls}+0.01\\mathcal{R}_{bal})]",
+      "lines": 2
+    }
+  ],
+  "references": [
+    {
+      "number": 1,
+      "key": "esteva",
+      "formatted": "Esteva Andre, Kuprel Brett, Novoa Roberto, et al. Dermatologist-level classification of skin cancer with deep neural networks[J]. Nature, 2017, 542: 115-118. DOI: 10.1038/nature21056.",
+      "url": "https://www.nature.com/articles/nature21056",
+      "claim": "深度卷积网络用于皮肤病变图像分类；细粒度外观差异构成识别困难。",
+      "verification": "期刊原始页面核对题名、作者、年份、卷页、DOI与摘要；不引用其医生水平结果作为本项目结论。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 2,
+      "key": "ham",
+      "formatted": "Tschandl Philipp, Rosendahl Cliff, Kittler Harald. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions[J]. Scientific Data, 2018, 5: 180161. DOI: 10.1038/sdata.2018.161.",
+      "url": "https://www.nature.com/articles/sdata2018161",
+      "claim": "皮肤镜公开数据具有多来源、不同采集方式及同病灶多图特点。",
+      "verification": "Scientific Data原文核对完整元数据及数据说明；不将其10015张规模冒充项目冻结规模。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 3,
+      "key": "isic2018",
+      "formatted": "Codella Noel, Rotemberg Veronica, Tschandl Philipp, et al. Skin Lesion Analysis Toward Melanoma Detection 2018: A Challenge Hosted by the International Skin Imaging Collaboration (ISIC)[EB/OL]. (2019-02-09)[2026-11-09]. https://arxiv.org/abs/1902.03368.",
+      "url": "https://arxiv.org/abs/1902.03368",
+      "claim": "病灶分割与疾病分类构成皮肤图像分析的相关但不同任务；基准成绩与泛化能力应区分。",
+      "verification": "作者arXiv原始发布核对题名、作者、提交年份及摘要；保留预印本类型，不虚构会议页码。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 4,
+      "key": "isic2019",
+      "formatted": "International Skin Imaging Collaboration. ISIC 2019 Challenge[EB/OL]. [2026-11-09]. https://challenge.isic-archive.com/landing/2019/.",
+      "url": "https://challenge.isic-archive.com/landing/2019/",
+      "claim": "ISIC2019训练数据覆盖八个类别，官方挑战另有未知类设定；本文限于项目八类任务。",
+      "verification": "官方任务页核对训练八类、测试额外outlier类别及官方评价口径；本文不沿用挑战排名指标。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 5,
+      "key": "unet",
+      "formatted": "Ronneberger Olaf, Fischer Philipp, Brox Thomas. U-Net: Convolutional Networks for Biomedical Image Segmentation[A]. Medical Image Computing and Computer-Assisted Intervention—MICCAI 2015[C]. Cham: Springer, 2015: 234-241. DOI: 10.1007/978-3-319-24574-4_28.",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-24574-4_28",
+      "support_urls": [
+        "https://arxiv.org/abs/1505.04597"
+      ],
+      "claim": "编码收缩路径获取上下文，扩张路径恢复定位信息。",
+      "verification": "Springer正式章节页核对作者、会议、年份、页码及DOI；只作研究背景，不宣称项目开展U-Net对比。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 6,
+      "key": "deeplab",
+      "formatted": "Chen Liang-Chieh, Zhu Yukun, Papandreou George, et al. Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation[A]. Proceedings of the European Conference on Computer Vision[C]. 2018: 801-818.",
+      "url": "https://openaccess.thecvf.com/content_ECCV_2018/html/Liang-Chieh_Chen_Encoder-Decoder_with_Atrous_ECCV_2018_paper.html",
+      "support_urls": [
+        "https://arxiv.org/abs/1802.02611"
+      ],
+      "claim": "DeepLabv3+结合多尺度上下文与解码恢复细节。",
+      "verification": "CVF正式页面与作者arXiv核对作者、题名、ECCV2018页码及方法摘要；未将其写入实测比较。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 7,
+      "key": "ima",
+      "formatted": "Abhishek Kumar, Kawahara Jeremy, Hamarneh Ghassan. Descriptor: ISIC Archive Multi-Annotator Dermoscopic Skin Lesion Segmentation Dataset (IMA++)[J]. IEEE Data Descriptions, 2026, 3: 367-378. DOI: 10.1109/IEEEDATA.2026.3689801.",
+      "url": "https://www.sfu.ca/~kabhishe/",
+      "support_urls": [
+        "https://arxiv.org/abs/2512.21472",
+        "https://github.com/sfu-mial/IMAplusplus",
+        "https://zenodo.org/records/14201693"
+      ],
+      "claim": "IMA++提供多标注者皮肤镜病灶掩膜、标注信息、官方多标注子集划分与共识掩膜。",
+      "verification": "作者SFU主页BibTeX确认正式题名Descriptor前缀、期刊、卷页、DOI；arXiv确认相同作者与journal reference。Zenodo v1.1及作者仓库确认数据构成、STAPLE、许可。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 8,
+      "key": "se",
+      "formatted": "Hu Jie, Shen Li, Sun Gang. Squeeze-and-Excitation Networks[A]. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition[C]. 2018: 7132-7141.",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Hu_Squeeze-and-Excitation_Networks_CVPR_2018_paper.html",
+      "claim": "全局汇聚后学习通道权重以校准特征响应。",
+      "verification": "CVF论文页核对CVPR版三位作者、题名、页码；没有误用arXiv后续TPAMI版五位作者。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 9,
+      "key": "eca",
+      "formatted": "Wang Qilong, Wu Banggu, Zhu Pengfei, et al. ECA-Net: Efficient Channel Attention for Deep Convolutional Neural Networks[A]. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition[C]. 2020: 11534-11542.",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_ECA-Net_Efficient_Channel_Attention_for_Deep_Convolutional_Neural_Networks_CVPR_2020_paper.html",
+      "claim": "不降维的局部跨通道交互及一维卷积构成轻量通道注意力。",
+      "verification": "CVF页及PDF核对题名、六位作者、CVPR2020页码、避免降维与局部跨通道交互。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 10,
+      "key": "cbam",
+      "formatted": "Woo Sanghyun, Park Jongchan, Lee Joon-Young, Kweon In So. CBAM: Convolutional Block Attention Module[A]. Proceedings of the European Conference on Computer Vision[C]. 2018: 3-19.",
+      "url": "https://openaccess.thecvf.com/content_ECCV_2018/html/Sanghyun_Woo_Convolutional_Block_Attention_ECCV_2018_paper.html",
+      "claim": "顺序通道和空间注意力通过乘法重标定中间特征。",
+      "verification": "CVF页与论文PDF核对完整四位作者、题名、年份、页码和模块作用。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 11,
+      "key": "mbdcnn",
+      "formatted": "Xie Yutong, Zhang Jianpeng, Xia Yong, Shen Chunhua. A Mutual Bootstrapping Model for Automated Skin Lesion Segmentation and Classification[J]. IEEE Transactions on Medical Imaging, 2020, 39(7): 2482-2493. DOI: 10.1109/TMI.2020.2972964.",
+      "url": "https://arxiv.org/abs/1903.03313",
+      "support_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/32070946/",
+        "https://github.com/YtongXie/MB-DCNN"
+      ],
+      "claim": "以粗分割掩膜引导分类，再向分割转移定位信息，是分割和分类协作的先行研究。",
+      "verification": "作者arXiv与官方代码核对结构与作者，PubMed期刊记录核对卷期页和DOI；不拿其指标与本项目直接比较。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 12,
+      "key": "caruana",
+      "formatted": "Caruana Rich. Multitask Learning[J]. Machine Learning, 1997, 28: 41-75. DOI: 10.1023/A:1007379606734.",
+      "url": "https://doi.org/10.1023/A:1007379606734",
+      "claim": "相关任务的共享表征可形成归纳偏置；需要讨论任务关系。",
+      "verification": "出版商页面核对作者、题名、卷页、DOI及摘要；不将潜在收益当作项目独立消融结果。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 13,
+      "key": "kendall",
+      "formatted": "Kendall Alex, Gal Yarin, Cipolla Roberto. Multi-Task Learning Using Uncertainty to Weigh Losses for Scene Geometry and Semantics[A]. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition[C]. 2018: 7482-7491.",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Kendall_Multi-Task_Learning_Using_CVPR_2018_paper.html",
+      "claim": "多任务损失的量级与相对权重影响联合训练；其不确定性加权属于相关工作。",
+      "verification": "CVF原始页面核对作者、页码与论文目标；明确本文未采用其不确定性加权。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 14,
+      "key": "partial",
+      "formatted": "Li Wei-Hong, Liu Xialei, Bilen Hakan. Learning Multiple Dense Prediction Tasks From Partially Annotated Data[A]. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition[C]. 2022: 18879-18889.",
+      "url": "https://openaccess.thecvf.com/content/CVPR2022/html/Li_Learning_Multiple_Dense_Prediction_Tasks_From_Partially_Annotated_Data_CVPR_2022_paper.html",
+      "claim": "每图仅部分任务标签可用的多任务部分监督问题；只在可用标签上计算损失是基本方案。",
+      "verification": "CVF页面/PDF核对三位作者与任务定义。页码采用CVF公开版本18879-18889；爱丁堡元数据另记IEEE版18857-18867，辅助记录保留差异，不混配。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 15,
+      "key": "staple",
+      "formatted": "Warfield Simon, Zou Kelly, Wells William. Simultaneous Truth and Performance Level Estimation (STAPLE): An Algorithm for the Validation of Image Segmentation[J]. IEEE Transactions on Medical Imaging, 2004, 23(7): 903-921. DOI: 10.1109/TMI.2004.828354.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1283110/",
+      "claim": "STAPLE在多个分割标注之间估计潜在分割及标注表现，可用于共识掩膜。",
+      "verification": "PMC作者存档原文核对方法、作者、正式出版卷期页和DOI；姓名按完整首名书写、不猜中间名。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 16,
+      "key": "yolo",
+      "formatted": "Redmon Joseph, Divvala Santosh, Girshick Ross, Farhadi Ali. You Only Look Once: Unified, Real-Time Object Detection[A]. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition[C]. 2016: 779-788.",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2016/html/Redmon_You_Only_Look_CVPR_2016_paper.html",
+      "claim": "YOLO将目标检测组织为单网络直接预测；本文语义分割分类任务不同于原始检测输出。",
+      "verification": "CVF论文页核对完整作者、题名、年份、页码；不挪用原论文FPS及检测性能。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 17,
+      "key": "fpn",
+      "formatted": "Lin Tsung-Yi, Dollár Piotr, Girshick Ross, et al. Feature Pyramid Networks for Object Detection[A]. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition[C]. 2017: 2117-2125.",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Lin_Feature_Pyramid_Networks_CVPR_2017_paper.html",
+      "claim": "横向连接与自顶向下路径支持不同分辨率的语义特征表达；用于说明多尺度思想。",
+      "verification": "CVF页面/PDF核对完整题名、作者和公开版页码2117-2125；不把项目结构称为未修改的原FPN。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 18,
+      "key": "semantic",
+      "formatted": "Ultralytics. Semantic Segmentation with Ultralytics YOLO[EB/OL]. [2026-11-09]. https://docs.ultralytics.com/tasks/semantic/.",
+      "url": "https://docs.ultralytics.com/tasks/semantic/",
+      "claim": "官方区分语义分割和实例分割，YOLO26具有-sem模型；项目历史版本须由本地证据确定。",
+      "verification": "2026-11-09实际访问官方文档；只支持任务概念与模型命名，不用当前默认值替代历史配置。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 19,
+      "key": "dropout",
+      "formatted": "Srivastava Nitish, Hinton Geoffrey, Krizhevsky Alex, et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting[J]. Journal of Machine Learning Research, 2014, 15(56): 1929-1958.",
+      "url": "https://www.jmlr.org/papers/v15/srivastava14a.html",
+      "claim": "训练时随机屏蔽单元的正则化方法；本文分类头Dropout与门控均衡作用不同。",
+      "verification": "JMLR原始页面/PDF核对五位作者、卷号/文章号和页码；不宣称独立证明正则化改善。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    },
+    {
+      "number": 20,
+      "key": "adamw",
+      "formatted": "Loshchilov Ilya, Hutter Frank. Decoupled Weight Decay Regularization[A]. International Conference on Learning Representations[C]. 2019.",
+      "url": "https://arxiv.org/abs/1711.05101",
+      "support_urls": [
+        "https://github.com/loshchil/AdamW-and-SGDW"
+      ],
+      "claim": "AdamW将权重衰减与自适应梯度更新解耦；为本项目实际优化器的文献依据。",
+      "verification": "作者arXiv v3注明ICLR2019，作者代码仓库再次确认；OpenReview遇浏览器验证，未声称已读其页面，不虚构页码。",
+      "verified_date": "2026-11-09",
+      "status": "已核验"
+    }
+  ],
+  "chapters": [
+    {
+      "number": 1,
+      "title": "绪论",
+      "prose_chars": 2765
+    },
+    {
+      "number": 2,
+      "title": "相关背景知识简介",
+      "prose_chars": 3335
+    },
+    {
+      "number": 3,
+      "title": "算法的改进方案",
+      "prose_chars": 4550
+    },
+    {
+      "number": 4,
+      "title": "改进算法实现",
+      "prose_chars": 4721
+    },
+    {
+      "number": 5,
+      "title": "实验验证",
+      "prose_chars": 5087
+    },
+    {
+      "number": 6,
+      "title": "总结及展望",
+      "prose_chars": 1016
+    }
+  ],
+  "final_postprocess": "template_recheck_patch.py; template_recheck_20261109/audit_final.json"
+}

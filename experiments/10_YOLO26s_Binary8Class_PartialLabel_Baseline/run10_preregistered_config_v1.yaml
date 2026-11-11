@@ -1,0 +1,104 @@
+# Run10 frozen baseline for the accepted binary+8-class partial-label contract.
+# No test or external candidate is present in this configuration.
+
+contract:
+  version: run10_partial_multitask_baseline_v1
+  role: first_formal_baseline_of_new_data_and_model_contract
+  single_preregistered_factor: migrate_to_binary_segmentation_plus_official_8class_partial_labels_v1
+  comparison_policy: not_a_causal_ablation_against_run9
+  future_policy: each_followup_run_changes_exactly_one_factor_from_run10
+  test_policy: forbidden_until_final_model_lock_and_fresh_user_authorization
+  external_policy: forbidden_for_training_selection_and_threshold_tuning
+
+ultralytics:
+  task: semantic
+  mode: train
+  model: models/yolo26s-sem.pt
+  data: experiments/10_YOLO26s_Binary8Class_PartialLabel_Baseline/run10_development_data.yaml
+  epochs: 100
+  patience: 20
+  batch: 16
+  imgsz: 640
+  device: 0
+  workers: 8
+  project: experiments/10_YOLO26s_Binary8Class_PartialLabel_Baseline/results
+  name: run10_yolo26s_binary8cls_partial_seed42
+  exist_ok: false
+  pretrained: true
+  optimizer: AdamW
+  lr0: 0.001
+  lrf: 0.01
+  cos_lr: true
+  momentum: 0.937
+  weight_decay: 0.0005
+  warmup_epochs: 3.0
+  warmup_momentum: 0.8
+  warmup_bias_lr: 0.1
+  nbs: 64
+  seed: 42
+  deterministic: true
+  amp: true
+  cache: false
+  save: true
+  save_period: -1
+  plots: true
+  val: true
+  verbose: true
+  fraction: 1.0
+  single_cls: false
+  rect: false
+  multi_scale: false
+  dropout: 0.0
+
+augmentations:
+  hsv_h: 0.005
+  hsv_s: 0.10
+  hsv_v: 0.10
+  degrees: 5.0
+  translate: 0.03
+  scale: 0.10
+  shear: 0.0
+  perspective: 0.0
+  flipud: 0.5
+  fliplr: 0.5
+  bgr: 0.0
+  mosaic: 0.0
+  mixup: 0.0
+  cutmix: 0.0
+  copy_paste: 0.0
+  close_mosaic: 0
+  auto_augment: null
+  erasing: 0.0
+
+multitask:
+  semantic_classes: 1
+  classification_classes: 8
+  image_cls_weight: 0.5
+  image_head: plain_p3_p4_global_pool_mlp_dropout020
+  classification_label_smoothing: 0.0
+  sampler: standard_seeded_epoch_shuffle_without_replacement
+  epoch_size: all_23462_train_samples_once
+  segmentation_loss_scope: has_segmentation_only
+  classification_loss_scope: has_official_classification_only
+
+checkpoint:
+  bundle_version: pifuv2_multitask_checkpoint_v2
+  keep_last: 3
+  resume_default: auto
+  safe_boundary: completed_epoch
+  require_success_hash_and_fingerprint: true
+  save_live_model_ema_optimizer_scaler_scheduler_stopper_rng_data_progress: true
+
+selection:
+  primary_alias: best_feasible_joint
+  joint_score: sqrt_binary_iou_times_group_macro_f1
+  max_mel_to_nv_rate: 0.1077844311
+  fallback_if_no_feasible: constraint_failure_report_best_joint_for_diagnosis_only
+  tie_break_order:
+    - higher_group_macro_f1
+    - higher_binary_iou
+    - earlier_epoch
+  semantic_probability_threshold: 0.5
+  classification_decision: argmax
+  calibration_temperature: 1.0
+  fit_temperature_or_threshold_on_external: false

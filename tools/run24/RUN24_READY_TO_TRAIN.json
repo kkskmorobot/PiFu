@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "ready_to_click_pycharm": true,
+  "entrypoint": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\train_run24_from_pycharm.py",
+  "config": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\run24_preregistered_config_v1.yaml",
+  "config_sha256": "96d87780853c73b21ca5171028aeff2e679133f03e972cfdce0ade7b4122a3f9",
+  "fingerprint": "c856d97b12202fac2e400ecbcd94d5ad91c705981d6c692cda827e99e28929e6",
+  "lock_inputs": {
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\run24_preregistered_config_v1.yaml": {
+      "bytes": 4093,
+      "sha256": "96d87780853c73b21ca5171028aeff2e679133f03e972cfdce0ade7b4122a3f9"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\RUN24_PROTOCOL_2026-08-16.md": {
+      "bytes": 1520,
+      "sha256": "39b29ad065158bf31dc1e748a798046c4f24801f9057fb58965dbfa825527539"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\run24_development_manifest.csv": {
+      "bytes": 8299971,
+      "sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\run24_development_data.yaml": {
+      "bytes": 632,
+      "sha256": "4bbc0e919c46170dca6a25f491478e6ff98a2d6e727853df563df8a20005c5c9"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt": {
+      "bytes": 28924971,
+      "sha256": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt": {
+      "bytes": 5544453,
+      "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml": {
+      "bytes": 771,
+      "sha256": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\multitask_manifest.csv": {
+      "bytes": 8511477,
+      "sha256": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\manifest.csv": {
+      "bytes": 5780376,
+      "sha256": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\manifest.csv": {
+      "bytes": 5317937,
+      "sha256": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2018_task1_incremental_v1\\manifest.csv": {
+      "bytes": 40002,
+      "sha256": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py": {
+      "bytes": 26587,
+      "sha256": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py": {
+      "bytes": 2877,
+      "sha256": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\imaplusplus_partial_multitask_plain_seed44_v1.py": {
+      "bytes": 3539,
+      "sha256": "1a032a84b709ffce49bbb911d5ca0772fae17646aa8692ff29f2605793e6ac04"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py": {
+      "bytes": 27811,
+      "sha256": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py": {
+      "bytes": 12421,
+      "sha256": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\train_run24_from_pycharm.py": {
+      "bytes": 34188,
+      "sha256": "abecfb5f12c136cc42aed40f627c2f69b63976fd987456e0c849470ad117ef70"
+    }
+  },
+  "preflight_report": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\RUN24_PREFLIGHT_REPORT.json",
+  "formal_training_started": false,
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

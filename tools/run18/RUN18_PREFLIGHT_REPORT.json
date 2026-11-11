@@ -1,0 +1,212 @@
+{
+  "status": "PASS",
+  "scope": "final Run18 preparation; no optimizer, backward, training, test, or external evaluation",
+  "created_local_time": "2026-08-10 20:58:38 +0800",
+  "config_sha256": "e0f6a2154d7bd8cfe85a7eb6f2ebcc4e5458d597832780450bd6cde29108265b",
+  "fingerprint": "2ed64c4aa90c6d90d15ace2158de0866e570f71ad8a3cb3bbc3e2b7d0fd2b7a3",
+  "protected_files": {
+    "models/yolo26m-sem.pt": {
+      "bytes": 28924971,
+      "sha256": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233"
+    },
+    "tools/yolo26n.pt": {
+      "bytes": 5544453,
+      "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef"
+    },
+    "tools/classification_taxonomy_v1.yaml": {
+      "bytes": 771,
+      "sha256": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e"
+    },
+    "Data/processed_imaplusplus_binary_v1/manifest.csv": {
+      "bytes": 5780376,
+      "sha256": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e"
+    },
+    "Data/processed_isic2019_classification_incremental_v1/manifest.csv": {
+      "bytes": 5317937,
+      "sha256": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a"
+    },
+    "Data/processed_isic2019_classification_incremental_v1/multitask_manifest.csv": {
+      "bytes": 8511477,
+      "sha256": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956"
+    },
+    "Data/processed_isic2019_classification_incremental_v1/multitask_data.yaml": {
+      "bytes": 600,
+      "sha256": "fb2becbc7d07086494b8abb6179b061a845c532717a23ff66c68d4ec70c7ce6e"
+    },
+    "Data/processed_isic2018_task1_incremental_v1/manifest.csv": {
+      "bytes": 40002,
+      "sha256": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102"
+    }
+  },
+  "lock_inputs": {
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\run18_preregistered_config_v1.yaml": {
+      "bytes": 4179,
+      "sha256": "e0f6a2154d7bd8cfe85a7eb6f2ebcc4e5458d597832780450bd6cde29108265b"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\RUN18_PROTOCOL_2026-08-10.md": {
+      "bytes": 2866,
+      "sha256": "e18e73d6a11be2517ff4fbaac685d020a2c056e4df518b1a7f1d6786a8f47957"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\run18_development_manifest.csv": {
+      "bytes": 8299971,
+      "sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\run18_development_data.yaml": {
+      "bytes": 632,
+      "sha256": "dba1ecedc191f1944caf7ded752088f5636418c97cd4a0331b7431ce2e0c482e"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt": {
+      "bytes": 28924971,
+      "sha256": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt": {
+      "bytes": 5544453,
+      "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml": {
+      "bytes": 771,
+      "sha256": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\multitask_manifest.csv": {
+      "bytes": 8511477,
+      "sha256": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\manifest.csv": {
+      "bytes": 5780376,
+      "sha256": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\manifest.csv": {
+      "bytes": 5317937,
+      "sha256": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2018_task1_incremental_v1\\manifest.csv": {
+      "bytes": 40002,
+      "sha256": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py": {
+      "bytes": 26587,
+      "sha256": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py": {
+      "bytes": 2877,
+      "sha256": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\imaplusplus_partial_multitask_delayed_early_stop_v1.py": {
+      "bytes": 3539,
+      "sha256": "1333a9fd52c25864637243031f891274dd82667d34ef067f7fd397ad57e94139"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py": {
+      "bytes": 27811,
+      "sha256": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py": {
+      "bytes": 12421,
+      "sha256": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad"
+    },
+    "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\train_run18_from_pycharm.py": {
+      "bytes": 34262,
+      "sha256": "94884dc473a8f06021dc8e153a2f26eb18a53a0f32b637e7d0cee0e1960b4157"
+    }
+  },
+  "development": {
+    "counts": {
+      "train": {
+        "total": 23462,
+        "seg": 10483,
+        "cls": 13715,
+        "both": 736
+      },
+      "val": {
+        "total": 1744,
+        "seg": 292,
+        "cls": 1488,
+        "both": 36
+      }
+    },
+    "development_manifest_sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+    "development_data_sha256": "dba1ecedc191f1944caf7ded752088f5636418c97cd4a0331b7431ce2e0c482e",
+    "source_test_rows_excluded": 634,
+    "test_key": null,
+    "external_candidates_present": false
+  },
+  "manual_pad_extraction": {
+    "status": "PASS",
+    "total_png": 2298,
+    "parts": {
+      "imgs_part_1": {
+        "png": 911,
+        "crc32_and_size": "PASS"
+      },
+      "imgs_part_2": {
+        "png": 659,
+        "crc32_and_size": "PASS"
+      },
+      "imgs_part_3": {
+        "png": 728,
+        "crc32_and_size": "PASS"
+      }
+    },
+    "training_role": "none_external_candidate_only"
+  },
+  "cuda": {
+    "available": true,
+    "count": 1,
+    "name": "NVIDIA GeForce RTX 5080",
+    "torch": "2.8.0+cu129",
+    "cuda_runtime": "12.9",
+    "free_bytes_before_preflight": 15712911360,
+    "total_bytes": 17094475776
+  },
+  "forward_only_preflight": {
+    "status": "PASS",
+    "scope": "real development role batch expanded to frozen batch size; forward and loss only",
+    "source_role_ids": [
+      "ISIC_0000017_downsampled",
+      "ISIC_0000000",
+      "ISIC_0000005"
+    ],
+    "batch": 16,
+    "imgsz": 640,
+    "amp": true,
+    "semantic_shape": [
+      16,
+      1,
+      80,
+      80
+    ],
+    "classification_shape": [
+      16,
+      8
+    ],
+    "loss_items": [
+      0.7536226511001587,
+      0.5999007821083069,
+      0.31733590364456177,
+      2.1125710010528564
+    ],
+    "parameters": 14507338,
+    "classification_head_parameters": 198920,
+    "plain_head_inputs": [
+      16,
+      13
+    ],
+    "attention_modules_present": false,
+    "descriptor": "p3_p4_global_average_pool",
+    "pretrained_load_result": "None",
+    "peak_cuda_allocated_bytes": 1057617408,
+    "peak_cuda_reserved_bytes": 1862270976,
+    "model_state_changed": false,
+    "optimizer_created": false,
+    "backward_called": false,
+    "optimizer_step_called": false,
+    "trainer_train_called": false,
+    "test_or_external_loaded": false
+  },
+  "formal_training_started": false,
+  "experiments_18_result_directory_created": false,
+  "amp_check_asset": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt",
+  "amp_check_working_directory": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools",
+  "amp_check_runtime_download": "forbidden_local_asset_required",
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

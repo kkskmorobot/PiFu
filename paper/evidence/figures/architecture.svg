@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="900" height="430" preserveAspectRatio="xMinYMin meet" viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="900" height="430"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-430)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="900" height="430" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="20" y="330" width="200" height="80" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="83.25" y="376.195" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,752) scale(1,-1)">RGB输入</text>
+			<text x="46.5" y="349.945" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,699) scale(1,-1)">B×3×640×640</text>
+			<rect x="280" y="330" width="280" height="80" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="356.75" y="376.78499999999997" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,753) scale(1,-1)">共享YOLO26m</text>
+			<text x="305.0" y="348.03499999999997" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,696) scale(1,-1)">骨干与多尺度特征融合</text>
+			<path d="M 220,370 L 280,370 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="280 370, 270.7894 366.1058, 270.7894 373.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="625" y="330" width="255" height="80" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="670.0" y="376.49" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,752) scale(1,-1)">P3：256×80×80</text>
+			<text x="670.0" y="348.99" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,697) scale(1,-1)">P4：512×40×40</text>
+			<path d="M 560,370 L 625,370 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="625 370, 615.7894 366.1058, 615.7894 373.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 752,330 L 752,295 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 140,295 L 752,295 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<path d="M 140,295 L 140,260 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="140 260, 136.1058 269.2106, 143.8942 269.2106" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 450,295 L 450,260 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="450 260, 446.1058 269.2106, 453.8942 269.2106" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 752,295 L 752,260 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="752 260, 748.1058 269.2106, 755.8942 269.2106" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="20" y="160" width="240" height="100" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="60.0" y="228.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,456) scale(1,-1)">语义分支（保留）</text>
+			<text x="85.0" y="203.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,406) scale(1,-1)">P3→主输出S</text>
+			<text x="40.0" y="178.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,356) scale(1,-1)">P4→辅助输出（训练）</text>
+			<rect x="330" y="160" width="240" height="100" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="385.0" y="228.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,456) scale(1,-1)">Plain分类路径</text>
+			<text x="355.0" y="203.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,406) scale(1,-1)">GAP(P3/P4)→拼接768</text>
+			<text x="375.0" y="178.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,356) scale(1,-1)">MLP 768→256→8</text>
+			<rect x="630" y="160" width="250" height="100" rx="5" ry="5" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(91%,96%,94%); fill-rule: evenodd;"/>
+			<text x="695.0" y="228.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,456) scale(1,-1)">LGLA分类路径</text>
+			<text x="670.0" y="203.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,406) scale(1,-1)">区域引导融合→256</text>
+			<text x="680.0" y="178.4" style="font-family: SimHei; font-size: 20px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,356) scale(1,-1)">MLP 256→256→8</text>
+			<path d="M 140,160 L 140,110 Z" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.8; stroke-dasharray: 6, 4;"/>
+			<path d="M 140,110 L 752,110 Z" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.8; stroke-dasharray: 6, 4;"/>
+			<path d="M 752,110 L 752,160 Z" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.8; stroke-dasharray: 6, 4;"/>
+			<polygon points="752 160, 755.8942 150.7894, 748.1058 150.7894" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<text x="219.0" y="75.0" style="font-family: SimHei; font-size: 22px;fill: rgb(14%,51%,47%); stroke:none;" transform="translate(0,150) scale(1,-1)">S经过停止梯度与Sigmoid，仅引导LGLA局部汇聚</text>
+			<text x="129.75" y="30.0" style="font-family: SimHei; font-size: 21px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,60) scale(1,-1)">Plain与LGLA为对比模型；共享网络、语义头与标签监督流程保持一致</text>
+		</g>
+	</g>
+</svg>

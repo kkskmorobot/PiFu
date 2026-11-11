@@ -1,0 +1,12 @@
+{
+  "protocol": "primary Macro-F1 with pre-registered segmentation, minority-recall and mel-to-nv constraints",
+  "constraints": {
+    "min_foreground_miou": 0.518748,
+    "min_minority_recall": 0.533498,
+    "max_mel_to_nv_rate": 0.1077844311
+  },
+  "best_macro_f1": 0.72935,
+  "best_macro_epoch": 49,
+  "best_feasible_macro_f1": 0.68511,
+  "best_feasible_epoch": 37
+}

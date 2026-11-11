@@ -1,0 +1,79 @@
+{
+  "mode": "SMOKE_NOT_THESIS",
+  "smoke_not_thesis": true,
+  "input_evidence": {
+    "path": "D:\\Data\\project\\PiFu\\tools\\run18\\run18_development_manifest.csv",
+    "sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+    "rows": 25206,
+    "splits": {
+      "train": 23462,
+      "val": 1744
+    },
+    "run": "run18",
+    "original_config_sha256": "e0f6a2154d7bd8cfe85a7eb6f2ebcc4e5458d597832780450bd6cde29108265b",
+    "task_counts": {
+      "train": 23462,
+      "val": 1744
+    },
+    "protected_hashes": {
+      "models/yolo26m-sem.pt": {
+        "expected": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+        "actual": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+        "matches_original": true
+      },
+      "tools/yolo26n.pt": {
+        "expected": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+        "actual": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+        "matches_original": true
+      },
+      "tools/classification_taxonomy_v1.yaml": {
+        "expected": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+        "actual": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+        "matches_original": true
+      },
+      "Data/processed_imaplusplus_binary_v1/manifest.csv": {
+        "expected": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e",
+        "actual": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e",
+        "matches_original": true
+      },
+      "Data/processed_isic2019_classification_incremental_v1/manifest.csv": {
+        "expected": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a",
+        "actual": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a",
+        "matches_original": true
+      },
+      "Data/processed_isic2019_classification_incremental_v1/multitask_manifest.csv": {
+        "expected": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956",
+        "actual": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956",
+        "matches_original": true
+      },
+      "Data/processed_isic2019_classification_incremental_v1/multitask_data.yaml": {
+        "expected": "fb2becbc7d07086494b8abb6179b061a845c532717a23ff66c68d4ec70c7ce6e",
+        "actual": "fb2becbc7d07086494b8abb6179b061a845c532717a23ff66c68d4ec70c7ce6e",
+        "matches_original": true
+      },
+      "Data/processed_isic2018_task1_incremental_v1/manifest.csv": {
+        "expected": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102",
+        "actual": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102",
+        "matches_original": true
+      }
+    }
+  },
+  "rows": 16,
+  "weights": {
+    "kind": "frozen_paper_export",
+    "weights": "weights/run18/frozen_eval.pt",
+    "sha256": "f51a465b92097b9cc40e57e83806b9f9a3f259f6383f166aa55d491cfc2a5683",
+    "bytes": 58344307,
+    "source_bundle": "experiments/18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop/results/run18_yolo26m_plain_delayed_utility_early_stop_seed42/checkpoint_bundles/epoch_0049",
+    "source_fingerprint": "2ed64c4aa90c6d90d15ace2158de0866e570f71ad8a3cb3bbc3e2b7d0fd2b7a3",
+    "source_trainer_sha256": "71a2308299fb3b7287c891bfc590f4b0b890f89750c94c081b715a0ced4fa312",
+    "source_runtime_sha256": "d746270550e867926d91cd498984ac4e339a0badf953f66a2b74ccbdd7e3d7bd",
+    "visible_epoch": 50,
+    "zero_based_epoch": 49,
+    "state_tensor_count": 428,
+    "exact_tensor_equality": true,
+    "scalar_count": 14536720,
+    "experiment": "18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop"
+  },
+  "prepared_only": false
+}

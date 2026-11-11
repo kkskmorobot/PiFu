@@ -1,0 +1,2638 @@
+{
+  "verified_on": "2026-11-09",
+  "manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\lgx_development_manifest.csv",
+  "manifest_sha256": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+  "development": {
+    "train": {
+      "total": 23462,
+      "seg": 10483,
+      "cls": 13715,
+      "both": 736,
+      "class_counts": {
+        "nv": 5539,
+        "mel": 3047,
+        "bkl": 1360,
+        "scc": 387,
+        "bcc": 2518,
+        "akiec": 654,
+        "df": 112,
+        "vasc": 98
+      },
+      "dataset_role_counts": {
+        "imaplusplus_binary": 10483,
+        "isic2019_classification_incremental": 12979
+      },
+      "empty_group_id": 0,
+      "classification_groups": 5812,
+      "empty_lesion_id": 10397,
+      "empty_patient_id": 22219
+    },
+    "val": {
+      "total": 1744,
+      "seg": 292,
+      "cls": 1488,
+      "both": 36,
+      "class_counts": {
+        "mel": 334,
+        "nv": 576,
+        "bkl": 151,
+        "scc": 44,
+        "bcc": 283,
+        "akiec": 75,
+        "df": 12,
+        "vasc": 13
+      },
+      "dataset_role_counts": {
+        "imaplusplus_binary": 292,
+        "isic2019_classification_incremental": 1452
+      },
+      "empty_group_id": 0,
+      "classification_groups": 587,
+      "empty_lesion_id": 325,
+      "empty_patient_id": 1632
+    }
+  },
+  "train_val_nonempty_key_overlap": {
+    "isic_id": 0,
+    "group_id": 0,
+    "image_sha256": 0,
+    "lesion_id": 0,
+    "patient_id": 0
+  },
+  "ima_frozen_counts": {
+    "train": 10483,
+    "val": 292,
+    "test": 634
+  },
+  "isic2019_frozen_counts": {
+    "train": 12979,
+    "val": 1452
+  },
+  "lock_input_hash_check": [
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\lgx_preregistered_config_v1.yaml",
+      "expected": "15a854ceee23149017dab986d18b6729359eabcc58be132990efe1e9df0f60df",
+      "actual": "15a854ceee23149017dab986d18b6729359eabcc58be132990efe1e9df0f60df",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\LGX_PROTOCOL_2026-09-13.md",
+      "expected": "65636ce3098c3b748426bf5a81d57ce330524f7e2c6b1050b85ea8461e787d57",
+      "actual": "65636ce3098c3b748426bf5a81d57ce330524f7e2c6b1050b85ea8461e787d57",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\lgx_development_manifest.csv",
+      "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+      "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\lgx_development_data.yaml",
+      "expected": "7d24cb3de0f190493c763f9119cc85736add0e30666b4c66ceeea44cbbe1633a",
+      "actual": "7d24cb3de0f190493c763f9119cc85736add0e30666b4c66ceeea44cbbe1633a",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+      "expected": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+      "actual": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt",
+      "expected": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+      "actual": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml",
+      "expected": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+      "actual": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_manifest.csv",
+      "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+      "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_data.yaml",
+      "expected": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+      "actual": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py",
+      "expected": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+      "actual": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py",
+      "expected": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+      "actual": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\imaplusplus_partial_multitask_lgla_v1_gate_balance_seed43.py",
+      "expected": "967f44959eab30fe7bec4510bd6afc32bbffb601d14d7f47fb30ef087a86cd48",
+      "actual": "967f44959eab30fe7bec4510bd6afc32bbffb601d14d7f47fb30ef087a86cd48",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py",
+      "expected": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+      "actual": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py",
+      "expected": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+      "actual": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+      "match": true
+    },
+    {
+      "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\train_lgx_from_pycharm.py",
+      "expected": "1c36c34ea0ee0460dc01f1c53b4db44aaec0df8a01620078c2a1fc84499157bf",
+      "actual": "1c36c34ea0ee0460dc01f1c53b4db44aaec0df8a01620078c2a1fc84499157bf",
+      "match": true
+    }
+  ],
+  "runs": [
+    {
+      "run": "lg1",
+      "seed": 43,
+      "args_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg1_YOLO26m_Binary8Class_LGLAv1_Seed43\\results\\lg1_yolo26m_lgla_v1_seed43\\args.yaml",
+      "args_sha256": "69ba79ec00503ad425547bc38c65b84abdcc101408d3c95c981b90eaf92af775",
+      "arguments": {
+        "task": "semantic",
+        "mode": "train",
+        "model": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+        "data": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg1\\lg1_development_data.yaml",
+        "epochs": "100",
+        "time": "null",
+        "patience": "30",
+        "batch": "16",
+        "imgsz": "640",
+        "save": "true",
+        "save_period": "-1",
+        "cache": "false",
+        "device": "'0'",
+        "workers": "8",
+        "project": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg1_YOLO26m_Binary8Class_LGLAv1_Seed43\\results",
+        "name": "lg1_yolo26m_lgla_v1_seed43",
+        "exist_ok": "false",
+        "pretrained": "true",
+        "cls_remap": "true",
+        "optimizer": "AdamW",
+        "verbose": "true",
+        "seed": "43",
+        "deterministic": "true",
+        "single_cls": "false",
+        "rect": "false",
+        "cos_lr": "true",
+        "close_mosaic": "0",
+        "resume": "false",
+        "amp": "true",
+        "fraction": "1.0",
+        "profile": "false",
+        "freeze": "null",
+        "multi_scale": "false",
+        "compile": "false",
+        "overlap_mask": "true",
+        "mask_ratio": "4",
+        "dropout": "0.0",
+        "val": "true",
+        "split": "val",
+        "save_json": "false",
+        "conf": "null",
+        "iou": "0.7",
+        "max_det": "300",
+        "quantize": "null",
+        "dnn": "false",
+        "plots": "true",
+        "end2end": "null",
+        "source": "null",
+        "vid_stride": "1",
+        "stream_buffer": "false",
+        "visualize": "false",
+        "augment": "false",
+        "agnostic_nms": "false",
+        "classes": "null",
+        "retina_masks": "false",
+        "embed": "null",
+        "show": "false",
+        "save_frames": "false",
+        "save_txt": "false",
+        "save_conf": "false",
+        "save_crop": "false",
+        "show_labels": "true",
+        "show_conf": "true",
+        "show_boxes": "true",
+        "line_width": "null",
+        "format": "torchscript",
+        "keras": "false",
+        "optimize": "false",
+        "dynamic": "false",
+        "simplify": "true",
+        "opset": "null",
+        "workspace": "null",
+        "nms": "false",
+        "lr0": "0.001",
+        "lrf": "0.01",
+        "momentum": "0.937",
+        "weight_decay": "0.0005",
+        "warmup_epochs": "3.0",
+        "warmup_momentum": "0.8",
+        "warmup_bias_lr": "0.1",
+        "distill_model": "null",
+        "dis": "6.0",
+        "box": "7.5",
+        "cls": "0.5",
+        "cls_pw": "0.0",
+        "dfl": "1.5",
+        "pose": "12.0",
+        "kobj": "1.0",
+        "rle": "1.0",
+        "angle": "1.0",
+        "nbs": "64",
+        "hsv_h": "0.005",
+        "hsv_s": "0.1",
+        "hsv_v": "0.1",
+        "degrees": "5.0",
+        "translate": "0.03",
+        "scale": "0.1",
+        "shear": "0.0",
+        "perspective": "0.0",
+        "flipud": "0.5",
+        "fliplr": "0.5",
+        "bgr": "0.0",
+        "mosaic": "0.0",
+        "mixup": "0.0",
+        "cutmix": "0.0",
+        "copy_paste": "0.0",
+        "copy_paste_mode": "flip",
+        "auto_augment": "null",
+        "erasing": "0.0",
+        "cfg": "null",
+        "tracker": "tracktrack.yaml",
+        "save_dir": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg1_YOLO26m_Binary8Class_LGLAv1_Seed43\\results\\lg1_yolo26m_lgla_v1_seed43"
+      },
+      "checkpoint_manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg1_YOLO26m_Binary8Class_LGLAv1_Seed43\\results\\lg1_yolo26m_lgla_v1_seed43\\checkpoint_bundles\\epoch_0083\\manifest.json",
+      "epoch_zero": 83,
+      "fingerprint": "ca47d032187061fe8107eb5152d4e3e28026426a6ea7e2df178a5fd146534732"
+    },
+    {
+      "run": "lgx",
+      "seed": 43,
+      "args_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43\\results\\lgx_yolo26m_lgla_v1_gate_balance_seed43\\args.yaml",
+      "args_sha256": "897dfd7edd680ded352bd79f650ea52d4620334d574cb09b07fb0a82f89820aa",
+      "arguments": {
+        "task": "semantic",
+        "mode": "train",
+        "model": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+        "data": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\lgx_development_data.yaml",
+        "epochs": "100",
+        "time": "null",
+        "patience": "30",
+        "batch": "16",
+        "imgsz": "640",
+        "save": "true",
+        "save_period": "-1",
+        "cache": "false",
+        "device": "'0'",
+        "workers": "8",
+        "project": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43\\results",
+        "name": "lgx_yolo26m_lgla_v1_gate_balance_seed43",
+        "exist_ok": "false",
+        "pretrained": "true",
+        "cls_remap": "true",
+        "optimizer": "AdamW",
+        "verbose": "true",
+        "seed": "43",
+        "deterministic": "true",
+        "single_cls": "false",
+        "rect": "false",
+        "cos_lr": "true",
+        "close_mosaic": "0",
+        "resume": "false",
+        "amp": "true",
+        "fraction": "1.0",
+        "profile": "false",
+        "freeze": "null",
+        "multi_scale": "false",
+        "compile": "false",
+        "overlap_mask": "true",
+        "mask_ratio": "4",
+        "dropout": "0.0",
+        "val": "true",
+        "split": "val",
+        "save_json": "false",
+        "conf": "null",
+        "iou": "0.7",
+        "max_det": "300",
+        "quantize": "null",
+        "dnn": "false",
+        "plots": "true",
+        "end2end": "null",
+        "source": "null",
+        "vid_stride": "1",
+        "stream_buffer": "false",
+        "visualize": "false",
+        "augment": "false",
+        "agnostic_nms": "false",
+        "classes": "null",
+        "retina_masks": "false",
+        "embed": "null",
+        "show": "false",
+        "save_frames": "false",
+        "save_txt": "false",
+        "save_conf": "false",
+        "save_crop": "false",
+        "show_labels": "true",
+        "show_conf": "true",
+        "show_boxes": "true",
+        "line_width": "null",
+        "format": "torchscript",
+        "keras": "false",
+        "optimize": "false",
+        "dynamic": "false",
+        "simplify": "true",
+        "opset": "null",
+        "workspace": "null",
+        "nms": "false",
+        "lr0": "0.001",
+        "lrf": "0.01",
+        "momentum": "0.937",
+        "weight_decay": "0.0005",
+        "warmup_epochs": "3.0",
+        "warmup_momentum": "0.8",
+        "warmup_bias_lr": "0.1",
+        "distill_model": "null",
+        "dis": "6.0",
+        "box": "7.5",
+        "cls": "0.5",
+        "cls_pw": "0.0",
+        "dfl": "1.5",
+        "pose": "12.0",
+        "kobj": "1.0",
+        "rle": "1.0",
+        "angle": "1.0",
+        "nbs": "64",
+        "hsv_h": "0.005",
+        "hsv_s": "0.1",
+        "hsv_v": "0.1",
+        "degrees": "5.0",
+        "translate": "0.03",
+        "scale": "0.1",
+        "shear": "0.0",
+        "perspective": "0.0",
+        "flipud": "0.5",
+        "fliplr": "0.5",
+        "bgr": "0.0",
+        "mosaic": "0.0",
+        "mixup": "0.0",
+        "cutmix": "0.0",
+        "copy_paste": "0.0",
+        "copy_paste_mode": "flip",
+        "auto_augment": "null",
+        "erasing": "0.0",
+        "cfg": "null",
+        "tracker": "tracktrack.yaml",
+        "save_dir": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43\\results\\lgx_yolo26m_lgla_v1_gate_balance_seed43"
+      },
+      "checkpoint_manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43\\results\\lgx_yolo26m_lgla_v1_gate_balance_seed43\\checkpoint_bundles\\epoch_0098\\manifest.json",
+      "epoch_zero": 98,
+      "fingerprint": "3a9aa4156828bd2e5af1b1f44a62929041cde5895d01ed995c8c5af823186ac0"
+    },
+    {
+      "run": "lg2",
+      "seed": 42,
+      "args_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42\\results\\lg2_yolo26m_lgla_v1_gate_balance_seed42\\args.yaml",
+      "args_sha256": "394bb2f15b70def4677ffbc370fb34326eeb6546496da3ef759b07227ace9671",
+      "arguments": {
+        "task": "semantic",
+        "mode": "train",
+        "model": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42\\results\\lg2_yolo26m_lgla_v1_gate_balance_seed42\\checkpoint_bundles\\epoch_0015\\trainer.pt",
+        "data": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg2\\lg2_development_data.yaml",
+        "epochs": "100",
+        "time": "null",
+        "patience": "30",
+        "batch": "16",
+        "imgsz": "640",
+        "save": "true",
+        "save_period": "-1",
+        "cache": "false",
+        "device": "'0'",
+        "workers": "8",
+        "project": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42\\results",
+        "name": "lg2_yolo26m_lgla_v1_gate_balance_seed42",
+        "exist_ok": "false",
+        "pretrained": "true",
+        "cls_remap": "true",
+        "optimizer": "AdamW",
+        "verbose": "true",
+        "seed": "42",
+        "deterministic": "true",
+        "single_cls": "false",
+        "rect": "false",
+        "cos_lr": "true",
+        "close_mosaic": "0",
+        "resume": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42\\results\\lg2_yolo26m_lgla_v1_gate_balance_seed42\\checkpoint_bundles\\epoch_0015\\trainer.pt",
+        "amp": "true",
+        "fraction": "1.0",
+        "profile": "false",
+        "freeze": "null",
+        "multi_scale": "false",
+        "compile": "false",
+        "overlap_mask": "true",
+        "mask_ratio": "4",
+        "dropout": "0.0",
+        "val": "true",
+        "split": "val",
+        "save_json": "false",
+        "conf": "null",
+        "iou": "0.7",
+        "max_det": "300",
+        "quantize": "null",
+        "dnn": "false",
+        "plots": "true",
+        "end2end": "null",
+        "source": "null",
+        "vid_stride": "1",
+        "stream_buffer": "false",
+        "visualize": "false",
+        "augment": "false",
+        "agnostic_nms": "false",
+        "classes": "null",
+        "retina_masks": "false",
+        "embed": "null",
+        "show": "false",
+        "save_frames": "false",
+        "save_txt": "false",
+        "save_conf": "false",
+        "save_crop": "false",
+        "show_labels": "true",
+        "show_conf": "true",
+        "show_boxes": "true",
+        "line_width": "null",
+        "format": "torchscript",
+        "keras": "false",
+        "optimize": "false",
+        "dynamic": "false",
+        "simplify": "true",
+        "opset": "null",
+        "workspace": "null",
+        "nms": "false",
+        "lr0": "0.001",
+        "lrf": "0.01",
+        "momentum": "0.937",
+        "weight_decay": "0.0005",
+        "warmup_epochs": "3.0",
+        "warmup_momentum": "0.8",
+        "warmup_bias_lr": "0.1",
+        "distill_model": "null",
+        "dis": "6.0",
+        "box": "7.5",
+        "cls": "0.5",
+        "cls_pw": "0.0",
+        "dfl": "1.5",
+        "pose": "12.0",
+        "kobj": "1.0",
+        "rle": "1.0",
+        "angle": "1.0",
+        "nbs": "64",
+        "hsv_h": "0.005",
+        "hsv_s": "0.1",
+        "hsv_v": "0.1",
+        "degrees": "5.0",
+        "translate": "0.03",
+        "scale": "0.1",
+        "shear": "0.0",
+        "perspective": "0.0",
+        "flipud": "0.5",
+        "fliplr": "0.5",
+        "bgr": "0.0",
+        "mosaic": "0.0",
+        "mixup": "0.0",
+        "cutmix": "0.0",
+        "copy_paste": "0.0",
+        "copy_paste_mode": "flip",
+        "auto_augment": "null",
+        "erasing": "0.0",
+        "cfg": "null",
+        "tracker": "tracktrack.yaml",
+        "save_dir": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42\\results\\lg2_yolo26m_lgla_v1_gate_balance_seed42"
+      },
+      "checkpoint_manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42\\results\\lg2_yolo26m_lgla_v1_gate_balance_seed42\\checkpoint_bundles\\epoch_0073\\manifest.json",
+      "epoch_zero": 73,
+      "fingerprint": "16f9505ad452813aac9eb85e1b4cb176d077ff9d16a30ac20965ff3efbd87df4"
+    },
+    {
+      "run": "lg3",
+      "seed": 44,
+      "args_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg3_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed44\\results\\lg3_yolo26m_lgla_v1_gate_balance_seed44\\args.yaml",
+      "args_sha256": "e5606e53d294ab9aea278189e9b41db1f46bfe9b28582d9d10506e93ee3c9163",
+      "arguments": {
+        "task": "semantic",
+        "mode": "train",
+        "model": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+        "data": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg3\\lg3_development_data.yaml",
+        "epochs": "100",
+        "time": "null",
+        "patience": "30",
+        "batch": "16",
+        "imgsz": "640",
+        "save": "true",
+        "save_period": "-1",
+        "cache": "false",
+        "device": "'0'",
+        "workers": "8",
+        "project": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg3_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed44\\results",
+        "name": "lg3_yolo26m_lgla_v1_gate_balance_seed44",
+        "exist_ok": "false",
+        "pretrained": "true",
+        "cls_remap": "true",
+        "optimizer": "AdamW",
+        "verbose": "true",
+        "seed": "44",
+        "deterministic": "true",
+        "single_cls": "false",
+        "rect": "false",
+        "cos_lr": "true",
+        "close_mosaic": "0",
+        "resume": "false",
+        "amp": "true",
+        "fraction": "1.0",
+        "profile": "false",
+        "freeze": "null",
+        "multi_scale": "false",
+        "compile": "false",
+        "overlap_mask": "true",
+        "mask_ratio": "4",
+        "dropout": "0.0",
+        "val": "true",
+        "split": "val",
+        "save_json": "false",
+        "conf": "null",
+        "iou": "0.7",
+        "max_det": "300",
+        "quantize": "null",
+        "dnn": "false",
+        "plots": "true",
+        "end2end": "null",
+        "source": "null",
+        "vid_stride": "1",
+        "stream_buffer": "false",
+        "visualize": "false",
+        "augment": "false",
+        "agnostic_nms": "false",
+        "classes": "null",
+        "retina_masks": "false",
+        "embed": "null",
+        "show": "false",
+        "save_frames": "false",
+        "save_txt": "false",
+        "save_conf": "false",
+        "save_crop": "false",
+        "show_labels": "true",
+        "show_conf": "true",
+        "show_boxes": "true",
+        "line_width": "null",
+        "format": "torchscript",
+        "keras": "false",
+        "optimize": "false",
+        "dynamic": "false",
+        "simplify": "true",
+        "opset": "null",
+        "workspace": "null",
+        "nms": "false",
+        "lr0": "0.001",
+        "lrf": "0.01",
+        "momentum": "0.937",
+        "weight_decay": "0.0005",
+        "warmup_epochs": "3.0",
+        "warmup_momentum": "0.8",
+        "warmup_bias_lr": "0.1",
+        "distill_model": "null",
+        "dis": "6.0",
+        "box": "7.5",
+        "cls": "0.5",
+        "cls_pw": "0.0",
+        "dfl": "1.5",
+        "pose": "12.0",
+        "kobj": "1.0",
+        "rle": "1.0",
+        "angle": "1.0",
+        "nbs": "64",
+        "hsv_h": "0.005",
+        "hsv_s": "0.1",
+        "hsv_v": "0.1",
+        "degrees": "5.0",
+        "translate": "0.03",
+        "scale": "0.1",
+        "shear": "0.0",
+        "perspective": "0.0",
+        "flipud": "0.5",
+        "fliplr": "0.5",
+        "bgr": "0.0",
+        "mosaic": "0.0",
+        "mixup": "0.0",
+        "cutmix": "0.0",
+        "copy_paste": "0.0",
+        "copy_paste_mode": "flip",
+        "auto_augment": "null",
+        "erasing": "0.0",
+        "cfg": "null",
+        "tracker": "tracktrack.yaml",
+        "save_dir": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg3_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed44\\results\\lg3_yolo26m_lgla_v1_gate_balance_seed44"
+      },
+      "checkpoint_manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg3_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed44\\results\\lg3_yolo26m_lgla_v1_gate_balance_seed44\\checkpoint_bundles\\epoch_0096\\manifest.json",
+      "epoch_zero": 96,
+      "fingerprint": "4a7c29f336b7ea28d8fbfe38e5e51cdff21f68ba418c78fddedbceb6956642aa"
+    },
+    {
+      "run": "ab1",
+      "seed": 43,
+      "args_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\ab1_YOLO26m_Binary8Class_LGLAv1_Unguided_GateBalance_Seed43\\results\\ab1_yolo26m_lgla_v1_unguided_gate_balance_seed43\\args.yaml",
+      "args_sha256": "a5c6a631c37aa910ed6150287d2af50c9edbf7d38140e5a6036200fc169b09d6",
+      "arguments": {
+        "task": "semantic",
+        "mode": "train",
+        "model": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+        "data": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab1\\ab1_development_data.yaml",
+        "epochs": "100",
+        "time": "null",
+        "patience": "30",
+        "batch": "16",
+        "imgsz": "640",
+        "save": "true",
+        "save_period": "-1",
+        "cache": "false",
+        "device": "'0'",
+        "workers": "8",
+        "project": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\ab1_YOLO26m_Binary8Class_LGLAv1_Unguided_GateBalance_Seed43\\results",
+        "name": "ab1_yolo26m_lgla_v1_unguided_gate_balance_seed43",
+        "exist_ok": "false",
+        "pretrained": "true",
+        "cls_remap": "true",
+        "optimizer": "AdamW",
+        "verbose": "true",
+        "seed": "43",
+        "deterministic": "true",
+        "single_cls": "false",
+        "rect": "false",
+        "cos_lr": "true",
+        "close_mosaic": "0",
+        "resume": "false",
+        "amp": "true",
+        "fraction": "1.0",
+        "profile": "false",
+        "freeze": "null",
+        "multi_scale": "false",
+        "compile": "false",
+        "overlap_mask": "true",
+        "mask_ratio": "4",
+        "dropout": "0.0",
+        "val": "true",
+        "split": "val",
+        "save_json": "false",
+        "conf": "null",
+        "iou": "0.7",
+        "max_det": "300",
+        "quantize": "null",
+        "dnn": "false",
+        "plots": "true",
+        "end2end": "null",
+        "source": "null",
+        "vid_stride": "1",
+        "stream_buffer": "false",
+        "visualize": "false",
+        "augment": "false",
+        "agnostic_nms": "false",
+        "classes": "null",
+        "retina_masks": "false",
+        "embed": "null",
+        "show": "false",
+        "save_frames": "false",
+        "save_txt": "false",
+        "save_conf": "false",
+        "save_crop": "false",
+        "show_labels": "true",
+        "show_conf": "true",
+        "show_boxes": "true",
+        "line_width": "null",
+        "format": "torchscript",
+        "keras": "false",
+        "optimize": "false",
+        "dynamic": "false",
+        "simplify": "true",
+        "opset": "null",
+        "workspace": "null",
+        "nms": "false",
+        "lr0": "0.001",
+        "lrf": "0.01",
+        "momentum": "0.937",
+        "weight_decay": "0.0005",
+        "warmup_epochs": "3.0",
+        "warmup_momentum": "0.8",
+        "warmup_bias_lr": "0.1",
+        "distill_model": "null",
+        "dis": "6.0",
+        "box": "7.5",
+        "cls": "0.5",
+        "cls_pw": "0.0",
+        "dfl": "1.5",
+        "pose": "12.0",
+        "kobj": "1.0",
+        "rle": "1.0",
+        "angle": "1.0",
+        "nbs": "64",
+        "hsv_h": "0.005",
+        "hsv_s": "0.1",
+        "hsv_v": "0.1",
+        "degrees": "5.0",
+        "translate": "0.03",
+        "scale": "0.1",
+        "shear": "0.0",
+        "perspective": "0.0",
+        "flipud": "0.5",
+        "fliplr": "0.5",
+        "bgr": "0.0",
+        "mosaic": "0.0",
+        "mixup": "0.0",
+        "cutmix": "0.0",
+        "copy_paste": "0.0",
+        "copy_paste_mode": "flip",
+        "auto_augment": "null",
+        "erasing": "0.0",
+        "cfg": "null",
+        "tracker": "tracktrack.yaml",
+        "save_dir": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\ab1_YOLO26m_Binary8Class_LGLAv1_Unguided_GateBalance_Seed43\\results\\ab1_yolo26m_lgla_v1_unguided_gate_balance_seed43"
+      },
+      "checkpoint_manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\ab1_YOLO26m_Binary8Class_LGLAv1_Unguided_GateBalance_Seed43\\results\\ab1_yolo26m_lgla_v1_unguided_gate_balance_seed43\\checkpoint_bundles\\epoch_0067\\manifest.json",
+      "epoch_zero": 67,
+      "fingerprint": "5bc2f059c8d85d45aa6addd4496ad706ca7de03144cf9fe28d9aa0ad956ce122"
+    },
+    {
+      "run": "ab2",
+      "seed": 43,
+      "args_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\ab2_YOLO26m_Binary8Class_LGLAv1_FixedEqualFusion_Seed43\\results\\ab2_yolo26m_lgla_v1_fixed_equal_fusion_seed43\\args.yaml",
+      "args_sha256": "a457d92c69180aed5060654ab3b470f8b95d1e21995ece5cf2133e4a6faa2605",
+      "arguments": {
+        "task": "semantic",
+        "mode": "train",
+        "model": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+        "data": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab2\\ab2_development_data.yaml",
+        "epochs": "100",
+        "time": "null",
+        "patience": "30",
+        "batch": "16",
+        "imgsz": "640",
+        "save": "true",
+        "save_period": "-1",
+        "cache": "false",
+        "device": "'0'",
+        "workers": "8",
+        "project": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\ab2_YOLO26m_Binary8Class_LGLAv1_FixedEqualFusion_Seed43\\results",
+        "name": "ab2_yolo26m_lgla_v1_fixed_equal_fusion_seed43",
+        "exist_ok": "false",
+        "pretrained": "true",
+        "cls_remap": "true",
+        "optimizer": "AdamW",
+        "verbose": "true",
+        "seed": "43",
+        "deterministic": "true",
+        "single_cls": "false",
+        "rect": "false",
+        "cos_lr": "true",
+        "close_mosaic": "0",
+        "resume": "false",
+        "amp": "true",
+        "fraction": "1.0",
+        "profile": "false",
+        "freeze": "null",
+        "multi_scale": "false",
+        "compile": "false",
+        "overlap_mask": "true",
+        "mask_ratio": "4",
+        "dropout": "0.0",
+        "val": "true",
+        "split": "val",
+        "save_json": "false",
+        "conf": "null",
+        "iou": "0.7",
+        "max_det": "300",
+        "quantize": "null",
+        "dnn": "false",
+        "plots": "true",
+        "end2end": "null",
+        "source": "null",
+        "vid_stride": "1",
+        "stream_buffer": "false",
+        "visualize": "false",
+        "augment": "false",
+        "agnostic_nms": "false",
+        "classes": "null",
+        "retina_masks": "false",
+        "embed": "null",
+        "show": "false",
+        "save_frames": "false",
+        "save_txt": "false",
+        "save_conf": "false",
+        "save_crop": "false",
+        "show_labels": "true",
+        "show_conf": "true",
+        "show_boxes": "true",
+        "line_width": "null",
+        "format": "torchscript",
+        "keras": "false",
+        "optimize": "false",
+        "dynamic": "false",
+        "simplify": "true",
+        "opset": "null",
+        "workspace": "null",
+        "nms": "false",
+        "lr0": "0.001",
+        "lrf": "0.01",
+        "momentum": "0.937",
+        "weight_decay": "0.0005",
+        "warmup_epochs": "3.0",
+        "warmup_momentum": "0.8",
+        "warmup_bias_lr": "0.1",
+        "distill_model": "null",
+        "dis": "6.0",
+        "box": "7.5",
+        "cls": "0.5",
+        "cls_pw": "0.0",
+        "dfl": "1.5",
+        "pose": "12.0",
+        "kobj": "1.0",
+        "rle": "1.0",
+        "angle": "1.0",
+        "nbs": "64",
+        "hsv_h": "0.005",
+        "hsv_s": "0.1",
+        "hsv_v": "0.1",
+        "degrees": "5.0",
+        "translate": "0.03",
+        "scale": "0.1",
+        "shear": "0.0",
+        "perspective": "0.0",
+        "flipud": "0.5",
+        "fliplr": "0.5",
+        "bgr": "0.0",
+        "mosaic": "0.0",
+        "mixup": "0.0",
+        "cutmix": "0.0",
+        "copy_paste": "0.0",
+        "copy_paste_mode": "flip",
+        "auto_augment": "null",
+        "erasing": "0.0",
+        "cfg": "null",
+        "tracker": "tracktrack.yaml",
+        "save_dir": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\ab2_YOLO26m_Binary8Class_LGLAv1_FixedEqualFusion_Seed43\\results\\ab2_yolo26m_lgla_v1_fixed_equal_fusion_seed43"
+      },
+      "checkpoint_manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\ab2_YOLO26m_Binary8Class_LGLAv1_FixedEqualFusion_Seed43\\results\\ab2_yolo26m_lgla_v1_fixed_equal_fusion_seed43\\checkpoint_bundles\\epoch_0048\\manifest.json",
+      "epoch_zero": 48,
+      "fingerprint": "e50ab8dea5846fd01adfd621d1b4b025c7bbac278cec6d096e6e120d3e574738"
+    },
+    {
+      "run": "18",
+      "seed": 42,
+      "args_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\args.yaml",
+      "args_sha256": "82d7c628529c13300c3e99df23b52b81dd3f006e3e52af221e2422cef8a859ec",
+      "arguments": {
+        "task": "semantic",
+        "mode": "train",
+        "model": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\checkpoint_bundles\\epoch_0031\\trainer.pt",
+        "data": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\run18_development_data.yaml",
+        "epochs": "100",
+        "time": "null",
+        "patience": "30",
+        "batch": "16",
+        "imgsz": "640",
+        "save": "true",
+        "save_period": "-1",
+        "cache": "false",
+        "device": "'0'",
+        "workers": "8",
+        "project": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results",
+        "name": "run18_yolo26m_plain_delayed_utility_early_stop_seed42",
+        "exist_ok": "false",
+        "pretrained": "true",
+        "cls_remap": "true",
+        "optimizer": "AdamW",
+        "verbose": "true",
+        "seed": "42",
+        "deterministic": "true",
+        "single_cls": "false",
+        "rect": "false",
+        "cos_lr": "true",
+        "close_mosaic": "0",
+        "resume": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\checkpoint_bundles\\epoch_0031\\trainer.pt",
+        "amp": "true",
+        "fraction": "1.0",
+        "profile": "false",
+        "freeze": "null",
+        "multi_scale": "false",
+        "compile": "false",
+        "overlap_mask": "true",
+        "mask_ratio": "4",
+        "dropout": "0.0",
+        "val": "true",
+        "split": "val",
+        "save_json": "false",
+        "conf": "null",
+        "iou": "0.7",
+        "max_det": "300",
+        "quantize": "null",
+        "dnn": "false",
+        "plots": "true",
+        "end2end": "null",
+        "source": "null",
+        "vid_stride": "1",
+        "stream_buffer": "false",
+        "visualize": "false",
+        "augment": "false",
+        "agnostic_nms": "false",
+        "classes": "null",
+        "retina_masks": "false",
+        "embed": "null",
+        "show": "false",
+        "save_frames": "false",
+        "save_txt": "false",
+        "save_conf": "false",
+        "save_crop": "false",
+        "show_labels": "true",
+        "show_conf": "true",
+        "show_boxes": "true",
+        "line_width": "null",
+        "format": "torchscript",
+        "keras": "false",
+        "optimize": "false",
+        "dynamic": "false",
+        "simplify": "true",
+        "opset": "null",
+        "workspace": "null",
+        "nms": "false",
+        "lr0": "0.001",
+        "lrf": "0.01",
+        "momentum": "0.937",
+        "weight_decay": "0.0005",
+        "warmup_epochs": "3.0",
+        "warmup_momentum": "0.8",
+        "warmup_bias_lr": "0.1",
+        "distill_model": "null",
+        "dis": "6.0",
+        "box": "7.5",
+        "cls": "0.5",
+        "cls_pw": "0.0",
+        "dfl": "1.5",
+        "pose": "12.0",
+        "kobj": "1.0",
+        "rle": "1.0",
+        "angle": "1.0",
+        "nbs": "64",
+        "hsv_h": "0.005",
+        "hsv_s": "0.1",
+        "hsv_v": "0.1",
+        "degrees": "5.0",
+        "translate": "0.03",
+        "scale": "0.1",
+        "shear": "0.0",
+        "perspective": "0.0",
+        "flipud": "0.5",
+        "fliplr": "0.5",
+        "bgr": "0.0",
+        "mosaic": "0.0",
+        "mixup": "0.0",
+        "cutmix": "0.0",
+        "copy_paste": "0.0",
+        "copy_paste_mode": "flip",
+        "auto_augment": "null",
+        "erasing": "0.0",
+        "cfg": "null",
+        "tracker": "tracktrack.yaml",
+        "save_dir": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42"
+      },
+      "checkpoint_manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop\\results\\run18_yolo26m_plain_delayed_utility_early_stop_seed42\\checkpoint_bundles\\epoch_0049\\manifest.json",
+      "epoch_zero": 49,
+      "fingerprint": "2ed64c4aa90c6d90d15ace2158de0866e570f71ad8a3cb3bbc3e2b7d0fd2b7a3"
+    },
+    {
+      "run": "22",
+      "seed": 43,
+      "args_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\args.yaml",
+      "args_sha256": "d90e851e6a0fa776a31c6c1c52d2404bfb592d8f20529e9fed3027b548a1a023",
+      "arguments": {
+        "task": "semantic",
+        "mode": "train",
+        "model": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\checkpoint_bundles\\epoch_0050\\trainer.pt",
+        "data": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_data.yaml",
+        "epochs": "100",
+        "time": "null",
+        "patience": "30",
+        "batch": "16",
+        "imgsz": "640",
+        "save": "true",
+        "save_period": "-1",
+        "cache": "false",
+        "device": "'0'",
+        "workers": "8",
+        "project": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results",
+        "name": "run22_yolo26m_plain_seed43_replication",
+        "exist_ok": "false",
+        "pretrained": "true",
+        "cls_remap": "true",
+        "optimizer": "AdamW",
+        "verbose": "true",
+        "seed": "43",
+        "deterministic": "true",
+        "single_cls": "false",
+        "rect": "false",
+        "cos_lr": "true",
+        "close_mosaic": "0",
+        "resume": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\checkpoint_bundles\\epoch_0050\\trainer.pt",
+        "amp": "true",
+        "fraction": "1.0",
+        "profile": "false",
+        "freeze": "null",
+        "multi_scale": "false",
+        "compile": "false",
+        "overlap_mask": "true",
+        "mask_ratio": "4",
+        "dropout": "0.0",
+        "val": "true",
+        "split": "val",
+        "save_json": "false",
+        "conf": "null",
+        "iou": "0.7",
+        "max_det": "300",
+        "quantize": "null",
+        "dnn": "false",
+        "plots": "true",
+        "end2end": "null",
+        "source": "null",
+        "vid_stride": "1",
+        "stream_buffer": "false",
+        "visualize": "false",
+        "augment": "false",
+        "agnostic_nms": "false",
+        "classes": "null",
+        "retina_masks": "false",
+        "embed": "null",
+        "show": "false",
+        "save_frames": "false",
+        "save_txt": "false",
+        "save_conf": "false",
+        "save_crop": "false",
+        "show_labels": "true",
+        "show_conf": "true",
+        "show_boxes": "true",
+        "line_width": "null",
+        "format": "torchscript",
+        "keras": "false",
+        "optimize": "false",
+        "dynamic": "false",
+        "simplify": "true",
+        "opset": "null",
+        "workspace": "null",
+        "nms": "false",
+        "lr0": "0.001",
+        "lrf": "0.01",
+        "momentum": "0.937",
+        "weight_decay": "0.0005",
+        "warmup_epochs": "3.0",
+        "warmup_momentum": "0.8",
+        "warmup_bias_lr": "0.1",
+        "distill_model": "null",
+        "dis": "6.0",
+        "box": "7.5",
+        "cls": "0.5",
+        "cls_pw": "0.0",
+        "dfl": "1.5",
+        "pose": "12.0",
+        "kobj": "1.0",
+        "rle": "1.0",
+        "angle": "1.0",
+        "nbs": "64",
+        "hsv_h": "0.005",
+        "hsv_s": "0.1",
+        "hsv_v": "0.1",
+        "degrees": "5.0",
+        "translate": "0.03",
+        "scale": "0.1",
+        "shear": "0.0",
+        "perspective": "0.0",
+        "flipud": "0.5",
+        "fliplr": "0.5",
+        "bgr": "0.0",
+        "mosaic": "0.0",
+        "mixup": "0.0",
+        "cutmix": "0.0",
+        "copy_paste": "0.0",
+        "copy_paste_mode": "flip",
+        "auto_augment": "null",
+        "erasing": "0.0",
+        "cfg": "null",
+        "tracker": "tracktrack.yaml",
+        "save_dir": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication"
+      },
+      "checkpoint_manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\checkpoint_bundles\\epoch_0059\\manifest.json",
+      "epoch_zero": 59,
+      "fingerprint": "6a9cc96bd2d21f28b9c17ed745a50e76846f05d9c96153b2bad69f59c7257e82"
+    },
+    {
+      "run": "24",
+      "seed": 44,
+      "args_path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results\\run24_yolo26m_plain_seed44_replication\\args.yaml",
+      "args_sha256": "90d46081ad1f7627c01f56ccbc3c24d8fc0243abad6c550eb0c8f098fe3cfdd2",
+      "arguments": {
+        "task": "semantic",
+        "mode": "train",
+        "model": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results\\run24_yolo26m_plain_seed44_replication\\checkpoint_bundles\\epoch_0023\\trainer.pt",
+        "data": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\run24_development_data.yaml",
+        "epochs": "100",
+        "time": "null",
+        "patience": "30",
+        "batch": "16",
+        "imgsz": "640",
+        "save": "true",
+        "save_period": "-1",
+        "cache": "false",
+        "device": "'0'",
+        "workers": "8",
+        "project": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results",
+        "name": "run24_yolo26m_plain_seed44_replication",
+        "exist_ok": "false",
+        "pretrained": "true",
+        "cls_remap": "true",
+        "optimizer": "AdamW",
+        "verbose": "true",
+        "seed": "44",
+        "deterministic": "true",
+        "single_cls": "false",
+        "rect": "false",
+        "cos_lr": "true",
+        "close_mosaic": "0",
+        "resume": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results\\run24_yolo26m_plain_seed44_replication\\checkpoint_bundles\\epoch_0023\\trainer.pt",
+        "amp": "true",
+        "fraction": "1.0",
+        "profile": "false",
+        "freeze": "null",
+        "multi_scale": "false",
+        "compile": "false",
+        "overlap_mask": "true",
+        "mask_ratio": "4",
+        "dropout": "0.0",
+        "val": "true",
+        "split": "val",
+        "save_json": "false",
+        "conf": "null",
+        "iou": "0.7",
+        "max_det": "300",
+        "quantize": "null",
+        "dnn": "false",
+        "plots": "true",
+        "end2end": "null",
+        "source": "null",
+        "vid_stride": "1",
+        "stream_buffer": "false",
+        "visualize": "false",
+        "augment": "false",
+        "agnostic_nms": "false",
+        "classes": "null",
+        "retina_masks": "false",
+        "embed": "null",
+        "show": "false",
+        "save_frames": "false",
+        "save_txt": "false",
+        "save_conf": "false",
+        "save_crop": "false",
+        "show_labels": "true",
+        "show_conf": "true",
+        "show_boxes": "true",
+        "line_width": "null",
+        "format": "torchscript",
+        "keras": "false",
+        "optimize": "false",
+        "dynamic": "false",
+        "simplify": "true",
+        "opset": "null",
+        "workspace": "null",
+        "nms": "false",
+        "lr0": "0.001",
+        "lrf": "0.01",
+        "momentum": "0.937",
+        "weight_decay": "0.0005",
+        "warmup_epochs": "3.0",
+        "warmup_momentum": "0.8",
+        "warmup_bias_lr": "0.1",
+        "distill_model": "null",
+        "dis": "6.0",
+        "box": "7.5",
+        "cls": "0.5",
+        "cls_pw": "0.0",
+        "dfl": "1.5",
+        "pose": "12.0",
+        "kobj": "1.0",
+        "rle": "1.0",
+        "angle": "1.0",
+        "nbs": "64",
+        "hsv_h": "0.005",
+        "hsv_s": "0.1",
+        "hsv_v": "0.1",
+        "degrees": "5.0",
+        "translate": "0.03",
+        "scale": "0.1",
+        "shear": "0.0",
+        "perspective": "0.0",
+        "flipud": "0.5",
+        "fliplr": "0.5",
+        "bgr": "0.0",
+        "mosaic": "0.0",
+        "mixup": "0.0",
+        "cutmix": "0.0",
+        "copy_paste": "0.0",
+        "copy_paste_mode": "flip",
+        "auto_augment": "null",
+        "erasing": "0.0",
+        "cfg": "null",
+        "tracker": "tracktrack.yaml",
+        "save_dir": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results\\run24_yolo26m_plain_seed44_replication"
+      },
+      "checkpoint_manifest": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\24_YOLO26m_Binary8Class_Plain_Seed44Replication\\results\\run24_yolo26m_plain_seed44_replication\\checkpoint_bundles\\epoch_0077\\manifest.json",
+      "epoch_zero": 77,
+      "fingerprint": "c856d97b12202fac2e400ecbcd94d5ad91c705981d6c692cda827e99e28929e6"
+    }
+  ],
+  "lgx_checkpoint_opcode_metadata": [
+    {
+      "key": "scale_channels",
+      "offset": 114083,
+      "following_opcodes": [
+        [
+          "BINUNICODE",
+          "scale_channels"
+        ],
+        [
+          "LONG_BINPUT",
+          10042
+        ],
+        [
+          "BININT2",
+          256
+        ],
+        [
+          "BININT2",
+          512
+        ],
+        [
+          "TUPLE2",
+          null
+        ],
+        [
+          "LONG_BINPUT",
+          10043
+        ],
+        [
+          "BINUNICODE",
+          "projection_dim"
+        ],
+        [
+          "LONG_BINPUT",
+          10044
+        ],
+        [
+          "BININT1",
+          128
+        ],
+        [
+          "BINUNICODE",
+          "gate_hidden_dim"
+        ],
+        [
+          "LONG_BINPUT",
+          10045
+        ],
+        [
+          "BININT1",
+          128
+        ],
+        [
+          "BINUNICODE",
+          "attention_eps"
+        ],
+        [
+          "LONG_BINPUT",
+          10046
+        ],
+        [
+          "BINFLOAT",
+          1e-06
+        ],
+        [
+          "BINUNICODE",
+          "min_attention_mass_fraction"
+        ]
+      ]
+    },
+    {
+      "key": "date",
+      "offset": 214231,
+      "following_opcodes": [
+        [
+          "BINUNICODE",
+          "date"
+        ],
+        [
+          "LONG_BINPUT",
+          15443
+        ],
+        [
+          "BINUNICODE",
+          "2026-09-13T20:24:42.277013"
+        ],
+        [
+          "LONG_BINPUT",
+          15444
+        ],
+        [
+          "BINUNICODE",
+          "version"
+        ],
+        [
+          "LONG_BINPUT",
+          15445
+        ],
+        [
+          "BINUNICODE",
+          "8.4.101"
+        ],
+        [
+          "LONG_BINPUT",
+          15446
+        ],
+        [
+          "BINUNICODE",
+          "git"
+        ],
+        [
+          "LONG_BINPUT",
+          15447
+        ],
+        [
+          "EMPTY_DICT",
+          null
+        ],
+        [
+          "LONG_BINPUT",
+          15448
+        ],
+        [
+          "MARK",
+          null
+        ],
+        [
+          "BINUNICODE",
+          "root"
+        ],
+        [
+          "LONG_BINPUT",
+          15449
+        ],
+        [
+          "BINUNICODE",
+          "None"
+        ]
+      ]
+    },
+    {
+      "key": "version",
+      "offset": 214281,
+      "following_opcodes": [
+        [
+          "BINUNICODE",
+          "version"
+        ],
+        [
+          "LONG_BINPUT",
+          15445
+        ],
+        [
+          "BINUNICODE",
+          "8.4.101"
+        ],
+        [
+          "LONG_BINPUT",
+          15446
+        ],
+        [
+          "BINUNICODE",
+          "git"
+        ],
+        [
+          "LONG_BINPUT",
+          15447
+        ],
+        [
+          "EMPTY_DICT",
+          null
+        ],
+        [
+          "LONG_BINPUT",
+          15448
+        ],
+        [
+          "MARK",
+          null
+        ],
+        [
+          "BINUNICODE",
+          "root"
+        ],
+        [
+          "LONG_BINPUT",
+          15449
+        ],
+        [
+          "BINUNICODE",
+          "None"
+        ],
+        [
+          "LONG_BINPUT",
+          15450
+        ],
+        [
+          "BINUNICODE",
+          "branch"
+        ],
+        [
+          "LONG_BINPUT",
+          15451
+        ],
+        [
+          "NONE",
+          null
+        ]
+      ]
+    },
+    {
+      "key": "git",
+      "offset": 214315,
+      "following_opcodes": [
+        [
+          "BINUNICODE",
+          "git"
+        ],
+        [
+          "LONG_BINPUT",
+          15447
+        ],
+        [
+          "EMPTY_DICT",
+          null
+        ],
+        [
+          "LONG_BINPUT",
+          15448
+        ],
+        [
+          "MARK",
+          null
+        ],
+        [
+          "BINUNICODE",
+          "root"
+        ],
+        [
+          "LONG_BINPUT",
+          15449
+        ],
+        [
+          "BINUNICODE",
+          "None"
+        ],
+        [
+          "LONG_BINPUT",
+          15450
+        ],
+        [
+          "BINUNICODE",
+          "branch"
+        ],
+        [
+          "LONG_BINPUT",
+          15451
+        ],
+        [
+          "NONE",
+          null
+        ],
+        [
+          "BINUNICODE",
+          "commit"
+        ],
+        [
+          "LONG_BINPUT",
+          15452
+        ],
+        [
+          "NONE",
+          null
+        ],
+        [
+          "BINUNICODE",
+          "message"
+        ]
+      ]
+    }
+  ],
+  "pretrained_checkpoint_opcode_metadata": [
+    {
+      "key": "date",
+      "offset": 6,
+      "following_opcodes": [
+        [
+          "BINUNICODE",
+          "date"
+        ],
+        [
+          "BINPUT",
+          1
+        ],
+        [
+          "BINUNICODE",
+          "2026-05-18T20:08:09.093763"
+        ],
+        [
+          "BINPUT",
+          2
+        ],
+        [
+          "BINUNICODE",
+          "version"
+        ],
+        [
+          "BINPUT",
+          3
+        ],
+        [
+          "BINUNICODE",
+          "8.4.50"
+        ],
+        [
+          "BINPUT",
+          4
+        ],
+        [
+          "BINUNICODE",
+          "license"
+        ],
+        [
+          "BINPUT",
+          5
+        ],
+        [
+          "BINUNICODE",
+          "AGPL-3.0 (https://ultralytics.com/license)"
+        ],
+        [
+          "BINPUT",
+          6
+        ],
+        [
+          "BINUNICODE",
+          "docs"
+        ],
+        [
+          "BINPUT",
+          7
+        ],
+        [
+          "BINUNICODE",
+          "https://docs.ultralytics.com"
+        ],
+        [
+          "BINPUT",
+          8
+        ]
+      ]
+    },
+    {
+      "key": "version",
+      "offset": 50,
+      "following_opcodes": [
+        [
+          "BINUNICODE",
+          "version"
+        ],
+        [
+          "BINPUT",
+          3
+        ],
+        [
+          "BINUNICODE",
+          "8.4.50"
+        ],
+        [
+          "BINPUT",
+          4
+        ],
+        [
+          "BINUNICODE",
+          "license"
+        ],
+        [
+          "BINPUT",
+          5
+        ],
+        [
+          "BINUNICODE",
+          "AGPL-3.0 (https://ultralytics.com/license)"
+        ],
+        [
+          "BINPUT",
+          6
+        ],
+        [
+          "BINUNICODE",
+          "docs"
+        ],
+        [
+          "BINPUT",
+          7
+        ],
+        [
+          "BINUNICODE",
+          "https://docs.ultralytics.com"
+        ],
+        [
+          "BINPUT",
+          8
+        ],
+        [
+          "BINUNICODE",
+          "epoch"
+        ],
+        [
+          "BINPUT",
+          9
+        ],
+        [
+          "BININT",
+          -1
+        ],
+        [
+          "BINUNICODE",
+          "best_fitness"
+        ]
+      ]
+    }
+  ],
+  "model_dimensions": {
+    "P3": [
+      256,
+      80,
+      80
+    ],
+    "P4": [
+      512,
+      40,
+      40
+    ],
+    "main": [
+      1,
+      80,
+      80
+    ],
+    "aux_train": [
+      1,
+      40,
+      40
+    ],
+    "projection_each": 128,
+    "global_descriptor": 256,
+    "local_descriptor": 256,
+    "gate": [
+      512,
+      128,
+      2
+    ],
+    "classifier": [
+      256,
+      256,
+      8
+    ],
+    "dropout": 0.2
+  },
+  "known_limits": [
+    "Ultralytics package git commit absent in checkpoint metadata. Core project source/config hashes verified against frozen preflight; installed dependency implementation read and version matches checkpoint, but dependency files were not included in original training fingerprint.",
+    "Split overlap checks apply to available metadata identifiers and frozen SHA256 fields; missing patient/lesion metadata does not establish patient independence."
+  ],
+  "all_run_input_hash_verification": {
+    "lg1": {
+      "preflight": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg1\\LG1_PREFLIGHT_REPORT.json",
+      "fingerprint": "ca47d032187061fe8107eb5152d4e3e28026426a6ea7e2df178a5fd146534732",
+      "checks": [
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg1\\lg1_preregistered_config_v1.yaml",
+          "expected": "d9fde3832b552083e42f1eab744880de507080a29ed7281dda646144f363a782",
+          "actual": "d9fde3832b552083e42f1eab744880de507080a29ed7281dda646144f363a782",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg1\\LG1_PROTOCOL_2026-09-12.md",
+          "expected": "265ad6c0d193871087dc8983c58def0c3609a29c2b16c46d0275903f9f7714ee",
+          "actual": "265ad6c0d193871087dc8983c58def0c3609a29c2b16c46d0275903f9f7714ee",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg1\\lg1_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg1\\lg1_development_data.yaml",
+          "expected": "64dd8046310fe4a223c39512e8db70838f1613357f653c33e24481de96353be9",
+          "actual": "64dd8046310fe4a223c39512e8db70838f1613357f653c33e24481de96353be9",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+          "expected": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "actual": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt",
+          "expected": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "actual": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml",
+          "expected": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "actual": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_data.yaml",
+          "expected": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "actual": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py",
+          "expected": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "actual": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py",
+          "expected": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "actual": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg1\\imaplusplus_partial_multitask_lgla_v1_seed43.py",
+          "expected": "cdcfe9977cbecdacc7a5ad6aa39024ccbed49b889502b4188cf53498284edb7f",
+          "actual": "cdcfe9977cbecdacc7a5ad6aa39024ccbed49b889502b4188cf53498284edb7f",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py",
+          "expected": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "actual": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py",
+          "expected": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "actual": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg1\\train_lg1_from_pycharm.py",
+          "expected": "49adae3fc985533a0ba2e0979b410485a331bda966f03f7debf5e3391812d27b",
+          "actual": "49adae3fc985533a0ba2e0979b410485a331bda966f03f7debf5e3391812d27b",
+          "match": true
+        }
+      ]
+    },
+    "lgx": {
+      "preflight": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\LGX_PREFLIGHT_REPORT.json",
+      "fingerprint": "3a9aa4156828bd2e5af1b1f44a62929041cde5895d01ed995c8c5af823186ac0",
+      "checks": [
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\lgx_preregistered_config_v1.yaml",
+          "expected": "15a854ceee23149017dab986d18b6729359eabcc58be132990efe1e9df0f60df",
+          "actual": "15a854ceee23149017dab986d18b6729359eabcc58be132990efe1e9df0f60df",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\LGX_PROTOCOL_2026-09-13.md",
+          "expected": "65636ce3098c3b748426bf5a81d57ce330524f7e2c6b1050b85ea8461e787d57",
+          "actual": "65636ce3098c3b748426bf5a81d57ce330524f7e2c6b1050b85ea8461e787d57",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\lgx_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\lgx_development_data.yaml",
+          "expected": "7d24cb3de0f190493c763f9119cc85736add0e30666b4c66ceeea44cbbe1633a",
+          "actual": "7d24cb3de0f190493c763f9119cc85736add0e30666b4c66ceeea44cbbe1633a",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+          "expected": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "actual": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt",
+          "expected": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "actual": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml",
+          "expected": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "actual": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_data.yaml",
+          "expected": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "actual": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py",
+          "expected": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "actual": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py",
+          "expected": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "actual": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\imaplusplus_partial_multitask_lgla_v1_gate_balance_seed43.py",
+          "expected": "967f44959eab30fe7bec4510bd6afc32bbffb601d14d7f47fb30ef087a86cd48",
+          "actual": "967f44959eab30fe7bec4510bd6afc32bbffb601d14d7f47fb30ef087a86cd48",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py",
+          "expected": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "actual": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py",
+          "expected": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "actual": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lgx\\train_lgx_from_pycharm.py",
+          "expected": "1c36c34ea0ee0460dc01f1c53b4db44aaec0df8a01620078c2a1fc84499157bf",
+          "actual": "1c36c34ea0ee0460dc01f1c53b4db44aaec0df8a01620078c2a1fc84499157bf",
+          "match": true
+        }
+      ]
+    },
+    "lg2": {
+      "preflight": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg2\\LG2_PREFLIGHT_REPORT.json",
+      "fingerprint": "16f9505ad452813aac9eb85e1b4cb176d077ff9d16a30ac20965ff3efbd87df4",
+      "checks": [
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg2\\lg2_preregistered_config_v1.yaml",
+          "expected": "ef019674fe95ae80560285abfc74fe046b72f4b3a473fb05334cae4aef19f170",
+          "actual": "ef019674fe95ae80560285abfc74fe046b72f4b3a473fb05334cae4aef19f170",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg2\\LG2_PROTOCOL_2026-09-13.md",
+          "expected": "e544d4bc19fb02312d8bc4c4a3778efc252dd5744c8a230e24ccaaef702f6594",
+          "actual": "e544d4bc19fb02312d8bc4c4a3778efc252dd5744c8a230e24ccaaef702f6594",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg2\\lg2_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg2\\lg2_development_data.yaml",
+          "expected": "d11d545f85d2997218603454b0171d46e53dd2da127196fb7b819c1511348eb1",
+          "actual": "d11d545f85d2997218603454b0171d46e53dd2da127196fb7b819c1511348eb1",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+          "expected": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "actual": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt",
+          "expected": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "actual": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml",
+          "expected": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "actual": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_data.yaml",
+          "expected": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "actual": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py",
+          "expected": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "actual": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py",
+          "expected": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "actual": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg2\\imaplusplus_partial_multitask_lgla_v1_gate_balance_seed42.py",
+          "expected": "c2349c26d1ed2b9f63c024c630454fb8d616d27451e20a5a03444d4de4b9bf9f",
+          "actual": "c2349c26d1ed2b9f63c024c630454fb8d616d27451e20a5a03444d4de4b9bf9f",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py",
+          "expected": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "actual": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py",
+          "expected": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "actual": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg2\\train_lg2_from_pycharm.py",
+          "expected": "060755877fe33e8112091f03e4b957a04711e8299312b035c5d1999739e47728",
+          "actual": "060755877fe33e8112091f03e4b957a04711e8299312b035c5d1999739e47728",
+          "match": true
+        }
+      ]
+    },
+    "lg3": {
+      "preflight": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg3\\LG3_PREFLIGHT_REPORT.json",
+      "fingerprint": "4a7c29f336b7ea28d8fbfe38e5e51cdff21f68ba418c78fddedbceb6956642aa",
+      "checks": [
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg3\\lg3_preregistered_config_v1.yaml",
+          "expected": "cac7a51ea7a5ee7780748cf860005d03976a3333336a149570504709e8ec90c9",
+          "actual": "cac7a51ea7a5ee7780748cf860005d03976a3333336a149570504709e8ec90c9",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg3\\LG3_PROTOCOL_2026-09-14.md",
+          "expected": "78ba2310135940897c7912315fafe7f1a90c97e152a69a3425bd66b592c2270e",
+          "actual": "78ba2310135940897c7912315fafe7f1a90c97e152a69a3425bd66b592c2270e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg3\\lg3_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg3\\lg3_development_data.yaml",
+          "expected": "fa8352122b3edfac00630579395a94527d6553c68c6cc94f9d451fd9748bb177",
+          "actual": "fa8352122b3edfac00630579395a94527d6553c68c6cc94f9d451fd9748bb177",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+          "expected": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "actual": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt",
+          "expected": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "actual": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml",
+          "expected": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "actual": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_data.yaml",
+          "expected": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "actual": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py",
+          "expected": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "actual": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py",
+          "expected": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "actual": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg3\\imaplusplus_partial_multitask_lgla_v1_gate_balance_seed44.py",
+          "expected": "f0ecd3d3125049e3ad7bd25c5fded61670cbafdf623e7de902ccb93e9ff4174b",
+          "actual": "f0ecd3d3125049e3ad7bd25c5fded61670cbafdf623e7de902ccb93e9ff4174b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py",
+          "expected": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "actual": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py",
+          "expected": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "actual": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg3\\train_lg3_from_pycharm.py",
+          "expected": "ba3dfe4ccfa110d68b2988cf58969bed2717e4cb6e8ff5b18aa7de6af263d03f",
+          "actual": "ba3dfe4ccfa110d68b2988cf58969bed2717e4cb6e8ff5b18aa7de6af263d03f",
+          "match": true
+        }
+      ]
+    },
+    "ab1": {
+      "preflight": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab1\\AB1_PREFLIGHT_REPORT.json",
+      "fingerprint": "5bc2f059c8d85d45aa6addd4496ad706ca7de03144cf9fe28d9aa0ad956ce122",
+      "checks": [
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab1\\ab1_preregistered_config_v1.yaml",
+          "expected": "7a56d935766258c1be5cbab20a4e8a8ae04d94dbcaeb6267b0ef63ab4ab3e213",
+          "actual": "7a56d935766258c1be5cbab20a4e8a8ae04d94dbcaeb6267b0ef63ab4ab3e213",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab1\\AB1_PROTOCOL_2026-09-15.md",
+          "expected": "79c46ecfc29683b78a491835174d1c75af49f2e11f6cfdd38e2b14383c664d83",
+          "actual": "79c46ecfc29683b78a491835174d1c75af49f2e11f6cfdd38e2b14383c664d83",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab1\\ab1_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab1\\ab1_development_data.yaml",
+          "expected": "cade2d9597595f3dda7e5a5c63532084cbd08d901477b302a86084713dd8c5c4",
+          "actual": "cade2d9597595f3dda7e5a5c63532084cbd08d901477b302a86084713dd8c5c4",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+          "expected": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "actual": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt",
+          "expected": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "actual": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml",
+          "expected": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "actual": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_data.yaml",
+          "expected": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "actual": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py",
+          "expected": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "actual": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py",
+          "expected": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "actual": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab1\\imaplusplus_partial_multitask_lgla_v1_unguided_gate_balance_seed43.py",
+          "expected": "b5f36e2d32934e7a8dddfa3e9fb40f79b809220bc903fba44e7fa4ec94d48a91",
+          "actual": "b5f36e2d32934e7a8dddfa3e9fb40f79b809220bc903fba44e7fa4ec94d48a91",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py",
+          "expected": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "actual": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py",
+          "expected": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "actual": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab1\\train_ab1_from_pycharm.py",
+          "expected": "81227869d7f25aed83c4f7a3fbeae506f51edf542ad1a48eb7990eb23629bb56",
+          "actual": "81227869d7f25aed83c4f7a3fbeae506f51edf542ad1a48eb7990eb23629bb56",
+          "match": true
+        }
+      ]
+    },
+    "ab2": {
+      "preflight": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab2\\AB2_PREFLIGHT_REPORT.json",
+      "fingerprint": "e50ab8dea5846fd01adfd621d1b4b025c7bbac278cec6d096e6e120d3e574738",
+      "checks": [
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab2\\ab2_preregistered_config_v1.yaml",
+          "expected": "13425e3d56f405ec2d855e636c23e105a17b234bf9b55a6fee9a92572e55f637",
+          "actual": "13425e3d56f405ec2d855e636c23e105a17b234bf9b55a6fee9a92572e55f637",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab2\\AB2_PROTOCOL_2026-09-15.md",
+          "expected": "77bc72d6df0847eb687e4b8851688b102a30b61471a3f13bd33fa60ae7aeb8ed",
+          "actual": "77bc72d6df0847eb687e4b8851688b102a30b61471a3f13bd33fa60ae7aeb8ed",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab2\\ab2_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab2\\ab2_development_data.yaml",
+          "expected": "92e999b84d8f9f872adf81f95e46f89c822cd5d83a7d9e015837e14396d7744b",
+          "actual": "92e999b84d8f9f872adf81f95e46f89c822cd5d83a7d9e015837e14396d7744b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+          "expected": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "actual": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt",
+          "expected": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "actual": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml",
+          "expected": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "actual": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_data.yaml",
+          "expected": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "actual": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py",
+          "expected": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "actual": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py",
+          "expected": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "actual": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab2\\imaplusplus_partial_multitask_lgla_v1_fixed_equal_fusion_seed43.py",
+          "expected": "b530264addb9248a0dabc562ece1154e7f9414e5daa5d13443952d88d9023071",
+          "actual": "b530264addb9248a0dabc562ece1154e7f9414e5daa5d13443952d88d9023071",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py",
+          "expected": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "actual": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py",
+          "expected": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "actual": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\ab2\\train_ab2_from_pycharm.py",
+          "expected": "3c199c0c52bbd3af957d0ba89ed159eaa8564144e31e203352b74c63d57b4c45",
+          "actual": "3c199c0c52bbd3af957d0ba89ed159eaa8564144e31e203352b74c63d57b4c45",
+          "match": true
+        }
+      ]
+    },
+    "run18": {
+      "preflight": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\RUN18_PREFLIGHT_REPORT.json",
+      "fingerprint": "2ed64c4aa90c6d90d15ace2158de0866e570f71ad8a3cb3bbc3e2b7d0fd2b7a3",
+      "checks": [
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\run18_preregistered_config_v1.yaml",
+          "expected": "e0f6a2154d7bd8cfe85a7eb6f2ebcc4e5458d597832780450bd6cde29108265b",
+          "actual": "e0f6a2154d7bd8cfe85a7eb6f2ebcc4e5458d597832780450bd6cde29108265b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\RUN18_PROTOCOL_2026-08-10.md",
+          "expected": "e18e73d6a11be2517ff4fbaac685d020a2c056e4df518b1a7f1d6786a8f47957",
+          "actual": "e18e73d6a11be2517ff4fbaac685d020a2c056e4df518b1a7f1d6786a8f47957",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\run18_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\run18_development_data.yaml",
+          "expected": "dba1ecedc191f1944caf7ded752088f5636418c97cd4a0331b7431ce2e0c482e",
+          "actual": "dba1ecedc191f1944caf7ded752088f5636418c97cd4a0331b7431ce2e0c482e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+          "expected": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "actual": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt",
+          "expected": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "actual": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml",
+          "expected": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "actual": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\multitask_manifest.csv",
+          "expected": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956",
+          "actual": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\manifest.csv",
+          "expected": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e",
+          "actual": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\manifest.csv",
+          "expected": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a",
+          "actual": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2018_task1_incremental_v1\\manifest.csv",
+          "expected": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102",
+          "actual": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py",
+          "expected": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "actual": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py",
+          "expected": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "actual": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\imaplusplus_partial_multitask_delayed_early_stop_v1.py",
+          "expected": "1333a9fd52c25864637243031f891274dd82667d34ef067f7fd397ad57e94139",
+          "actual": "1333a9fd52c25864637243031f891274dd82667d34ef067f7fd397ad57e94139",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py",
+          "expected": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "actual": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py",
+          "expected": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "actual": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run18\\train_run18_from_pycharm.py",
+          "expected": "94884dc473a8f06021dc8e153a2f26eb18a53a0f32b637e7d0cee0e1960b4157",
+          "actual": "94884dc473a8f06021dc8e153a2f26eb18a53a0f32b637e7d0cee0e1960b4157",
+          "match": true
+        }
+      ]
+    },
+    "run22": {
+      "preflight": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\RUN22_PREFLIGHT_REPORT.json",
+      "fingerprint": "6a9cc96bd2d21f28b9c17ed745a50e76846f05d9c96153b2bad69f59c7257e82",
+      "checks": [
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_preregistered_config_v1.yaml",
+          "expected": "a4ab4cf55726bed2b43e9cf6716be90523d8a087bd2fffd86ac89453abd7d25a",
+          "actual": "a4ab4cf55726bed2b43e9cf6716be90523d8a087bd2fffd86ac89453abd7d25a",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\RUN22_PROTOCOL_2026-08-14.md",
+          "expected": "0d32b989eaa71ead4824bec5c4bd73cfd6568fc96ab82e9b0927600b22f76de0",
+          "actual": "0d32b989eaa71ead4824bec5c4bd73cfd6568fc96ab82e9b0927600b22f76de0",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\run22_development_data.yaml",
+          "expected": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "actual": "3e06dad3dc6769502ad41ec6f5ed52a97f3ae4c001c75e70c3cd5529d87aeff9",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+          "expected": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "actual": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt",
+          "expected": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "actual": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml",
+          "expected": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "actual": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\multitask_manifest.csv",
+          "expected": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956",
+          "actual": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\manifest.csv",
+          "expected": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e",
+          "actual": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\manifest.csv",
+          "expected": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a",
+          "actual": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2018_task1_incremental_v1\\manifest.csv",
+          "expected": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102",
+          "actual": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py",
+          "expected": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "actual": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py",
+          "expected": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "actual": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\imaplusplus_partial_multitask_plain_seed43_v1.py",
+          "expected": "fe2429e1a31bde7cf3a7a8e1cd0648e6e01c7d8a2e6920c7b6bf791d18ef4775",
+          "actual": "fe2429e1a31bde7cf3a7a8e1cd0648e6e01c7d8a2e6920c7b6bf791d18ef4775",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py",
+          "expected": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "actual": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py",
+          "expected": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "actual": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\train_run22_from_pycharm.py",
+          "expected": "3c2381b5c795199cdb4ed77f52d01a2acb79a8c718b9659f4f80b315629bb562",
+          "actual": "3c2381b5c795199cdb4ed77f52d01a2acb79a8c718b9659f4f80b315629bb562",
+          "match": true
+        }
+      ]
+    },
+    "run24": {
+      "preflight": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\RUN24_PREFLIGHT_REPORT.json",
+      "fingerprint": "c856d97b12202fac2e400ecbcd94d5ad91c705981d6c692cda827e99e28929e6",
+      "checks": [
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\run24_preregistered_config_v1.yaml",
+          "expected": "96d87780853c73b21ca5171028aeff2e679133f03e972cfdce0ade7b4122a3f9",
+          "actual": "96d87780853c73b21ca5171028aeff2e679133f03e972cfdce0ade7b4122a3f9",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\RUN24_PROTOCOL_2026-08-16.md",
+          "expected": "39b29ad065158bf31dc1e748a798046c4f24801f9057fb58965dbfa825527539",
+          "actual": "39b29ad065158bf31dc1e748a798046c4f24801f9057fb58965dbfa825527539",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\run24_development_manifest.csv",
+          "expected": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "actual": "3544f94e0cfd4aa3b15a7f4798ea29cbedd8ab7e5d313b72a1f94835542f6c1b",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\run24_development_data.yaml",
+          "expected": "4bbc0e919c46170dca6a25f491478e6ff98a2d6e727853df563df8a20005c5c9",
+          "actual": "4bbc0e919c46170dca6a25f491478e6ff98a2d6e727853df563df8a20005c5c9",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\models\\yolo26m-sem.pt",
+          "expected": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "actual": "3de52574cf1b18e38d32d9e51fc57135abc4f8dda37ff13ccbf44dcf99986233",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\yolo26n.pt",
+          "expected": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "actual": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\classification_taxonomy_v1.yaml",
+          "expected": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "actual": "ffd14ba2e73c8df5d3df5af67007db122d4397adbaf9ef4475fdb9858f802b8e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\multitask_manifest.csv",
+          "expected": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956",
+          "actual": "c8d18fdb6489ddac72b38c865d24549635b06fdebcc8b3e6e60c56a708e14956",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_imaplusplus_binary_v1\\manifest.csv",
+          "expected": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e",
+          "actual": "47c3763f210f36d9428a0d0b90427451eb6d5f43b43163bcb7141c191614396e",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2019_classification_incremental_v1\\manifest.csv",
+          "expected": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a",
+          "actual": "b2aee37dee5dd983ee4edadc03f570a70ba791f380ab1485415a42ce4365a17a",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\Data\\processed_isic2018_task1_incremental_v1\\manifest.csv",
+          "expected": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102",
+          "actual": "595fbbfc279ab5b591990e9bc266cda337fdb3646f1bc277605e4f23b8075102",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_v1.py",
+          "expected": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "actual": "691eeb20753f6caf96ea9a1a79b881fe1c3d26a34749f9d63afe19ab80950e62",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\imaplusplus_partial_multitask_utility_selection_v1.py",
+          "expected": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "actual": "5c274476aae629c138c673b6ecb56e503e4a397adc392550e5fb16eb99824d12",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\imaplusplus_partial_multitask_plain_seed44_v1.py",
+          "expected": "1a032a84b709ffce49bbb911d5ca0772fae17646aa8692ff29f2605793e6ac04",
+          "actual": "1a032a84b709ffce49bbb911d5ca0772fae17646aa8692ff29f2605793e6ac04",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\multitask_checkpoint_contract.py",
+          "expected": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "actual": "3f8b3316467f99952e7c13af0b622949f93d8f8b3b68784b1b96c73969bd44e3",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\evaluate_imaplusplus_multitask_v1.py",
+          "expected": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "actual": "6911d59ecb5cde6308f4386e5f85b365372d98472319bf04cac8be7ed12729ad",
+          "match": true
+        },
+        {
+          "path": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run24\\train_run24_from_pycharm.py",
+          "expected": "abecfb5f12c136cc42aed40f627c2f69b63976fd987456e0c849470ad117ef70",
+          "actual": "abecfb5f12c136cc42aed40f627c2f69b63976fd987456e0c849470ad117ef70",
+          "match": true
+        }
+      ]
+    }
+  }
+}

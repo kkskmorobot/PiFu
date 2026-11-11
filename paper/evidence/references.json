@@ -1,0 +1,200 @@
+[
+  {
+    "key": "esteva",
+    "formatted": "Esteva Andre, Kuprel Brett, Novoa Roberto, et al. Dermatologist-level classification of skin cancer with deep neural networks[J]. Nature, 2017, 542: 115-118. DOI: 10.1038/nature21056.",
+    "url": "https://www.nature.com/articles/nature21056",
+    "claim": "深度卷积网络用于皮肤病变图像分类；细粒度外观差异构成识别困难。",
+    "verification": "期刊原始页面核对题名、作者、年份、卷页、DOI与摘要；不引用其医生水平结果作为本项目结论。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "ham",
+    "formatted": "Tschandl Philipp, Rosendahl Cliff, Kittler Harald. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions[J]. Scientific Data, 2018, 5: 180161. DOI: 10.1038/sdata.2018.161.",
+    "url": "https://www.nature.com/articles/sdata2018161",
+    "claim": "皮肤镜公开数据具有多来源、不同采集方式及同病灶多图特点。",
+    "verification": "Scientific Data原文核对完整元数据及数据说明；不将其10015张规模冒充项目冻结规模。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "isic2018",
+    "formatted": "Codella Noel, Rotemberg Veronica, Tschandl Philipp, et al. Skin Lesion Analysis Toward Melanoma Detection 2018: A Challenge Hosted by the International Skin Imaging Collaboration (ISIC)[EB/OL]. (2019-02-09)[2026-11-09]. https://arxiv.org/abs/1902.03368.",
+    "url": "https://arxiv.org/abs/1902.03368",
+    "claim": "病灶分割与疾病分类构成皮肤图像分析的相关但不同任务；基准成绩与泛化能力应区分。",
+    "verification": "作者arXiv原始发布核对题名、作者、提交年份及摘要；保留预印本类型，不虚构会议页码。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "isic2019",
+    "formatted": "International Skin Imaging Collaboration. ISIC 2019 Challenge[EB/OL]. [2026-11-09]. https://challenge.isic-archive.com/landing/2019/.",
+    "url": "https://challenge.isic-archive.com/landing/2019/",
+    "claim": "ISIC2019训练数据覆盖八个类别，官方挑战另有未知类设定；本文限于项目八类任务。",
+    "verification": "官方任务页核对训练八类、测试额外outlier类别及官方评价口径；本文不沿用挑战排名指标。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "unet",
+    "formatted": "Ronneberger Olaf, Fischer Philipp, Brox Thomas. U-Net: Convolutional Networks for Biomedical Image Segmentation[A]. Medical Image Computing and Computer-Assisted Intervention—MICCAI 2015[C]. Cham: Springer, 2015: 234-241. DOI: 10.1007/978-3-319-24574-4_28.",
+    "url": "https://link.springer.com/chapter/10.1007/978-3-319-24574-4_28",
+    "support_urls": [
+      "https://arxiv.org/abs/1505.04597"
+    ],
+    "claim": "编码收缩路径获取上下文，扩张路径恢复定位信息。",
+    "verification": "Springer正式章节页核对作者、会议、年份、页码及DOI；只作研究背景，不宣称项目开展U-Net对比。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "deeplab",
+    "formatted": "Chen Liang-Chieh, Zhu Yukun, Papandreou George, et al. Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation[A]. Proceedings of the European Conference on Computer Vision[C]. 2018: 801-818.",
+    "url": "https://openaccess.thecvf.com/content_ECCV_2018/html/Liang-Chieh_Chen_Encoder-Decoder_with_Atrous_ECCV_2018_paper.html",
+    "support_urls": [
+      "https://arxiv.org/abs/1802.02611"
+    ],
+    "claim": "DeepLabv3+结合多尺度上下文与解码恢复细节。",
+    "verification": "CVF正式页面与作者arXiv核对作者、题名、ECCV2018页码及方法摘要；未将其写入实测比较。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "ima",
+    "formatted": "Abhishek Kumar, Kawahara Jeremy, Hamarneh Ghassan. Descriptor: ISIC Archive Multi-Annotator Dermoscopic Skin Lesion Segmentation Dataset (IMA++)[J]. IEEE Data Descriptions, 2026, 3: 367-378. DOI: 10.1109/IEEEDATA.2026.3689801.",
+    "url": "https://www.sfu.ca/~kabhishe/",
+    "support_urls": [
+      "https://arxiv.org/abs/2512.21472",
+      "https://github.com/sfu-mial/IMAplusplus",
+      "https://zenodo.org/records/14201693"
+    ],
+    "claim": "IMA++提供多标注者皮肤镜病灶掩膜、标注信息、官方多标注子集划分与共识掩膜。",
+    "verification": "作者SFU主页BibTeX确认正式题名Descriptor前缀、期刊、卷页、DOI；arXiv确认相同作者与journal reference。Zenodo v1.1及作者仓库确认数据构成、STAPLE、许可。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "se",
+    "formatted": "Hu Jie, Shen Li, Sun Gang. Squeeze-and-Excitation Networks[A]. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition[C]. 2018: 7132-7141.",
+    "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Hu_Squeeze-and-Excitation_Networks_CVPR_2018_paper.html",
+    "claim": "全局汇聚后学习通道权重以校准特征响应。",
+    "verification": "CVF论文页核对CVPR版三位作者、题名、页码；没有误用arXiv后续TPAMI版五位作者。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "eca",
+    "formatted": "Wang Qilong, Wu Banggu, Zhu Pengfei, et al. ECA-Net: Efficient Channel Attention for Deep Convolutional Neural Networks[A]. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition[C]. 2020: 11534-11542.",
+    "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_ECA-Net_Efficient_Channel_Attention_for_Deep_Convolutional_Neural_Networks_CVPR_2020_paper.html",
+    "claim": "不降维的局部跨通道交互及一维卷积构成轻量通道注意力。",
+    "verification": "CVF页及PDF核对题名、六位作者、CVPR2020页码、避免降维与局部跨通道交互。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "cbam",
+    "formatted": "Woo Sanghyun, Park Jongchan, Lee Joon-Young, Kweon In So. CBAM: Convolutional Block Attention Module[A]. Proceedings of the European Conference on Computer Vision[C]. 2018: 3-19.",
+    "url": "https://openaccess.thecvf.com/content_ECCV_2018/html/Sanghyun_Woo_Convolutional_Block_Attention_ECCV_2018_paper.html",
+    "claim": "顺序通道和空间注意力通过乘法重标定中间特征。",
+    "verification": "CVF页与论文PDF核对完整四位作者、题名、年份、页码和模块作用。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "mbdcnn",
+    "formatted": "Xie Yutong, Zhang Jianpeng, Xia Yong, Shen Chunhua. A Mutual Bootstrapping Model for Automated Skin Lesion Segmentation and Classification[J]. IEEE Transactions on Medical Imaging, 2020, 39(7): 2482-2493. DOI: 10.1109/TMI.2020.2972964.",
+    "url": "https://arxiv.org/abs/1903.03313",
+    "support_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/32070946/",
+      "https://github.com/YtongXie/MB-DCNN"
+    ],
+    "claim": "以粗分割掩膜引导分类，再向分割转移定位信息，是分割和分类协作的先行研究。",
+    "verification": "作者arXiv与官方代码核对结构与作者，PubMed期刊记录核对卷期页和DOI；不拿其指标与本项目直接比较。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "caruana",
+    "formatted": "Caruana Rich. Multitask Learning[J]. Machine Learning, 1997, 28: 41-75. DOI: 10.1023/A:1007379606734.",
+    "url": "https://doi.org/10.1023/A:1007379606734",
+    "claim": "相关任务的共享表征可形成归纳偏置；需要讨论任务关系。",
+    "verification": "出版商页面核对作者、题名、卷页、DOI及摘要；不将潜在收益当作项目独立消融结果。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "kendall",
+    "formatted": "Kendall Alex, Gal Yarin, Cipolla Roberto. Multi-Task Learning Using Uncertainty to Weigh Losses for Scene Geometry and Semantics[A]. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition[C]. 2018: 7482-7491.",
+    "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Kendall_Multi-Task_Learning_Using_CVPR_2018_paper.html",
+    "claim": "多任务损失的量级与相对权重影响联合训练；其不确定性加权属于相关工作。",
+    "verification": "CVF原始页面核对作者、页码与论文目标；明确本文未采用其不确定性加权。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "partial",
+    "formatted": "Li Wei-Hong, Liu Xialei, Bilen Hakan. Learning Multiple Dense Prediction Tasks From Partially Annotated Data[A]. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition[C]. 2022: 18879-18889.",
+    "url": "https://openaccess.thecvf.com/content/CVPR2022/html/Li_Learning_Multiple_Dense_Prediction_Tasks_From_Partially_Annotated_Data_CVPR_2022_paper.html",
+    "claim": "每图仅部分任务标签可用的多任务部分监督问题；只在可用标签上计算损失是基本方案。",
+    "verification": "CVF页面/PDF核对三位作者与任务定义。页码采用CVF公开版本18879-18889；爱丁堡元数据另记IEEE版18857-18867，辅助记录保留差异，不混配。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "staple",
+    "formatted": "Warfield Simon, Zou Kelly, Wells William. Simultaneous Truth and Performance Level Estimation (STAPLE): An Algorithm for the Validation of Image Segmentation[J]. IEEE Transactions on Medical Imaging, 2004, 23(7): 903-921. DOI: 10.1109/TMI.2004.828354.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1283110/",
+    "claim": "STAPLE在多个分割标注之间估计潜在分割及标注表现，可用于共识掩膜。",
+    "verification": "PMC作者存档原文核对方法、作者、正式出版卷期页和DOI；姓名按完整首名书写、不猜中间名。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "yolo",
+    "formatted": "Redmon Joseph, Divvala Santosh, Girshick Ross, Farhadi Ali. You Only Look Once: Unified, Real-Time Object Detection[A]. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition[C]. 2016: 779-788.",
+    "url": "https://openaccess.thecvf.com/content_cvpr_2016/html/Redmon_You_Only_Look_CVPR_2016_paper.html",
+    "claim": "YOLO将目标检测组织为单网络直接预测；本文语义分割分类任务不同于原始检测输出。",
+    "verification": "CVF论文页核对完整作者、题名、年份、页码；不挪用原论文FPS及检测性能。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "fpn",
+    "formatted": "Lin Tsung-Yi, Dollár Piotr, Girshick Ross, et al. Feature Pyramid Networks for Object Detection[A]. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition[C]. 2017: 2117-2125.",
+    "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Lin_Feature_Pyramid_Networks_CVPR_2017_paper.html",
+    "claim": "横向连接与自顶向下路径支持不同分辨率的语义特征表达；用于说明多尺度思想。",
+    "verification": "CVF页面/PDF核对完整题名、作者和公开版页码2117-2125；不把项目结构称为未修改的原FPN。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "semantic",
+    "formatted": "Ultralytics. Semantic Segmentation with Ultralytics YOLO[EB/OL]. [2026-11-09]. https://docs.ultralytics.com/tasks/semantic/.",
+    "url": "https://docs.ultralytics.com/tasks/semantic/",
+    "claim": "官方区分语义分割和实例分割，YOLO26具有-sem模型；项目历史版本须由本地证据确定。",
+    "verification": "2026-11-09实际访问官方文档；只支持任务概念与模型命名，不用当前默认值替代历史配置。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "dropout",
+    "formatted": "Srivastava Nitish, Hinton Geoffrey, Krizhevsky Alex, et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting[J]. Journal of Machine Learning Research, 2014, 15(56): 1929-1958.",
+    "url": "https://www.jmlr.org/papers/v15/srivastava14a.html",
+    "claim": "训练时随机屏蔽单元的正则化方法；本文分类头Dropout与门控均衡作用不同。",
+    "verification": "JMLR原始页面/PDF核对五位作者、卷号/文章号和页码；不宣称独立证明正则化改善。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  },
+  {
+    "key": "adamw",
+    "formatted": "Loshchilov Ilya, Hutter Frank. Decoupled Weight Decay Regularization[A]. International Conference on Learning Representations[C]. 2019.",
+    "url": "https://arxiv.org/abs/1711.05101",
+    "support_urls": [
+      "https://github.com/loshchil/AdamW-and-SGDW"
+    ],
+    "claim": "AdamW将权重衰减与自适应梯度更新解耦；为本项目实际优化器的文献依据。",
+    "verification": "作者arXiv v3注明ICLR2019，作者代码仓库再次确认；OpenReview遇浏览器验证，未声称已读其页面，不虚构页码。",
+    "verified_date": "2026-11-09",
+    "status": "已核验"
+  }
+]

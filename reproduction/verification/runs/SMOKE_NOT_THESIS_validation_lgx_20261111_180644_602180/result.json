@@ -1,0 +1,350 @@
+{
+  "status": "COMPLETE",
+  "mode": "NEW_TRAINING_EVALUATION",
+  "smoke_not_thesis": true,
+  "run": "lgx",
+  "weight_source": {
+    "kind": "new_training_bundle",
+    "bundle": "D:\\Data\\project\\PiFu\\outputs\\SMOKE_NOT_THESIS_train_lgx_20261111_174837_266747\\training\\checkpoint_bundles\\epoch_0000",
+    "alias": "D:\\Data\\project\\PiFu\\outputs\\SMOKE_NOT_THESIS_train_lgx_20261111_174837_266747\\training\\checkpoint_bundles\\aliases\\best_joint_score.json",
+    "epoch": 0,
+    "fingerprint": "6b366fefef6a8df609a2e7f0ca126e648acdb36fed104acd72dc9bb6f78cfc41",
+    "manifest_sha256": "d3f5d6a9c8f9dca86f31e22c5b5080478b800efbeb3398723f22bb0933be4572",
+    "files": {
+      "trainer.pt": {
+        "bytes": 116785847,
+        "sha256": "03e87c4b8e5a2017801bcd03e7616c46da68646bc7de4b18a732c86bf3cd6b86"
+      },
+      "runtime_state.pt": {
+        "bytes": 233366160,
+        "sha256": "60bbbab25632d38404189509aea136caf9d22a758b4ee9b6bf49ded9a66adf88"
+      }
+    },
+    "state": "exact_fp32_training_ema"
+  },
+  "metrics": {
+    "metrics/mIoU": 0.20715,
+    "metrics/pixel_acc": 0.70681,
+    "fitness": -0.79044,
+    "metrics/binary_lesion_iou": 0.20715,
+    "metrics/binary_lesion_dice": 0.3432,
+    "metrics/image_macro_f1": 0.05,
+    "metrics/image_macro_recall": 0.125,
+    "metrics/group_macro_f1": 0.05,
+    "metrics/group_macro_recall": 0.125,
+    "metrics/group_mel_to_nv_rate": 1.0,
+    "metrics/group_malignant_to_benign_rate": 1.0,
+    "metrics/group_nll": 2.4096,
+    "metrics/group_brier": 1.02863,
+    "metrics/group_ece": 0.37805,
+    "metrics/joint_score": 0.10177,
+    "metrics/feasible_joint": 0.0
+  },
+  "group_classification": {
+    "samples": 12,
+    "accuracy": 0.25,
+    "macro_precision": 0.03125,
+    "macro_recall": 0.125,
+    "macro_f1": 0.05,
+    "mel_to_nv": 3,
+    "mel_to_nv_rate": 1.0,
+    "nv_to_mel": 0,
+    "nv_to_mel_rate": 0.0,
+    "malignant_to_benign": 5,
+    "malignant_to_benign_rate": 1.0,
+    "per_class": [
+      {
+        "class": "akiec",
+        "support": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      {
+        "class": "bcc",
+        "support": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      {
+        "class": "bkl",
+        "support": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      {
+        "class": "df",
+        "support": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      {
+        "class": "mel",
+        "support": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      {
+        "class": "nv",
+        "support": 3,
+        "precision": 0.25,
+        "recall": 1.0,
+        "f1": 0.4
+      },
+      {
+        "class": "vasc",
+        "support": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      {
+        "class": "scc",
+        "support": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    ]
+  },
+  "group_calibration": {
+    "nll": 2.409603162900172,
+    "multiclass_brier": 1.0286251050420105,
+    "ece": 0.3780517578125,
+    "ece_bins": 15
+  },
+  "group_predictions": [
+    {
+      "group_id": "CLS19G00407",
+      "images": 1,
+      "true_id": 2,
+      "true_class": "bkl",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": false,
+      "probabilities": [
+        0.05621337890625,
+        0.04241943359375,
+        0.046234130859375,
+        0.03582763671875,
+        0.038665771484375,
+        0.6259765625,
+        0.052215576171875,
+        0.10247802734375
+      ]
+    },
+    {
+      "group_id": "CLS19G02066",
+      "images": 1,
+      "true_id": 7,
+      "true_class": "scc",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": false,
+      "probabilities": [
+        0.055084228515625,
+        0.040802001953125,
+        0.04632568359375,
+        0.035430908203125,
+        0.039093017578125,
+        0.630859375,
+        0.05078125,
+        0.10174560546875
+      ]
+    },
+    {
+      "group_id": "CLS19G02073",
+      "images": 1,
+      "true_id": 1,
+      "true_class": "bcc",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": false,
+      "probabilities": [
+        0.054931640625,
+        0.041290283203125,
+        0.046478271484375,
+        0.036102294921875,
+        0.03912353515625,
+        0.6279296875,
+        0.051422119140625,
+        0.10272216796875
+      ]
+    },
+    {
+      "group_id": "CLS19G02195",
+      "images": 1,
+      "true_id": 0,
+      "true_class": "akiec",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": false,
+      "probabilities": [
+        0.05511474609375,
+        0.041748046875,
+        0.0465087890625,
+        0.036102294921875,
+        0.039215087890625,
+        0.62646484375,
+        0.05120849609375,
+        0.10382080078125
+      ]
+    },
+    {
+      "group_id": "CLS19G03012",
+      "images": 1,
+      "true_id": 3,
+      "true_class": "df",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": false,
+      "probabilities": [
+        0.054901123046875,
+        0.041595458984375,
+        0.0460205078125,
+        0.035247802734375,
+        0.0386962890625,
+        0.630859375,
+        0.050872802734375,
+        0.101806640625
+      ]
+    },
+    {
+      "group_id": "CLS19G04390",
+      "images": 1,
+      "true_id": 6,
+      "true_class": "vasc",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": false,
+      "probabilities": [
+        0.055389404296875,
+        0.0418701171875,
+        0.046539306640625,
+        0.03594970703125,
+        0.039154052734375,
+        0.626953125,
+        0.051116943359375,
+        0.10296630859375
+      ]
+    },
+    {
+      "group_id": "G00173",
+      "images": 1,
+      "true_id": 4,
+      "true_class": "mel",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": false,
+      "probabilities": [
+        0.055999755859375,
+        0.04248046875,
+        0.047607421875,
+        0.03607177734375,
+        0.039276123046875,
+        0.62548828125,
+        0.05157470703125,
+        0.10137939453125
+      ]
+    },
+    {
+      "group_id": "G00187",
+      "images": 1,
+      "true_id": 5,
+      "true_class": "nv",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": true,
+      "probabilities": [
+        0.05621337890625,
+        0.04254150390625,
+        0.0472412109375,
+        0.035675048828125,
+        0.03875732421875,
+        0.62646484375,
+        0.051544189453125,
+        0.10174560546875
+      ]
+    },
+    {
+      "group_id": "G00268",
+      "images": 1,
+      "true_id": 5,
+      "true_class": "nv",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": true,
+      "probabilities": [
+        0.0552978515625,
+        0.041961669921875,
+        0.046600341796875,
+        0.0357666015625,
+        0.038818359375,
+        0.62841796875,
+        0.05078125,
+        0.10247802734375
+      ]
+    },
+    {
+      "group_id": "G00287",
+      "images": 1,
+      "true_id": 4,
+      "true_class": "mel",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": false,
+      "probabilities": [
+        0.055999755859375,
+        0.042572021484375,
+        0.047210693359375,
+        0.03558349609375,
+        0.03851318359375,
+        0.62646484375,
+        0.051513671875,
+        0.1019287109375
+      ]
+    },
+    {
+      "group_id": "G00303",
+      "images": 1,
+      "true_id": 4,
+      "true_class": "mel",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": false,
+      "probabilities": [
+        0.055572509765625,
+        0.04217529296875,
+        0.046478271484375,
+        0.035491943359375,
+        0.038238525390625,
+        0.63037109375,
+        0.051483154296875,
+        0.1002197265625
+      ]
+    },
+    {
+      "group_id": "G00313",
+      "images": 1,
+      "true_id": 5,
+      "true_class": "nv",
+      "pred_id": 5,
+      "pred_class": "nv",
+      "correct": true,
+      "probabilities": [
+        0.055023193359375,
+        0.041015625,
+        0.046630859375,
+        0.03533935546875,
+        0.039031982421875,
+        0.63037109375,
+        0.051055908203125,
+        0.10137939453125
+      ]
+    }
+  ]
+}

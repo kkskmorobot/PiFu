@@ -1,0 +1,51 @@
+{
+  "chapters": [
+    {
+      "number": 6,
+      "title": "总结及展望",
+      "sections": [
+        {
+          "title": "研究工作总结",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "本文围绕皮肤病图像中局部信息与全局上下文的利用问题，在YOLO26m语义分割与八类分类的任务适配基础上，设计并实现了病灶引导全局—局部注意力融合模块。研究改动集中于共享特征的汇聚阶段。该模块利用主分割输出构建软区域权重，对P3与P4特征分别提取全局平均描述和病灶引导局部描述，经同尺度共享投影形成两路256维表示，再通过可学习门控进行样本自适应融合。"
+            },
+            {
+              "type": "p",
+              "text": "方法在病灶概率路径上设置停止梯度，同时保留分类与分割对共享网络的更新。在具有分类标签的样本上，引入门logit均值差的平方约束，调节两路融合的批次整体倾向，而不要求每张图像等权融合。训练继续采用标签可用性屏蔽机制，分别在有效像素和有效分类样本上计算损失，利用任务标签覆盖不同的图像。"
+            },
+            {
+              "type": "p",
+              "text": "在固定开发验证集上，三种子比较显示，图像宏平均F1由0.54578提高到0.55945，病灶分组宏平均F1由0.61492提高到0.63993，综合指标J由0.68524提高到0.70224，相对增幅分别约为2.50%、4.07%和2.48%。三项指标在三个配对种子中均有改善。单种子结构对照支持完整区域引导与受约束融合的组合设计。模型新增33,410个参数，约占基线的0.23%；同机平均直接前向耗时为5.6642 ms。"
+            },
+            {
+              "type": "p",
+              "text": "本文通过算法定义、实现与真实预测案例说明了区域引导的作用方式，并完成本地部署演示。结果支持在既定任务与开发数据条件下采用LGLA改进分类特征汇聚，但结论限于当前模型规模、标签覆盖与评价集合，不能外推至所有类别和数据域。"
+            }
+          ]
+        },
+        {
+          "title": "后续研究方向",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "后续可研究区域引导的不确定性。当前局部描述依赖预测概率，边界模糊或浅色病灶可能使预测区域偏离真实掩膜。可保留全局补充路径，分析概率质量、边界不确定性与融合权重的关系，通过独立归因或受控实验确定局部描述应加强或回退的条件。不能仅凭分割概率图判断分类关注范围。"
+            },
+            {
+              "type": "p",
+              "text": "数据方面，需要扩大分类与分割双监督覆盖，补充可靠的病灶和患者关联信息，并结合逐类别错误与成像来源分析困难类别。新的验证数据应覆盖全部目标类别，明确来源与患者分组边界，采用与开发过程分离的方案检验跨来源适用性。"
+            },
+            {
+              "type": "p",
+              "text": "实验方面，可按预先确定的协议增加重复运行，设置更细致的结构对照，分别检验门控约束、引导质量和融合策略的作用。当前单种子对照同时改变部分相关因素，后续需区分其独立影响。效率研究可考察投影维度、计算精度与部署算子的关系，在相同硬件和计时边界下评估精度与开销的取舍。这些方向均需新增、独立的证据支持。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "abstract_cn": "针对皮肤病图像分类中病灶局部特征与全局上下文难以兼顾、分割与分类标签覆盖不一致的问题，本文在YOLO26m语义分割与八类图像分类的任务适配基础上，设计病灶引导全局—局部注意力融合模块（LGLA）。该模块将停止梯度后的分割概率作为软区域权重，对P3、P4多尺度特征进行局部加权汇聚，并与全局平均描述通过同尺度共享投影和自适应门控融合；训练时在有分类标签的样本上加入批次级门控均衡约束，按标签可用性计算联合损失。实验采用既定开发数据划分，对Plain与完整LGLA分别进行三个随机种子比较，并结合单种子结构对照、真实预测可视化和固定测试集合补充评价分析方法表现。结果表明，LGLA在开发验证集上的图像宏平均F1、病灶分组宏平均F1和综合指标J分别由0.54578、0.61492和0.68524提高至0.55945、0.63993和0.70224，相对增幅约为2.50%、4.07%和2.48%，且三项指标在三个配对种子中改善方向一致。模型新增参数33,410个，约占基线的0.23%，同机平均直接前向耗时为5.6642 ms。研究表明，利用分割概率组织局部与全局特征融合，可在既定任务和数据条件下改善分类及联合评价表现，为部分任务标签条件下的皮肤图像分析提供一种可复现的改进方法。",
+  "abstract_en": "To balance lesion-specific features and global context in skin lesion classification under incomplete task annotations, this study developed a lesion-guided global–local attention module (LGLA) on a YOLO26m model adapted for binary semantic segmentation and eight-class image classification. The module used detached segmentation probabilities as soft spatial weights to pool P3 and P4 features. Local descriptors were combined with global average descriptors using projections shared by the two branches at each scale and an adaptive gate. A batch-level gate-balancing penalty was applied to samples with classification labels, while joint losses were computed according to annotation availability. Plain and full LGLA models were compared using three random seeds on a fixed development split. Single-seed structural controls, saved prediction visualizations, and supplementary evaluation on fixed test sets were also analyzed. On the development validation set, image macro-F1, lesion-group macro-F1, and the joint metric J increased from 0.54578, 0.61492, and 0.68524 to 0.55945, 0.63993, and 0.70224, respectively. The relative gains were approximately 2.50%, 4.07%, and 2.48%, with consistent directions across all three paired seeds. LGLA added 33,410 parameters, approximately 0.23% of the baseline, and had a mean direct-forward latency of 5.6642 ms on the same device. The results support segmentation-guided fusion of local and global features as a reproducible way to improve classification and joint performance under the specified task and data conditions.",
+  "acknowledgements": "感谢指导教师郑莉萍老师在毕业论文研究和写作过程中给予的指导。围绕研究问题、方法表达与实验分析的学习，使我逐步认识到，算法研究不仅需要得到结果，也需要说明结果如何获得、能够支持怎样的结论。感谢学院老师在专业学习中给予的教导，感谢家人与同学在学习和论文完成过程中给予的理解与支持。今后的学习中，我将继续重视问题分析、实验规范和独立思考。"
+}

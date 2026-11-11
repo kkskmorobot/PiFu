@@ -1,0 +1,72 @@
+# runs6 controlled experiment: runs5 + one standard CBAM on P3/8.
+# All optimization/data settings match runs5. Test is never used for selection.
+
+model: models/yolo26s-sem.pt
+data: Data/processed_skin7_v3/data.yaml
+
+epochs: 100
+patience: 20
+batch: 16
+imgsz: 640
+device: 0
+workers: 8
+
+project: experiments/06_YOLO26s_Semantic_AuxClassifier_CBAM/results/semantic_multitask_cbam
+name: skin7_yolo26s_sem_auxcls_cbam_seed42
+exist_ok: false
+pretrained: true
+
+optimizer: AdamW
+lr0: 0.001
+lrf: 0.01
+cos_lr: true
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 3.0
+cls_pw: 0.5
+
+seed: 42
+deterministic: true
+amp: true
+cache: false
+save: true
+save_period: 5
+plots: true
+val: true
+
+hsv_h: 0.005
+hsv_s: 0.10
+hsv_v: 0.10
+degrees: 5.0
+translate: 0.03
+scale: 0.10
+shear: 0.0
+perspective: 0.0
+flipud: 0.5
+fliplr: 0.5
+mosaic: 0.0
+mixup: 0.0
+cutmix: 0.0
+copy_paste: 0.0
+close_mosaic: 0
+
+single_cls: false
+rect: false
+multi_scale: false
+
+multitask:
+  image_cls_weight: 0.5
+  selection:
+    # Same online composite/early-stopping fitness as runs5 for strict
+    # comparability. Formal model judgment also uses the constraints below.
+    macro_f1_weight: 0.50
+    foreground_miou_weight: 0.25
+    minority_recall_weight: 0.25
+    mel_to_nv_penalty: 0.25
+    max_mel_to_nv_rate: 0.1077844311  # runs4: 18 / 167
+
+    # Pre-registered formal-candidate constraints. Foreground mIoU allows an
+    # absolute 0.02 tolerance relative to runs4's 0.538748 validation value.
+    min_foreground_miou: 0.518748
+    min_minority_recall: 0.533498
+

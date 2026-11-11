@@ -1,0 +1,133 @@
+# Run13 completes the frozen 2x2 attention x MEL-weight factorial.
+# No test or external candidate is present in this configuration.
+
+contract:
+  version: run13_binary_lesion_guided_attention_mel_weight_v1
+  role: controlled_factorial_combination_followup_to_run12
+  single_preregistered_factor: add_frozen_run11_mel_target_ce_weight_to_run12_attention
+  comparison_policy: causal_single_factor_comparison_against_run12_and_2x2_interaction_readout
+  baseline_run: experiments/12_YOLO26s_Binary8Class_BinaryLesionGuidedAttention
+  baseline_fingerprint: 77ba2344a10784443d11ded2a9e6dff497e92429481a986a3539becdbc45710f
+  factorial_reference_run10: no_attention_unweighted_ce
+  factorial_reference_run11: no_attention_mel_weighted_ce
+  factorial_reference_run12: attention_unweighted_ce
+  factorial_cell_run13: attention_mel_weighted_ce
+  test_policy: forbidden_until_final_model_lock_and_fresh_user_authorization
+  external_policy: forbidden_for_training_selection_and_threshold_tuning
+
+ultralytics:
+  task: semantic
+  mode: train
+  model: models/yolo26s-sem.pt
+  data: experiments/13_YOLO26s_Binary8Class_BinaryLesionGuidedAttention_MELWeightedCE/run13_development_data.yaml
+  epochs: 100
+  patience: 20
+  batch: 16
+  imgsz: 640
+  device: 0
+  workers: 8
+  project: experiments/13_YOLO26s_Binary8Class_BinaryLesionGuidedAttention_MELWeightedCE/results
+  name: run13_yolo26s_binary8cls_attention_mel_weighted_ce_seed42
+  exist_ok: false
+  pretrained: true
+  optimizer: AdamW
+  lr0: 0.001
+  lrf: 0.01
+  cos_lr: true
+  momentum: 0.937
+  weight_decay: 0.0005
+  warmup_epochs: 3.0
+  warmup_momentum: 0.8
+  warmup_bias_lr: 0.1
+  nbs: 64
+  seed: 42
+  deterministic: true
+  amp: true
+  cache: false
+  save: true
+  save_period: -1
+  plots: true
+  val: true
+  verbose: true
+  fraction: 1.0
+  single_cls: false
+  rect: false
+  multi_scale: false
+  dropout: 0.0
+
+augmentations:
+  hsv_h: 0.005
+  hsv_s: 0.10
+  hsv_v: 0.10
+  degrees: 5.0
+  translate: 0.03
+  scale: 0.10
+  shear: 0.0
+  perspective: 0.0
+  flipud: 0.5
+  fliplr: 0.5
+  bgr: 0.0
+  mosaic: 0.0
+  mixup: 0.0
+  cutmix: 0.0
+  copy_paste: 0.0
+  close_mosaic: 0
+  auto_augment: null
+  erasing: 0.0
+
+multitask:
+  semantic_classes: 1
+  classification_classes: 8
+  image_cls_weight: 0.5
+  image_head: binary_lesion_guided_p3_p4_p5_eca_mask_pool_mlp_dropout020
+  classification_label_smoothing: 0.0
+  classification_loss: cross_entropy_with_fixed_target_class_weight
+  classification_class_weights:
+    akiec: 1.0
+    bcc: 1.0
+    bkl: 1.0
+    df: 1.0
+    mel: 1.8178536265178864
+    nv: 1.0
+    vasc: 1.0
+    scc: 1.0
+  mel_weight_derivation: train_only_n_nv_5539_divided_by_n_mel_3047
+  val_test_external_used_to_choose_weight: false
+  sampler: standard_seeded_epoch_shuffle_without_replacement
+  epoch_size: all_23462_train_samples_once
+  segmentation_loss_scope: has_segmentation_only
+  classification_loss_scope: has_official_classification_only
+
+lesion_attention:
+  spatial_source: detached_sigmoid_binary_semantic_main_logit
+  scales: [P3, P4, P5]
+  p5_layer: 10
+  channel_gate: identity_initialized_eca
+  eca_kernel_size: 5
+  pooling: half_global_average_plus_half_normalized_lesion_guided_average
+  mask_guided_mix: 0.5
+  detach_mask: true
+  p5_initial_contribution: zero
+  semantic_branch_modified: false
+
+checkpoint:
+  bundle_version: pifuv2_multitask_checkpoint_v2
+  keep_last: 3
+  resume_default: auto
+  safe_boundary: completed_epoch
+  require_success_hash_and_fingerprint: true
+  save_live_model_ema_optimizer_scaler_scheduler_stopper_rng_data_progress: true
+
+selection:
+  primary_alias: best_feasible_joint
+  joint_score: sqrt_binary_iou_times_group_macro_f1
+  max_mel_to_nv_rate: 0.1077844311
+  fallback_if_no_feasible: constraint_failure_report_best_joint_for_diagnosis_only
+  tie_break_order:
+    - higher_group_macro_f1
+    - higher_binary_iou
+    - earlier_epoch
+  semantic_probability_threshold: 0.5
+  classification_decision: argmax
+  calibration_temperature: 1.0
+  fit_temperature_or_threshold_on_external: false

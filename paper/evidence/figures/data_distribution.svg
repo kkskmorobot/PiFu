@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="900" height="505" preserveAspectRatio="xMinYMin meet" viewBox="0 0 900 505" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="900" height="505"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-505)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="900" height="505" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="277.5" y="481.0" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,962) scale(1,-1)">监督覆盖比例（各集合内归一化）</text>
+			<text x="63.0" y="418.0" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,836) scale(1,-1)">训练</text>
+			<rect x="150" y="405" width="294.9607876566363" height="35" style="stroke: rgb(100%,100%,100%); stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="444.9607876566363" y="405" width="22.27261103060266" height="35" style="stroke: rgb(100%,100%,100%); stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,45%,21%); fill-rule: evenodd;"/>
+			<rect x="467.23339868723895" y="405" width="392.76660131276105" height="35" style="stroke: rgb(100%,100%,100%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<text x="300.75" y="382.0" style="font-family: SimHei; font-size: 19px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,764) scale(1,-1)">仅分割 9747  |  双监督 736  |  仅分类 12979</text>
+			<text x="63.0" y="358.0" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,716) scale(1,-1)">验证</text>
+			<rect x="150" y="345" width="104.22018348623851" height="35" style="stroke: rgb(100%,100%,100%); stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="254.2201834862385" y="345" width="14.655963302752298" height="35" style="stroke: rgb(100%,100%,100%); stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,45%,21%); fill-rule: evenodd;"/>
+			<rect x="268.8761467889908" y="345" width="591.1238532110092" height="35" style="stroke: rgb(100%,100%,100%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<text x="315.0" y="322.0" style="font-family: SimHei; font-size: 19px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,644) scale(1,-1)">仅分割 256  |  双监督 36  |  仅分类 1452</text>
+			<text x="224.99999999999997" y="294.0" style="font-family: SimHei; font-size: 18px;fill: rgb(33%,38%,42%); stroke:none;" transform="translate(0,588) scale(1,-1)">条内比例按各集合图像总数归一化；标签数值为图像数量</text>
+			<text x="283.25" y="254.0" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,508) scale(1,-1)">有分类标签图像的类别占比（%）</text>
+			<path d="M 70,55 L 875,55 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="46.5" y="50.0" style="font-family: SimHei; font-size: 17px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,100) scale(1,-1)">0</text>
+			<path d="M 70,91.666667 L 875,91.666667 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="38.0" y="86.66666666666669" style="font-family: SimHei; font-size: 17px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,173) scale(1,-1)">10</text>
+			<path d="M 70,128.333333 L 875,128.333333 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="38.0" y="123.33333333333331" style="font-family: SimHei; font-size: 17px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,246) scale(1,-1)">20</text>
+			<path d="M 70,165 L 875,165 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="38.0" y="160.0" style="font-family: SimHei; font-size: 17px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,320) scale(1,-1)">30</text>
+			<path d="M 70,201.666667 L 875,201.666667 Z" style="stroke: rgb(83%,86%,89%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="38.0" y="196.66666666666663" style="font-family: SimHei; font-size: 17px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,393) scale(1,-1)">40</text>
+			<rect x="73" y="55" width="24" height="17.484506015311695" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="103" y="55" width="24" height="18.481182795698928" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<text x="77.5" y="27.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,54) scale(1,-1)">AKIEC</text>
+			<rect x="173" y="55" width="24" height="67.31802163081784" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="203" y="55" width="24" height="69.73566308243728" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<text x="186.5" y="27.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,54) scale(1,-1)">BCC</text>
+			<rect x="273" y="55" width="24" height="36.35921740187143" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="303" y="55" width="24" height="37.20878136200716" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<text x="286.5" y="27.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,54) scale(1,-1)">BKL</text>
+			<rect x="373" y="55" width="24" height="2.994288491918823" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="403" y="55" width="24" height="2.9569892473118244" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<text x="391.0" y="27.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,54) scale(1,-1)">DF</text>
+			<rect x="473" y="55" width="24" height="81.46068781139871" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="503" y="55" width="24" height="82.30286738351253" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<text x="486.5" y="27.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,54) scale(1,-1)">MEL</text>
+			<rect x="573" y="55" width="24" height="148.08360675659253" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="603" y="55" width="24" height="141.93548387096774" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<text x="591.0" y="27.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,54) scale(1,-1)">NV</text>
+			<rect x="673" y="55" width="24" height="2.6200024304289684" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="703" y="55" width="24" height="3.203405017921149" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<text x="682.0" y="27.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,54) scale(1,-1)">VASC</text>
+			<rect x="773" y="55" width="24" height="10.346336128326655" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(20%,40%,51%); fill-rule: evenodd;"/>
+			<rect x="803" y="55" width="24" height="10.842293906810042" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,51%,47%); fill-rule: evenodd;"/>
+			<text x="786.5" y="27.0" style="font-family: SimHei; font-size: 18px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,54) scale(1,-1)">SCC</text>
+			<text x="559.75" y="235.0" style="font-family: SimHei; font-size: 19px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,470) scale(1,-1)">蓝：训练   绿：验证</text>
+		</g>
+	</g>
+</svg>

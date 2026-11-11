@@ -1,0 +1,10 @@
+{
+  "status": "STARTING_OR_RESUMING",
+  "started_local_time": "2026-09-07 22:50:21 +0800",
+  "entrypoint": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run31\\train_run31_from_pycharm.py",
+  "config_sha256": "69168bc82fde8b01a092cd48ce6cdb6c4a4e58b56f29edaa3c75886010c82378",
+  "fingerprint": "6200795f73c0adee421b1d0e0086fdfd432e314017e0c03c8465af47fc8ddc69",
+  "resume_bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\31_YOLO26m_Binary8Class_Plain_MELNVAuxHead_Seed43\\results\\run31_yolo26m_plain_mel_nv_aux_head_seed43\\checkpoint_bundles\\epoch_0084",
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

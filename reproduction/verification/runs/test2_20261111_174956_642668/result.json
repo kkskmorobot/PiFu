@@ -1,0 +1,347 @@
+{
+  "status": "COMPLETE",
+  "mode": "FROZEN_TEST_REPRODUCTION",
+  "per_seed": [
+    {
+      "run": "LG2",
+      "seed": 42,
+      "internal_test": {
+        "segmentation": {
+          "binary_iou": 0.78062,
+          "binary_dice": 0.87679,
+          "pixel_accuracy": 0.94467,
+          "samples": 634
+        },
+        "weight_source": {
+          "source": "D:\\Data\\project\\PiFu\\weights\\lg2\\frozen_eval.pt",
+          "sha256": "50b39cb6e3c449f6abbbfdc62c640f2b2d467fdd10e8be88d703485b048d0e49",
+          "source_bundle": "experiments/lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42/results/lg2_yolo26m_lgla_v1_gate_balance_seed42/checkpoint_bundles/epoch_0073",
+          "state": "exact_fp32_ema_export",
+          "original_runtime_sha256": "2b2371927bbaa0c746b81c2879bff0abebcf891ecf6aed9f1a6fa962a7f23973"
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast",
+        "classification": {
+          "support": {
+            "total": 56,
+            "mel": 16,
+            "nv": 40
+          },
+          "accuracy": 0.8035714285714286,
+          "mel_recall": 0.4375,
+          "nv_recall": 0.95,
+          "balanced_recall": 0.69375,
+          "mel_to_nv_count": 9,
+          "mel_to_nv_rate": 0.5625,
+          "nv_to_mel_count": 1,
+          "nv_to_mel_rate": 0.025,
+          "nll": 0.728859549331568,
+          "brier": 0.338075588984171,
+          "ece": 0.13956124441964285,
+          "predicted_class_counts": {
+            "akiec": 0,
+            "bcc": 1,
+            "bkl": 0,
+            "df": 0,
+            "mel": 8,
+            "nv": 47,
+            "vasc": 0,
+            "scc": 0
+          },
+          "bootstrap_95ci": {
+            "accuracy": [
+              0.7142857142857143,
+              0.8928571428571429
+            ],
+            "mel_recall": [
+              0.1875,
+              0.6875
+            ],
+            "nv_recall": [
+              0.875,
+              1.0
+            ],
+            "balanced_recall": [
+              0.56875,
+              0.81875
+            ],
+            "mel_to_nv_rate": [
+              0.3125,
+              0.8125
+            ],
+            "nv_to_mel_rate": [
+              0.0,
+              0.075
+            ]
+          },
+          "scope": "IMA++ test MEL/NV labeled subset only; not eight-class test Macro-F1"
+        }
+      },
+      "external": {
+        "segmentation": {
+          "binary_iou": 0.60135,
+          "binary_dice": 0.75105,
+          "pixel_accuracy": 0.92633,
+          "samples": 89
+        },
+        "weight_source": {
+          "source": "D:\\Data\\project\\PiFu\\weights\\lg2\\frozen_eval.pt",
+          "sha256": "50b39cb6e3c449f6abbbfdc62c640f2b2d467fdd10e8be88d703485b048d0e49",
+          "source_bundle": "experiments/lg2_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed42/results/lg2_yolo26m_lgla_v1_gate_balance_seed42/checkpoint_bundles/epoch_0073",
+          "state": "exact_fp32_ema_export",
+          "original_runtime_sha256": "2b2371927bbaa0c746b81c2879bff0abebcf891ecf6aed9f1a6fa962a7f23973"
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast"
+      }
+    },
+    {
+      "run": "LGX",
+      "seed": 43,
+      "internal_test": {
+        "segmentation": {
+          "binary_iou": 0.79436,
+          "binary_dice": 0.8854,
+          "pixel_accuracy": 0.9491,
+          "samples": 634
+        },
+        "weight_source": {
+          "source": "D:\\Data\\project\\PiFu\\weights\\lgx\\frozen_eval.pt",
+          "sha256": "24bbab8ad3de5cc62b887e9e64435cc32993fb186152b7d70a1a6417268953ef",
+          "source_bundle": "experiments/lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43/results/lgx_yolo26m_lgla_v1_gate_balance_seed43/checkpoint_bundles/epoch_0098",
+          "state": "exact_fp32_ema_export",
+          "original_runtime_sha256": "6ad29b0d5422d393e79efa6eab414dabc0f731055654bf82c75e66787c0f9b33"
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast",
+        "classification": {
+          "support": {
+            "total": 56,
+            "mel": 16,
+            "nv": 40
+          },
+          "accuracy": 0.7678571428571429,
+          "mel_recall": 0.375,
+          "nv_recall": 0.925,
+          "balanced_recall": 0.65,
+          "mel_to_nv_count": 10,
+          "mel_to_nv_rate": 0.625,
+          "nv_to_mel_count": 3,
+          "nv_to_mel_rate": 0.075,
+          "nll": 1.0429915807879897,
+          "brier": 0.37218957744451664,
+          "ece": 0.1724330357142857,
+          "predicted_class_counts": {
+            "akiec": 0,
+            "bcc": 0,
+            "bkl": 0,
+            "df": 0,
+            "mel": 9,
+            "nv": 47,
+            "vasc": 0,
+            "scc": 0
+          },
+          "bootstrap_95ci": {
+            "accuracy": [
+              0.6785714285714286,
+              0.8571428571428571
+            ],
+            "mel_recall": [
+              0.125,
+              0.625
+            ],
+            "nv_recall": [
+              0.825,
+              1.0
+            ],
+            "balanced_recall": [
+              0.525,
+              0.775
+            ],
+            "mel_to_nv_rate": [
+              0.375,
+              0.875
+            ],
+            "nv_to_mel_rate": [
+              0.0,
+              0.175
+            ]
+          },
+          "scope": "IMA++ test MEL/NV labeled subset only; not eight-class test Macro-F1"
+        }
+      },
+      "external": {
+        "segmentation": {
+          "binary_iou": 0.58794,
+          "binary_dice": 0.7405,
+          "pixel_accuracy": 0.91752,
+          "samples": 89
+        },
+        "weight_source": {
+          "source": "D:\\Data\\project\\PiFu\\weights\\lgx\\frozen_eval.pt",
+          "sha256": "24bbab8ad3de5cc62b887e9e64435cc32993fb186152b7d70a1a6417268953ef",
+          "source_bundle": "experiments/lgx_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed43/results/lgx_yolo26m_lgla_v1_gate_balance_seed43/checkpoint_bundles/epoch_0098",
+          "state": "exact_fp32_ema_export",
+          "original_runtime_sha256": "6ad29b0d5422d393e79efa6eab414dabc0f731055654bf82c75e66787c0f9b33"
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast"
+      }
+    },
+    {
+      "run": "LG3",
+      "seed": 44,
+      "internal_test": {
+        "segmentation": {
+          "binary_iou": 0.78175,
+          "binary_dice": 0.87751,
+          "pixel_accuracy": 0.94513,
+          "samples": 634
+        },
+        "weight_source": {
+          "source": "D:\\Data\\project\\PiFu\\weights\\lg3\\frozen_eval.pt",
+          "sha256": "31e40b81cb51ee88a8b7182d888cc7f95c720c068e3e141da25307ac31a2cf20",
+          "source_bundle": "experiments/lg3_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed44/results/lg3_yolo26m_lgla_v1_gate_balance_seed44/checkpoint_bundles/epoch_0096",
+          "state": "exact_fp32_ema_export",
+          "original_runtime_sha256": "b7bb2c5d926f899c66d9ee74ef5b4cac8266c763413ac3475e7a162bbba269d7"
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast",
+        "classification": {
+          "support": {
+            "total": 56,
+            "mel": 16,
+            "nv": 40
+          },
+          "accuracy": 0.8035714285714286,
+          "mel_recall": 0.5,
+          "nv_recall": 0.925,
+          "balanced_recall": 0.7125,
+          "mel_to_nv_count": 8,
+          "mel_to_nv_rate": 0.5,
+          "nv_to_mel_count": 3,
+          "nv_to_mel_rate": 0.075,
+          "nll": 0.9821839902955972,
+          "brier": 0.33066804643353026,
+          "ece": 0.16416713169642858,
+          "predicted_class_counts": {
+            "akiec": 0,
+            "bcc": 0,
+            "bkl": 0,
+            "df": 0,
+            "mel": 11,
+            "nv": 45,
+            "vasc": 0,
+            "scc": 0
+          },
+          "bootstrap_95ci": {
+            "accuracy": [
+              0.7142857142857143,
+              0.8928571428571429
+            ],
+            "mel_recall": [
+              0.25,
+              0.75
+            ],
+            "nv_recall": [
+              0.825,
+              1.0
+            ],
+            "balanced_recall": [
+              0.5875,
+              0.8375
+            ],
+            "mel_to_nv_rate": [
+              0.25,
+              0.75
+            ],
+            "nv_to_mel_rate": [
+              0.0,
+              0.175
+            ]
+          },
+          "scope": "IMA++ test MEL/NV labeled subset only; not eight-class test Macro-F1"
+        }
+      },
+      "external": {
+        "segmentation": {
+          "binary_iou": 0.59419,
+          "binary_dice": 0.74545,
+          "pixel_accuracy": 0.91884,
+          "samples": 89
+        },
+        "weight_source": {
+          "source": "D:\\Data\\project\\PiFu\\weights\\lg3\\frozen_eval.pt",
+          "sha256": "31e40b81cb51ee88a8b7182d888cc7f95c720c068e3e141da25307ac31a2cf20",
+          "source_bundle": "experiments/lg3_YOLO26m_Binary8Class_LGLAv1_GateBalance_Seed44/results/lg3_yolo26m_lgla_v1_gate_balance_seed44/checkpoint_bundles/epoch_0096",
+          "state": "exact_fp32_ema_export",
+          "original_runtime_sha256": "b7bb2c5d926f899c66d9ee74ef5b4cac8266c763413ac3475e7a162bbba269d7"
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast"
+      }
+    }
+  ],
+  "aggregate": {
+    "internal_segmentation": {
+      "binary_iou": {
+        "mean": 0.7855766666666666,
+        "sample_sd": 0.0076275443842257155
+      },
+      "binary_dice": {
+        "mean": 0.8799,
+        "sample_sd": 0.0047767248193715224
+      },
+      "pixel_accuracy": {
+        "mean": 0.9462999999999999,
+        "sample_sd": 0.00243575450322895
+      }
+    },
+    "external_segmentation": {
+      "binary_iou": {
+        "mean": 0.5944933333333334,
+        "sample_sd": 0.006710144062040216
+      },
+      "binary_dice": {
+        "mean": 0.7456666666666667,
+        "sample_sd": 0.00527833622776468
+      },
+      "pixel_accuracy": {
+        "mean": 0.9208966666666667,
+        "sample_sd": 0.004751466440303801
+      }
+    },
+    "restricted_classification": {
+      "accuracy": {
+        "mean": 0.7916666666666666,
+        "sample_sd": 0.020619652471058052
+      },
+      "mel_recall": {
+        "mean": 0.4375,
+        "sample_sd": 0.0625
+      },
+      "nv_recall": {
+        "mean": 0.9333333333333332,
+        "sample_sd": 0.014433756729740593
+      },
+      "balanced_recall": {
+        "mean": 0.6854166666666667,
+        "sample_sd": 0.03207250899654302
+      },
+      "mel_to_nv_rate": {
+        "mean": 0.5625,
+        "sample_sd": 0.0625
+      },
+      "nv_to_mel_rate": {
+        "mean": 0.05833333333333333,
+        "sample_sd": 0.028867513459481284
+      },
+      "nll": {
+        "mean": 0.9180117068050516,
+        "sample_sd": 0.1666082073999591
+      },
+      "brier": {
+        "mean": 0.3469777376207393,
+        "sample_sd": 0.022146005782866175
+      },
+      "ece": {
+        "mean": 0.15872047061011904,
+        "sample_sd": 0.017099364124770203
+      }
+    }
+  }
+}

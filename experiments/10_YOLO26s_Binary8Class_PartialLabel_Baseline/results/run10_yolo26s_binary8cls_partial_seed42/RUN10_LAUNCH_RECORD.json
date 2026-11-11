@@ -1,0 +1,10 @@
+{
+  "status": "STARTING_OR_RESUMING",
+  "started_local_time": "2026-08-05 12:48:50 +0800",
+  "entrypoint": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\train_run10_from_pycharm.py",
+  "config_sha256": "7480f3cc7fbfc6de35e769f2df4386cdadfb84b069ba2a2a9a0f277560f14c72",
+  "fingerprint": "a09e0cfb4669e06ff8ff67036699253282bbaa619c9bba28eb3e79bfb7445d9a",
+  "resume_bundle": null,
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

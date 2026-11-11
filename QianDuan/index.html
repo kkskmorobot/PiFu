@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DermaSeg - 皮肤病灶语义分割与辅助分析系统</title>
+  <meta name="description" content="基于 PiFuV2 多任务模型的皮肤病灶语义分割与八分类辅助分析系统">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d9488'/%3E%3Cpath d='M19 33c0-10 6-17 14-17 9 0 15 7 13 16-2 11-10 17-18 15-6-1-9-7-9-14Z' fill='white' fill-opacity='.92'/%3E%3Cpath d='M27 28c4-5 11-5 14 0' fill='none' stroke='%230f766e' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome 图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts: Inter 与 Noto Sans SC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans SC', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            clinic: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+            },
+            surface: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 极简细致的淡色滚动条 */
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f8fafc;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* 图像平滑对齐与分割遮罩动画 */
+    .mask-transition {
+      transition: opacity 0.25s ease, filter 0.25s ease;
+    }
+
+    /* 临床点阵背景（极淡的浅灰点，提供适度工整感） */
+    .bg-medical-dots {
+      background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
+      background-size: 20px 20px;
+    }
+
+    .result-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .batch-folder-card {
+      transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+    .batch-folder-card:hover {
+      transform: translateY(-1px);
+      border-color: #94a3b8;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    }
+  </style>
+</head>
+
+<body class="bg-surface-50 text-slate-800 font-sans h-screen flex flex-col overflow-hidden antialiased selection:bg-clinic-100 selection:text-clinic-700">
+
+  <!-- ================= 顶部导航栏 (Medical Top Bar) ================= -->
+  <header class="h-14 border-b border-slate-200 bg-white/95 backdrop-blur px-5 flex items-center justify-between shrink-0 z-30">
+    <!-- 左侧 Logo 与当前项目信息 -->
+    <div class="flex items-center space-x-3">
+      <div class="w-8 h-8 rounded-lg bg-clinic-600 flex items-center justify-center text-white shadow-sm shadow-clinic-500/20">
+        <i class="fa-solid fa-shapes text-sm"></i>
+      </div>
+      <div>
+        <div class="flex items-center space-x-2">
+          <span class="font-semibold text-slate-900 text-sm tracking-tight">DermaSeg <span class="font-normal text-slate-400">|</span> 皮肤病语义分割</span>
+          <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">YOLO-Seg</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中间：当前病例与模型状态（轻量简洁） -->
+    <div class="hidden md:flex items-center space-x-6 text-xs text-slate-600">
+      <div class="flex items-center space-x-2">
+        <span id="modelStatusDot" class="w-2 h-2 rounded-full bg-amber-400"></span>
+        <span class="text-slate-400">模型就绪:</span>
+        <select id="modelSelect" aria-label="选择推理模型" class="font-medium text-slate-700 bg-transparent border-0 focus:outline-none max-w-64 cursor-pointer">
+          <option>正在连接模型服务...</option>
+        </select>
+      </div>
+      <div class="h-3 w-px bg-slate-200"></div>
+      <div class="flex items-center space-x-2">
+        <span class="text-slate-400">当前病例:</span>
+        <span id="labelCaseId" class="font-mono font-medium text-slate-700">#DERMA-2026-0941</span>
+      </div>
+    </div>
+
+    <!-- 右侧操作区：上传图像与报告导出 -->
+    <div class="flex items-center space-x-2.5">
+      <div class="flex items-center rounded-lg border border-slate-200 bg-slate-50 p-0.5 text-[11px] font-medium">
+        <button id="btnSingleMode" class="px-2.5 py-1 rounded-md bg-white text-clinic-700 shadow-sm transition flex items-center gap-1.5">
+          <i class="fa-regular fa-image"></i><span>单张预测</span>
+        </button>
+        <button id="btnBatchMode" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-700 transition flex items-center gap-1.5">
+          <i class="fa-regular fa-folder-open"></i><span>批量预测</span>
+        </button>
+      </div>
+      <input type="file" id="fileImageInput" accept="image/*" class="hidden">
+      <button id="btnUploadImage" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 transition flex items-center space-x-1.5 shadow-sm">
+        <i class="fa-solid fa-arrow-up-from-bracket text-slate-500"></i>
+        <span>导入皮肤影像</span>
+      </button>
+
+      <button id="btnExportReport" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 transition flex items-center space-x-1.5 shadow-sm">
+        <i class="fa-regular fa-file-lines text-slate-500"></i>
+        <span class="hidden sm:inline">导出评估结果</span>
+      </button>
+
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+
+      <button id="btnSettings" title="分割配置" class="w-8 h-8 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-500 flex items-center justify-center transition">
+        <i class="fa-solid fa-sliders text-xs"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= 主体工作区 (Three-Panel Medical Layout) ================= -->
+  <main id="singleWorkspace" class="flex-1 flex overflow-hidden">
+
+    <!-- 1. 左侧栏：分割与显示图层控制 (Settings & Layer Control) -->
+    <aside class="w-72 shrink-0 border-r border-slate-200 bg-white flex flex-col justify-between overflow-y-auto">
+      <div class="p-4 space-y-5">
+        
+        <!-- 1.1 预设病例库 (供演示快速切换) -->
+        <div>
+          <label class="block text-xs font-medium text-slate-500 mb-2">
+            标准测试样本 (Dermoscopy Samples)
+          </label>
+          <div class="grid grid-cols-2 gap-2" id="samplePresetsContainer">
+            <button class="sample-btn active p-2 text-left rounded-lg border border-clinic-500 bg-clinic-50/60 text-clinic-700 text-xs font-medium transition" data-case="test">
+              <div class="font-semibold text-slate-800">下一张</div>
+              <div class="text-[11px] text-slate-500 truncate">TEST 随机样本</div>
+            </button>
+            <button class="sample-btn p-2 text-left rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 text-xs font-medium transition" data-case="val">
+              <div class="font-semibold text-slate-800">下一张</div>
+              <div class="text-[11px] text-slate-500 truncate">VAL 随机样本</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- 1.2 分割可视化参数 (Mask Visualization) -->
+        <div class="space-y-4 pt-4 border-t border-slate-100">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-700">掩膜叠加设置 (Overlay)</span>
+            <span class="text-[11px] text-slate-400 font-mono" id="valMaskOpacity">65%</span>
+          </div>
+
+          <!-- 掩膜不透明度滑块 -->
+          <div>
+            <div class="flex justify-between text-xs text-slate-500 mb-1.5">
+              <span>掩膜透明度 (Mask Opacity)</span>
+            </div>
+            <input id="sliderMaskOpacity" type="range" min="0" max="100" value="65" 
+                   class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-clinic-600">
+          </div>
+
+          <!-- 置信度阈值滑块 -->
+          <div>
+            <div class="flex justify-between text-xs text-slate-500 mb-1.5">
+              <span>分割判定阈值 (Threshold)</span>
+              <span id="valConfidence" class="text-slate-700 font-mono font-medium">0.40</span>
+            </div>
+            <input id="sliderConfidence" type="range" min="0.10" max="0.90" step="0.05" value="0.40" 
+                   class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-clinic-600">
+          </div>
+        </div>
+
+        <!-- 1.3 临床可视化图层开关 (Clean Toggles) -->
+        <div class="space-y-3 pt-4 border-t border-slate-100">
+          <label class="block text-xs font-semibold text-slate-700 mb-1">
+            显示元素开关 (Layers)
+          </label>
+
+          <label class="flex items-center justify-between text-xs text-slate-600 cursor-pointer py-0.5">
+            <span>填充语义掩膜 (Semantic Mask)</span>
+            <input type="checkbox" id="toggleMask" checked class="w-4 h-4 rounded text-clinic-600 accent-clinic-600 cursor-pointer">
+          </label>
+
+          <label class="flex items-center justify-between text-xs text-slate-600 cursor-pointer py-0.5">
+            <span>病灶外轮廓边线 (Contour Line)</span>
+            <input type="checkbox" id="toggleContour" checked class="w-4 h-4 rounded text-clinic-600 accent-clinic-600 cursor-pointer">
+          </label>
+
+          <label class="flex items-center justify-between text-xs text-slate-600 cursor-pointer py-0.5">
+            <span>最小外接矩形 (BBox)</span>
+            <input type="checkbox" id="toggleBbox" class="w-4 h-4 rounded text-clinic-600 accent-clinic-600 cursor-pointer">
+          </label>
+
+          <label class="flex items-center justify-between text-xs text-slate-600 cursor-pointer py-0.5">
+            <span>毫米标尺参考 (Scale Bar)</span>
+            <input type="checkbox" id="toggleScale" checked class="w-4 h-4 rounded text-clinic-600 accent-clinic-600 cursor-pointer">
+          </label>
+        </div>
+
+        <!-- 1.4 病变目标类别图例 (Dermatology Class Legend) -->
+        <div class="pt-4 border-t border-slate-100">
+          <label class="block text-xs font-semibold text-slate-700 mb-2">
+            病理分类图例 (Classes)
+          </label>
+          <div class="space-y-1.5 text-xs" id="legendContainer">
+            <div class="flex items-center justify-between px-2 py-1 rounded bg-slate-50 border border-slate-100">
+              <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-sm bg-orange-500"></span>
+                <span class="text-slate-700 font-medium">日光性角化 / 鲍恩病</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono">AKIEC</span>
+            </div>
+            <div class="flex items-center justify-between px-2 py-1 rounded bg-slate-50 border border-slate-100">
+              <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-sm bg-amber-500"></span>
+                <span class="text-slate-700 font-medium">基底细胞癌</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono">BCC</span>
+            </div>
+            <div class="flex items-center justify-between px-2 py-1 rounded bg-slate-50 border border-slate-100">
+              <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-sm bg-teal-500"></span>
+                <span class="text-slate-700 font-medium">良性角化样病变</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono">BKL</span>
+            </div>
+            <div class="flex items-center justify-between px-2 py-1 rounded bg-slate-50 border border-slate-100">
+              <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-sm bg-indigo-500"></span>
+                <span class="text-slate-700 font-medium">皮肤纤维瘤</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono">DF</span>
+            </div>
+            <div class="flex items-center justify-between px-2 py-1 rounded bg-slate-50 border border-slate-100">
+              <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-sm bg-rose-600"></span>
+                <span class="text-slate-700 font-medium">黑色素瘤</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono">MEL</span>
+            </div>
+            <div class="flex items-center justify-between px-2 py-1 rounded bg-slate-50 border border-slate-100">
+              <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-sm bg-pink-400"></span>
+                <span class="text-slate-700 font-medium">黑色素细胞痣</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono">NV</span>
+            </div>
+            <div class="flex items-center justify-between px-2 py-1 rounded bg-slate-50 border border-slate-100">
+              <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-sm bg-sky-500"></span>
+                <span class="text-slate-700 font-medium">血管性病变</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono">VASC</span>
+            </div>
+            <div class="flex items-center justify-between px-2 py-1 rounded bg-slate-50 border border-slate-100">
+              <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-sm bg-red-600"></span>
+                <span class="text-slate-700 font-medium">鳞状细胞癌</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono">SCC</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 底部执行分析大按钮 -->
+      <div class="p-4 border-t border-slate-100 bg-white">
+        <button id="btnRunInference" class="w-full py-2.5 rounded-lg bg-clinic-600 hover:bg-clinic-700 active:scale-[0.99] text-white font-medium text-xs shadow-sm transition flex items-center justify-center space-x-2">
+          <i class="fa-solid fa-wand-magic-sparkles text-xs"></i>
+          <span>重新执行语义分割</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- 2. 中间主区域：皮肤镜图像展示与分割遮罩视口 (Medical Viewer) -->
+    <section class="flex-1 flex flex-col bg-surface-100 relative overflow-hidden bg-medical-dots">
+      
+      <!-- 视口顶部工具栏 -->
+      <div class="h-10 border-b border-slate-200 bg-white/90 backdrop-blur px-4 flex items-center justify-between text-xs text-slate-600">
+        <div class="flex items-center space-x-3">
+          <span class="font-medium text-slate-700 flex items-center gap-1.5 text-xs">
+            <i class="fa-regular fa-image text-clinic-600"></i>
+            <span id="currentFileName">skin_lesion_dermoscopy_01.jpg</span>
+          </span>
+          <span id="imageDimensions" class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-500 font-mono">1024 × 768 px</span>
+        </div>
+
+        <!-- 视图操作按钮组 -->
+        <div class="flex items-center space-x-1">
+          <button id="btnToggleSplitView" class="px-2.5 py-1 rounded hover:bg-slate-100 text-slate-600 font-medium text-[11px] flex items-center space-x-1 transition" title="对比原图与掩膜">
+            <i class="fa-solid fa-table-columns"></i>
+            <span>对比原图</span>
+          </button>
+          <div class="h-3 w-px bg-slate-200 mx-1"></div>
+          <button id="btnZoomIn" class="w-7 h-7 rounded hover:bg-slate-100 text-slate-600 flex items-center justify-center transition" title="放大"><i class="fa-solid fa-plus text-xs"></i></button>
+          <button id="btnZoomOut" class="w-7 h-7 rounded hover:bg-slate-100 text-slate-600 flex items-center justify-center transition" title="缩小"><i class="fa-solid fa-minus text-xs"></i></button>
+          <button id="btnResetZoom" class="w-7 h-7 rounded hover:bg-slate-100 text-slate-600 flex items-center justify-center transition" title="自适应大小"><i class="fa-solid fa-arrows-rotate text-xs"></i></button>
+        </div>
+      </div>
+
+      <!-- 图像与分割遮罩容器 -->
+      <div id="viewerStage" class="flex-1 relative flex items-center justify-center p-6 overflow-hidden select-none">
+        
+        <!-- 图像包装框 -->
+        <div id="imageWrapper" class="relative max-w-full max-h-full rounded-xl overflow-hidden shadow-md border border-slate-200/80 bg-white">
+          
+          <!-- 皮肤镜底图 -->
+          <img 
+            id="lesionImage"
+            src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80" 
+            alt="皮肤镜影像" 
+            class="max-h-[68vh] object-contain block pointer-events-none"
+            onerror="this.src='https://placehold.co/900x675/f1f5f9/475569?text=Dermoscopy+Image+Preview'"
+          />
+
+          <!-- SVG 语义分割不规则遮罩层 (模拟 YOLO-Seg 像素级多边形轮廓输出) -->
+          <svg id="segmentationSvg" class="mask-transition absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <!-- 语义填充区域 (玫瑰红/珊瑚色半透明代表色素病灶) -->
+            <path id="maskPathFill"
+                  d="M 38,32 C 48,27 65,30 68,42 C 71,54 66,66 57,72 C 48,78 35,74 30,62 C 25,50 28,37 38,32 Z" 
+                  fill="#f43f5e" 
+                  fill-opacity="0.60" />
+
+            <!-- 病灶外轮廓精准边界线 (深红/玫瑰红线条) -->
+            <path id="maskPathContour"
+                  d="M 38,32 C 48,27 65,30 68,42 C 71,54 66,66 57,72 C 48,78 35,74 30,62 C 25,50 28,37 38,32 Z" 
+                  fill="none" 
+                  stroke="#be123c" 
+                  stroke-width="0.8" 
+                  stroke-dasharray="none" />
+          </svg>
+
+          <img id="maskImageOverlay" alt="模型分割掩膜" class="result-overlay mask-transition hidden" />
+          <img id="contourImageOverlay" alt="病灶轮廓" class="result-overlay mask-transition hidden" />
+
+          <!-- 可选的 Bounding Box (默认隐藏或轻量辅助) -->
+          <div id="bboxOverlay" class="hidden absolute border border-dashed border-rose-500 rounded pointer-events-none" 
+               style="top: 28%; left: 26%; width: 46%; height: 48%;">
+            <span class="absolute -top-5 left-0 bg-rose-600 text-white text-[10px] font-mono px-1 rounded shadow-xs">
+              Lesion: 94.6%
+            </span>
+          </div>
+
+          <!-- 真实临床 10mm 比例尺模拟 (左下角) -->
+          <div id="scaleBarIndicator" class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-2.5 py-1.5 rounded-md border border-slate-200/80 shadow-xs flex flex-col items-start gap-1">
+            <div class="w-16 h-1 bg-slate-900 rounded-full"></div>
+            <div class="text-[9px] font-mono text-slate-600 tracking-wider">10.0 mm</div>
+          </div>
+
+          <!-- 病灶中心指示标签 -->
+          <div id="lesionPinBadge" class="absolute top-[32%] left-[45%] bg-white/95 backdrop-blur px-2 py-0.5 rounded-full border border-slate-200 shadow-xs text-[11px] font-medium text-slate-700 flex items-center space-x-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+            <span>目标病灶 #1</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 视口底部辅助信息条 -->
+      <div class="h-9 border-t border-slate-200 bg-white/80 backdrop-blur px-4 flex items-center justify-between text-[11px] text-slate-500">
+        <div class="flex items-center space-x-4">
+          <span>算法流水线: <span id="pipelineName" class="text-slate-700 font-medium">PiFuV2 多任务推理</span></span>
+          <span>推理耗时: <span id="inferenceTime" class="text-slate-700 font-medium">等待推理</span></span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          <span id="segmentationStatus">等待载入影像</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 3. 右侧栏：病变定量形态学参数与临床诊断分析 (Diagnostic & Quantitative Analysis) -->
+    <aside class="w-84 shrink-0 border-l border-slate-200 bg-white flex flex-col justify-between overflow-hidden">
+      
+      <!-- 3.1 诊断分类核心结论 (Diagnosis Conclusion) -->
+      <div class="p-4 border-b border-slate-100">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-semibold text-slate-700">模型推断诊断 (Diagnosis)</span>
+          <span id="badgeRiskLevel" class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+            低中度恶性风险
+          </span>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 id="diagPrimaryName" class="text-sm font-bold text-slate-900">色素性皮损 (Pigmented Nevus)</h3>
+              <p id="diagSuggestion" class="text-[11px] text-slate-500 mt-0.5">仅供科研与论文演示，不构成临床诊断</p>
+            </div>
+            <div class="text-right">
+              <span id="diagConfidence" class="text-lg font-bold font-mono text-clinic-600">92.4%</span>
+              <span class="block text-[10px] text-slate-400">置信概率</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3.2 语义分割定量形态学指标 (ABCD Dermatology Metrics) -->
+      <div class="flex-1 p-4 overflow-y-auto space-y-4">
+        <div>
+          <span class="text-xs font-semibold text-slate-700 block mb-2">
+            病灶形态学量化数据 (Morphometrics)
+          </span>
+
+          <div class="grid grid-cols-2 gap-2">
+            <!-- 指标卡 1: 面积 -->
+            <div class="p-2.5 rounded-lg border border-slate-100 bg-slate-50/70">
+              <span class="text-[11px] text-slate-400 block mb-0.5">病灶面积 (Area)</span>
+              <span id="metricArea" class="text-sm font-bold font-mono text-slate-800">28.4 <span class="text-[10px] font-normal text-slate-500">mm²</span></span>
+            </div>
+            <!-- 指标卡 2: 视场占比 -->
+            <div class="p-2.5 rounded-lg border border-slate-100 bg-slate-50/70">
+              <span class="text-[11px] text-slate-400 block mb-0.5">视野占比 (Ratio)</span>
+              <span id="metricRatio" class="text-sm font-bold font-mono text-slate-800">14.8 <span class="text-[10px] font-normal text-slate-500">%</span></span>
+            </div>
+            <!-- 指标卡 3: 最大径 -->
+            <div class="p-2.5 rounded-lg border border-slate-100 bg-slate-50/70">
+              <span class="text-[11px] text-slate-400 block mb-0.5">最大长径 (Major Axis)</span>
+              <span id="metricAxis" class="text-sm font-bold font-mono text-slate-800">6.8 <span class="text-[10px] font-normal text-slate-500">mm</span></span>
+            </div>
+            <!-- 指标卡 4: 边缘不规则度 (Border Irregularity) -->
+            <div class="p-2.5 rounded-lg border border-slate-100 bg-slate-50/70">
+              <span class="text-[11px] text-slate-400 block mb-0.5">不规则度 (Compactness)</span>
+              <span id="metricIrregularity" class="text-sm font-bold font-mono text-slate-800">0.32 <span class="text-[10px] font-normal text-slate-500">(平滑)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3.3 鉴别诊断多分类概率条 (Differential Classes) -->
+        <div>
+          <span class="text-xs font-semibold text-slate-700 block mb-2">
+            鉴别诊断概率 (Differential Diagnosis)
+          </span>
+          <div id="differentialContainer" class="space-y-2 text-xs">
+            <div>
+              <div class="flex justify-between text-slate-600 mb-1 text-[11px]">
+                <span>良性色素痣 (Melanocytic Nevus)</span>
+                <span class="font-mono font-medium">92.4%</span>
+              </div>
+              <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-clinic-600 h-full rounded-full" style="width: 92.4%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-slate-600 mb-1 text-[11px]">
+                <span>脂溢性角化 (Seborrheic Keratosis)</span>
+                <span class="font-mono font-medium">5.2%</span>
+              </div>
+              <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-slate-400 h-full rounded-full" style="width: 5.2%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-slate-600 mb-1 text-[11px]">
+                <span>黑色素瘤疑云 (Melanoma)</span>
+                <span class="font-mono font-medium">2.4%</span>
+              </div>
+              <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-rose-400 h-full rounded-full" style="width: 2.4%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3.4 临床医生复核与备注输入框 (便于 Codex 直接读写存储) -->
+        <div class="pt-2">
+          <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+            医师复核与临床意见 (Clinical Notes)
+          </label>
+          <textarea id="inputClinicalNotes" rows="3" 
+                    placeholder="输入临床观察、复诊周期或人工修正意见..." 
+                    class="w-full text-xs p-2.5 rounded-lg border border-slate-200 focus:outline-none focus:border-clinic-500 focus:ring-1 focus:ring-clinic-500 transition placeholder:text-slate-400 resize-none text-slate-700"></textarea>
+        </div>
+
+      </div>
+
+      <!-- 底部操作：确认病灶与保存 -->
+      <div class="p-4 border-t border-slate-100 bg-white">
+        <button id="btnSaveAnnotation" class="w-full py-2.5 rounded-lg border border-slate-300 hover:bg-slate-50 active:scale-[0.99] text-slate-700 font-medium text-xs shadow-xs transition flex items-center justify-center space-x-2">
+          <i class="fa-regular fa-circle-check text-emerald-600"></i>
+          <span>标记为已核对 (Confirm)</span>
+        </button>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- ================= 批量预测工作区 ================= -->
+  <main id="batchWorkspace" class="hidden flex-1 overflow-hidden bg-surface-100">
+    <aside class="w-72 shrink-0 border-r border-slate-200 bg-white flex flex-col justify-between">
+      <div class="p-4 space-y-5 overflow-y-auto">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-clinic-50 border border-clinic-100 text-clinic-600 flex items-center justify-center mb-3">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <h2 class="text-sm font-semibold text-slate-900">批量预测</h2>
+          <p class="text-[11px] leading-5 text-slate-500 mt-1">按真实病种分层抽样，TEST 与 VAL 各 50 张，共 100 张，使用顶部当前选中的模型依次分析。</p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 space-y-3 text-xs">
+          <div class="flex items-center justify-between">
+            <span class="text-slate-500">图片数量</span><span class="font-mono font-semibold text-slate-800">100</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-slate-500">TEST / VAL</span><span class="font-mono font-semibold text-slate-800">50 / 50</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block mb-1.5">类别分布</span>
+            <div id="batchClassDistribution" class="grid grid-cols-2 gap-1 text-[10px]">
+              <span class="col-span-2 rounded bg-slate-50 border border-slate-100 px-2 py-1 text-slate-400">每类约 14～15 张</span>
+            </div>
+          </div>
+          <div>
+            <span class="text-slate-500 block mb-1">当前模型</span>
+            <div id="batchModelName" class="text-[11px] leading-4 text-slate-700 font-medium rounded-lg bg-slate-50 border border-slate-100 p-2 break-words">正在读取模型...</div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100">
+          <div class="flex items-center justify-between text-[11px] mb-2">
+            <span id="batchStatusText" class="font-medium text-slate-600">尚未开始</span>
+            <span id="batchProgressText" class="font-mono text-slate-500">0 / 100</span>
+          </div>
+          <div class="h-1.5 rounded-full bg-slate-100 overflow-hidden">
+            <div id="batchProgressBar" class="h-full w-0 rounded-full bg-clinic-600 transition-all duration-300"></div>
+          </div>
+          <p id="batchTimeText" class="text-[10px] text-slate-400 mt-2">预测过程中可以查看已完成的条目</p>
+        </div>
+      </div>
+      <div class="p-4 border-t border-slate-100 bg-white">
+        <button id="btnStartBatch" class="w-full py-2.5 rounded-lg bg-clinic-600 hover:bg-clinic-700 active:scale-[0.99] text-white font-medium text-xs shadow-sm transition flex items-center justify-center space-x-2">
+          <i class="fa-solid fa-play text-[10px]"></i><span>开始批量预测</span>
+        </button>
+      </div>
+    </aside>
+
+    <section class="flex-1 flex flex-col min-w-0 bg-medical-dots">
+      <div class="h-10 shrink-0 border-b border-slate-200 bg-white/90 backdrop-blur px-4 flex items-center justify-between text-xs">
+        <div class="flex items-center gap-2 text-slate-700 font-medium">
+          <i class="fa-regular fa-folder-open text-clinic-600"></i>
+          <span>批量预测结果</span>
+          <span id="batchResultCount" class="px-2 py-0.5 rounded-full bg-slate-100 text-[10px] font-mono text-slate-500">0 项</span>
+        </div>
+        <span class="text-[10px] text-slate-400">点击任一结果文件夹查看原图与分割</span>
+      </div>
+      <div id="batchEmpty" class="flex-1 flex items-center justify-center p-8">
+        <div class="text-center max-w-xs">
+          <div class="w-16 h-16 mx-auto rounded-2xl border border-slate-200 bg-white text-slate-300 flex items-center justify-center shadow-sm">
+            <i class="fa-regular fa-folder-open text-2xl"></i>
+          </div>
+          <h3 class="text-sm font-semibold text-slate-700 mt-4">等待批量任务</h3>
+          <p class="text-[11px] text-slate-400 mt-1 leading-5">点击左侧“开始批量预测”，系统会随机抽取 100 张图片。</p>
+        </div>
+      </div>
+      <div id="batchGrid" class="hidden flex-1 overflow-y-auto p-4 grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3 content-start"></div>
+    </section>
+
+    <aside class="w-96 shrink-0 border-l border-slate-200 bg-white flex flex-col overflow-hidden">
+      <div class="h-10 shrink-0 border-b border-slate-100 px-4 flex items-center justify-between">
+        <span class="text-xs font-semibold text-slate-700">结果详情</span>
+        <span id="batchDetailSplit" class="hidden text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-500"></span>
+      </div>
+      <div id="batchDetailEmpty" class="flex-1 flex items-center justify-center p-6 text-center text-[11px] text-slate-400">
+        <div><i class="fa-solid fa-arrow-pointer text-xl text-slate-300 mb-3"></i><p>选择一个结果文件夹后<br>在这里查看图像与分割掩膜</p></div>
+      </div>
+      <div id="batchDetailContent" class="hidden flex-1 overflow-y-auto">
+        <div class="p-4">
+          <div id="batchDetailViewer" class="relative rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+            <img id="batchDetailImage" alt="批量预测原图" class="w-full block object-contain max-h-80">
+            <img id="batchDetailMask" alt="批量预测分割掩膜" class="result-overlay" style="opacity:.65">
+            <img id="batchDetailContour" alt="批量预测轮廓" class="result-overlay">
+          </div>
+          <div class="flex items-center justify-between mt-3 gap-3">
+            <div class="min-w-0">
+              <div id="batchDetailName" class="text-xs font-semibold text-slate-800 truncate"></div>
+              <div id="batchDetailEnglish" class="text-[10px] text-slate-400 truncate mt-0.5"></div>
+            </div>
+            <span id="batchDetailConfidence" class="font-mono text-base font-bold text-clinic-600"></span>
+          </div>
+          <div class="grid grid-cols-2 gap-2 mt-4 text-[11px]">
+            <div class="rounded-lg bg-slate-50 border border-slate-100 p-2.5"><span class="text-slate-400 block">病灶覆盖率</span><span id="batchDetailRatio" class="font-mono font-semibold text-slate-700"></span></div>
+            <div class="rounded-lg bg-slate-50 border border-slate-100 p-2.5"><span class="text-slate-400 block">推理耗时</span><span id="batchDetailTime" class="font-mono font-semibold text-slate-700"></span></div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <span class="text-[11px] font-semibold text-slate-700">分类概率</span>
+            <div id="batchDetailProbabilities" class="space-y-2.5 mt-3"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <div id="toastContainer" class="fixed top-16 right-4 z-50 space-y-2" aria-live="polite"></div>
+
+  <!-- ================= 页面前端交互逻辑 ================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const $ = (id) => document.getElementById(id);
+      const state = {
+        file: null, result: null, zoom: 1, overlaysVisible: true, busy: false,
+        mode: 'single', batchId: null, batchPolling: false, batchSelectedId: null
+      };
+      const els = {
+        fileInput: $('fileImageInput'), upload: $('btnUploadImage'), run: $('btnRunInference'),
+        export: $('btnExportReport'), save: $('btnSaveAnnotation'), settings: $('btnSettings'),
+        image: $('lesionImage'), wrapper: $('imageWrapper'), fileName: $('currentFileName'),
+        dimensions: $('imageDimensions'), model: $('modelSelect'), statusDot: $('modelStatusDot'),
+        mask: $('maskImageOverlay'), contour: $('contourImageOverlay'), svg: $('segmentationSvg'),
+        bbox: $('bboxOverlay'), pin: $('lesionPinBadge'), scale: $('scaleBarIndicator'),
+        maskOpacity: $('sliderMaskOpacity'), maskOpacityValue: $('valMaskOpacity'),
+        threshold: $('sliderConfidence'), thresholdValue: $('valConfidence'),
+        toggleMask: $('toggleMask'), toggleContour: $('toggleContour'), toggleBbox: $('toggleBbox'),
+        toggleScale: $('toggleScale'), notes: $('inputClinicalNotes'),
+        singleWorkspace: $('singleWorkspace'), batchWorkspace: $('batchWorkspace'),
+        singleMode: $('btnSingleMode'), batchMode: $('btnBatchMode'), startBatch: $('btnStartBatch'),
+        batchGrid: $('batchGrid'), batchEmpty: $('batchEmpty'), batchModelName: $('batchModelName'),
+        batchStatus: $('batchStatusText'), batchProgress: $('batchProgressText'), batchProgressBar: $('batchProgressBar'),
+        batchTime: $('batchTimeText'), batchResultCount: $('batchResultCount'), batchDistribution: $('batchClassDistribution'),
+        batchDetailEmpty: $('batchDetailEmpty'), batchDetailContent: $('batchDetailContent')
+      };
+
+      const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (char) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+      })[char]);
+
+      function toast(message, kind = 'info') {
+        const item = document.createElement('div');
+        const tone = kind === 'error' ? 'border-rose-200 text-rose-700' : kind === 'success' ? 'border-emerald-200 text-emerald-700' : 'border-slate-200 text-slate-700';
+        item.className = `max-w-sm rounded-lg border bg-white px-3 py-2 text-xs shadow-lg ${tone}`;
+        item.textContent = message;
+        $('toastContainer').appendChild(item);
+        setTimeout(() => item.remove(), 4200);
+      }
+
+      function setBusy(busy, text = '正在执行模型推理...') {
+        state.busy = busy;
+        els.run.disabled = busy;
+        els.run.classList.toggle('opacity-60', busy);
+        els.run.querySelector('span').textContent = busy ? text : '重新执行语义分割';
+        els.run.querySelector('i').classList.toggle('fa-spin', busy);
+      }
+
+      function setMode(mode) {
+        state.mode = mode;
+        const batch = mode === 'batch';
+        els.singleWorkspace.classList.toggle('hidden', batch);
+        els.singleWorkspace.classList.toggle('flex', !batch);
+        els.batchWorkspace.classList.toggle('hidden', !batch);
+        els.batchWorkspace.classList.toggle('flex', batch);
+        [els.singleMode, els.batchMode].forEach((button) => {
+          button.classList.remove('bg-white', 'text-clinic-700', 'shadow-sm', 'text-slate-500');
+        });
+        const active = batch ? els.batchMode : els.singleMode;
+        const inactive = batch ? els.singleMode : els.batchMode;
+        active.classList.add('bg-white', 'text-clinic-700', 'shadow-sm');
+        inactive.classList.add('text-slate-500');
+        els.upload.classList.toggle('hidden', batch);
+        els.export.classList.toggle('hidden', batch);
+      }
+
+      function resetResult() {
+        state.result = null;
+        els.svg.style.display = 'none';
+        els.mask.classList.add('hidden');
+        els.contour.classList.add('hidden');
+        els.bbox.classList.add('hidden');
+        els.pin.style.display = 'none';
+        $('inferenceTime').textContent = '等待推理';
+        $('segmentationStatus').textContent = '影像已载入，等待执行';
+      }
+
+      function setImageFile(file) {
+        if (!file || !file.type.startsWith('image/')) {
+          toast('请选择 JPG、PNG 或 WebP 影像。', 'error');
+          return;
+        }
+        state.file = file;
+        els.fileName.textContent = file.name;
+        els.image.src = URL.createObjectURL(file);
+        $('labelCaseId').textContent = `#DERMA-${new Date().getFullYear()}-${String(Date.now()).slice(-6)}`;
+        resetResult();
+      }
+
+      async function loadModels() {
+        try {
+          const response = await fetch('/api/models');
+          if (!response.ok) throw new Error('模型列表读取失败');
+          const data = await response.json();
+          els.model.innerHTML = data.models.map((model) => `<option value="${model.id}">${model.label}</option>`).join('');
+          els.model.value = data.default_model;
+          els.batchModelName.textContent = els.model.selectedOptions[0]?.textContent || '未选择模型';
+          els.statusDot.classList.remove('bg-amber-400', 'bg-rose-500');
+          els.statusDot.classList.add('bg-emerald-500');
+          return true;
+        } catch (error) {
+          els.model.innerHTML = '<option>模型服务未启动</option>';
+          els.statusDot.classList.remove('bg-amber-400');
+          els.statusDot.classList.add('bg-rose-500');
+          toast('模型服务未启动，请用项目中的启动脚本打开本系统。', 'error');
+          return false;
+        }
+      }
+
+      function setBatchBusy(busy) {
+        els.startBatch.disabled = busy;
+        els.model.disabled = busy;
+        els.startBatch.classList.toggle('opacity-60', busy);
+        els.startBatch.querySelector('i').classList.toggle('fa-spin', busy);
+        els.startBatch.querySelector('i').classList.toggle('fa-spinner', busy);
+        els.startBatch.querySelector('i').classList.toggle('fa-play', !busy);
+        els.startBatch.querySelector('span').textContent = busy ? '正在批量预测...' : '重新开始批量预测';
+      }
+
+      async function startBatchPrediction() {
+        if (state.batchPolling || !els.model.value) return;
+        setMode('batch');
+        setBatchBusy(true);
+        state.batchSelectedId = null;
+        els.batchGrid.innerHTML = '';
+        els.batchGrid.classList.add('hidden');
+        els.batchEmpty.classList.remove('hidden');
+        els.batchDetailContent.classList.add('hidden');
+        els.batchDetailEmpty.classList.remove('hidden');
+        els.batchStatus.textContent = '正在创建任务';
+        els.batchProgress.textContent = '0 / 100';
+        els.batchProgressBar.style.width = '0%';
+        els.batchResultCount.textContent = '0 项';
+        try {
+          const params = new URLSearchParams({
+            model: els.model.value,
+            threshold: Number(els.threshold.value).toFixed(2)
+          });
+          const response = await fetch(`/api/batch/start?${params}`, { method: 'POST' });
+          const data = await response.json();
+          if (!response.ok) throw new Error(data.error || '批量任务创建失败');
+          state.batchId = data.id;
+          state.batchPolling = true;
+          toast('批量任务已开始，已随机抽取 100 张图片。', 'success');
+          await pollBatchPrediction();
+        } catch (error) {
+          state.batchPolling = false;
+          setBatchBusy(false);
+          els.batchStatus.textContent = '启动失败';
+          toast(error.message, 'error');
+        }
+      }
+
+      async function pollBatchPrediction() {
+        if (!state.batchId || !state.batchPolling) return;
+        try {
+          const response = await fetch(`/api/batch/${state.batchId}`);
+          const job = await response.json();
+          if (!response.ok) throw new Error(job.error || '批量任务状态读取失败');
+          renderBatchJob(job);
+          if (job.status === 'queued' || job.status === 'running') {
+            window.setTimeout(pollBatchPrediction, 700);
+            return;
+          }
+          state.batchPolling = false;
+          setBatchBusy(false);
+          if (job.status === 'completed') {
+            toast(`批量预测完成：${job.completed - job.failed} 张成功，${job.failed} 张失败。`, job.failed ? 'info' : 'success');
+          } else {
+            toast(job.error || '批量预测失败', 'error');
+          }
+        } catch (error) {
+          state.batchPolling = false;
+          setBatchBusy(false);
+          els.batchStatus.textContent = '连接中断';
+          toast(error.message, 'error');
+        }
+      }
+
+      function renderBatchJob(job) {
+        const percent = job.total ? (job.completed / job.total) * 100 : 0;
+        els.batchProgress.textContent = `${job.completed} / ${job.total}`;
+        els.batchProgressBar.style.width = `${percent}%`;
+        els.batchResultCount.textContent = `${job.items.length} 项`;
+        if (job.class_distribution?.length) {
+          els.batchDistribution.innerHTML = job.class_distribution.map((item) =>
+            `<span class="rounded bg-slate-50 border border-slate-100 px-2 py-1 text-slate-500 truncate" title="${escapeHtml(item.name_zh)}"><b class="text-slate-700">${escapeHtml(item.code.toUpperCase())}</b> · ${item.count}</span>`
+          ).join('');
+        }
+        els.batchStatus.textContent = job.status === 'completed' ? '预测完成' : job.status === 'failed' ? '任务失败' : '模型预测中';
+        els.batchTime.textContent = job.duration_ms
+          ? `总耗时 ${(job.duration_ms / 1000).toFixed(1)} 秒 · 失败 ${job.failed} 项`
+          : `已完成 ${job.completed} 项 · 失败 ${job.failed} 项`;
+        if (job.items.length) {
+          els.batchEmpty.classList.add('hidden');
+          els.batchGrid.classList.remove('hidden');
+          els.batchGrid.innerHTML = job.items.map((item) => {
+            if (item.status === 'failed') {
+              return `<button data-batch-item="${item.id}" class="batch-folder-card text-left rounded-xl border border-rose-200 bg-white p-3 min-w-0"><div class="flex items-start gap-3"><i class="fa-solid fa-folder text-rose-300 text-2xl mt-0.5"></i><div class="min-w-0"><div class="text-[11px] font-semibold text-slate-700 truncate">${escapeHtml(item.filename)}</div><div class="text-[10px] text-rose-500 mt-1">预测失败</div></div></div></button>`;
+            }
+            const diagnosis = item.diagnosis;
+            const riskTone = diagnosis.risk_level === 'high' ? 'text-rose-600 bg-rose-50' : diagnosis.risk_level === 'medium' ? 'text-amber-600 bg-amber-50' : 'text-emerald-600 bg-emerald-50';
+            return `<button data-batch-item="${item.id}" class="batch-folder-card text-left rounded-xl border ${state.batchSelectedId === item.id ? 'border-clinic-400 ring-2 ring-clinic-100' : 'border-slate-200'} bg-white p-3 min-w-0"><div class="flex items-start gap-3"><i class="fa-solid fa-folder text-amber-300 text-2xl mt-0.5"></i><div class="min-w-0 flex-1"><div class="text-[11px] font-semibold text-slate-700 truncate" title="${escapeHtml(item.filename)}">${escapeHtml(item.filename)}</div><div class="flex items-center gap-1.5 mt-1.5"><span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">${item.split.toUpperCase()}</span><span class="text-[9px] font-medium px-1.5 py-0.5 rounded bg-sky-50 text-sky-600" title="真实类别：${escapeHtml(item.ground_truth_zh)}">样本 ${escapeHtml(item.ground_truth.toUpperCase())}</span></div><div class="mt-1.5 text-[10px] truncate ${riskTone} rounded px-1.5 py-0.5" title="预测：${escapeHtml(diagnosis.name_zh)}">预测 · ${escapeHtml(diagnosis.name_zh)}</div><div class="flex justify-between mt-1.5 text-[10px] text-slate-400"><span>置信度</span><span class="font-mono font-semibold text-slate-600">${diagnosis.confidence_percent.toFixed(1)}%</span></div></div></div></button>`;
+          }).join('');
+        }
+      }
+
+      async function openBatchDetail(itemId) {
+        if (!state.batchId) return;
+        state.batchSelectedId = itemId;
+        document.querySelectorAll('[data-batch-item]').forEach((card) => {
+          card.classList.toggle('border-clinic-400', card.dataset.batchItem === itemId);
+          card.classList.toggle('ring-2', card.dataset.batchItem === itemId);
+          card.classList.toggle('ring-clinic-100', card.dataset.batchItem === itemId);
+        });
+        els.batchDetailEmpty.classList.remove('hidden');
+        els.batchDetailEmpty.innerHTML = '<div><i class="fa-solid fa-spinner fa-spin text-clinic-500 text-xl mb-3"></i><p>正在读取图像与分割结果...</p></div>';
+        els.batchDetailContent.classList.add('hidden');
+        try {
+          const response = await fetch(`/api/batch/${state.batchId}/${itemId}`);
+          const data = await response.json();
+          if (!response.ok) throw new Error(data.error || '结果详情读取失败');
+          if (!data.result) throw new Error(data.item.error || '该图片预测失败');
+          const result = data.result;
+          $('batchDetailImage').src = `data:${data.source_image.mime};base64,${data.source_image.base64}`;
+          $('batchDetailMask').src = `data:image/png;base64,${result.visualization.mask_png}`;
+          $('batchDetailContour').src = `data:image/png;base64,${result.visualization.contour_png}`;
+          $('batchDetailName').textContent = result.diagnosis.name_zh;
+          $('batchDetailEnglish').textContent = `${data.item.filename} · 样本 ${data.item.ground_truth.toUpperCase()} · ${result.diagnosis.name_en}`;
+          $('batchDetailConfidence').textContent = `${result.diagnosis.confidence_percent.toFixed(1)}%`;
+          $('batchDetailRatio').textContent = `${result.segmentation.ratio_percent.toFixed(2)}%`;
+          $('batchDetailTime').textContent = `${result.timing.inference_ms.toFixed(1)} ms`;
+          $('batchDetailSplit').textContent = data.item.split.toUpperCase();
+          $('batchDetailSplit').classList.remove('hidden');
+          $('batchDetailProbabilities').innerHTML = probabilityBars(result.probabilities);
+          els.batchDetailEmpty.classList.add('hidden');
+          els.batchDetailContent.classList.remove('hidden');
+        } catch (error) {
+          els.batchDetailEmpty.innerHTML = `<div><i class="fa-solid fa-triangle-exclamation text-rose-400 text-xl mb-3"></i><p class="text-rose-500">${escapeHtml(error.message)}</p></div>`;
+          toast(error.message, 'error');
+        }
+      }
+
+      async function loadSample(sampleId, runAfterLoad = false) {
+        try {
+          const response = await fetch(`/api/sample/${sampleId}`);
+          if (!response.ok) throw new Error('样本读取失败');
+          const blob = await response.blob();
+          const name = decodeURIComponent(response.headers.get('X-Filename') || `sample_${sampleId}.jpg`);
+          setImageFile(new File([blob], name, { type: blob.type || 'image/jpeg' }));
+          if (runAfterLoad) await runInference();
+        } catch (error) {
+          toast(error.message, 'error');
+        }
+      }
+
+      async function runInference() {
+        if (state.busy) return;
+        if (!state.file) {
+          await loadSample('test', false);
+          if (!state.file) return;
+        }
+        setBusy(true);
+        $('segmentationStatus').textContent = '模型计算中';
+        try {
+          const params = new URLSearchParams({
+            model: els.model.value,
+            threshold: Number(els.threshold.value).toFixed(2),
+            filename: state.file.name
+          });
+          const response = await fetch(`/api/infer?${params}`, {
+            method: 'POST', headers: { 'Content-Type': state.file.type || 'application/octet-stream' }, body: state.file
+          });
+          const data = await response.json();
+          if (!response.ok) throw new Error(data.error || '推理失败');
+          renderResult(data);
+          toast(`分析完成：${data.diagnosis.name_zh}`, 'success');
+        } catch (error) {
+          $('segmentationStatus').textContent = '推理失败';
+          toast(error.message, 'error');
+        } finally {
+          setBusy(false);
+        }
+      }
+
+      function renderResult(data) {
+        state.result = data;
+        state.overlaysVisible = true;
+        els.svg.style.display = 'none';
+        els.mask.src = `data:image/png;base64,${data.visualization.mask_png}`;
+        els.contour.src = `data:image/png;base64,${data.visualization.contour_png}`;
+        els.mask.classList.toggle('hidden', !els.toggleMask.checked);
+        els.contour.classList.toggle('hidden', !els.toggleContour.checked);
+        els.mask.style.opacity = Number(els.maskOpacity.value) / 100;
+
+        const box = data.segmentation.bbox_percent;
+        if (box) {
+          Object.assign(els.bbox.style, { left: `${box.x}%`, top: `${box.y}%`, width: `${box.width}%`, height: `${box.height}%` });
+          els.bbox.querySelector('span').textContent = `Lesion: ${data.diagnosis.confidence_percent.toFixed(1)}%`;
+          els.bbox.classList.toggle('hidden', !els.toggleBbox.checked);
+          els.pin.style.left = `${Math.min(92, box.x + box.width / 2)}%`;
+          els.pin.style.top = `${Math.max(5, box.y)}%`;
+          els.pin.style.display = 'flex';
+        }
+
+        $('diagPrimaryName').textContent = `${data.diagnosis.name_zh} (${data.diagnosis.name_en})`;
+        $('diagConfidence').textContent = `${data.diagnosis.confidence_percent.toFixed(1)}%`;
+        $('diagSuggestion').textContent = data.diagnosis.suggestion;
+        updateRiskBadge(data.diagnosis.risk_level, data.diagnosis.risk_text);
+        $('metricArea').innerHTML = `${data.segmentation.area_px.toLocaleString()} <span class="text-[10px] font-normal text-slate-500">px²</span>`;
+        $('metricRatio').innerHTML = `${data.segmentation.ratio_percent.toFixed(2)} <span class="text-[10px] font-normal text-slate-500">%</span>`;
+        $('metricAxis').innerHTML = `${data.segmentation.major_axis_px.toFixed(1)} <span class="text-[10px] font-normal text-slate-500">px</span>`;
+        $('metricIrregularity').innerHTML = `${data.segmentation.irregularity.toFixed(2)} <span class="text-[10px] font-normal text-slate-500">${data.segmentation.shape_text}</span>`;
+        renderDifferentials(data.probabilities);
+
+        $('pipelineName').textContent = `${data.model.label} · ${data.probability_mode}`;
+        $('inferenceTime').textContent = `${data.timing.inference_ms.toFixed(1)} ms`;
+        $('segmentationStatus').textContent = data.segmentation.area_px ? `病灶像素覆盖率: ${data.segmentation.ratio_percent.toFixed(2)}%` : '未检出病灶区域';
+        $('labelCaseId').textContent = data.case_id;
+        els.model.value = data.model.id;
+      }
+
+      function updateRiskBadge(level, text) {
+        const badge = $('badgeRiskLevel');
+        badge.textContent = text;
+        badge.className = 'text-[11px] font-medium px-2 py-0.5 rounded-full border';
+        const classes = level === 'high'
+          ? ['bg-rose-50', 'text-rose-700', 'border-rose-200']
+          : level === 'medium'
+            ? ['bg-amber-50', 'text-amber-700', 'border-amber-200']
+            : ['bg-emerald-50', 'text-emerald-700', 'border-emerald-200'];
+        badge.classList.add(...classes);
+      }
+
+      function renderDifferentials(probabilities) {
+        $('differentialContainer').innerHTML = probabilityBars(probabilities);
+      }
+
+      function probabilityBars(probabilities) {
+        return probabilities.map((item, index) => {
+          const bar = index === 0 ? 'bg-clinic-600' : item.malignant ? 'bg-rose-400' : 'bg-slate-400';
+          return `<div><div class="flex justify-between text-slate-600 mb-1 text-[11px]"><span>${escapeHtml(item.name_zh)} (${escapeHtml(item.code.toUpperCase())})</span><span class="font-mono font-medium">${item.percent.toFixed(1)}%</span></div><div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden"><div class="${bar} h-full rounded-full" style="width:${Math.max(item.percent, 0.5)}%"></div></div></div>`;
+        }).join('');
+      }
+
+      async function saveAnnotation() {
+        if (!state.result) return toast('请先完成一次模型分析。', 'error');
+        const payload = {
+          case_id: state.result.case_id, filename: state.file.name, model: state.result.model,
+          diagnosis: state.result.diagnosis, segmentation: state.result.segmentation,
+          clinical_notes: els.notes.value.trim(), confirmed_at: new Date().toISOString()
+        };
+        try {
+          const response = await fetch('/api/annotations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+          const data = await response.json();
+          if (!response.ok) throw new Error(data.error || '保存失败');
+          els.save.querySelector('span').textContent = '已核对并保存';
+          toast(`复核记录已保存（${data.annotation_id}）`, 'success');
+        } catch (error) { toast(error.message, 'error'); }
+      }
+
+      function exportReport() {
+        if (!state.result) return toast('请先完成一次模型分析。', 'error');
+        const report = {
+          report_title: 'DermaSeg 皮肤病灶辅助分析报告', generated_at: new Date().toISOString(),
+          case_id: state.result.case_id, source_file: state.file.name, model: state.result.model,
+          diagnosis: state.result.diagnosis, probabilities: state.result.probabilities,
+          segmentation: state.result.segmentation, timing: state.result.timing,
+          clinical_notes: els.notes.value.trim(), disclaimer: '本结果仅用于科研与毕业论文演示，不构成临床诊断或治疗建议。'
+        };
+        const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `${state.result.case_id.replace('#', '')}_report.json`;
+        link.click();
+        URL.revokeObjectURL(link.href);
+        toast('评估结果已导出。', 'success');
+      }
+
+      function applyLayerVisibility() {
+        const visible = state.overlaysVisible;
+        els.mask.classList.toggle('hidden', !visible || !els.toggleMask.checked || !state.result);
+        els.contour.classList.toggle('hidden', !visible || !els.toggleContour.checked || !state.result);
+        els.bbox.classList.toggle('hidden', !visible || !els.toggleBbox.checked || !state.result?.segmentation.bbox_percent);
+      }
+
+      els.image.addEventListener('load', () => {
+        els.dimensions.textContent = `${els.image.naturalWidth} × ${els.image.naturalHeight} px`;
+      });
+      els.upload.addEventListener('click', () => els.fileInput.click());
+      els.fileInput.addEventListener('change', (event) => setImageFile(event.target.files[0]));
+      els.run.addEventListener('click', runInference);
+      els.export.addEventListener('click', exportReport);
+      els.save.addEventListener('click', saveAnnotation);
+      els.model.addEventListener('change', () => {
+        resetResult();
+        els.batchModelName.textContent = els.model.selectedOptions[0]?.textContent || '未选择模型';
+        toast('模型已切换，请重新执行分析。');
+      });
+      els.singleMode.addEventListener('click', () => setMode('single'));
+      els.batchMode.addEventListener('click', () => setMode('batch'));
+      els.startBatch.addEventListener('click', startBatchPrediction);
+      els.batchGrid.addEventListener('click', (event) => {
+        const card = event.target.closest('[data-batch-item]');
+        if (card) openBatchDetail(card.dataset.batchItem);
+      });
+      els.maskOpacity.addEventListener('input', () => {
+        els.maskOpacityValue.textContent = `${els.maskOpacity.value}%`;
+        els.mask.style.opacity = Number(els.maskOpacity.value) / 100;
+      });
+      els.threshold.addEventListener('input', () => els.thresholdValue.textContent = Number(els.threshold.value).toFixed(2));
+      els.toggleMask.addEventListener('change', applyLayerVisibility);
+      els.toggleContour.addEventListener('change', applyLayerVisibility);
+      els.toggleBbox.addEventListener('change', applyLayerVisibility);
+      els.toggleScale.addEventListener('change', () => els.scale.style.display = els.toggleScale.checked ? 'flex' : 'none');
+      $('btnToggleSplitView').addEventListener('click', () => {
+        state.overlaysVisible = !state.overlaysVisible;
+        applyLayerVisibility();
+        $('btnToggleSplitView').classList.toggle('bg-slate-200', !state.overlaysVisible);
+      });
+      $('btnZoomIn').addEventListener('click', () => { state.zoom = Math.min(3, state.zoom + 0.2); els.wrapper.style.transform = `scale(${state.zoom})`; });
+      $('btnZoomOut').addEventListener('click', () => { state.zoom = Math.max(0.4, state.zoom - 0.2); els.wrapper.style.transform = `scale(${state.zoom})`; });
+      $('btnResetZoom').addEventListener('click', () => { state.zoom = 1; els.wrapper.style.transform = 'scale(1)'; });
+      els.settings.addEventListener('click', async () => {
+        try {
+          const health = await (await fetch('/api/health')).json();
+          toast(`服务正常 · ${health.device} · ${health.model_count} 个可用模型`, 'success');
+        } catch { toast('无法连接模型服务。', 'error'); }
+      });
+      document.querySelectorAll('.sample-btn').forEach((button) => {
+        button.addEventListener('click', async () => {
+          document.querySelectorAll('.sample-btn').forEach((item) => {
+            item.classList.remove('border-clinic-500', 'bg-clinic-50/60', 'text-clinic-700');
+            item.classList.add('border-slate-200', 'text-slate-700');
+          });
+          button.classList.add('border-clinic-500', 'bg-clinic-50/60', 'text-clinic-700');
+          button.classList.remove('border-slate-200', 'text-slate-700');
+          await loadSample(button.dataset.case, true);
+        });
+      });
+
+      loadModels().then((ready) => { if (ready) loadSample('test', true); });
+    });
+  </script>
+</body>
+</html>

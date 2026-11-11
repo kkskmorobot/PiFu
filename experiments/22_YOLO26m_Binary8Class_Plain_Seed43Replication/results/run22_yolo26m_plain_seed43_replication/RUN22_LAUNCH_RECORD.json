@@ -1,0 +1,10 @@
+{
+  "status": "STARTING_OR_RESUMING",
+  "started_local_time": "2026-08-15 13:36:51 +0800",
+  "entrypoint": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\run22\\train_run22_from_pycharm.py",
+  "config_sha256": "a4ab4cf55726bed2b43e9cf6716be90523d8a087bd2fffd86ac89453abd7d25a",
+  "fingerprint": "6a9cc96bd2d21f28b9c17ed745a50e76846f05d9c96153b2bad69f59c7257e82",
+  "resume_bundle": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\22_YOLO26m_Binary8Class_Plain_Seed43Replication\\results\\run22_yolo26m_plain_seed43_replication\\checkpoint_bundles\\epoch_0050",
+  "test_metrics_used": false,
+  "external_metrics_used": false
+}

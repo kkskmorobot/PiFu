@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "scope": "frozen development validation only; no test, external, or PAD-UFES-20",
+  "weights": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\experiments\\lg1_YOLO26m_Binary8Class_LGLAv1_Seed43\\results\\lg1_yolo26m_lgla_v1_seed43\\checkpoint_bundles\\epoch_0083\\trainer.pt",
+  "data": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2\\tools\\lg1\\lg1_development_data.yaml",
+  "sample_count_all_forwarded": 1746,
+  "classification_rows": 1488,
+  "plain_run22": {
+    "binary_lesion_iou": 0.76377,
+    "image_macro_f1": 0.55017,
+    "group_macro_f1": 0.62811,
+    "group_macro_recall": 0.64033,
+    "group_mel_to_nv_rate": 0.40816,
+    "joint_score": 0.69263
+  },
+  "lg1_best_joint_validation": {
+    "binary_lesion_iou": 0.7597277164459229,
+    "image_macro_f1": 0.5380178132251684,
+    "group_macro_f1": 0.6077310615562372,
+    "group_macro_recall": 0.5854217651362048,
+    "group_mel_to_nv_rate": 0.336734693877551,
+    "joint_score": 0.6794925544914946
+  },
+  "delta_lg1_minus_run22": {
+    "binary_lesion_iou": -0.004042283554077097,
+    "image_macro_f1": -0.012152186774831653,
+    "group_macro_f1": -0.020378938443762706,
+    "group_macro_recall": -0.05490823486379515,
+    "group_mel_to_nv_rate": -0.07142530612244902,
+    "joint_score": -0.013137445508505374
+  },
+  "screening_gate": {
+    "group_macro_f1_delta_at_least_0p005": false,
+    "joint_delta_at_least_0p003": false,
+    "image_macro_f1_non_decreasing": false,
+    "binary_iou_delta_at_least_minus_0p005": true
+  },
+  "screening_gate_pass": false,
+  "diagnostics": {
+    "global_gate": {
+      "count": 1746,
+      "mean": 1.0,
+      "std_population": 0.0,
+      "min": 1.0,
+      "p05": 1.0,
+      "p25": 1.0,
+      "median": 1.0,
+      "p75": 1.0,
+      "p95": 1.0,
+      "max": 1.0
+    },
+    "local_gate": {
+      "count": 1746,
+      "mean": 8.59767281240903e-13,
+      "std_population": 3.409409907173533e-12,
+      "min": 0.0,
+      "p05": 0.0,
+      "p25": 6.997705833455147e-24,
+      "median": 1.9361740497412364e-17,
+      "p75": 6.779827215050091e-14,
+      "p95": 5.380604382182463e-12,
+      "max": 6.009518577210216e-11
+    },
+    "attention_mass_fraction_p3": {
+      "count": 1746,
+      "mean": 0.31913742423057556,
+      "std_population": 0.24940277636051178,
+      "min": 0.0013044725637882948,
+      "p05": 0.022883199155330658,
+      "p25": 0.1120724231004715,
+      "median": 0.25985682010650635,
+      "p75": 0.47705167531967163,
+      "p95": 0.8231188058853149,
+      "max": 0.987970769405365
+    },
+    "attention_mass_fraction_p4": {
+      "count": 1746,
+      "mean": 0.31913742423057556,
+      "std_population": 0.24940277636051178,
+      "min": 0.0013044725637882948,
+      "p05": 0.022883199155330658,
+      "p25": 0.1120724156498909,
+      "median": 0.25985684990882874,
+      "p75": 0.47705167531967163,
+      "p95": 0.8231188058853149,
+      "max": 0.987970769405365
+    },
+    "fallback_rate_p3": 0.0,
+    "fallback_rate_p4": 0.0,
+    "global_local_descriptor_cosine": {
+      "count": 1746,
+      "mean": 0.750385046005249,
+      "std_population": 0.21827907860279083,
+      "min": -0.21334218978881836,
+      "p05": 0.3124698996543884,
+      "p25": 0.647601842880249,
+      "median": 0.8057821393013,
+      "p75": 0.9149684309959412,
+      "p95": 0.9918466210365295,
+      "max": 0.9999533891677856
+    },
+    "global_local_descriptor_relative_l2": {
+      "count": 1746,
+      "mean": 3.700273275375366,
+      "std_population": 4.95382022857666,
+      "min": 0.010896929539740086,
+      "p05": 0.20732006430625916,
+      "p25": 0.8415391445159912,
+      "median": 1.9466276168823242,
+      "p75": 4.26133918762207,
+      "p95": 13.2543306350708,
+      "max": 38.24831008911133
+    }
+  },
+  "diagnostic_gate": {
+    "local_gate_mean_in_0p05_0p95": false,
+    "local_gate_std_at_least_0p001": false,
+    "all_finite": true
+  },
+  "diagnostic_gate_pass": false,
+  "forbidden_data_access": {
+    "imaplusplus_test": false,
+    "isic2018_external": false,
+    "pad_ufes_20": false
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "status": "COMPLETE",
+  "mode": "NEW_TRAINING_EVALUATION",
+  "smoke_not_thesis": true,
+  "per_seed": [
+    {
+      "run": "lgx",
+      "seed": 43,
+      "internal_test": {
+        "segmentation": {
+          "binary_iou": 0.08919,
+          "binary_dice": 0.16377,
+          "pixel_accuracy": 0.73218,
+          "samples": 16
+        },
+        "weight_source": {
+          "kind": "new_training_bundle",
+          "bundle": "D:\\Data\\project\\PiFu\\outputs\\SMOKE_NOT_THESIS_train_lgx_20261111_174837_266747\\training\\checkpoint_bundles\\epoch_0000",
+          "alias": "D:\\Data\\project\\PiFu\\outputs\\SMOKE_NOT_THESIS_train_lgx_20261111_174837_266747\\training\\checkpoint_bundles\\aliases\\best_joint_score.json",
+          "epoch": 0,
+          "fingerprint": "6b366fefef6a8df609a2e7f0ca126e648acdb36fed104acd72dc9bb6f78cfc41",
+          "manifest_sha256": "d3f5d6a9c8f9dca86f31e22c5b5080478b800efbeb3398723f22bb0933be4572",
+          "files": {
+            "trainer.pt": {
+              "bytes": 116785847,
+              "sha256": "03e87c4b8e5a2017801bcd03e7616c46da68646bc7de4b18a732c86bf3cd6b86"
+            },
+            "runtime_state.pt": {
+              "bytes": 233366160,
+              "sha256": "60bbbab25632d38404189509aea136caf9d22a758b4ee9b6bf49ded9a66adf88"
+            }
+          },
+          "state": "exact_fp32_training_ema"
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast",
+        "classification": {
+          "scope": "IMA++ test MEL/NV labeled subset only; not eight-class test Macro-F1",
+          "support": {
+            "total": 2
+          },
+          "accuracy": 0.5,
+          "bootstrap_95ci": {}
+        }
+      },
+      "external": {
+        "segmentation": {
+          "binary_iou": 4e-05,
+          "binary_dice": 8e-05,
+          "pixel_accuracy": 0.75311,
+          "samples": 16
+        },
+        "weight_source": {
+          "kind": "new_training_bundle",
+          "bundle": "D:\\Data\\project\\PiFu\\outputs\\SMOKE_NOT_THESIS_train_lgx_20261111_174837_266747\\training\\checkpoint_bundles\\epoch_0000",
+          "alias": "D:\\Data\\project\\PiFu\\outputs\\SMOKE_NOT_THESIS_train_lgx_20261111_174837_266747\\training\\checkpoint_bundles\\aliases\\best_joint_score.json",
+          "epoch": 0,
+          "fingerprint": "6b366fefef6a8df609a2e7f0ca126e648acdb36fed104acd72dc9bb6f78cfc41",
+          "manifest_sha256": "d3f5d6a9c8f9dca86f31e22c5b5080478b800efbeb3398723f22bb0933be4572",
+          "files": {
+            "trainer.pt": {
+              "bytes": 116785847,
+              "sha256": "03e87c4b8e5a2017801bcd03e7616c46da68646bc7de4b18a732c86bf3cd6b86"
+            },
+            "runtime_state.pt": {
+              "bytes": 233366160,
+              "sha256": "60bbbab25632d38404189509aea136caf9d22a758b4ee9b6bf49ded9a66adf88"
+            }
+          },
+          "state": "exact_fp32_training_ema"
+        },
+        "validation_mode": "training_path_unfused_fp32_ema_cuda_autocast"
+      }
+    }
+  ]
+}

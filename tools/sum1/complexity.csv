@@ -1,0 +1,5 @@
+family,source_run,parameters,delta_vs_plain,relative_increase_percent,gflops_note
+Plain,18,14507338,0,0.00000000,59.1 semantic backbone reported; custom head total GFLOPs not uniformly recorded
+ECA,21,14507348,10,0.00006893,59.1 semantic backbone reported; custom head total GFLOPs not uniformly recorded
+ECA+Spatial7,26,14507544,206,0.00141997,59.1 semantic backbone reported; custom head total GFLOPs not uniformly recorded
+CBAM,33,14548494,41156,0.28369092,59.1 semantic backbone reported; custom head total GFLOPs not uniformly recorded

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="900" height="370" preserveAspectRatio="xMinYMin meet" viewBox="0 0 900 370" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="900" height="370"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-370)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="900" height="370" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="20" y="255" width="240" height="90" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="82.5" y="306.78499999999997" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,613) scale(1,-1)">数据与监督</text>
+			<text x="25.0" y="278.03499999999997" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,556) scale(1,-1)">IMA++分割 / ISIC分类</text>
+			<rect x="330" y="255" width="240" height="90" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="381.0" y="306.78499999999997" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,613) scale(1,-1)">任务适配基线</text>
+			<text x="335.0" y="278.03499999999997" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,556) scale(1,-1)">共享特征 + P3/P4分类</text>
+			<rect x="640" y="255" width="240" height="90" rx="5" ry="5" style="stroke: rgb(20%,40%,51%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(93%,95%,96%); fill-rule: evenodd;"/>
+			<text x="714.0" y="306.78499999999997" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,613) scale(1,-1)">LGLA改进</text>
+			<text x="650.75" y="278.03499999999997" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,556) scale(1,-1)">区域池化 + 门控均衡</text>
+			<path d="M 260,300 L 330,300 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="330 300, 320.7894 296.1058, 320.7894 303.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 570,300 L 640,300 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="640 300, 630.7894 296.1058, 630.7894 303.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<rect x="20" y="100" width="240" height="90" rx="5" ry="5" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(91%,96%,94%); fill-rule: evenodd;"/>
+			<text x="36.5" y="151.785" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,303) scale(1,-1)">固定数据与训练条件</text>
+			<text x="25.0" y="123.035" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,246) scale(1,-1)">部分任务标签损失屏蔽</text>
+			<rect x="330" y="100" width="240" height="90" rx="5" ry="5" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(91%,96%,94%); fill-rule: evenodd;"/>
+			<text x="381.0" y="151.785" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,303) scale(1,-1)">三种子主比较</text>
+			<text x="369.5" y="123.035" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,246) scale(1,-1)">单种子结构对照</text>
+			<rect x="640" y="100" width="240" height="90" rx="5" ry="5" style="stroke: rgb(14%,51%,47%); stroke-linecap: butt; stroke-width: 1.5; fill: rgb(91%,96%,94%); fill-rule: evenodd;"/>
+			<text x="679.5" y="151.785" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,303) scale(1,-1)">结果与开销分析</text>
+			<text x="668.0" y="123.035" style="font-family: SimHei; font-size: 23px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,246) scale(1,-1)">固定集合补充评价</text>
+			<path d="M 140,255 L 140,190 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="140 190, 136.1058 199.2106, 143.8942 199.2106" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 450,255 L 450,190 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="450 190, 446.1058 199.2106, 453.8942 199.2106" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 760,255 L 760,190 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="760 190, 756.1058 199.2106, 763.8942 199.2106" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 260,145 L 330,145 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="330 145, 320.7894 141.1058, 320.7894 148.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<path d="M 570,145 L 640,145 Z" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<polygon points="640 145, 630.7894 141.1058, 630.7894 148.8942" style="stroke: rgb(33%,38%,42%); stroke-linecap: butt; stroke-width: 1; fill: rgb(33%,38%,42%); fill-rule: evenodd;"/>
+			<text x="65.0" y="35.0" style="font-family: SimHei; font-size: 22px;fill: rgb(9%,14%,20%); stroke:none;" transform="translate(0,70) scale(1,-1)">研究主线：病灶区域如何参与特征汇聚，以及融合策略能否改善分类与联合指标</text>
+		</g>
+	</g>
+</svg>

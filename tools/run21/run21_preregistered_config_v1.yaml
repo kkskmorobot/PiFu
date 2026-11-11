@@ -1,0 +1,145 @@
+# Run21 controlled YOLO26m P3/P4 ECA-only attention under the Run18 lifecycle.
+# No test or external candidate is present in this configuration.
+
+contract:
+  version: run21_yolo26m_p3p4_eca_only_attention_v1
+  role: channel_attention_only_ablation_against_run18_plain_baseline
+  single_preregistered_factor: add_identity_initialized_p3_p4_eca_before_unchanged_global_average_pooling
+  comparison_policy: causal_single_factor_channel_attention_comparison_against_run18
+  baseline_run: experiments/18_YOLO26m_Binary8Class_Plain_DelayedUtilityEarlyStop
+  baseline_fingerprint: 2ed64c4aa90c6d90d15ace2158de0866e570f71ad8a3cb3bbc3e2b7d0fd2b7a3
+  metric_protocol_note: validation_metrics_selection_aliases_and_lifecycle_unchanged_from_run18
+  test_policy: forbidden_until_final_model_lock_and_fresh_user_authorization
+  external_policy: forbidden_for_training_selection_and_threshold_tuning
+
+ultralytics:
+  task: semantic
+  mode: train
+  model: models/yolo26m-sem.pt
+  data: tools/run21/run21_development_data.yaml
+  epochs: 100
+  patience: 30
+  batch: 16
+  imgsz: 640
+  device: 0
+  workers: 8
+  project: experiments/21_YOLO26m_Binary8Class_P3P4_ECAOnlyAttention/results
+  name: run21_yolo26m_p3p4_eca_only_attention_seed42
+  exist_ok: false
+  pretrained: true
+  optimizer: AdamW
+  lr0: 0.001
+  lrf: 0.01
+  cos_lr: true
+  momentum: 0.937
+  weight_decay: 0.0005
+  warmup_epochs: 3.0
+  warmup_momentum: 0.8
+  warmup_bias_lr: 0.1
+  nbs: 64
+  seed: 42
+  deterministic: true
+  amp: true
+  cache: false
+  save: true
+  save_period: -1
+  plots: true
+  val: true
+  verbose: true
+  fraction: 1.0
+  single_cls: false
+  rect: false
+  multi_scale: false
+  dropout: 0.0
+
+amp_check:
+  asset: tools/yolo26n.pt
+  sha256: 9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef
+  working_directory: tools
+  runtime_download: forbidden_local_asset_required
+
+early_stopping:
+  policy: delayed_utility_gated_v1
+  start_epoch: 40
+  patience_after_start: 30
+  earliest_possible_stop_epoch: 70
+  ineligible_score: joint_score_minus_two
+  eligible_score: original_joint_minus_mel_to_nv_excess_fitness
+  utility_eligible_requires:
+    min_binary_iou: 0.70
+    min_group_macro_f1: 0.50
+  applies_to:
+    - ultralytics_stopper
+    - ultralytics_best_pt
+  does_not_change:
+    - validation_metrics
+    - checkpoint_selection_aliases
+
+augmentations:
+  hsv_h: 0.005
+  hsv_s: 0.10
+  hsv_v: 0.10
+  degrees: 5.0
+  translate: 0.03
+  scale: 0.10
+  shear: 0.0
+  perspective: 0.0
+  flipud: 0.5
+  fliplr: 0.5
+  bgr: 0.0
+  mosaic: 0.0
+  mixup: 0.0
+  cutmix: 0.0
+  copy_paste: 0.0
+  close_mosaic: 0
+  auto_augment: null
+  erasing: 0.0
+
+multitask:
+  semantic_classes: 1
+  classification_classes: 8
+  image_cls_weight: 0.5
+  image_head: p3_p4_eca_global_average_pool_mlp_dropout020
+  classification_loss: unweighted_cross_entropy
+  classification_label_smoothing: 0.0
+  sampler: standard_seeded_epoch_shuffle_without_replacement
+  epoch_size: all_23462_train_samples_once
+  segmentation_loss_scope: has_segmentation_only
+  classification_loss_scope: has_official_classification_only
+
+channel_attention:
+  enabled: true
+  baseline_run18: plain_p3_p4_global_average_pool_mlp_dropout020
+  scales: [P3, P4]
+  mechanism: identity_initialized_eca
+  eca_kernel_size: 5
+  pooling: global_average
+  spatial_attention: false
+  p5_descriptor: false
+  semantic_branch_modified: false
+
+checkpoint:
+  bundle_version: pifuv2_multitask_checkpoint_v2
+  keep_last: 3
+  resume_default: auto
+  safe_boundary: completed_epoch
+  require_success_hash_and_fingerprint: true
+  save_live_model_ema_optimizer_scaler_scheduler_stopper_rng_data_progress: true
+
+selection:
+  primary_alias: best_feasible_joint
+  joint_score: sqrt_binary_iou_times_group_macro_f1
+  max_mel_to_nv_rate: 0.1077844311
+  min_binary_iou: 0.70
+  min_group_macro_f1: 0.50
+  feasible_requires: mel_support_and_risk_limit_and_non_degenerate_utility_floors
+  fitness_policy: unchanged_joint_minus_mel_to_nv_excess_only
+  fallback_if_no_feasible: constraint_failure_report_best_joint_for_diagnosis_only
+  tie_break_order:
+    - higher_group_macro_f1
+    - higher_binary_iou
+    - earlier_epoch
+  semantic_probability_threshold: 0.5
+  classification_decision: argmax
+  calibration_temperature: 1.0
+  fit_temperature_or_threshold_on_external: false

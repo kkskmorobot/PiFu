@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "date": "2026-11-11",
+  "source_project": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2",
+  "source_project_modified": false,
+  "scope": "Current thesis: 16 experiments, complete frozen processed train/val/internal-test/external-test data, exact selected EMA weights, original numerical algorithms, historical results, latest thesis and frontend.",
+  "source_copy": {
+    "source": "E:\\App\\DaiMa\\JetBrains\\Project\\PiFuV2",
+    "target": "D:\\Data\\project\\PiFu",
+    "runs": [
+      "run18",
+      "run22",
+      "run24",
+      "run21",
+      "run23",
+      "run25",
+      "run26",
+      "run27",
+      "run28",
+      "run33",
+      "lg1",
+      "lg2",
+      "lgx",
+      "lg3",
+      "ab1",
+      "ab2"
+    ],
+    "copied_files": 2466,
+    "source_copy_sha256_all_equal": true,
+    "frozen_exports": 16,
+    "frozen_state_tensor_equality_all_pass": true,
+    "bytes": 1464366298
+  },
+  "data": {
+    "payload_files": 52188,
+    "payload_bytes": 12870938214,
+    "source_and_destination_sha256_verified_during_copy": true
+  },
+  "frozen_models": {
+    "count": 16,
+    "all_exported_FP32_EMA_state_tensors_exactly_equal_to_original": true,
+    "index": "reproduction/frozen_models.json"
+  },
+  "formal_tests": {
+    "suites": [
+      "test1",
+      "test2"
+    ],
+    "seed_models": 6,
+    "internal_images_per_model": 634,
+    "external_images_per_model": 89,
+    "numeric_metrics_exactly_equal": 312,
+    "numeric_metrics_different": 0,
+    "all_classification_prediction_csv_bytes_identical": true
+  },
+  "training_smoke": {
+    "run": "lgx",
+    "epochs": 1,
+    "train_images": 32,
+    "val_images": 32,
+    "actual_backward_and_checkpoint_save": true,
+    "not_thesis_result": true
+  },
+  "frontend": {
+    "all_16_models_real_inference": "PASS",
+    "HTTP_entrypoint_models_samples_and_one_inference": "PASS",
+    "balanced_selection_100_rounds_of_100_images": "PASS",
+    "each_class_per_batch": [
+      14,
+      15
+    ],
+    "test_val_per_batch": [
+      50,
+      50
+    ]
+  },
+  "restriction_changes": {
+    "human_authorization_ready_and_once_only_gates_removed": true,
+    "repeat_runs_use_unique_outputs": true,
+    "configurable_hyperparameter_locks_relaxed": true,
+    "default_model_arithmetic_unchanged": true,
+    "early_stopping_configuration_connected": true,
+    "normal_missing_file_shape_and_finite_value_checks_retained": true
+  },
+  "relocation_validation": "Actual training, frozen evaluation and validation executed with audit hook blocking old-project code/data/weights; only dependencies from the existing Python environment were reused.",
+  "outcomes": [
+    {
+      "directory": "SMOKE_NOT_THESIS_new_test2_20261111_180813_928131",
+      "mode": "NEW_TRAINING_EVALUATION",
+      "status": "COMPLETE",
+      "evidence": "reproduction/verification/runs/SMOKE_NOT_THESIS_new_test2_20261111_180813_928131/result.json"
+    },
+    {
+      "directory": "SMOKE_NOT_THESIS_train_lgx_20261111_174837_266747",
+      "status": "COMPLETE",
+      "mode": "SMOKE_NOT_THESIS",
+      "epoch": 0,
+      "evidence": "reproduction/verification/runs/SMOKE_NOT_THESIS_train_lgx_20261111_174837_266747/complete.json"
+    },
+    {
+      "directory": "SMOKE_NOT_THESIS_validation_lgx_20261111_180644_602180",
+      "mode": "NEW_TRAINING_EVALUATION",
+      "status": "COMPLETE",
+      "evidence": "reproduction/verification/runs/SMOKE_NOT_THESIS_validation_lgx_20261111_180644_602180/result.json"
+    },
+    {
+      "directory": "SMOKE_NOT_THESIS_validation_run18_20261111_175855_007230",
+      "mode": "SMOKE_NOT_THESIS",
+      "status": "COMPLETE",
+      "evidence": "reproduction/verification/runs/SMOKE_NOT_THESIS_validation_run18_20261111_175855_007230/result.json"
+    },
+    {
+      "directory": "test1_20261111_175506_788702",
+      "mode": "FROZEN_TEST_REPRODUCTION",
+      "status": "COMPLETE",
+      "evidence": "reproduction/verification/runs/test1_20261111_175506_788702/result.json"
+    },
+    {
+      "directory": "test1_20261111_180837_546960",
+      "status": "PREPARED",
+      "evidence": "reproduction/verification/runs/test1_20261111_180837_546960/launch.json"
+    },
+    {
+      "directory": "test2_20261111_174956_642668",
+      "mode": "FROZEN_TEST_REPRODUCTION",
+      "status": "COMPLETE",
+      "evidence": "reproduction/verification/runs/test2_20261111_174956_642668/result.json"
+    },
+    {
+      "directory": "train_lgx_20261111_175147_414168",
+      "status": "PREPARED",
+      "evidence": "reproduction/verification/runs/train_lgx_20261111_175147_414168/launch.json"
+    },
+    {
+      "directory": "train_lgx_20261111_180831_368425",
+      "status": "PREPARED",
+      "evidence": "reproduction/verification/runs/train_lgx_20261111_180831_368425/launch.json"
+    }
+  ],
+  "evidence_directory": "reproduction/verification",
+  "limits": [
+    "Did not retrain all 16 experiments for their full epoch budgets.",
+    "Fresh dependency installation on another computer was not executed; versions and preserved framework were audited and runtime tested in the existing matching environment.",
+    "Formal frozen tests ran before relaxation of parameter guards; the subsequent patch preserves all defaults and forward/loss arithmetic, with boundary-case proof and post-patch new-checkpoint validation/evaluation.",
+    "Original raw downloads, early Run1-9 training datasets and optimizer states of historical runs are intentionally omitted.",
+    "Initial dependency installation and original frontend CDN styling require network access."
+  ],
+  "cleanup": "Only temporary verification outputs/runtime/cache within the two destination folders are removed after evidence is archived. No source files are removed."
+}

@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "entrypoint": "QianDuan/app.py",
+  "transport": "localhost HTTP",
+  "model_count": 16,
+  "default_model": "lg3",
+  "health": {
+    "status": "ok",
+    "device": "NVIDIA GeForce RTX 5080",
+    "model_count": 16,
+    "loaded_model": null,
+    "sample_counts": {
+      "test": 70,
+      "val": 70
+    }
+  },
+  "index_identical": true,
+  "sample_requests": [
+    {
+      "split": "test",
+      "filename": "ISIC_0029147.jpg",
+      "bytes": 223343
+    },
+    {
+      "split": "test",
+      "filename": "ISIC_0030877.jpg",
+      "bytes": 162932
+    },
+    {
+      "split": "val",
+      "filename": "ISIC_0029948.jpg",
+      "bytes": 262380
+    },
+    {
+      "split": "val",
+      "filename": "ISIC_0033844.jpg",
+      "bytes": 270181
+    }
+  ],
+  "inference": {
+    "model": "lg3",
+    "classes": 8,
+    "visualization_returned": true
+  },
+  "server_stopped_after_test": true
+}
